@@ -1,7 +1,6 @@
 $description = $(".description");
 
 $('path').hover(function () {
-    // $(this).attr("class", "enabled heyo");
     $description.addClass('active');
     $description.html($(this).attr('title'));
 }, function () {
