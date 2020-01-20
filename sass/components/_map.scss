@@ -1,0 +1,15 @@
+svg {
+	fill: $color-secondary;
+	stroke: $color-grey-light-1;
+	stroke-width: 0.0621318rem;
+}
+
+.active {
+	fill: $color-primary;
+}
+
+path:hover {
+	fill: $color-secondary-light;
+	stroke: $color-grey-light-1;
+	stroke-width: 0.0621318rem;
+}
