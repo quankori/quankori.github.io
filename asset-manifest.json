@@ -1,25 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0713bf6.chunk.css",
-    "main.js": "/static/js/main.c5369729.chunk.js",
-    "main.js.map": "/static/js/main.c5369729.chunk.js.map",
+    "main.css": "/static/css/main.6bb794dd.chunk.css",
+    "main.js": "/static/js/main.2a7f0fab.chunk.js",
+    "main.js.map": "/static/js/main.2a7f0fab.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef29f233.js",
     "runtime-main.js.map": "/static/js/runtime-main.ef29f233.js.map",
     "static/css/2.f5ad9e04.chunk.css": "/static/css/2.f5ad9e04.chunk.css",
-    "static/js/2.0fe5fdc8.chunk.js": "/static/js/2.0fe5fdc8.chunk.js",
-    "static/js/2.0fe5fdc8.chunk.js.map": "/static/js/2.0fe5fdc8.chunk.js.map",
+    "static/js/2.be4d0f50.chunk.js": "/static/js/2.be4d0f50.chunk.js",
+    "static/js/2.be4d0f50.chunk.js.map": "/static/js/2.be4d0f50.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.25869c1ffad9c8475d144f0a8b0e8006.js": "/precache-manifest.25869c1ffad9c8475d144f0a8b0e8006.js",
+    "precache-manifest.2a717013008c52b70d5532665fc4ecb4.js": "/precache-manifest.2a717013008c52b70d5532665fc4ecb4.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.f5ad9e04.chunk.css.map": "/static/css/2.f5ad9e04.chunk.css.map",
-    "static/css/main.b0713bf6.chunk.css.map": "/static/css/main.b0713bf6.chunk.css.map",
-    "static/js/2.0fe5fdc8.chunk.js.LICENSE": "/static/js/2.0fe5fdc8.chunk.js.LICENSE"
+    "static/css/main.6bb794dd.chunk.css.map": "/static/css/main.6bb794dd.chunk.css.map",
+    "static/js/2.be4d0f50.chunk.js.LICENSE": "/static/js/2.be4d0f50.chunk.js.LICENSE",
+    "static/media/ba-ria.jpg": "/static/media/ba-ria.b7e10b8d.jpg",
+    "static/media/binh-thuan.jpg": "/static/media/binh-thuan.03df8513.jpg",
+    "static/media/dong-nai.jpg": "/static/media/dong-nai.6f152485.jpg",
+    "static/media/khanh-hoa.jpg": "/static/media/khanh-hoa.3a4ed078.jpg",
+    "static/media/lam-dong.jpg": "/static/media/lam-dong.7541d4c2.jpg",
+    "static/media/tay-ninh.jpg": "/static/media/tay-ninh.217099ee.jpg",
+    "static/media/tp-hcm.jpg": "/static/media/tp-hcm.7c94f555.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ef29f233.js",
     "static/css/2.f5ad9e04.chunk.css",
-    "static/js/2.0fe5fdc8.chunk.js",
-    "static/css/main.b0713bf6.chunk.css",
-    "static/js/main.c5369729.chunk.js"
+    "static/js/2.be4d0f50.chunk.js",
+    "static/css/main.6bb794dd.chunk.css",
+    "static/js/main.2a7f0fab.chunk.js"
   ]
 }
