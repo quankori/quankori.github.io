@@ -24,7 +24,7 @@ docker-compose build --no-cache
 docker-compose up --force-recreate
 ```
 
-- Chạy logsdocker-compose
+- Chạy logs docker-compose
 
 ```bash
 docker-compose logs
