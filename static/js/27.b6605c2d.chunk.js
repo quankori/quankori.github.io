@@ -1,2 +1,0 @@
-(this["webpackJsonpreactjs-blog"]=this["webpackJsonpreactjs-blog"]||[]).push([[27],{572:function(s,t,a){"use strict";a.r(t),t.default=a.p+"static/media/linux.e6894a6c.md"}}]);
-//# sourceMappingURL=27.b6605c2d.chunk.js.map

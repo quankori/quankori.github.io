@@ -1,2 +1,0 @@
-(this["webpackJsonpreactjs-blog"]=this["webpackJsonpreactjs-blog"]||[]).push([[12],{557:function(t,e,s){"use strict";s.r(e),e.default=s.p+"static/media/had_better.2ee598cc.md"}}]);
-//# sourceMappingURL=12.fe15ccce.chunk.js.map
