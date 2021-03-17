@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c132a7e7.chunk.css",
-    "main.js": "/static/js/main.1ecb9750.chunk.js",
-    "main.js.map": "/static/js/main.1ecb9750.chunk.js.map",
+    "main.js": "/static/js/main.f1d24cd1.chunk.js",
+    "main.js.map": "/static/js/main.f1d24cd1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.230d6fe4.js",
     "runtime-main.js.map": "/static/js/runtime-main.230d6fe4.js.map",
     "static/css/2.b72b1a0e.chunk.css": "/static/css/2.b72b1a0e.chunk.css",
@@ -81,7 +81,7 @@
     "static/media/advanced.md": "/static/media/advanced.4152be6d.md",
     "static/media/android.md": "/static/media/android.30509dbf.md",
     "static/media/ansible.md": "/static/media/ansible.7d56e47b.md",
-    "static/media/avatar.b6ad0391.jpg": "/static/media/avatar.b6ad0391.jpg",
+    "static/media/avatar.037dec82.jpg": "/static/media/avatar.037dec82.jpg",
     "static/media/aws.md": "/static/media/aws.5315000f.md",
     "static/media/bash.md": "/static/media/bash.55ad2230.md",
     "static/media/basic.md": "/static/media/basic.9f0c67a5.md",
@@ -117,6 +117,6 @@
     "static/css/2.b72b1a0e.chunk.css",
     "static/js/2.6c71d8d0.chunk.js",
     "static/css/main.c132a7e7.chunk.css",
-    "static/js/main.1ecb9750.chunk.js"
+    "static/js/main.f1d24cd1.chunk.js"
   ]
 }
