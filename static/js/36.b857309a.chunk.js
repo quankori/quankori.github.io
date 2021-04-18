@@ -1,2 +1,0 @@
-(this["webpackJsonpreactjs-blog"]=this["webpackJsonpreactjs-blog"]||[]).push([[36],{581:function(s,t,c){"use strict";c.r(t),t.default=c.p+"static/media/quiz.9c40817d.md"}}]);
-//# sourceMappingURL=36.b857309a.chunk.js.map
