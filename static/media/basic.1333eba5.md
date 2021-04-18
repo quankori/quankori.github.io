@@ -1,4 +1,4 @@
-# Solidity Cheatsheet
+# Solidity Basic
 
 - Common function types
 
