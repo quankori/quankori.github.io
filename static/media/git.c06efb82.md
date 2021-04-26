@@ -24,3 +24,18 @@ git config --global user.name "your_name"
 git config --local user.email "your_email@example.com"
 git config --local user.name "your_name"
 ```
+
+- Move change to another branch
+
+```bash
+git stash
+git checkout correct-branch
+git stash pop
+```
+
+- Discard local changes
+
+```bash
+git reset --hard origin/master
+git pull origin master
+```
