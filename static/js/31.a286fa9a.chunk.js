@@ -1,0 +1,2 @@
+(this["webpackJsonpreactjs-blog"]=this["webpackJsonpreactjs-blog"]||[]).push([[31],{576:function(s,t,e){"use strict";e.r(t),t.default=e.p+"static/media/singleton.36335e63.md"}}]);
+//# sourceMappingURL=31.a286fa9a.chunk.js.map
