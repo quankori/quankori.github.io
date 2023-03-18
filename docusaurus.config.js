@@ -79,6 +79,11 @@ const config = {
           sidebarId: "cheatsheet",
         },
         {
+          type: "docSidebar",
+          label: "Exampels",
+          sidebarId: "examples",
+        },
+        {
           type: "search",
           position: "right",
           className: "navbar-search", // Defined in style/custom.scss
