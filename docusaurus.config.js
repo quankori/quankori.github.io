@@ -88,7 +88,12 @@ const config = {
         {
           type: "search",
           position: "right",
-          className: "navbar-search", // Defined in style/custom.scss
+          className: "navbar-search", 
+        },
+        {
+          href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
+          position: "right",
+          label: "My Resume"
         },
         {
           href: "https://github.com/quankori/",
