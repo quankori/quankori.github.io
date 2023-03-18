@@ -10,8 +10,9 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  organizationName: "QuanKori",
-  projectName: "wiki",
+  trailingSlash: false,
+  organizationName: "quankori",
+  projectName: "quankori.github.io",
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
