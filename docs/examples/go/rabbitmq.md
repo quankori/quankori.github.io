@@ -1,6 +1,7 @@
 ---
 title: RabbitMQ
 ---
+
 Example using Golang with RabbitMQ
 
 ```go

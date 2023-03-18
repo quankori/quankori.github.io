@@ -1,6 +1,7 @@
 ---
 title: Singleton Pattern
 ---
+
 Singleton is one of the five design patterns in the Creational Design Pattern group.
 
 Singleton ensures that only one instance is created and provides a method for accessing that instance at any time and in any part of the program.

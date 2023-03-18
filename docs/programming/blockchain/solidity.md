@@ -1,6 +1,7 @@
 ---
 title: Solidity Basic
 ---
+
 ## Common function types
 
 | Type     | Description                                                        |

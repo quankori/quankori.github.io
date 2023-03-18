@@ -1,6 +1,7 @@
 ---
 title: Open Systems Interconnection Reference Model
 ---
+
 The OSI Model is composed of 7 layers, and when receiving a request, it will go from layer 7 to layer 1, and the response returned will go from layer 1 to layer 7.
 
 ## Application layer
@@ -67,4 +68,4 @@ The Presentation layer processes the packet by converting the data formats to th
 
 Finally, the Application layer processes and removes the last header. At this point, the receiving machine will receive the data of the transmitted packet.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/programming/1.jpeg)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/1.jpeg)

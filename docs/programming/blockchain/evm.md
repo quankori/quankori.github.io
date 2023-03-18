@@ -1,6 +1,7 @@
 ---
 title: Ethereum Virtual Machine
 ---
+
 ## Concept
 
 It is a system that executes pre-programmed contracts without the need for intermediaries, however, still requires fees (gas fees) to execute transactions as well as rewards for miners.
@@ -9,7 +10,7 @@ Interactions with contracts are done through transactions.
 
 The blockchain only stores a history trail and does not store data.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/3.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/3.PNG)
 
 ## Structure
 
@@ -25,7 +26,7 @@ In blockchain, SHA256 hashes the data and it is a one-way encryption.
 
 The hash code will be compiled into a decimal number (hexadecimal to decimal).
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/5.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/5.PNG)
 
 ## Characteristics
 
@@ -49,4 +50,4 @@ When a miner successfully adds a block to the chain, the remaining nodes in the 
 
 However, one of the drawbacks of short block mining time is that there will be many miners who find a block in very close time periods, but only the earliest found block is added to the main branch and slower blocks are abandoned, called orphaned blocks.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/4.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/4.PNG)

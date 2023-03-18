@@ -22,4 +22,4 @@ When loading file information, the server only needs a CID segment to download t
     With the OpenSea method, the image must be uploaded back to S3 and made into a centralized image stored in the database to avoid long loading times.
     An IPFS instance must be built to optimize the image loading time.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/7.png)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/7.png)

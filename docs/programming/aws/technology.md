@@ -1,13 +1,6 @@
 ---
 title: AWS Technology
 ---
-## AWS Concierge
-
-AWS Concierge là một dịch vụ hỗ trợ cao cấp của Amazon Web Services (AWS) được cung cấp cho các khách hàng doanh nghiệp và khối lượng lớn. Nó giúp các khách hàng có được quản lý tài khoản AWS chuyên nghiệp, kế hoạch hóa quản lý chi phí và tối ưu hóa hiệu suất hạ tầng.
-
-Với dịch vụ AWS Concierge, khách hàng sẽ được cung cấp một chuyên gia kỹ thuật AWS (Technical Account Manager - TAM) với kinh nghiệm để hỗ trợ các yêu cầu đặc biệt và làm việc với khách hàng để đảm bảo rằng các mục tiêu kinh doanh của họ được đáp ứng. Ngoài ra, khách hàng còn nhận được các dịch vụ hỗ trợ như kiểm tra tính khả dụng của ứng dụng và hướng dẫn về tối ưu hóa chi phí.
-
-Dịch vụ AWS Concierge được thiết kế để giúp các khách hàng doanh nghiệp và khối lượng lớn thực hiện việc triển khai và quản lý các ứng dụng phức tạp trên nền tảng AWS một cách hiệu quả và tiết kiệm chi phí.
 
 ## AWS Management Console
 
@@ -98,17 +91,16 @@ Ngoài việc lưu trữ và di chuyển dữ liệu, Snowball Edge cũng có th
 
 Tóm lại, AWS Snowball Edge là một thiết bị lưu trữ tính toán và kết nối mạng được thiết kế để giúp người dùng di chuyển lượng lớn dữ liệu từ các vùng không có kết nối Internet đến AWS một cách an toàn và nhanh chóng. Nó cũng được sử dụng để thực hiện các tác vụ tính toán trên máy chủ riêng của người dùng.
 
-| Tính năng | AWS Snowmobile | AWS Snowball Edge | AWS Snowcone |
-| --- | --- | --- | --- |
-| Dung lượng lưu trữ tối đa | 100 PB - 1 EB | 80 TB - 100 TB | 8 TB |
-| Kết nối mạng tích hợp | Có | Có | Không |
-| Khả năng tính toán tích hợp | Không | Có | Không |
-| Loại dữ liệu hỗ trợ | Mọi loại | Mọi loại | Tập tin, ảnh, video |
-| Kích thước | Container xe tải | Hộp nhỏ gọn | Hộp siêu nhỏ gọn |
-| Thời gian chuyển dữ liệu tối đa | 2 tuần | 1-2 ngày | Tùy thuộc vào kích thước và tốc độ của dữ liệu |
-| Điều khiển từ xa | Không | Có | Có |
-| Chi phí cho mỗi lần sử dụng | Cao | Trung bình | Thấp |
-
+| Tính năng                       | AWS Snowmobile   | AWS Snowball Edge | AWS Snowcone                                   |
+| ------------------------------- | ---------------- | ----------------- | ---------------------------------------------- |
+| Dung lượng lưu trữ tối đa       | 100 PB - 1 EB    | 80 TB - 100 TB    | 8 TB                                           |
+| Kết nối mạng tích hợp           | Có               | Có                | Không                                          |
+| Khả năng tính toán tích hợp     | Không            | Có                | Không                                          |
+| Loại dữ liệu hỗ trợ             | Mọi loại         | Mọi loại          | Tập tin, ảnh, video                            |
+| Kích thước                      | Container xe tải | Hộp nhỏ gọn       | Hộp siêu nhỏ gọn                               |
+| Thời gian chuyển dữ liệu tối đa | 2 tuần           | 1-2 ngày          | Tùy thuộc vào kích thước và tốc độ của dữ liệu |
+| Điều khiển từ xa                | Không            | Có                | Có                                             |
+| Chi phí cho mỗi lần sử dụng     | Cao              | Trung bình        | Thấp                                           |
 
 ## AWS CloudSearch
 
@@ -217,7 +209,3 @@ Mỗi Quick Start đi kèm với một tài liệu hướng dẫn chi tiết đ�
 Sử dụng Quick Starts giúp giảm thời gian triển khai, giảm độ phức tạp và tăng tính nhất quán. Đồng thời, Quick Starts cũng giúp khách hàng tiết kiệm chi phí, vì không cần phải tự xây dựng toàn bộ giải pháp từ đầu.
 
 Tóm lại, AWS Quick Starts là một bộ công cụ của AWS giúp khách hàng triển khai các giải pháp đám mây được thiết kế trước và kiểm tra sẵn một cách nhanh chóng và dễ dàng. Các Quick Starts giúp giảm thời gian, chi phí và độ phức tạp của việc triển khai ứng dụng trong môi trường đám mây của AWS.
-
-## AWS Direct Connect
-
-AWS Direct Connect là một dịch vụ của Amazon Web Services (AWS) cho phép khách hàng thiết lập kết nối mạng riêng tư từ trung tâm dữ liệu của họ đến AWS. Kết nối này được thực hiện thông qua các điểm kết nối trực tiếp giữa trung tâm dữ liệu của khách hàng và AWS, thay vì thông qua Internet công cộng. Việc sử dụng AWS Direct Connect giúp tăng tính bảo mật và giảm độ trễ trong quá trình truyền tải dữ liệu giữa hệ thống của khách hàng và các dịch vụ của AWS. Ngoài ra, AWS Direct Connect cũng cho phép khách hàng tiết kiệm chi phí bằng cách giảm lượng dữ liệu được truyền tải qua Internet công cộng.

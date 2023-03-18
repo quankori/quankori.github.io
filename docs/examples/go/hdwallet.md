@@ -1,6 +1,7 @@
 ---
 title: Hierarchical Deterministic Wallet
 ---
+
 Mnemonic to private key
 
 ```go

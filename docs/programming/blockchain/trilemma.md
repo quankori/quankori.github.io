@@ -15,4 +15,4 @@ The blockchain's infeasible triad includes: Scalability, Security, and Decentral
 Currently, Bitcoin and Ethereum are designed for Decentralization and Security, which affects Scalability.
 
 Ripple, on the other hand, is designed for Security and Scalability, while in terms of Decentralization, they will decide who will participate in the network.
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/1.png)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/1.png)

@@ -1,6 +1,7 @@
 ---
 title: AWS Security
 ---
+
 ## AWS WAF
 
 AWS WAF (Web Application Firewall) là một dịch vụ bảo mật trên đám mây (cloud security service) của Amazon Web Services (AWS) được thiết kế để bảo vệ các ứng dụng web khỏi các cuộc tấn công mạng. Nó hoạt động bằng cách kiểm tra lưu lượng truy cập đến ứng dụng web và chặn các truy cập có chứa các mẫu đáng ngờ hoặc các yêu cầu độc hại.
@@ -47,7 +48,7 @@ Ngoài ra, CloudTrail còn cho phép bạn tích hợp với các dịch vụ kh
 
 Với CloudTrail, bạn có thể giám sát và kiểm soát các hoạt động trên tài khoản AWS của mình một cách chặt chẽ hơn, giúp tăng cường bảo mật và đáp ứng các yêu cầu tuân thủ quy định liên quan đến việc bảo vệ thông tin khách hàng và dữ liệu nhạy cảm.
 
-## AWS Shared responsibility model
+## AWS Shared Responsibility Model
 
 | Responsibility                                                                                | AWS | User |
 | --------------------------------------------------------------------------------------------- | --- | ---- |

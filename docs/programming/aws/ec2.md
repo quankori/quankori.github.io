@@ -1,7 +1,8 @@
 ---
 title: Amazon Elastic Compute Cloud
 ---
-## Loại cơ bản
+
+## Các loại EC2
 
 - On-Demand Instances: Là loại EC2 hỗ trợ cho thuê máy ảo theo giờ, không yêu cầu các cam kết dài hạn hoặc trước đó. Loại này phù hợp cho các ứng dụng có tính linh động cao, nhu cầu sử dụng ngắn hạn hoặc có biến động lớn.
 
@@ -15,7 +16,7 @@ title: Amazon Elastic Compute Cloud
 
 - Mặc định EC2 sẽ là loại On-demand Instances.
 
-## Loại thanh toán của Resverved Instnaces
+### Loại thanh toán của Resverved Instnaces
 
 - Partial Upfront: Là loại thanh toán trước cho Reserved Instances trong đó người dùng phải thanh toán một khoản tiền trước ở mức giá giảm và phải thanh toán chi phí sử dụng cho phần còn lại của thời gian đặt hàng.
 
@@ -49,7 +50,7 @@ Sự khác nhau giữa EBS và EFS là:
 
 Về cơ bản, EBS được sử dụng cho các ứng dụng lưu trữ dữ liệu trên một máy chủ EC2 duy nhất, trong khi EFS được sử dụng cho các ứng dụng chia sẻ dữ liệu trên nhiều máy chủ EC2.
 
-## Các loại EBS
+### Các loại EBS
 
 | Loại EBS                 | Giá thành mỗi GB/tháng                                       | Hiệu suất (IOPS) tối đa | Tốc độ truyền tải dữ liệu tối đa | Tính năng chính                                         |
 | ------------------------ | ------------------------------------------------------------ | ----------------------- | -------------------------------- | ------------------------------------------------------- |

@@ -1,6 +1,7 @@
 ---
 title: Amazon Virtual Private Cloud
 ---
+
 ## Network ACL
 
 Network Access Control List (ACL) là một tính năng của Amazon Web Services (AWS) được sử dụng để kiểm soát quyền truy cập vào một tài nguyên mạng. Nó hoạt động trên mức mạng và được áp dụng cho các tài nguyên trên Amazon Virtual Private Cloud (VPC), bao gồm các subnet và các instance.
@@ -19,7 +20,7 @@ Mỗi subnet network sẽ có một phạm vi địa chỉ IP riêng, được x
 
 Trong Amazon Web Services (AWS), các subnet network được sử dụng trong Amazon Virtual Private Cloud (VPC), một dịch vụ cho phép người dùng tạo ra các mạng riêng ảo theo ý muốn trên nền tảng AWS. Các subnet network trong VPC có thể được sử dụng để chia mạng ra thành các khu vực có tính riêng tư khác nhau, tăng tính bảo mật và nhận diện truy cập mạng.
 
-## CIDR
+## CI/DR
 
 CIDR (Classless Inter-Domain Routing) là một phương pháp định tuyến IP, cho phép chia nhỏ và quản lý các phạm vi địa chỉ IP dễ dàng hơn. CIDR được sử dụng để biểu diễn phạm vi địa chỉ IP bằng cách sử dụng một số lượng bit trong địa chỉ IP để xác định mạng con.
 
@@ -64,6 +65,10 @@ Một số ưu điểm của NAT Gateway bao gồm:
 
 Tuy nhiên, NAT Gateway là một dịch vụ có tính phí, người dùng cần thanh toán phí hàng tháng tương ứng với lượng traffic được chuyển tiếp qua NAT Gateway.
 
+## AWS Direct Connect
+
+AWS Direct Connect là một dịch vụ của Amazon Web Services (AWS) cho phép khách hàng thiết lập kết nối mạng riêng tư từ trung tâm dữ liệu của họ đến AWS. Kết nối này được thực hiện thông qua các điểm kết nối trực tiếp giữa trung tâm dữ liệu của khách hàng và AWS, thay vì thông qua Internet công cộng. Việc sử dụng AWS Direct Connect giúp tăng tính bảo mật và giảm độ trễ trong quá trình truyền tải dữ liệu giữa hệ thống của khách hàng và các dịch vụ của AWS. Ngoài ra, AWS Direct Connect cũng cho phép khách hàng tiết kiệm chi phí bằng cách giảm lượng dữ liệu được truyền tải qua Internet công cộng.
+
 ## Route table
 
 Route table là một thành phần quan trọng trong Amazon Virtual Private Cloud (VPC) của Amazon Web Services (AWS), được sử dụng để xác định cách thức điều hướng traffic giữa các subnet network hoặc internet gateway trong VPC.
@@ -76,4 +81,4 @@ Các route table cũng cho phép người dùng tùy chỉnh các bản ghi rout
 
 Tổng kết lại, Route Table là một thành phần quan trọng trong Amazon Virtual Private Cloud (VPC) giúp điều hướng traffic giữa các subnet network hoặc Internet gateway trong VPC và cho phép người dùng tùy chỉnh các bản ghi route để điều hướng traffic theo ý muốn của mình.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/aws/1.png)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/aws/1.png)

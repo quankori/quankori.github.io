@@ -1,6 +1,7 @@
 ---
 title: Proof Of Work
 ---
+
 Example Golang with basic PoW
 
 ```go

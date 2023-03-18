@@ -1,6 +1,7 @@
 ---
 title: Concurrent data processing
 ---
+
 Example with Golang
 
 ```go

@@ -1,7 +1,8 @@
 ---
-title: Billing and Pricing trong AWS
+title: Billing và Pricing
 ---
-## Chuyển đổi hạ tầng on-premises qua AWS
+
+## Lợi ích chuyển on-premises qua AWS
 
 Trong việc chuyển đổi hạ tầng và các ứng dụng từ trung tâm dữ liệu on-premises sang AWS, một trong những cơ hội tài chính quan trọng là thay thế chi phí hoạt động biến đổi (OPEX) bằng chi phí vốn ban đầu thấp (CAPEX).
 
@@ -9,7 +10,7 @@ Với hạ tầng on-premises, các hoạt động vận hành hàng ngày liên
 
 Việc sử dụng AWS giúp các tổ chức tiết kiệm chi phí hoạt động không cố định và tối thiểu hóa đầu tư vốn ban đầu. Bằng cách chuyển từ OPEX sang CAPEX, các tổ chức có thể tăng tính linh hoạt trong việc quản lý chi phí, giảm thiểu đầu tư vốn ban đầu và tăng khả năng phát triển và mở rộng nhanh chóng.
 
-## OPEX và CAPEX
+### OPEX và CAPEX
 
 OPEX và CAPEX là hai khái niệm tài chính trong quản lý kinh doanh. Dưới góc nhìn đơn giản, OPEX (Operational Expenditures) là các chi phí liên quan đến hoạt động vận hành hàng ngày của một tổ chức, ví dụ như chi phí tiêu điện, chi phí thuê mặt bằng, chi phí lương nhân viên, chi phí mua linh kiện, vật tư, ... Trong khi đó, CAPEX (Capital Expenditures) là các chi phí liên quan đến việc đầu tư vào tài sản cố định của tổ chức, ví dụ như chi phí xây dựng, mua sắm thiết bị, máy móc, ...
 
@@ -45,11 +46,19 @@ Tóm lại, AWS cung cấp một loạt các gói hỗ trợ khác nhau để đ
 | Third-Party Software Support        | Not included                                 | Not included                           | Not included                                       | Included                                                                         |
 | Concierge Support                   | Not included                                 | Not included                           | Not included                                       | Included                                                                         |
 
-## Trusted Advisor
+### Trusted Advisor
 
 AWS Trusted Advisor là một dịch vụ được cung cấp bởi Amazon Web Services (AWS) để giúp khách hàng của họ tối ưu hóa môi trường AWS của họ. Nó sử dụng các kiến ​​thức và kinh nghiệm tích lũy từ AWS để cung cấp các khuyến nghị về tài nguyên, hiệu suất, bảo mật và chi phí.
 
 AWS Trusted Advisor hoạt động bằng cách tự động quét môi trường AWS của bạn và so sánh nó với các best practices đã được xác định. Nó sau đó cung cấp các khuyến nghị để cải thiện hoạt động, giảm chi phí và tăng tính khả dụng của hệ thống.
+
+### AWS Concierge
+
+AWS Concierge là một dịch vụ hỗ trợ cao cấp của Amazon Web Services (AWS) được cung cấp cho các khách hàng doanh nghiệp và khối lượng lớn. Nó giúp các khách hàng có được quản lý tài khoản AWS chuyên nghiệp, kế hoạch hóa quản lý chi phí và tối ưu hóa hiệu suất hạ tầng.
+
+Với dịch vụ AWS Concierge, khách hàng sẽ được cung cấp một chuyên gia kỹ thuật AWS (Technical Account Manager - TAM) với kinh nghiệm để hỗ trợ các yêu cầu đặc biệt và làm việc với khách hàng để đảm bảo rằng các mục tiêu kinh doanh của họ được đáp ứng. Ngoài ra, khách hàng còn nhận được các dịch vụ hỗ trợ như kiểm tra tính khả dụng của ứng dụng và hướng dẫn về tối ưu hóa chi phí.
+
+Dịch vụ AWS Concierge được thiết kế để giúp các khách hàng doanh nghiệp và khối lượng lớn thực hiện việc triển khai và quản lý các ứng dụng phức tạp trên nền tảng AWS một cách hiệu quả và tiết kiệm chi phí.
 
 ## AWS Cost Explorer
 

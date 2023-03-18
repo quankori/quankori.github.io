@@ -65,4 +65,4 @@ For example:
 
 Through this basic example, we can understand the mechanism of the network's mining algorithm, but the implementation of the mining algorithm may vary depending on the network and the participating nodes.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/6.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/6.PNG)

@@ -1,6 +1,7 @@
 ---
 title: Staking in Blockchain
 ---
+
 ## APR (Annual Percentage Rate)
 
 ```

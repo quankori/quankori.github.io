@@ -7,9 +7,9 @@ title: Node.js Concept
 - V8 is used to interpret and execute Javascript code
 - Libuv is used for accessing the filesystem and some aspects of concurrency
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/programming/3.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/3.PNG)
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/programming/4.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/4.PNG)
 
 ## Basic concepts of Node.js
 

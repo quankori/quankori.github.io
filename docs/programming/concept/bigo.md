@@ -1,6 +1,7 @@
 ---
 title: Big O Notation
 ---
+
 ## Some common complexities
 
 O(n): Linear complexity. Consider the function that calculates the sum of numbers from 1 to n
@@ -23,4 +24,4 @@ int sum(int n)
 
 Based on the above annotations, in this case T = O(1) + n x O(1) + O(1) = n x c + d (using (3), consider O(1) + O(1) as d, where c, d are constants) = n (as mentioned above, n can be considered as +∞, using (4) to remove c, d). = O(n).
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/programming/5.png)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/5.png)

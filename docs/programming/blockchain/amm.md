@@ -12,4 +12,4 @@ title: Automated Market Maker
   - KORI received: 50 - (2500 / 55) = 4.54 KORI.
   - Now the pool will be 55 \* 45.46 = 2500, which is equal to the initial k value.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/main/src/images/blockchain/2.PNG)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/2.PNG)

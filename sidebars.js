@@ -1,6 +1,44 @@
 // @ts-check
 const sidebars = {
   programming: [
+     {
+      type: "category",
+      label: "AWS",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/aws/billing",
+          label: "Billing",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/ec2",
+          label: "EC2",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/s3",
+          label: "S3",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/security",
+          label: "Security",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/technology",
+          label: "Technology",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/vpc",
+          label: "VPC",
+        },
+      ],
+    },
     {
       type: "category",
       label: "Blockchain",
@@ -79,44 +117,6 @@ const sidebars = {
           type: "doc",
           id: "programming/concept/solid",
           label: "SOLID",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "AWS",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/aws/billing",
-          label: "Billing",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/ec2",
-          label: "EC2",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/s3",
-          label: "S3",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/security",
-          label: "Security",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/technology",
-          label: "Technology",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/vpc",
-          label: "VPC",
         },
       ],
     },

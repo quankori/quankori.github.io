@@ -1,6 +1,7 @@
 ---
 title: Object-oriented programming
 ---
+
 ## Inheritance
 
 Reusing a function from another class through inheriting that class.
