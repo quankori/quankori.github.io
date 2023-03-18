@@ -13,6 +13,7 @@ const config = {
   trailingSlash: false,
   organizationName: "quankori",
   projectName: "quankori.github.io",
+  deploymentBranch: "master",
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
