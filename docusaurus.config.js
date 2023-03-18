@@ -53,6 +53,7 @@ const config = {
           ignorePatterns: ["/tags/**"],
           filename: "sitemap.xml",
         },
+        blog: false,
       }),
     ],
   ],
@@ -88,12 +89,12 @@ const config = {
         {
           type: "search",
           position: "right",
-          className: "navbar-search", 
+          className: "navbar-search",
         },
         {
           href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
           position: "right",
-          label: "My Resume"
+          label: "My Resume",
         },
         {
           href: "https://github.com/quankori/",
