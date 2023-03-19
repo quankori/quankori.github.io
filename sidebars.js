@@ -9,8 +9,8 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/aws/billing",
-          label: "Billing",
+          id: "programming/aws/concept",
+          label: "Concept",
         },
         {
           type: "doc",
@@ -24,18 +24,33 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/aws/security",
-          label: "Security",
+          id: "programming/aws/database",
+          label: "Database",
         },
         {
           type: "doc",
-          id: "programming/aws/technology",
-          label: "Technology",
+          id: "programming/aws/container",
+          label: "Containers",
         },
         {
           type: "doc",
           id: "programming/aws/vpc",
           label: "VPC",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/billing",
+          label: "Billing & Pricing",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/security",
+          label: "Security",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/service",
+          label: "Other Services",
         },
       ],
     },

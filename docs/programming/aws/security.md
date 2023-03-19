@@ -2,6 +2,14 @@
 title: AWS Security
 ---
 
+## AWS Inspector
+
+AWS Inspector là một dịch vụ kiểm tra bảo mật tự động do Amazon Web Services (AWS) cung cấp, giúp người dùng tìm thấy các lỗ hổng bảo mật trong ứng dụng và hệ thống của họ chạy trên nền tảng AWS.
+
+AWS Inspector sử dụng các quy tắc chuẩn để quét máy ảo EC2 hoặc hệ thống tương tự khác. Nó kiểm tra các thành phần của hệ thống như cổng mạng, dịch vụ và giao thức để xác định các lỗ hổng bảo mật tiềm ẩn. Ngoài ra, AWS Inspector cũng đánh giá các thiết lập bảo mật của người dùng, bao gồm các chính sách điều khiển truy cập và cấu hình bảo mật.
+
+Sau khi quét hệ thống của mình với AWS Inspector, người dùng nhận được báo cáo chi tiết về các lỗ hổng bảo mật được tìm thấy và các khuyến nghị để sửa chữa chúng. AWS Inspector cung cấp cho người dùng một cách tiếp cận tự động, linh hoạt và thuận tiện để kiểm tra bảo mật hệ thống của họ trong AWS.
+
 ## AWS WAF
 
 AWS WAF (Web Application Firewall) là một dịch vụ bảo mật trên đám mây (cloud security service) của Amazon Web Services (AWS) được thiết kế để bảo vệ các ứng dụng web khỏi các cuộc tấn công mạng. Nó hoạt động bằng cách kiểm tra lưu lượng truy cập đến ứng dụng web và chặn các truy cập có chứa các mẫu đáng ngờ hoặc các yêu cầu độc hại.
@@ -47,21 +55,6 @@ CloudTrail cung cấp một ghi chép chi tiết về các hoạt động quản
 Ngoài ra, CloudTrail còn cho phép bạn tích hợp với các dịch vụ khác của AWS, bao gồm Amazon S3, Amazon CloudWatch và AWS Lambda. Nó cũng hỗ trợ tính năng tìm kiếm và truy vấn trong các nhật ký, cho phép bạn nhanh chóng tìm kiếm các hoạt động cụ thể trên tài khoản AWS của bạn.
 
 Với CloudTrail, bạn có thể giám sát và kiểm soát các hoạt động trên tài khoản AWS của mình một cách chặt chẽ hơn, giúp tăng cường bảo mật và đáp ứng các yêu cầu tuân thủ quy định liên quan đến việc bảo vệ thông tin khách hàng và dữ liệu nhạy cảm.
-
-## AWS Shared Responsibility Model
-
-| Responsibility                                                                                | AWS | User |
-| --------------------------------------------------------------------------------------------- | --- | ---- |
-| Physical security of data centers                                                             | ✓   |      |
-| Network and infrastructure security                                                           | ✓   |      |
-| Hypervisor and virtual instance security                                                      | ✓   |      |
-| Patching and updating of host operating system, application stacks, and AWS-provided services | ✓   |      |
-| Configuration of firewall and access control lists (ACLs)                                     | ✓   |      |
-| Encryption of data in transit and at rest                                                     | ✓   |      |
-| Managing access to resources and data                                                         |     | ✓    |
-| Security configuration of applications and operating systems                                  |     | ✓    |
-| Data classification and protection                                                            |     | ✓    |
-| Incident response planning and execution                                                      |     | ✓    |
 
 ## AWS Single Sign-On
 

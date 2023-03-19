@@ -65,3 +65,19 @@ Giải thích:
 - Provisioned IOPS (SSD): dùng cho các ứng dụng yêu cầu tính toàn vẹn dữ liệu và hiệu suất cao.
 - Magnetic: dùng cho các ứng dụng có yêu cầu ít hiệu suất và muốn tiết kiệm chi phí.
 - Throughput Optimized HDD: dùng cho các ứng dụng yêu cầu xử lý dữ liệu lớn.
+
+## RAID
+
+RAID là viết tắt của "Redundant Array of Independent Disks". Nó là một kỹ thuật lưu trữ dữ liệu được sử dụng để cải thiện độ tin cậy và hiệu suất của hệ thống lưu trữ bằng cách sử dụng nhiều ổ đĩa cứng.
+
+Các loại RAID phổ biến nhất gồm:
+
+- RAID 0: Kỹ thuật này tạo ra một ổ đĩa ảo bằng cách ghép nối hai hoặc nhiều ổ đĩa vật lý vào một nhóm. Dữ liệu được chia thành các phân đoạn nhỏ và lưu trữ trên các ổ đĩa khác nhau. RAID 0 không có khả năng phục hồi dữ liệu nếu một trong các ổ đĩa bị hỏng, nhưng nó mang lại hiệu suất đọc/ghi cao hơn so với một ổ đĩa duy nhất.
+
+- RAID 1: Kỹ thuật này sử dụng hai hoặc nhiều ổ đĩa giống nhau và sao lưu dữ liệu từ ổ đĩa này sang ổ đĩa kia. RAID 1 có khả năng phục hồi dữ liệu nếu một trong các ổ đĩa bị hỏng, nhưng có giá thành cao hơn so với RAID 0 và hiệu suất đọc/ghi thấp hơn.
+
+- RAID 5: Kỹ thuật này sử dụng ít nhất ba ổ đĩa vật lý và lưu trữ thông tin dự phòng (parity information) trên các ổ đĩa khác nhau. RAID 5 có khả năng phục hồi dữ liệu nếu một trong các ổ đĩa bị hỏng, và hiệu suất đọc/ghi tương đối cao.
+
+- RAID 6: Tương tự như RAID 5, nhưng sử dụng ít nhất bốn ổ đĩa để lưu trữ thông tin dự phòng, cải thiện khả năng phục hồi dữ liệu so với RAID 5.
+
+- RAID 10 (hoặc RAID 1+0): Kết hợp giữa RAID 1 và RAID 0, sử dụng ít nhất bốn ổ đĩa và phân chia dữ liệu thành các đoạn nhỏ, sau đó sao lưu các đoạn này đến các ổ đĩa khác nhau. RAID 10 có khả năng phục hồi dữ liệu rất tốt và hiệu suất đọc/ghi cao, nhưng có giá thành cao hơn so với các kỹ thuật RAID khác.

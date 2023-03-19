@@ -1,5 +1,5 @@
 ---
-title: AWS Technology
+title: Other Services
 ---
 
 ## AWS Management Console
@@ -36,60 +36,13 @@ Ngoài ra, AWS Glue còn hỗ trợ tính năng "Development Endpoints" cho phé
 
 Tóm lại, AWS Glue là một dịch vụ ETL quản lý hạ tầng đám mây của AWS cung cấp các công cụ để trích xuất, chuyển đổi và tải dữ liệu. Nó cũng cung cấp khả năng tự động mở rộng và hỗ trợ tính năng "Development Endpoints" để giúp các nhà phát triển xử lý các tác vụ ETL phức tạp.
 
-## AWS Database Migration Service
+## Di chuyển dữ liệu lớn
 
-AWS Database Migration Service (AWS DMS) là một dịch vụ của Amazon Web Services (AWS) cho phép di chuyển dữ liệu từ một nơi đến nơi khác, giữa các cơ sở dữ liệu khác nhau. AWS DMS giúp người dùng sao chép cơ sở dữ liệu đến hoặc từ AWS Cloud, và giữ nguyên tính toàn vẹn và khả năng truy cập của dữ liệu trong quá trình di chuyển.
+- AWS Snowmobile: Là một loại thiết bị lưu trữ tạm thời có kích thước tương đương với container vận tải hàng hóa và được sử dụng cho việc di chuyển dữ liệu lên đến hàng petabyte giữa các trung tâm dữ liệu. Snowmobile được tạo ra để giảm thiểu thời gian cần thiết để di chuyển nhiều dữ liệu giữa các trung tâm dữ liệu.
 
-AWS DMS hỗ trợ nhiều loại cơ sở dữ liệu, bao gồm MySQL, PostgreSQL, Oracle, SQL Server và MongoDB. Nó cung cấp các công cụ để tối ưu hóa và can thiệp vào quá trình di chuyển dữ liệu, như lọc và biến đổi dữ liệu.
+- AWS Snowcone: Là một loại thiết bị lưu trữ tạm thời kích thước nhỏ hơn và nhẹ hơn so với Snowball và được sử dụng cho việc lưu trữ và chuyển dữ liệu tại các vị trí xa nhau hoặc khó tiếp cận. Nó có kích thước chỉ bằng một phần nhỏ của một máy tính xách tay thông thường.
 
-Các tính năng chính của AWS DMS bao gồm:
-
-- Khả năng di chuyển dữ liệu giữa các cơ sở dữ liệu khác nhau.
-- Hỗ trợ cho nhiều loại cơ sở dữ liệu.
-- Tùy chọn lọc và biến đổi dữ liệu trong quá trình di chuyển.
-- Cải thiện hiệu suất và tối ưu hóa quá trình di chuyển dữ liệu.
-- Đảm bảo tính toàn vẹn và khả năng truy cập của dữ liệu trong quá trình di chuyển.
-
-Với AWS DMS, người dùng có thể dễ dàng di chuyển cơ sở dữ liệu của họ giữa các nền tảng khác nhau mà không cần phải lo lắng về việc mất dữ liệu hoặc gián đoạn kết nối. AWS DMS giúp tăng tính linh hoạt của kiến trúc cơ sở dữ liệu và giảm chi phí và thời gian cho quá trình di chuyển.
-
-## AWS Snowmobile
-
-AWS Snowmobile là một dịch vụ di chuyển dữ liệu lớn của Amazon Web Services (AWS). Dịch vụ này cung cấp cho khách hàng một phương tiện di chuyển dữ liệu vật lý, được thiết kế để di chuyển tới nơi khách hàng đang lưu trữ dữ liệu của họ, để chuyển dữ liệu từ các trung tâm dữ liệu của khách hàng vào AWS Cloud.
-
-Snowmobile có thể chứa lên tới 100 petabyte (PB) dữ liệu và được vận chuyển bằng một xe tải chuyên dụng có kích thước lớn. Khi Snowmobile đến nơi, khách hàng có thể sử dụng kết nối trực tiếp với AWS Direct Connect để nhanh chóng truyền dữ liệu vào AWS Cloud. Vì Snowmobile được thiết kế để chuyển dữ liệu lớn, việc truyền dữ liệu qua Snowmobile có thể giảm thời gian và chi phí so với việc truyền dữ liệu qua Internet.
-
-Các tính năng chính của Snowmobile bao gồm:
-
-- Khả năng chứa lên tới 100 PB dữ liệu trong một xe tải.
-- Công nghệ bảo mật cao để bảo vệ dữ liệu trong quá trình di chuyển.
-- Cung cấp kết nối trực tiếp tới AWS Direct Connect.
-- Phù hợp cho việc chuyển dữ liệu lớn đến AWS Cloud.
-
-Tóm lại, AWS Snowmobile là một dịch vụ di chuyển dữ liệu lớn của AWS, được thiết kế để chuyển dữ liệu từ khách hàng vào AWS Cloud thông qua một xe tải chuyên dụng có kích thước lớn. Việc sử dụng Snowmobile có thể giảm thời gian và chi phí so với việc truyền dữ liệu qua Internet.
-
-## AWS Snowcone
-
-AWS Snowcone là một dịch vụ lưu trữ di động của Amazon Web Services (AWS) được thiết kế để lưu trữ, chuyển và xử lý dữ liệu trong các môi trường độc lập và khó tiếp cận. Nó là một thiết bị nhỏ gọn, bền và có khả năng hoạt động ở những môi trường khắc nghiệt nhất.
-
-Snowcone có kích thước nhỏ hơn rất nhiều so với Snowmobile. Thiết bị này có kích thước tương tự với một quả bóng bàn, có khả năng chứa lên tới 8 terabyte (TB) dữ liệu. Snowcone có thể được sử dụng để sao lưu và phục hồi dữ liệu, chuyển dữ liệu giữa các vị trí khác nhau, và cho phép xử lý dữ liệu tại chỗ.
-
-Để phân biệt AWS Snowmobile và AWS Snowcone, bạn có thể xem xét các yếu tố sau:
-
-- Kích thước: Snowmobile có kích thước rất lớn, trong khi Snowcone có kích thước rất nhỏ.
-- Khả năng chứa dữ liệu: Snowmobile có khả năng chứa lên tới 100 PB dữ liệu, trong khi Snowcone chỉ có thể chứa tối đa 8 TB.
-- Mục đích sử dụng: Snowmobile được sử dụng để chuyển dữ liệu lớn từ khách hàng vào AWS Cloud, trong khi Snowcone được sử dụng để lưu trữ, chuyển và xử lý dữ liệu trong các môi trường khó tiếp cận.
-
-Tóm lại, AWS Snowcone là một dịch vụ lưu trữ di động nhỏ gọn của AWS cho phép lưu trữ, chuyển và xử lý dữ liệu trong các môi trường khó tiếp cận, trong khi AWS Snowmobile là một dịch vụ di chuyển dữ liệu lớn của AWS được thiết kế để chuyển dữ liệu từ khách hàng vào AWS Cloud.
-
-## AWS Snowball Edge
-
-AWS Snowball Edge là một thiết bị lưu trữ có khả năng tính toán và kết nối mạng, được thiết kế để giúp người dùng di chuyển dữ liệu từ các vùng không có kết nối internet đến AWS (Amazon Web Services) một cách nhanh chóng và an toàn.
-
-Snowball Edge được xây dựng trên nền tảng phần cứng của Amazon và có dung lượng lưu trữ từ 80TB đến 100TB. Nó cho phép người dùng lưu trữ dữ liệu cục bộ và sau đó gửi dữ liệu đó đến AWS thông qua một kết nối mạng an toàn. Tính năng này rất hữu ích cho các tổ chức hoặc doanh nghiệp muốn di chuyển lượng lớn dữ liệu từ các vùng không có kết nối internet đến AWS.
-
-Ngoài việc lưu trữ và di chuyển dữ liệu, Snowball Edge cũng có thể sử dụng như một node tính toán trong mạng, cho phép người dùng thực hiện các công việc xử lý dữ liệu trên máy chủ riêng của họ. Snowball Edge hỗ trợ các tác vụ xử lý dữ liệu như phân tích dữ liệu, học máy, xử lý video và phát triển ứng dụng.
-
-Tóm lại, AWS Snowball Edge là một thiết bị lưu trữ tính toán và kết nối mạng được thiết kế để giúp người dùng di chuyển lượng lớn dữ liệu từ các vùng không có kết nối Internet đến AWS một cách an toàn và nhanh chóng. Nó cũng được sử dụng để thực hiện các tác vụ tính toán trên máy chủ riêng của người dùng.
+- AWS Snowball Edge: Tương tự như Snowball, Snowball Edge là một thiết bị di động dùng để chuyển đổi, sao lưu và chuyển dữ liệu giữa các trung tâm dữ liệu, nhưng nó cũng có khả năng xử lý dữ liệu trực tiếp tại nơi lưu trữ để đáp ứng các yêu cầu xử lý tại chỗ.
 
 | Tính năng                       | AWS Snowmobile   | AWS Snowball Edge | AWS Snowcone                                   |
 | ------------------------------- | ---------------- | ----------------- | ---------------------------------------------- |
@@ -124,8 +77,6 @@ Với Amazon CloudSearch, người dùng có thể dễ dàng tạo các giải 
 - AWS Macie: là một dịch vụ bảo mật, giúp phát hiện và bảo vệ các thông tin quan trọng của khách hàng, bao gồm thông tin riêng tư và thông tin nhạy cảm. Nó sử dụng trí tuệ nhân tạo để phát hiện các dữ liệu quan trọng, xác định rủi ro và đề xuất các biện pháp cần thiết để bảo vệ thông tin.
 
 - AWS Rekognition: là một dịch vụ trí tuệ nhân tạo, cung cấp khả năng nhận diện khuôn mặt và phân tích hình ảnh. Nó có thể xác định các đối tượng và khuôn mặt trong hình ảnh, phát hiện các độ tuổi và giới tính, xác minh danh tính và theo dõi vật thể trong thời gian thực.
-
-Tóm lại, AWS SageMaker là dịch vụ xây dựng và triển khai các mô hình máy học nhanh chóng, trong khi AWS Macie là dịch vụ bảo mật dữ liệu và AWS Rekognition là dịch vụ trí tuệ nhân tạo cho phép xử lý hình ảnh và nhận diện khuôn mặt.
 
 ## AWS Storage Gateway
 
@@ -186,18 +137,6 @@ Control Tower hỗ trợ nhiều quy định và chuẩn mực bảo mật quố
 
 Tóm lại, AWS Control Tower là một dịch vụ quản lý cơ sở hạ tầng đám mây của AWS, giúp tự động hóa và kiểm soát việc triển khai và quản lý các tài nguyên AWS. Nó cung cấp các tính năng quản lý, hỗ trợ nhiều chuẩn mực bảo mật quốc tế và có thể được tùy chỉnh để tuân thủ nội quy và quy trình bảo mật của tổ chức.
 
-## AWS Fargate
-
-AWS Fargate là một dịch vụ quản lý máy chủ đám mây của Amazon Web Services (AWS). Nó cho phép khách hàng triển khai các ứng dụng trên AWS mà không cần phải quản lý các máy chủ ảo EC2.
-
-Với AWS Fargate, khách hàng có thể tạo ra các bộ điều khiển ứng dụng mà không cần phải cấu hình hay quản lý các máy chủ. Dịch vụ này sẽ tự động quản lý tài nguyên và tính toán để đáp ứng yêu cầu của ứng dụng.
-
-Fargate là một dịch vụ linh hoạt và có khả năng mở rộng, hỗ trợ cho việc triển khai các ứng dụng đa dạng như container và microservices. Nó cũng cung cấp các tính năng bảo mật, như mã hóa dữ liệu, xác thực API, chính sách quản lý truy cập và bảo vệ mạng.
-
-Ngoài ra, Fargate còn tích hợp chặt chẽ với các dịch vụ khác của AWS như Amazon Elastic Container Service (ECS) và Kubernetes. Điều này giúp khách hàng quản lý và triển khai các ứng dụng một cách hiệu quả trong môi trường đám mây của AWS.
-
-Tóm lại, AWS Fargate là một dịch vụ quản lý máy chủ đám mây của AWS được thiết kế để giúp khách hàng triển khai và quản lý các ứng dụng một cách linh hoạt, dễ dàng và bảo mật trên các máy chủ ảo của AWS mà không cần phải quản lý chúng.
-
 ## AWS Quick Start
 
 AWS Quick Starts là một bộ công cụ của Amazon Web Services (AWS) giúp khách hàng nhanh chóng triển khai các giải pháp đám mây được thiết kế trước và đã được kiểm tra sẵn.
@@ -209,3 +148,11 @@ Mỗi Quick Start đi kèm với một tài liệu hướng dẫn chi tiết đ�
 Sử dụng Quick Starts giúp giảm thời gian triển khai, giảm độ phức tạp và tăng tính nhất quán. Đồng thời, Quick Starts cũng giúp khách hàng tiết kiệm chi phí, vì không cần phải tự xây dựng toàn bộ giải pháp từ đầu.
 
 Tóm lại, AWS Quick Starts là một bộ công cụ của AWS giúp khách hàng triển khai các giải pháp đám mây được thiết kế trước và kiểm tra sẵn một cách nhanh chóng và dễ dàng. Các Quick Starts giúp giảm thời gian, chi phí và độ phức tạp của việc triển khai ứng dụng trong môi trường đám mây của AWS.
+
+## AWS Lake Formation
+
+AWS Lake Formation là một dịch vụ của Amazon Web Services (AWS) được thiết kế để giúp người dùng xây dựng và quản lý các data lake trên AWS. Data lake là một hệ thống lưu trữ dữ liệu phi cấu trúc và có khả năng mở rộng, cho phép lưu trữ nhiều loại dữ liệu khác nhau từ nhiều nguồn khác nhau.
+
+AWS Lake Formation cung cấp các công cụ để tự động hóa việc tạo ra các data lake, bao gồm tập tin dữ liệu, cơ sở dữ liệu và dữ liệu streaming, và quản lý các quy trình ETL (extract-transform-load) để tải dữ liệu vào data lake. Nó cũng cung cấp tính năng kiểm soát truy cập và bảo mật để đảm bảo rằng chỉ những người được ủy quyền mới có thể truy cập vào dữ liệu trong data lake.
+
+Với AWS Lake Formation, người dùng có thể giảm thiểu thời gian và chi phí để triển khai và quản lý các data lake của mình trên AWS.
