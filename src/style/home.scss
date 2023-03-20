@@ -2,3 +2,14 @@
   margin: auto;
   margin-top: 30px;
 }
+
+.magic-border {
+  width: 1px;
+  height: 128px;
+  background: #b3b3b3;
+  position: absolute;
+  right: 50%;
+  top: 16px;
+  z-index: 1;
+  transform: translateX(-50%);
+}

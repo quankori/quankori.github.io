@@ -16,6 +16,9 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+
+  const isMobile = window.innerWidth <= 992;
+
   return (
     <Layout
       title={`About me`}
@@ -52,7 +55,7 @@ export default function Home(): JSX.Element {
             <Typography mt={5} variant="h5" align="center">
               My Technical
             </Typography>
-            <Grid mt={5} container spacing={2}>
+            <Grid mt={5} container spacing={2} style={{ position: "relative" }}>
               <Grid item xs={12} sm={6} className="grid-item">
                 <Typography variant="h6" align="center">
                   Back-end / DevOPS
@@ -82,6 +85,9 @@ export default function Home(): JSX.Element {
                   })}
                 </Box>
               </Grid>
+              {
+                (!isMobile) && <div className="magic-border"></div>
+              }
               <Grid item xs={12} sm={6} className="grid-item">
                 <Typography variant="h6" align="center">
                   Blockchain
@@ -119,7 +125,7 @@ export default function Home(): JSX.Element {
             </Typography>
             {timelines.reverse().map((timeline) => {
               return (
-                <TimelineItem>
+                <TimelineItem key={timeline.year}>
                   <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
                     {timeline.year}
                   </TimelineOppositeContent>
