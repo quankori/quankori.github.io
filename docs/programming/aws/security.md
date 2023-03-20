@@ -56,6 +56,10 @@ Ngoài ra, CloudTrail còn cho phép bạn tích hợp với các dịch vụ kh
 
 Với CloudTrail, bạn có thể giám sát và kiểm soát các hoạt động trên tài khoản AWS của mình một cách chặt chẽ hơn, giúp tăng cường bảo mật và đáp ứng các yêu cầu tuân thủ quy định liên quan đến việc bảo vệ thông tin khách hàng và dữ liệu nhạy cảm.
 
+### CloudTrail Log File Validation
+
+CloudTrail Log File Validation là một tính năng của dịch vụ AWS CloudTrail, cho phép xác thực tính toàn vẹn của các tập tin nhật ký hoạt động được lưu trữ trong Amazon S3 bởi CloudTrail.
+
 ## AWS Single Sign-On
 
 AWS Single Sign-On (SSO) là một dịch vụ quản lý danh tính dựa trên đám mây cho phép người dùng truy cập vào tài nguyên AWS và các ứng dụng doanh nghiệp khác chỉ với một lần đăng nhập. Với AWS SSO, công cụ giúp quản lý tài khoản và quyền truy cập của người dùng được thực hiện ở một nơi duy nhất.

@@ -14,6 +14,10 @@ scp -i mykey.pem somefile.txt root@my.ec2.id.amazonaws.com:/
 assume-role profile_name aws iam get-user
 ```
 
+```bash
+aws sts get-caller-identity --profile
+```
+
 ## Access AWS ECS
 
 ```bash

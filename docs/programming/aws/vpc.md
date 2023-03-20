@@ -65,10 +65,6 @@ Một số ưu điểm của NAT Gateway bao gồm:
 
 Tuy nhiên, NAT Gateway là một dịch vụ có tính phí, người dùng cần thanh toán phí hàng tháng tương ứng với lượng traffic được chuyển tiếp qua NAT Gateway.
 
-## AWS Direct Connect
-
-AWS Direct Connect là một dịch vụ của Amazon Web Services (AWS) cho phép khách hàng thiết lập kết nối mạng riêng tư từ trung tâm dữ liệu của họ đến AWS. Kết nối này được thực hiện thông qua các điểm kết nối trực tiếp giữa trung tâm dữ liệu của khách hàng và AWS, thay vì thông qua Internet công cộng. Việc sử dụng AWS Direct Connect giúp tăng tính bảo mật và giảm độ trễ trong quá trình truyền tải dữ liệu giữa hệ thống của khách hàng và các dịch vụ của AWS. Ngoài ra, AWS Direct Connect cũng cho phép khách hàng tiết kiệm chi phí bằng cách giảm lượng dữ liệu được truyền tải qua Internet công cộng.
-
 ## Route table
 
 Route table là một thành phần quan trọng trong Amazon Virtual Private Cloud (VPC) của Amazon Web Services (AWS), được sử dụng để xác định cách thức điều hướng traffic giữa các subnet network hoặc internet gateway trong VPC.
