@@ -1,7 +1,7 @@
 // @ts-check
 const sidebars = {
   programming: [
-     {
+    {
       type: "category",
       label: "AWS",
       collapsed: true,
@@ -9,8 +9,13 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/aws/concept",
-          label: "Concept",
+          id: "programming/aws/cost",
+          label: "Cost & Management",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/governance",
+          label: "Management & Governance",
         },
         {
           type: "doc",

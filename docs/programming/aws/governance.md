@@ -1,6 +1,21 @@
 ---
-title: Concept
+title: Management & Governance
 ---
+
+## AWS Organizations
+
+AWS Organizations là một dịch vụ của Amazon Web Services (AWS), cho phép người dùng quản lý nhiều tài khoản AWS trong một tổ chức duy nhất.
+
+Với AWS Organizations, người dùng có thể tạo và quản lý các tài khoản AWS của mình, thiết lập các chính sách điều khiển truy cập, quản lý chi phí và khả năng sử dụng tài nguyên. Nó cung cấp cho người dùng một bộ công cụ để tổ chức tài khoản AWS của họ thành các đơn vị quản lý riêng biệt, giúp cho việc quản lý các tài khoản này trở nên thuận tiện và hiệu quả hơn.
+
+Các tính năng của AWS Organizations bao gồm:
+
+- Quản lý tài khoản: cho phép người dùng tạo, xóa và quản lý các tài khoản AWS.
+- Thiết lập chính sách: cho phép người dùng thiết lập các chính sách điều khiển truy cập và quản lý tài nguyên cho tất cả các tài khoản trong tổ chức.
+- Quản lý chi phí: cho phép tổng hợp các khoản chi phí từ nhiều tài khoản vào một hóa đơn duy nhất và theo dõi các chi phí trong tổ chức.
+- Quản lý tài nguyên: cho phép người dùng quản lý tài nguyên (ví dụ: máy chủ ảo EC2, Cơ sở dữ liệu RDS) trong các tài khoản của mình một cách hiệu quả hơn.
+
+Với AWS Organizations, người dùng có thể giảm thiểu chi phí, tối ưu hóa việc sử dụng tài nguyên, quản lý độ phức tạp và an toàn cho các ứng dụng và dịch vụ được chạy trên nền tảng AWS.
 
 ## Well-Architected Framework
 
