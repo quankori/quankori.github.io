@@ -17,8 +17,6 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
-  const isMobile = window.innerWidth <= 992;
-
   return (
     <Layout
       title={`About me`}
@@ -85,9 +83,7 @@ export default function Home(): JSX.Element {
                   })}
                 </Box>
               </Grid>
-              {
-                (!isMobile) && <div className="magic-border"></div>
-              }
+              {/* {!isMobile && <div className="magic-border"></div>} */}
               <Grid item xs={12} sm={6} className="grid-item">
                 <Typography variant="h6" align="center">
                   Blockchain
