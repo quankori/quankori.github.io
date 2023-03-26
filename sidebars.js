@@ -44,11 +44,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/aws/billing",
-          label: "Billing & Pricing",
-        },
-        {
-          type: "doc",
           id: "programming/aws/security",
           label: "Security",
         },
@@ -306,6 +301,19 @@ const sidebars = {
           type: "doc",
           id: "examples/go/rabbitmq",
           label: "Rabbit MQ",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Docker",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "examples/docker/mongo_replicate",
+          label: "MongoDB Replicate",
         },
       ],
     },
