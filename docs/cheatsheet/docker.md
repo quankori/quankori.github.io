@@ -47,6 +47,44 @@ Active service
 systemctl start docker
 ```
 
+### AWS EC2 Docker
+
+Update system
+
+```bash
+sudo yum update
+```
+
+Install docker
+
+```bash
+sudo yum search docker
+```
+
+```bash
+sudo yum info docker
+```
+
+```bash
+sudo yum install docker
+```
+
+Active service
+
+```bash
+sudo usermod -a -G docker ec2-user
+id ec2-user
+newgrp docker
+```
+
+Docker-compose
+
+```bash
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) 
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+sudo chmod -v +x /usr/local/bin/docker-compose
+```
+
 ### Docker compose
 
 Install docker compose
