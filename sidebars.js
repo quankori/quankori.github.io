@@ -326,11 +326,6 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "english/parts_of_speech",
-      label: "9 Parts of Speech",
-    },
-    {
-      type: "doc",
       id: "english/modal_verb",
       label: "Modal Verb",
     },
