@@ -160,7 +160,16 @@ export default function Home(): JSX.Element {
               mt={5}
               mb={5}
             >
-              <Chip variant="outlined">AWS Certified Cloud Practitioner</Chip>
+              <a
+                href="https://www.credly.com/earner/earned/badge/7f6efa2a-70e0-438b-ba6c-7d6d1c1265c5"
+                target="_blank"
+              >
+                <img
+                  src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                  alt="AWS Certified Cloud Practitioner"
+                  style={{ width: 150, height: 150 }}
+                />
+              </a>
             </Box>
           </section>
         </div>

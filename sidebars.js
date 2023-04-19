@@ -318,6 +318,21 @@ const sidebars = {
       ],
     },
   ],
+  english: [
+    {
+      type: "category",
+      label: "Basic",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/basic/tenses",
+          label: "12 Basic English Tenses",
+        },
+      ],
+    },
+  ],
 };
 
 module.exports = sidebars;

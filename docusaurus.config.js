@@ -87,6 +87,11 @@ const config = {
           sidebarId: "examples",
         },
         {
+          type: "docSidebar",
+          label: "English",
+          sidebarId: "english",
+        },
+        {
           type: "search",
           position: "right",
           className: "navbar-search",

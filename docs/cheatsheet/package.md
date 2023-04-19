@@ -88,6 +88,26 @@ export PATH=$PATH:/usr/local/go/bin
 go get github.com/pilu/fresh
 ```
 
+## Rust
+
+Install Rust
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Check version
+
+```bash
+rustc --version
+```
+
+Install Cargo
+
+```bash
+rustup component add cargo
+```
+
 ## VSCode
 
 ```bash
@@ -103,8 +123,3 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-## Cargo
-
-```bash
-curl https://sh.rustup.rs -sSf | sh
-```
