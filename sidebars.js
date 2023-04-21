@@ -324,56 +324,6 @@ const sidebars = {
       id: "english/tenses",
       label: "12 Basic English Tenses",
     },
-    {
-      type: "doc",
-      id: "english/modal_verb",
-      label: "Modal Verb",
-    },
-    {
-      type: "doc",
-      id: "english/if_wish",
-      label: "If and Wish",
-    },
-    {
-      type: "doc",
-      id: "english/passive",
-      label: "Passive",
-    },
-    {
-      type: "doc",
-      id: "english/reported_speech",
-      label: "Reported Speech",
-    },
-    {
-      type: "doc",
-      id: "english/question_auxiliary_verb",
-      label: "Questions and Auxiliary verbs",
-    },
-    {
-      type: "doc",
-      id: "english/ing_to",
-      label: "-Ing and To",
-    },
-    {
-      type: "doc",
-      id: "english/relative_clauses",
-      label: "Relative clauses",
-    },
-    {
-      type: "doc",
-      id: "english/phrasal_verbs",
-      label: "Phrasal Verbs",
-    },
-    {
-      type: "doc",
-      id: "english/exclamations",
-      label: "Exclamations",
-    },
-    {
-      type: "doc",
-      id: "english/preferences",
-      label: "Preferences",
-    },
   ],
 };
 
