@@ -320,9 +320,62 @@ const sidebars = {
   ],
   english: [
     {
-      type: "doc",
-      id: "english/tenses",
-      label: "12 Basic English Tenses",
+      type: "category",
+      label: "Grammar",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/grammar/tenses",
+          label: "12 Basic English Tenses",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/verbs",
+          label: "Verbs",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/nouns",
+          label: "Nouns",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/adjective",
+          label: "Adjective",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/adverbs",
+          label: "Adverbs",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/conjuction",
+          label: "Conjuction",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/determiner",
+          label: "Determiner",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/injection",
+          label: "Injection",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/preposition",
+          label: "Preposition",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/pronoun",
+          label: "Pronoun",
+        },
+      ],
     },
   ],
 };
