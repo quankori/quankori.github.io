@@ -14,13 +14,19 @@ title: Pronoun
 |              | He/She/It        | Which          | Himself/Herself/Itself | His/Hers/Its  |
 |              | We               | That           | Ourselves              | Ours          |
 |              | They             |                | Themselves             | Theirs        |
+
+| Loại Pronoun | Đại từ nhân xưng | Đại từ quan hệ | Đại từ phản thân       | Đại từ sở hữu |
+| ------------ | ---------------- | -------------- | ---------------------- | ------------- |
 | Tân ngữ      | Me               | Who/Whom       | Myself                 | Mine          |
 |              | You              | Which          | Yourself               | Yours         |
 |              | Him/Her/It       | That           | Himself/Herself/Itself | His/Hers/Its  |
 |              | Us               |                | Ourselves              | Ours          |
 |              | Them             |                | Themselves             | Theirs        |
-| Sở hữu       | My               | Whose          |                        |               |
-|              | Your             |                |                        |               |
-|              | His/Her/Its      |                |                        |               |
-|              | Our              |                |                        |               |
-|              | Their            |                |                        |               |
+
+| Loại Pronoun | Đại từ nhân xưng | Đại từ quan hệ | Đại từ phản thân | Đại từ sở hữu |
+| ------------ | ---------------- | -------------- | ---------------- | ------------- |
+| Sở hữu       | My               | Whose          |                  |               |
+|              | Your             |                |                  |               |
+|              | His/Her/Its      |                |                  |               |
+|              | Our              |                |                  |               |
+|              | Their            |                |                  |               |
