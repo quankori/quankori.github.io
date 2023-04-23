@@ -30,7 +30,7 @@ Trong ngữ pháp tiếng Anh, "proper adjective" là một dạng của tính t
 
 Tương tự như các tính từ thông thường, "proper adjectives" được sử dụng để mô tả tính chất của một đối tượng, tùy thuộc vào ngữ cảnh. Tuy nhiên, khác với các tính từ thông thường, "proper adjectives" luôn viết hoa chữ cái đầu tiên, kể cả khi chúng xuất hiện giữa câu hoặc sau các dấu câu.
 
-### Adjective order
+### Order
 
 "Adjective order" là thứ tự các tính từ (adjective) được sử dụng trong tiếng Anh khi sử dụng nhiều hơn một tính từ để miêu tả một danh từ. Thứ tự này được quy định nhằm giúp người nghe hoặc đọc hiểu rõ hơn về tính chất của đối tượng được miêu tả.
 
@@ -49,7 +49,7 @@ Tuy nhiên, không phải lúc nào cũng cần phải sử dụng tất cả c�
 "A beautiful big red Chinese silk scarf" (Một chiếc khăn lụa Trung Quốc đẹp to màu đỏ)
 "Five small wooden round dining tables" (Năm cái bàn ăn tròn nhỏ bằng gỗ)
 
-### Adjective gradability
+### Gradability
 
 "Adjective gradability" là khả năng của một tính từ (adjective) có thể biểu thị mức độ của tính chất được miêu tả. Trong tiếng Anh, các tính từ thường được phân loại thành 3 loại gradability: positive, comparative và superlative.
 
