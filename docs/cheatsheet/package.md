@@ -123,3 +123,29 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
+## NVM
+
+Install the Node Version Manager (NVM):
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
+Close and reopen the terminal or run the following command to load the NVM script:
+
+If you're using a different shell, replace ~/.bashrc with the appropriate file for your shell (e.g., ~/.zshrc for Zsh).
+
+```bash
+source ~/.bashrc
+```
+
+```bash
+nvm --version
+```
+
+Install the latest version of Node.js:
+
+```bash
+nvm install --lts
+nvm use --lts
+```
