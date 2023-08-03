@@ -11,10 +11,6 @@ scp -i mykey.pem somefile.txt root@my.ec2.id.amazonaws.com:/
 ## AWS CLI account
 
 ```bash
-assume-role profile_name aws iam get-user
-```
-
-```bash
 aws sts get-caller-identity --profile
 ```
 
@@ -34,26 +30,4 @@ aws ecs execute-command  \
 
 ```bash
 aws configure --profile <profile-name>
-```
-
-## Policity JSON Example
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowSpecifics",
-      "Action": ["ec2:*", "rds:*"],
-      "Effect": "Allow",
-      "Resource": "*"
-    },
-    {
-      "Sid": "DenySpecifics",
-      "Action": ["iam:*User*", "iam:*Login*"],
-      "Effect": "Deny",
-      "Resource": "*"
-    }
-  ]
-}
 ```

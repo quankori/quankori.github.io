@@ -56,3 +56,13 @@ terraform plan -out plan.out
 
 terraform show -json plan.out > plan.json
 ```
+
+- State
+
+```bash
+terraform import
+
+terraform state list
+
+terraform state rm
+```

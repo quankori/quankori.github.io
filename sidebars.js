@@ -203,11 +203,6 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "cheatsheet/githubactions",
-      label: "Github Actions",
-    },
-    {
-      type: "doc",
       id: "cheatsheet/golang",
       label: "Go",
     },
@@ -243,6 +238,24 @@ const sidebars = {
     },
   ],
   examples: [
+    {
+      type: "category",
+      label: "DevOPS",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "examples/devops/githubactions",
+          label: "Github Action",
+        },
+        {
+          type: "doc",
+          id: "examples/devops/assumerole",
+          label: "Assume Role",
+        },
+      ],
+    },
     {
       type: "category",
       label: "Node.js",

@@ -77,10 +77,22 @@ id ec2-user
 newgrp docker
 ```
 
+Enable docker service
+
+```bash
+sudo systemctl enable docker.service
+```
+
+Enable docker service
+
+```bash
+sudo systemctl start docker.service
+```
+
 Docker-compose
 
 ```bash
-wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) 
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
 sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
 sudo chmod -v +x /usr/local/bin/docker-compose
 ```
