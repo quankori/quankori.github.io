@@ -66,3 +66,23 @@ terraform state list
 
 terraform state rm
 ```
+
+- Check version
+
+```bash
+curl -sL https://checkpoint-api.hashicorp.com/v1/check/terraform | jq -r '.current_version'
+```
+
+- Downlaod version
+
+```bash
+wget https://releases.hashicorp.com/terraform/....
+```
+
+- Unzip and move to local bin
+
+```bash
+unzip unzip terraform_VERSION_linux_amd64.zip
+
+sudo mv terraform /usr/local/bin/
+```
