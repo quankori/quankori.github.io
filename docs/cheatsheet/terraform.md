@@ -86,3 +86,23 @@ unzip unzip terraform_VERSION_linux_amd64.zip
 
 sudo mv terraform /usr/local/bin/
 ```
+
+- Terraform init state
+
+Mục đích của tùy chọn này là giúp bạn di chuyển trạng thái từ một backend cấu hình cũ sang một backend cấu hình mới mà không cần phải thực hiện công việc này một cách thủ công.
+
+```bash
+terraform init -migrate-state
+```
+
+Tùy chọn này buộc Terraform không tham chiếu hoặc sử dụng bất kỳ cấu hình backend nào hiện có.
+
+```bash
+terraform init -reconfigure
+```
+
+Khi chạy terraform init với tùy chọn -upgrade, lệnh sẽ cố gắng tải về và cập nhật các phiên bản mới nhất của providers mà bạn đã sử dụng, theo điều kiện phiên bản đã được xác định trong mã của bạn.
+
+```bash
+terraform init -upgrade
+```
