@@ -65,3 +65,19 @@ User test
 ```bash
 ssh newuser@<ip_ec2>
 ```
+
+### SSH Tunnel
+
+Dynamic Port Forwarding
+
+```bash
+ssh -D 8080 -N -i "key.pem" ec2-user@server
+```
+
+Change SOCKS Network config
+
+```
+Server: 127.0.0.1
+
+Port: 8080
+```
