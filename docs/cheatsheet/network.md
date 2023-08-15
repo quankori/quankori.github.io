@@ -19,3 +19,15 @@ sudo netstat -tulpn
 ```bash
 sudo kill Process_ID
 ```
+
+- Check port open
+
+```bash
+telnet google.com 443
+```
+
+- Hostname to IP
+
+```bash
+nslookup hostname
+```
