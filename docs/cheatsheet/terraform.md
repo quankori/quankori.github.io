@@ -106,3 +106,17 @@ Khi chạy terraform init với tùy chọn -upgrade, lệnh sẽ cố gắng t�
 ```bash
 terraform init -upgrade
 ```
+
+## ECS on M1
+
+Open permission
+
+```bash
+sudo chown -R $(id -u):$(id -g) $HOME/.docker
+```
+
+Build docker to AMD64 and buildx
+
+```bash
+sudo docker buildx build -t prj-ecr-dev --platform=linux/amd64 .
+```
