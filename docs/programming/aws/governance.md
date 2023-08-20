@@ -17,9 +17,9 @@ Các tính năng của AWS Organizations bao gồm:
 
 Với AWS Organizations, người dùng có thể giảm thiểu chi phí, tối ưu hóa việc sử dụng tài nguyên, quản lý độ phức tạp và an toàn cho các ứng dụng và dịch vụ được chạy trên nền tảng AWS.
 
-## Well-Architected Framework
+## Well-Architected infrastructure
 
-Well-Architected Framework (WAF) của AWS là một bộ khung hướng dẫn thiết kế kiến trúc đáng tin cậy cho các ứng dụng đang chạy trên nền tảng AWS. Nó giúp quý khách hàng đánh giá chi tiết sự phù hợp của kiến trúc đang được sử dụng với những tiêu chuẩn và các best-practices đã được AWS xác định.
+Well-Architected Framework của AWS là một bộ khung hướng dẫn thiết kế kiến trúc đáng tin cậy cho các ứng dụng đang chạy trên nền tảng AWS. Nó giúp quý khách hàng đánh giá chi tiết sự phù hợp của kiến trúc đang được sử dụng với những tiêu chuẩn và các best-practices đã được AWS xác định.
 
 Các phần chính của WAF bao gồm:
 
@@ -50,21 +50,6 @@ Một cách trực quan để hiểu rõ hơn là so sánh chi phí mua xe hơi 
 Trong lĩnh vực công nghệ thông tin, các chi phí cho phần mềm, phần cứng và các dịch vụ đám mây có thể được coi là OPEX, trong khi việc mua sắm máy chủ hay thiết bị mạng mới có thể được coi là CAPEX.
 
 Từ góc nhìn kinh doanh, việc chọn giữa OPEX và CAPEX có ảnh hưởng đến cách quản lý và phân bổ ngân sách và tài nguyên của một tổ chức. Việc sử dụng các dịch vụ đám mây của AWS giúp giảm thiểu chi phí vốn ban đầu (CAPEX) và chuyển sang chi phí hoạt động biến đổi (OPEX), giúp các tổ chức tiết kiệm chi phí và tăng tính linh hoạt trong quản lý tài chính.
-
-## AWS Shared Responsibility Model
-
-| Responsibility                                                                                | AWS | User |
-| --------------------------------------------------------------------------------------------- | --- | ---- |
-| Physical security of data centers                                                             | ✓   |      |
-| Network and infrastructure security                                                           | ✓   |      |
-| Hypervisor and virtual instance security                                                      | ✓   |      |
-| Patching and updating of host operating system, application stacks, and AWS-provided services | ✓   |      |
-| Configuration of firewall and access control lists (ACLs)                                     | ✓   |      |
-| Encryption of data in transit and at rest                                                     | ✓   |      |
-| Managing access to resources and data                                                         |     | ✓    |
-| Security configuration of applications and operating systems                                  |     | ✓    |
-| Data classification and protection                                                            |     | ✓    |
-| Incident response planning and execution                                                      |     | ✓    |
 
 ## Support plan
 
@@ -110,10 +95,22 @@ Các phần chính của Trusted Advisor bao gồm:
 
 - Service Limits: Phần này kiểm tra các giới hạn dịch vụ của bạn trên AWS và cung cấp khuyến nghị về cách tối ưu hóa sử dụng tài nguyên để tránh vượt quá giới hạn.
 
-### AWS Concierge
+### AWS Support Concierge
 
 AWS Concierge là một dịch vụ hỗ trợ cao cấp của Amazon Web Services (AWS) được cung cấp cho các khách hàng doanh nghiệp và khối lượng lớn. Nó giúp các khách hàng có được quản lý tài khoản AWS chuyên nghiệp, kế hoạch hóa quản lý chi phí và tối ưu hóa hiệu suất hạ tầng.
 
 Với dịch vụ AWS Concierge, khách hàng sẽ được cung cấp một chuyên gia kỹ thuật AWS (Technical Account Manager - TAM) với kinh nghiệm để hỗ trợ các yêu cầu đặc biệt và làm việc với khách hàng để đảm bảo rằng các mục tiêu kinh doanh của họ được đáp ứng. Ngoài ra, khách hàng còn nhận được các dịch vụ hỗ trợ như kiểm tra tính khả dụng của ứng dụng và hướng dẫn về tối ưu hóa chi phí.
 
 Dịch vụ AWS Concierge được thiết kế để giúp các khách hàng doanh nghiệp và khối lượng lớn thực hiện việc triển khai và quản lý các ứng dụng phức tạp trên nền tảng AWS một cách hiệu quả và tiết kiệm chi phí.
+
+## AWS Application Discovery Service
+
+## AWS Quick Start
+
+## AWS Config
+
+## AWS CloudFormation
+
+## AWS Control Tower
+
+## Enterprise Support Concierge

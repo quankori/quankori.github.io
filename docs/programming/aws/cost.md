@@ -1,5 +1,5 @@
 ---
-title: Cost & Management
+title: Cost Management & Optimize
 ---
 
 ## AWS Cost Explorer
@@ -53,3 +53,7 @@ Trong AWS Billing Console, người dùng có thể:
 - Cấu hình thanh toán tự động để đảm bảo rằng các khoản phí được thanh toán đúng hạn và tránh các sự cố nợ chi phí.
 
 Tóm lại, AWS Billing Console giúp người dùng quản lý và kiểm soát chi phí của họ khi sử dụng các dịch vụ AWS.
+
+## AWS Trusted Advisor
+
+## AWS Compute Optimizer

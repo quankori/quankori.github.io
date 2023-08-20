@@ -81,3 +81,7 @@ Các loại RAID phổ biến nhất gồm:
 - RAID 6: Tương tự như RAID 5, nhưng sử dụng ít nhất bốn ổ đĩa để lưu trữ thông tin dự phòng, cải thiện khả năng phục hồi dữ liệu so với RAID 5.
 
 - RAID 10 (hoặc RAID 1+0): Kết hợp giữa RAID 1 và RAID 0, sử dụng ít nhất bốn ổ đĩa và phân chia dữ liệu thành các đoạn nhỏ, sau đó sao lưu các đoạn này đến các ổ đĩa khác nhau. RAID 10 có khả năng phục hồi dữ liệu rất tốt và hiệu suất đọc/ghi cao, nhưng có giá thành cao hơn so với các kỹ thuật RAID khác.
+
+## AWS Lambda
+
+## AWS Lightsail

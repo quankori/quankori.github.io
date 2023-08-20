@@ -44,12 +44,6 @@ Một số ưu điểm của VPC Peering bao gồm:
 
 Tuy nhiên, cần lưu ý rằng VPC Peering chỉ cho phép truy cập các tài nguyên trong VPC khác, không phải các tài nguyên nằm ngoài AWS.
 
-## AWS Transit Gateway
-
-AWS Transit Gateway là một dịch vụ của Amazon Web Services (AWS) cho phép kết nối các mạng ảo riêng (VPCs) và định tuyến lưu lượng giữa chúng. Với AWS Transit Gateway, bạn có thể tạo một mô hình mạng trung tâm để quản lý tất cả các lưu lượng mạng vào và ra khỏi AWS. Điều này giúp giảm thiểu chi phí, đơn giản hóa quản lý và tăng tính linh hoạt trong việc quản lý mạng của bạn trên AWS. Nó cũng hỗ trợ nhiều kết nối và cho phép điều khiển quyền truy cập vào các tài nguyên AWS từ các mạng khác nhau.
-
-Nếu chỉ cần xử lý kết nối đơn giản giữa một vài VPC với nhau thì nên sử dụng Peering Connection còn nếu giữa nhiều VPC có sự kết nối phức tạp thì ta nên sử dụng Transit Gateway để tiện cho việc quản lý. Hơn nữa, Transit Gateway còn hỗ trợ kết nối giữa nhiều VPC và mạng local qua VPN
-
 ## NAT Gateway
 
 NAT Gateway là một dịch vụ của Amazon Web Services (AWS) cho phép các instance trong một Amazon Virtual Private Cloud (VPC) có thể truy cập Internet thông qua một địa chỉ IP đơn duy nhất, giúp tăng tính bảo mật và quản lý traffic mạng.

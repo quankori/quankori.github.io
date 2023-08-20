@@ -101,3 +101,5 @@ HIPAA (Health Insurance Portability and Accountability Act): Là một quy đị
 ## AWS KMS
 
 KMS là viết tắt của Key Management Service, đây là một dịch vụ quản lý khóa trong hạ tầng điện toán đám mây của Amazon Web Services (AWS). KMS cho phép người dùng tạo và quản lý các khóa mã hóa, sử dụng để bảo vệ dữ liệu của họ trong các dịch vụ AWS như S3, EBS, RDS, DynamoDB và Redshift. KMS cung cấp các tính năng quan trọng như quản lý khóa tự động, quản lý chu kỳ khóa, ghi nhật ký và kiểm soát truy cập cho các khóa. Dịch vụ này giúp người dùng tiết kiệm thời gian và có được tính bảo mật cao trong việc quản lý khóa mã hóa của họ trên nền tảng cloud.
+
+## AWS Directory Service for Microsoft Active Directory

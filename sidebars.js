@@ -15,7 +15,7 @@ const sidebars = {
         {
           type: "doc",
           id: "programming/aws/cost",
-          label: "Cost Management",
+          label: "Cost Management & Optimize",
         },
         {
           type: "doc",
@@ -49,6 +49,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/aws/artificialintelligence",
+          label: "Artificial Intelligence",
+        },
+        {
+          type: "doc",
           id: "programming/aws/security",
           label: "Security",
         },
@@ -66,12 +71,7 @@ const sidebars = {
           type: "doc",
           id: "programming/aws/analytics",
           label: "Analytics",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/service",
-          label: "Other Services",
-        },
+        }
       ],
     },
     {
