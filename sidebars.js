@@ -107,11 +107,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/blockchain/solidity",
-          label: "Solidity",
-        },
-        {
-          type: "doc",
           id: "programming/blockchain/staking",
           label: "Staking",
         },
@@ -207,6 +202,12 @@ const sidebars = {
       type: "doc",
       id: "cheatsheet/git",
       label: "GIT",
+    },
+    
+    {
+      type: "doc",
+      id: "cheatsheet/solidity",
+      label: "Solidity",
     },
     {
       type: "doc",

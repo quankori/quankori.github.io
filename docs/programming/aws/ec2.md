@@ -83,5 +83,15 @@ Các loại RAID phổ biến nhất gồm:
 - RAID 10 (hoặc RAID 1+0): Kết hợp giữa RAID 1 và RAID 0, sử dụng ít nhất bốn ổ đĩa và phân chia dữ liệu thành các đoạn nhỏ, sau đó sao lưu các đoạn này đến các ổ đĩa khác nhau. RAID 10 có khả năng phục hồi dữ liệu rất tốt và hiệu suất đọc/ghi cao, nhưng có giá thành cao hơn so với các kỹ thuật RAID khác.
 
 ## AWS Lambda
+- **Purpose**: Run serverless code in response to events.
+- **Description**: Compute service that lets you run code without provisioning servers.
+- **Use case**: Image processing, real-time stream analysis.
+- **Example**: Automatically creating a thumbnail when an image is uploaded to S3.
+- **Key features**: Automatic scaling, built-in fault tolerance, event-driven execution.
 
 ## AWS Lightsail
+- **Purpose**: Easily deploy and manage applications in the cloud.
+- **Description**: Provides developers compute, storage, and networking capacity and capabilities to deploy and manage websites and web applications in the cloud.
+- **Use case**: Hosting simple web applications or websites.
+- **Example**: Deploying a WordPress site with a single click.
+- **Key features**: Fixed monthly plans, integrated tools, managed databases.

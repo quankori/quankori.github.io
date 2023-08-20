@@ -2,21 +2,6 @@
 title: Management & Governance
 ---
 
-## AWS Organizations
-
-AWS Organizations là một dịch vụ của Amazon Web Services (AWS), cho phép người dùng quản lý nhiều tài khoản AWS trong một tổ chức duy nhất.
-
-Với AWS Organizations, người dùng có thể tạo và quản lý các tài khoản AWS của mình, thiết lập các chính sách điều khiển truy cập, quản lý chi phí và khả năng sử dụng tài nguyên. Nó cung cấp cho người dùng một bộ công cụ để tổ chức tài khoản AWS của họ thành các đơn vị quản lý riêng biệt, giúp cho việc quản lý các tài khoản này trở nên thuận tiện và hiệu quả hơn.
-
-Các tính năng của AWS Organizations bao gồm:
-
-- Quản lý tài khoản: cho phép người dùng tạo, xóa và quản lý các tài khoản AWS.
-- Thiết lập chính sách: cho phép người dùng thiết lập các chính sách điều khiển truy cập và quản lý tài nguyên cho tất cả các tài khoản trong tổ chức.
-- Quản lý chi phí: cho phép tổng hợp các khoản chi phí từ nhiều tài khoản vào một hóa đơn duy nhất và theo dõi các chi phí trong tổ chức.
-- Quản lý tài nguyên: cho phép người dùng quản lý tài nguyên (ví dụ: máy chủ ảo EC2, Cơ sở dữ liệu RDS) trong các tài khoản của mình một cách hiệu quả hơn.
-
-Với AWS Organizations, người dùng có thể giảm thiểu chi phí, tối ưu hóa việc sử dụng tài nguyên, quản lý độ phức tạp và an toàn cho các ứng dụng và dịch vụ được chạy trên nền tảng AWS.
-
 ## Well-Architected infrastructure
 
 Well-Architected Framework của AWS là một bộ khung hướng dẫn thiết kế kiến trúc đáng tin cậy cho các ứng dụng đang chạy trên nền tảng AWS. Nó giúp quý khách hàng đánh giá chi tiết sự phù hợp của kiến trúc đang được sử dụng với những tiêu chuẩn và các best-practices đã được AWS xác định.
@@ -32,24 +17,6 @@ Các phần chính của WAF bao gồm:
 - Performance Efficiency: Phần này tập trung vào việc đảm bảo rằng các ứng dụng được triển khai và quản lý với hiệu suất tối ưu và đảm bảo sử dụng tài nguyên hiệu quả.
 
 - Cost Optimization: Phần này tập trung vào việc đảm bảo rằng các ứng dụng được triển khai và quản lý với chi phí tối thiểu và đảm bảo sử dụng tài nguyên một cách hiệu quả.
-
-## Lợi ích chuyển on-premises qua AWS
-
-Trong việc chuyển đổi hạ tầng và các ứng dụng từ trung tâm dữ liệu on-premises sang AWS, một trong những cơ hội tài chính quan trọng là thay thế chi phí hoạt động biến đổi (OPEX) bằng chi phí vốn ban đầu thấp (CAPEX).
-
-Với hạ tầng on-premises, các hoạt động vận hành hàng ngày liên quan đến việc duy trì, nâng cấp và mở rộng hạ tầng được tính toán dưới dạng OPEX. Tuy nhiên, khi di chuyển đến AWS, chi phí này có thể được thay thế bằng các khoản chi phí vốn ban đầu thấp để xây dựng và triển khai hạ tầng mới, và sau đó những chi phí vận hành liên quan sẽ được giảm thiểu.
-
-Việc sử dụng AWS giúp các tổ chức tiết kiệm chi phí hoạt động không cố định và tối thiểu hóa đầu tư vốn ban đầu. Bằng cách chuyển từ OPEX sang CAPEX, các tổ chức có thể tăng tính linh hoạt trong việc quản lý chi phí, giảm thiểu đầu tư vốn ban đầu và tăng khả năng phát triển và mở rộng nhanh chóng.
-
-### OPEX và CAPEX
-
-OPEX và CAPEX là hai khái niệm tài chính trong quản lý kinh doanh. Dưới góc nhìn đơn giản, OPEX (Operational Expenditures) là các chi phí liên quan đến hoạt động vận hành hàng ngày của một tổ chức, ví dụ như chi phí tiêu điện, chi phí thuê mặt bằng, chi phí lương nhân viên, chi phí mua linh kiện, vật tư, ... Trong khi đó, CAPEX (Capital Expenditures) là các chi phí liên quan đến việc đầu tư vào tài sản cố định của tổ chức, ví dụ như chi phí xây dựng, mua sắm thiết bị, máy móc, ...
-
-Một cách trực quan để hiểu rõ hơn là so sánh chi phí mua xe hơi với chi phí duy trì xe hơi. Chi phí mua xe hơi mới có thể được xem là chi phí vốn ban đầu (CAPEX), trong khi chi phí xăng, bảo dưỡng và sửa chữa định kỳ được coi là chi phí hoạt động (OPEX).
-
-Trong lĩnh vực công nghệ thông tin, các chi phí cho phần mềm, phần cứng và các dịch vụ đám mây có thể được coi là OPEX, trong khi việc mua sắm máy chủ hay thiết bị mạng mới có thể được coi là CAPEX.
-
-Từ góc nhìn kinh doanh, việc chọn giữa OPEX và CAPEX có ảnh hưởng đến cách quản lý và phân bổ ngân sách và tài nguyên của một tổ chức. Việc sử dụng các dịch vụ đám mây của AWS giúp giảm thiểu chi phí vốn ban đầu (CAPEX) và chuyển sang chi phí hoạt động biến đổi (OPEX), giúp các tổ chức tiết kiệm chi phí và tăng tính linh hoạt trong quản lý tài chính.
 
 ## Support plan
 
@@ -79,38 +46,74 @@ Tóm lại, AWS cung cấp một loạt các gói hỗ trợ khác nhau để đ
 
 ### Trusted Advisor
 
-AWS Trusted Advisor là một dịch vụ được cung cấp bởi Amazon Web Services (AWS) để giúp khách hàng của họ tối ưu hóa môi trường AWS của họ. Nó sử dụng các kiến ​​thức và kinh nghiệm tích lũy từ AWS để cung cấp các khuyến nghị về tài nguyên, hiệu suất, bảo mật và chi phí.
+AWS Trusted Advisor is a service provided by Amazon Web Services (AWS) to help its customers optimize their AWS environment. It utilizes the knowledge and experience accumulated from AWS to provide recommendations on resources, performance, security, and cost.
 
-AWS Trusted Advisor hoạt động bằng cách tự động quét môi trường AWS của bạn và so sánh nó với các best practices đã được xác định. Nó sau đó cung cấp các khuyến nghị để cải thiện hoạt động, giảm chi phí và tăng tính khả dụng của hệ thống.
+AWS Trusted Advisor operates by automatically scanning your AWS environment and comparing it to predefined best practices. It then provides recommendations to improve operations, reduce costs, and enhance the availability of the system.
 
-Các phần chính của Trusted Advisor bao gồm:
+The main components of Trusted Advisor include:
 
-- Cost Optimization: Phần này kiểm tra các tài nguyên của bạn trên AWS và cung cấp khuyến nghị về cách tối ưu hóa việc sử dụng tài nguyên để giảm thiểu chi phí.
+- Cost Optimization: This section checks your resources on AWS and provides recommendations on how to optimize resource usage to reduce costs.
 
-- Performance: Phần này kiểm tra hiệu suất của hệ thống AWS của bạn và cung cấp khuyến nghị về cách tối ưu hóa hiệu suất.
+- Performance: This section reviews the performance of your AWS system and provides recommendations on how to optimize it.
 
-- Security: Phần này kiểm tra các biện pháp bảo mật của bạn trên nền tảng AWS và cung cấp khuyến nghị về cách tăng cường bảo mật.
+- Security: This section checks your security measures on the AWS platform and provides recommendations on how to enhance security.
 
-- Fault Tolerance: Phần này kiểm tra tính sẵn sàng và khả năng phục hồi của các tài nguyên trên AWS của bạn và cung cấp khuyến nghị về cách tối ưu hóa sự sẵn sàng.
+- Fault Tolerance: This section reviews the availability and recovery capabilities of your AWS resources and provides recommendations on how to optimize readiness.
 
-- Service Limits: Phần này kiểm tra các giới hạn dịch vụ của bạn trên AWS và cung cấp khuyến nghị về cách tối ưu hóa sử dụng tài nguyên để tránh vượt quá giới hạn.
+- Service Limits: This section checks your service limits on AWS and provides recommendations on how to optimize resource usage to avoid exceeding those limits.
 
-### AWS Support Concierge
+## AWS Organizations
 
-AWS Concierge là một dịch vụ hỗ trợ cao cấp của Amazon Web Services (AWS) được cung cấp cho các khách hàng doanh nghiệp và khối lượng lớn. Nó giúp các khách hàng có được quản lý tài khoản AWS chuyên nghiệp, kế hoạch hóa quản lý chi phí và tối ưu hóa hiệu suất hạ tầng.
-
-Với dịch vụ AWS Concierge, khách hàng sẽ được cung cấp một chuyên gia kỹ thuật AWS (Technical Account Manager - TAM) với kinh nghiệm để hỗ trợ các yêu cầu đặc biệt và làm việc với khách hàng để đảm bảo rằng các mục tiêu kinh doanh của họ được đáp ứng. Ngoài ra, khách hàng còn nhận được các dịch vụ hỗ trợ như kiểm tra tính khả dụng của ứng dụng và hướng dẫn về tối ưu hóa chi phí.
-
-Dịch vụ AWS Concierge được thiết kế để giúp các khách hàng doanh nghiệp và khối lượng lớn thực hiện việc triển khai và quản lý các ứng dụng phức tạp trên nền tảng AWS một cách hiệu quả và tiết kiệm chi phí.
+- **Purpose**: Manage and govern multiple AWS accounts centrally.
+- **Description**: A service allowing you to create a centralized environment to manage billing, security, and compliance across multiple AWS accounts.
+- **Use Case**: Large enterprises managing multiple AWS accounts.
+- **Example**: Setting consolidated billing for multiple departments in a corporation.
+- **Key Features**: Hierarchical structure, policy-based management, consolidated billing.
 
 ## AWS Application Discovery Service
 
+- **Purpose**: Discover on-premises applications to ease migration to AWS.
+- **Description**: Helps enterprises plan migration projects by gathering information about their on-premises data centers.
+- **Use Case**: Pre-migration assessment.
+- **Example**: Assessing and grouping servers based on applications before cloud migration.
+- **Key Features**: Server discovery, application dependency mapping, migration planning.
+
 ## AWS Quick Start
+
+- **Purpose**: Accelerate cloud adoption with predefined templates.
+- **Description**: Automated deployments for popular workloads and architectural baselines.
+- **Use Case**: Rapid cloud deployment.
+- **Example**: Quickly deploying a WordPress website on AWS.
+- **Key Features**: Pre-built templates, integration with AWS best practices, wide range of workloads.
 
 ## AWS Config
 
+- **Purpose**: Track resource inventory and changes.
+- **Description**: Provides a detailed view of the configuration of AWS resources in your account.
+- **Use Case**: Compliance and audit.
+- **Example**: Ensuring no publicly accessible S3 buckets exist in an account.
+- **Key Features**: Resource tracking, change tracking, compliance checks.
+
 ## AWS CloudFormation
+
+- **Purpose**: Define and deploy infrastructure as code.
+- **Description**: Allows you to use templates to define, provision, and manage AWS resources.
+- **Use Case**: Reproducible infrastructure deployment.
+- **Example**: Deploying an entire three-tier web application using a single template.
+- **Key Features**: Template-based provisioning, drift detection, modular and reusable.
 
 ## AWS Control Tower
 
+- **Purpose**: Set up and govern a secure, compliant multi-account AWS environment.
+- **Description**: Simplifies the process of setting up AWS Organizations and other baseline infrastructure.
+- **Use Case**: Streamlined AWS account setup and governance.
+- **Example**: Enabling a centralized log archive and audit trail across multiple AWS accounts.
+- **Key Features**: Account factory, guardrails, log archive.
+
 ## Enterprise Support Concierge
+
+- **Purpose**: Personalized cloud support.
+- **Description**: Dedicated technical advisors providing 24/7 access to cloud support engineers.
+- **Use Case**: Enterprises requiring dedicated and in-depth support.
+- **Example**: Guidance during critical deployment or troubleshooting complex issues.
+- **Key Features**: Infrastructure event management, training, architectural guidance.

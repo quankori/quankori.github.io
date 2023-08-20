@@ -4,14 +4,32 @@ title: Containers
 
 ## AWS Elastic Container Registry (ECR)
 
+- **Purpose**: Container image storage.
+- **Description**: Fully managed Docker container registry.
+- **Use case**: Store, manage, and deploy Docker container images.
+- **Example**: Storing Docker images for a microservices architecture.
+- **Key features**: Secure, scalable, integrated with ECS and EKS.
+
 ## AWS Elastic Container Service (ECS)
+
+- **Purpose**: Container orchestration.
+- **Description**: Managed service to run, stop, and manage Docker containers on a cluster.
+- **Use case**: Microservices deployment, batch processing.
+- **Example**: Deploying a three-tier web application as containers.
+- **Key features**: Deep AWS integration, Fargate compatibility, service discovery.
+
+## Fargate
+
+- **Purpose**: Serverless compute for containers.
+- **Description**: Allows running containers without managing the underlying infrastructure.
+- **Use case**: Containerized applications without infrastructure management.
+- **Example**: Running a stateless web app in containers without managing servers.
+- **Key features**: Serverless, integrates with ECS and EKS, automatic scaling.
 
 ## AWS Elastic Kubernetes Service (EKS)
 
-## AWS Fargate
-
-AWS Fargate là một dịch vụ của Amazon Web Services (AWS) được sử dụng để quản lý các container. Nó cho phép người dùng triển khai và quản lý các ứng dụng chạy trên Docker containers mà không cần quan tâm đến việc quản lý hạ tầng hoặc máy chủ.
-
-Với AWS Fargate, người dùng chỉ cần tập trung vào việc xây dựng ứng dụng của mình trong các container Docker, sau đó triển khai các container này lên AWS Fargate để chúng được quản lý tự động bởi dịch vụ. AWS Fargate giảm thiểu sự phức tạp khi triển khai và quản lý các ứng dụng container bằng cách tự động cấu hình và quản lý các tài nguyên đòi hỏi của ứng dụng mà không cần phải lo lắng về đáp ứng yêu cầu về hạ tầng cơ sở.
-
-Fargate là một phần của dịch vụ AWS Elastic Container Service (ECS), một dịch vụ quản lý và triển khai container cho phép bạn chạy, quản lý và triển khai các ứng dụng container trên AWS. Với ECS và Fargate, người dùng có thể triển khai các ứng dụng container trên AWS một cách dễ dàng và hiệu quả hơn mà không cần phải quản lý hạ tầng hoặc máy chủ.
+- **Purpose**: Managed Kubernetes service.
+- **Description**: Lets you run Kubernetes on AWS without maintaining the control plane.
+- **Use case**: Kubernetes-based applications.
+- **Example**: Hosting a multi-container application using Kubernetes.
+- **Key features**: Deep AWS integration, managed Kubernetes, auto-scaling.
