@@ -38,12 +38,27 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              I have 5 years of experience in coding with technically Node.js
-              and Go, and have a few technical DevOPS such as AWS, CI/CD,
-              BashScript, and Solidity for a smart contract, recently I working
-              and researching technical cloud engineering and communication
-              skills. I can work back-end, and a few DevOps besides I see myself
-              as strong about research and working with other technologies.
+              I have 4 years of experience in server-side programming with
+              Node.js and Golang, and within those 4 years, I have spent 2 years
+              working as a full-stack developer and 1-year building
+              infrastructure with Terraform and DevOps on AWS. My main focus has
+              been on domains like blockchain, but I also have a strong desire
+              to explore and develop expertise in other technology domains. I am
+              particularly intrigued by various technologies in fields such as
+              server-side, systems, cloud computing, and DevOps. Currently, my
+              strongest skills and depth of knowledge lie in Node.js and cloud
+              technologies. In the future, my aspiration is to grow as a
+              Technical Architect.
+            </Typography>
+
+            <Typography mt={5} variant="subtitle1" gutterBottom>
+              I am experienced in working on development projects from the
+              ground up. I have the ability to translate customer ideas into
+              workflows within the system and build a suitable database for the
+              concept. I can understand and analyze customer requirements and
+              apply appropriate development processes to complete the project.
+              By working closely with customers, I ensure that their ideas are
+              optimized and meet the project requirements
             </Typography>
           </section>
 

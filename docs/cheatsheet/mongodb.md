@@ -2,43 +2,46 @@
 title: MongoDB CheatSheet
 ---
 
-## Login monitor
+## Basic command
+
+Login monitor
 
 ```bash
 mongo uri
 ```
 
-## Connect to mongo
+Connect to mongo
 
 ```bash
 mongo -host 127.0.0.1 --port 27017 -u root --password XXXXXX
 ```
 
-## Show all databases
+Show all databases
 
 ```bash
 show dbs;
 ```
 
-## Show excute database
+Show excute database
 
 ```bash
 use db_name;
 ```
 
-## Show all collections
+Show all collections
 
 ```bash
 show collections;
 ```
 
-## Backup
+## Backup and Restore
+Backup
 
 ```bash
 mongodump --db your-db-name
 ```
 
-## Restore backup
+Restore backup
 
 ```bash
 mongorestore --db your-db-name dump/your-db-name

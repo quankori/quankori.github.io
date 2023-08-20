@@ -1,10 +1,8 @@
 ---
-title: Sign and verify message on EVM
+title: Sign and verify message
 ---
 
-Example about verify message on ethers.js
 
-Verify
 
 ```js
 const ethers = require("ethers");

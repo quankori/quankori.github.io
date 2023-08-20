@@ -26,6 +26,13 @@
   }
 }
 
+[data-theme="dark"] .header-linkedin-icon {
+  &::before {
+    background: url("https://cdn-icons-png.flaticon.com/512/174/174857.png")
+      no-repeat;
+  }
+}
+
 // Navbar Icon
 .navbar-icon {
   border-radius: 6px;

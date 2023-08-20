@@ -9,8 +9,13 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "programming/aws/concept",
+          label: "Cloud Concept",
+        },
+        {
+          type: "doc",
           id: "programming/aws/cost",
-          label: "Cost & Management",
+          label: "Cost Management",
         },
         {
           type: "doc",
@@ -46,6 +51,21 @@ const sidebars = {
           type: "doc",
           id: "programming/aws/security",
           label: "Security",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/migration",
+          label: "Migration & Transfer",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/networking",
+          label: "Networking",
+        },
+        {
+          type: "doc",
+          id: "programming/aws/analytics",
+          label: "Analytics",
         },
         {
           type: "doc",
@@ -143,11 +163,6 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/go/basic",
-          label: "Basic",
-        },
-        {
-          type: "doc",
           id: "programming/go/advanced",
           label: "Advanced",
         },
@@ -171,30 +186,22 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "category",
-      label: "BashScript",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/bash/basic",
-          label: "Basic",
-        },
-      ],
-    },
   ],
   cheatsheet: [
     {
       type: "doc",
       id: "cheatsheet/aws",
-      label: "AWS",
+      label: "AWS CLI",
     },
     {
       type: "doc",
       id: "cheatsheet/docker",
       label: "Docker",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/installdocker",
+      label: "Install Docker",
     },
     {
       type: "doc",
@@ -247,12 +254,12 @@ const sidebars = {
         {
           type: "doc",
           id: "examples/devops/githubactions",
-          label: "Github Action",
+          label: "Github Action - Github",
         },
         {
           type: "doc",
           id: "examples/devops/assumerole",
-          label: "Assume Role",
+          label: "Assume Role - AWS",
         },
       ],
     },
@@ -265,17 +272,17 @@ const sidebars = {
         {
           type: "doc",
           id: "examples/nodejs/mongodbjoin",
-          label: "AMM",
+          label: "Relationsship Query - MongoDB",
         },
         {
           type: "doc",
           id: "examples/nodejs/signmessage",
-          label: "Sign Message",
+          label: "Sign & Verify Message - EVM",
         },
         {
           type: "doc",
           id: "examples/nodejs/uniswap",
-          label: "Uniswap",
+          label: "Get price on Uniswap - EVM",
         },
       ],
     },
@@ -287,33 +294,13 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "examples/go/cache",
-          label: "Cache",
-        },
-        {
-          type: "doc",
-          id: "examples/go/concurrentdata",
-          label: "Concurrent Data",
-        },
-        {
-          type: "doc",
           id: "examples/go/hdwallet",
-          label: "HD Wallet",
+          label: "HD Wallet - Blockchain",
         },
         {
           type: "doc",
           id: "examples/go/pow",
-          label: "Proof Of Work",
-        },
-        {
-          type: "doc",
-          id: "examples/go/queue",
-          label: "Queue",
-        },
-        {
-          type: "doc",
-          id: "examples/go/rabbitmq",
-          label: "Rabbit MQ",
+          label: "Proof Of Work - Blockchain",
         },
       ],
     },
@@ -326,7 +313,7 @@ const sidebars = {
         {
           type: "doc",
           id: "examples/docker/mongo_replicate",
-          label: "MongoDB Replicate",
+          label: "MongoDB Replicate - Database",
         },
       ],
     },

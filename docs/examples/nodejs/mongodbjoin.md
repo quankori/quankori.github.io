@@ -2,8 +2,6 @@
 title: Relationship Query Mongodb
 ---
 
-Example about relationship one to many in mongodb with Node.js
-
 ```js
 const mongoose = require("mongoose");
 

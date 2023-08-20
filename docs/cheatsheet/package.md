@@ -30,41 +30,6 @@ sudo apt install net-tools
 netstat -tulpn | grep LISTEN
 ```
 
-## VLC
-
-```bash
-sudo apt install vlc
-```
-
-## Media Codecs
-
-```bash
-sudo apt install ubuntu-restricted-extras
-```
-
-## GNOME Tools
-
-```bash
-sudo apt install gnome-tweaks
-sudo apt install chrome-gnome-shell
-sudo apt install firefox-gnome-shell
-```
-
-## Additional Archive Utilities
-
-```bash
-sudo apt install rar unrar p7zip-full p7zip-rar
-```
-
-## Bamboo
-
-```bash
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-sudo apt-get update
-sudo apt-get install ibus-bamboo
-ibus restart
-```
-
 ## Tree
 
 ```bash
@@ -74,7 +39,7 @@ sudo apt-get install tree
 ## NodeJS
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
 sudo rm -rf nodesource_setup.sh
@@ -88,42 +53,7 @@ export PATH=$PATH:/usr/local/go/bin
 go get github.com/pilu/fresh
 ```
 
-## Rust
-
-Install Rust
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Check version
-
-```bash
-rustc --version
-```
-
-Install Cargo
-
-```bash
-rustup component add cargo
-```
-
-## VSCode
-
-```bash
-wget -qO- https://raw.githubusercontent.com/cra0zy/code-nautilus/master/install.sh | bash
-```
-
-## Ansible
-
-```bash
-sudo apt update
-sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
-```
-
-## NVM
+## Node Version Manager
 
 Install the Node Version Manager (NVM):
 

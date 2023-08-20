@@ -35,7 +35,6 @@ const config = {
           sidebarPath: "./sidebars.js",
           showLastUpdateAuthor: false,
           showLastUpdateTime: false,
-          editUrl: "https://github.com/recallwei/wiki/tree/main/website",
           include: ["**/*.md", "**/*.mdx"],
           exclude: [
             "**/_*.{js,jsx,ts,tsx,md,mdx}",
@@ -100,6 +99,11 @@ const config = {
           href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
           position: "right",
           label: "My Resume",
+        },
+        {
+          href: "https://www.linkedin.com/in/quankori/",
+          position: "right",
+          label: "My Linkedin",
         },
         {
           href: "https://github.com/quankori/",

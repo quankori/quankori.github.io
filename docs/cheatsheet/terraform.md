@@ -2,44 +2,8 @@
 title: Terraform
 ---
 
-## Setup Terraform
 
-- Install aws cli
-
-- Setup HashiCorp tab package
-
-```bash
-brew tap hashicorp/tap
-```
-
-- Setup Terraform CLI package
-
-```bash
-brew install hashicorp/tap/terraform
-```
-
-- Update latest version Terraform
-
-```bash
-brew update
-brew upgrade hashicorp/tap/terraform
-```
-
-- Check terraform
-
-```bash
-terraform -help
-```
-
-- Check library
-
-```bash
-https://registry.terraform.io/
-```
-
-## Command line Terraform
-
-- Basic command line
+Basic command line
 
 ```bash
 terraform init
@@ -73,7 +37,7 @@ terraform state rm
 curl -sL https://checkpoint-api.hashicorp.com/v1/check/terraform | jq -r '.current_version'
 ```
 
-- Downlaod version
+- Download version
 
 ```bash
 wget https://releases.hashicorp.com/terraform/....
@@ -105,18 +69,4 @@ Khi chạy terraform init với tùy chọn -upgrade, lệnh sẽ cố gắng t�
 
 ```bash
 terraform init -upgrade
-```
-
-## ECS on M1
-
-Open permission
-
-```bash
-sudo chown -R $(id -u):$(id -g) $HOME/.docker
-```
-
-Build docker to AMD64 and buildx
-
-```bash
-sudo docker buildx build -t prj-ecr-dev --platform=linux/amd64 .
 ```

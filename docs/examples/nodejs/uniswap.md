@@ -1,8 +1,6 @@
 ---
-title: Uniswap
+title: Get price on Uniswap
 ---
-
-Example get price on BSC Chain
 
 ```ts
 async function getHistory(
