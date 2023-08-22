@@ -71,7 +71,7 @@ const sidebars = {
           type: "doc",
           id: "programming/aws/analytics",
           label: "Analytics",
-        }
+        },
       ],
     },
     {
@@ -174,6 +174,16 @@ const sidebars = {
           id: "programming/nodejs/concept",
           label: "Concept",
         },
+        {
+          type: "doc",
+          id: "programming/nodejs/processthread",
+          label: "Process & Thread",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/nestjs",
+          label: "Nest.js",
+        },
       ],
     },
   ],
@@ -198,7 +208,7 @@ const sidebars = {
       id: "cheatsheet/git",
       label: "GIT",
     },
-    
+
     {
       type: "doc",
       id: "cheatsheet/solidity",

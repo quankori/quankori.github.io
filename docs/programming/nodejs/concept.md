@@ -11,18 +11,12 @@ title: Node.js Concept
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/4.PNG)
 
-## Single thread in Node.js
-
-# Node.js Single-threaded vs. Multi-threaded in Other Languages
-
-Node.js primarily functions as a single-threaded runtime environment. However, it has features to handle concurrent operations efficiently. Let's dive deeper:
-
-## Node.js Fundamentals:
+## Node.js Fundamentals
 
 1. **Event Loop & Non-Blocking I/O**: Node.js achieves high concurrency using an event loop paired with non-blocking I/O. While JavaScript code runs on a single thread, many operations, especially I/O, are offloaded, allowing the main thread to process other tasks without waiting. This mechanism makes Node.js efficient for I/O-bound applications.
 2. **Worker Threads**: Node.js introduced the "worker_threads" module from version 10.5.0, which provides the ability to run JavaScript in parallel threads, enhancing its capability to handle CPU-bound tasks.
 
-## Comparison:
+## Single-threaded vs Multi-threaded
 
 ### 1. Concurrency Model:
 
@@ -46,14 +40,6 @@ Node.js primarily functions as a single-threaded runtime environment. However, i
 
 Node.js can indeed operate in a multi-threaded fashion with the "worker_threads" module. However, its primary design is single-threaded. Implementing multiple threads in Node.js brings forth the challenges typical of multi-threaded programming in other languages.
 
-## Child process
-
-- Allows you to run a new process on the system and interact with it through pipes. Child processes do not share memory or resources with each other, and each child process uses a separate thread. Child processes are useful for tasks that require processing multiple processes, but require interaction between independent processes.
-
-## Worker threads
-
-- Worker threads are a new feature in Node.js 10.5, allowing you to create multiple threads within a single Node.js process. All worker threads share memory and resources with the main thread, but each worker thread runs on a separate thread. Worker threads make it easier to create multithreaded applications in Node.js.
-
 ## Event loop
 
 - When an asynchronous request is sent, such as an HTTP request, Node.js does not wait for that request to complete before continuing to execute other requests. Instead, Node.js sends that request to the system and continues to execute other requests. When that request is completed, the system notifies Node.js that the request is complete, and Node.js continues to execute other tasks.
@@ -70,16 +56,58 @@ Node.js can indeed operate in a multi-threaded fashion with the "worker_threads"
 
 - When a task is executed, Node.js puts it into an infinite loop to wait for other tasks. While waiting, Node.js continues to execute tasks in the event loop queue.
 
-## Cluster mode
+## process.nextTick() and setImmediate() in Event Loop
 
-Cluster mode is a feature in Node.js that allows you to create multiple child processes to run the same Node.js application on a computer or network. Each child process can run on a separate CPU or core, so it can take advantage of the power of CPUs or cores in the system.
+In Node.js, both process.nextTick() and setImmediate() are used to schedule the execution of a callback function after the current phase of the event loop completes. However, they operate in different parts of the loop.
 
-In Cluster mode, the master process is responsible for creating and managing the worker processes. The master process shares TCP and UDP connections with the worker processes, allowing them to share network connections and process requests concurrently. When a request is received, the master process distributes the request to one of the available worker processes.
+### process.nextTick()
 
-## PM2
+**Description**: Schedules a callback to be invoked after the current phase of the event loop completes and before any other I/O operations occur.
 
-PM2 (Process Manager 2) is a process management tool for Node.js that provides many useful features for running and managing Node.js applications on a server or in a production environment. PM2 can help manage Node.js processes, restart processes that have crashed, monitor system resources, log events, and much more.
+**Operation**: The callback is added to a special queue called the "nextTick queue," and will be executed after each phase of the event loop. This means that if you keep adding functions to the "nextTick queue," the event loop can get stuck in the current phase, and other operations (like I/O) may be delayed.
 
-## process.nextTick() và setImmediate()
+```js
+console.log("Start");
 
-process.nextTick() and setImmediate() are both methods used for scheduling callbacks. The difference between them is that process.nextTick() is called immediately after the current function ends, while setImmediate() is called after the system has processed all scheduled I/O. Therefore, process.nextTick() may be prioritized in cases where a quick response is necessary and I/O blocking should be avoided.
+process.nextTick(() => {
+  console.log("Next Tick");
+});
+
+console.log("End");
+```
+
+Output
+
+```js
+Start
+End
+Next Tick
+```
+
+### setImmediate()
+
+**Description**: Schedules a callback to be executed in the "check" phase of the event loop after I/O events are processed.
+
+**Operation**: The callback is added to a separate queue and will be executed after all I/O events are processed.
+
+```js
+console.log("Start");
+
+setImmediate(() => {
+  console.log("Immediate");
+});
+
+console.log("End");
+```
+
+Output
+
+```js
+Start;
+End;
+Immediate;
+```
+
+However, the order between Next Tick and Immediate is not guaranteed in every scenario, especially when they're invoked from within an I/O cycle. But if run in a context with no I/O, process.nextTick() will always execute before setImmediate().
+
+In practice, when you need to schedule a function to run after the current stack completes but before any I/O operations, use process.nextTick(). When you want to schedule a function to run after all I/O operations, use setImmediate().
