@@ -92,20 +92,20 @@ title: AWS Security
 
 ## AWS IAM
 
-IAM User là một thực thể đại diện cho một người dùng hoặc ứng dụng được xác thực và ủy quyền truy cập vào tài nguyên trong AWS. Mỗi IAM User có một tên đăng nhập và chứng chỉ xác thực riêng biệt.
+**IAM User**: Represents an individual user or application that is authenticated and authorized to access resources within AWS. Each IAM User has a unique username and authentication credentials.
 
-IAM Group là một tập hợp các IAM User. Nhóm được sử dụng để quản lý quyền truy cập của nhiều người dùng cùng một lúc, thay vì phải quản lý từng người dùng một cách riêng lẻ. Khi một IAM User được thêm vào một nhóm, người dùng sẽ thừa hưởng tất cả các quyền truy cập được gán cho nhóm.
+**IAM Group**: A collection of IAM Users. Groups are used to manage permissions for multiple users simultaneously rather than managing each user individually. When an IAM User is added to a group, the user inherits all permissions assigned to that group.
 
-IAM Policy là một bộ quy tắc xác định quyền truy cập vào tài nguyên trong AWS. Chính sách được gán cho IAM User hoặc IAM Group để kiểm soát quyền truy cập vào các tài nguyên cụ thể như EC2 instances, RDS databases, hay S3 buckets. IAM Policy sử dụng các quy tắc về nguyên tắc (principles), hành động (actions) và tài nguyên (resources) để kiểm soát việc truy cập vào các tài nguyên AWS.
+**IAM Policy**: Defines rules for access to AWS resources. Policies are attached to IAM Users or IAM Groups to control their access to specific resources like EC2 instances, RDS databases, or S3 buckets. IAM Policies use rules regarding principles, actions, and resources to govern access to AWS resources.
 
-IAM Role là một khái niệm liên quan đến quyền truy cập tạm thời trong AWS. Nó cho phép một IAM User hoặc một dịch vụ AWS khác được ủy quyền truy cập vào các tài nguyên cụ thể trong AWS. IAM Role thường được sử dụng khi một dịch vụ AWS yêu cầu truy cập vào một tài nguyên khác trong AWS. Trong trường hợp này, IAM Role được gán cho dịch vụ AWS đó để có thể truy cập vào tài nguyên được chỉ định. Khác với IAM User hoặc IAM Group, IAM Role không liên kết trực tiếp với một người dùng hoặc nhóm. Thay vào đó, nó được gán cho một danh sách nguyên tắc, cho phép mọi người dùng hoặc dịch vụ AWS được ủy quyền truy cập vào tài nguyên được chỉ định.
+**IAM Role**: Concerns temporary access within AWS. It allows an IAM User or another AWS service to be granted permission to access specific AWS resources. Roles are often used when one AWS service requires access to another AWS resource. In such cases, the IAM Role is assigned to the service, granting it the necessary permissions. Unlike IAM Users or IAM Groups, IAM Roles are not directly associated with users or groups. Instead, they are linked to a set of principles, enabling any authorized user or AWS service to access the designated resources.
 
-## Tiêu chuẩn bảo mật thông tin
+## Information Security Standards
 
-SOC 2 (System and Organization Controls 2): Là một tiêu chuẩn kiểm tra và đánh giá việc thực hiện các điều khiển bảo mật, nhằm đảm bảo tính toàn vẹn, sẵn sàng và bảo mật của dịch vụ, sản phẩm và cơ sở hạ tầng của một tổ chức. SOC 2 được thiết kế để đáp ứng các yêu cầu đối với các công ty và tổ chức xử lý thông tin khách hàng.
+**SOC 2 (System and Organization Controls 2)**: A standard for auditing and assessing the implementation of security controls, ensuring the integrity, availability, and security of an organization's services, products, and infrastructure. Designed to meet requirements for companies handling customer information.
 
-SOC 1 (System and Organization Controls 1): Là một tiêu chuẩn kiểm tra và đánh giá để đảm bảo tính toàn vẹn và an toàn của các báo cáo tài chính được tạo ra bởi các tổ chức. Nó còn được gọi là Statement on Standards for Attestation Engagements 18 (SSAE 18).
+**SOC 1 (System and Organization Controls 1)**: A standard for auditing and assessing the integrity and security of financial reports produced by organizations. Also known as Statement on Standards for Attestation Engagements 18 (SSAE 18).
 
-PCI DSS (Payment Card Industry Data Security Standard): Là một tiêu chuẩn bảo mật dành cho các tổ chức xử lý thông tin thanh toán, đảm bảo rằng các thông tin thanh toán của khách hàng được bảo vệ tốt nhất có thể. Nó đảm bảo rằng các doanh nghiệp tuân thủ các quy định về bảo mật, quản lý và bảo vệ thông tin thanh toán.
+**PCI DSS (Payment Card Industry Data Security Standard)**: A security standard for organizations processing payment information, ensuring that customer payment data is optimally protected. It ensures businesses adhere to security, management, and protection regulations for payment data.
 
-HIPAA (Health Insurance Portability and Accountability Act): Là một quy định bảo mật thông tin y tế tại Mỹ, đặc biệt là để bảo vệ thông tin cá nhân y tế của người tiêu dùng và đảm bảo rằng những thông tin này được bảo vệ an toàn và riêng tư. HIPAA áp dụng cho tất cả các tổ chức và cá nhân liên quan đến việc lưu trữ, xử lý và chia sẻ thông tin y tế.
+**HIPAA (Health Insurance Portability and Accountability Act)**: A U.S. information security regulation, especially to safeguard consumers' personal health information and ensure it remains confidential and secure. HIPAA applies to all organizations and individuals involved in storing, processing, and sharing health information.

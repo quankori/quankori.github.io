@@ -4,33 +4,34 @@ title: Management & Governance
 
 ## Well-Architected infrastructure
 
-Well-Architected Framework của AWS là một bộ khung hướng dẫn thiết kế kiến trúc đáng tin cậy cho các ứng dụng đang chạy trên nền tảng AWS. Nó giúp quý khách hàng đánh giá chi tiết sự phù hợp của kiến trúc đang được sử dụng với những tiêu chuẩn và các best-practices đã được AWS xác định.
+The AWS Well-Architected Framework is a guide for designing trustworthy architectures for applications running on the AWS platform. It assists customers in comprehensively assessing the alignment of their current architectures with the standards and best practices defined by AWS.
 
-Các phần chính của WAF bao gồm:
+The main pillars of the Well-Architected Framework include:
 
-- Operational Excellence: Phần này tập trung vào việc đảm bảo rằng các hệ thống được triển khai và quản lý hiệu quả, để đáp ứng yêu cầu kinh doanh và khách hàng.
+- **Operational Excellence**: This pillar focuses on ensuring that systems are deployed and managed effectively to meet business and customer demands.
 
-- Security: Phần này tập trung vào việc đảm bảo tính bảo mật của các ứng dụng và dữ liệu được quản lý trên nền tảng AWS, bao gồm các giải pháp bảo mật cơ bản và các công nghệ bảo mật tiên tiến.
+- **Security**: This pillar emphasizes ensuring the security of applications and data managed on the AWS platform, encompassing both foundational security solutions and advanced security technologies.
 
-- Reliability: Phần này tập trung vào việc đảm bảo rằng các ứng dụng luôn hoạt động đúng cách, với sự gián đoạn tối thiểu trong trường hợp các sự cố xảy ra.
+- **Reliability**: This section centers on guaranteeing that applications consistently operate correctly, with minimal interruptions in the event of incidents.
 
-- Performance Efficiency: Phần này tập trung vào việc đảm bảo rằng các ứng dụng được triển khai và quản lý với hiệu suất tối ưu và đảm bảo sử dụng tài nguyên hiệu quả.
+- **Performance Efficiency**: This pillar concentrates on ensuring that applications are deployed and managed with optimal performance and efficient resource utilization.
 
-- Cost Optimization: Phần này tập trung vào việc đảm bảo rằng các ứng dụng được triển khai và quản lý với chi phí tối thiểu và đảm bảo sử dụng tài nguyên một cách hiệu quả.
+- **Cost Optimization**: This area zeroes in on making sure applications are deployed and managed at minimal cost while ensuring efficient resource usage.
+
 
 ## Support plan
 
-AWS cung cấp các loại Support Plan khác nhau để hỗ trợ người dùng khi sử dụng dịch vụ của AWS, bao gồm:
+AWS offers different Support Plans to assist users in using AWS services, including:
 
-- Basic Support: Đây là một gói hỗ trợ miễn phí được cung cấp cho tất cả các khách hàng AWS. Nó bao gồm tiện ích hỗ trợ qua email, truy cập vào diễn đàn và tài liệu hỗ trợ.
+- **Basic Support**: This is a free support package provided to all AWS customers. It includes email support utilities, access to forums, and support documentation.
 
-- Developer Support: Đây là một gói hỗ trợ giúp các nhà phát triển xử lý các vấn đề kỹ thuật khi sử dụng các dịch vụ của AWS. Gói này bao gồm tiện ích hỗ trợ qua email, truy cập vào diễn đàn, tài liệu hướng dẫn và hỗ trợ chat trực tiếp.
+- **Developer Support**: This package helps developers address technical issues when using AWS services. This package includes email support utilities, access to forums, tutorial documentation, and direct chat support.
 
-- Business Support: Đây là một gói hỗ trợ cao cấp hơn, cung cấp hỗ trợ kỹ thuật 24/7/365, phiếu yêu cầu hỗ trợ đã ưu tiên, chuyên viên hỗ trợ được chỉ định, và nhiều tính năng khác.
+- **Business Support**: This is a more premium support package, providing 24/7/365 technical support, prioritized support tickets, assigned support specialists, and many other features.
 
-- Enterprise Support: Đây là gói hỗ trợ chuyên nghiệp nhất của AWS. Gói dịch vụ này cung cấp một số tính năng nâng cao như hỗ trợ tùy chỉnh, chuyên gia kỹ thuật được chỉ định, giám sát sức khỏe của hệ thống, và các tùy chọn báo cáo và phân tích.
+- **Enterprise Support**: This is AWS's most professional support package. This service package offers advanced features like customized support, assigned technical experts, system health monitoring, and reporting and analysis options.
 
-Tóm lại, AWS cung cấp một loạt các gói hỗ trợ khác nhau để đáp ứng nhu cầu và ngân sách của từng khách hàng, từ các khách hàng có nhu cầu hỗ trợ cơ bản đến các doanh nghiệp lớn có nhu cầu hỗ trợ tùy chỉnh và nâng cao.
+In summary, AWS offers a range of different support packages to meet the needs and budgets of each customer, from customers needing basic support to large enterprises requiring customized and advanced support.
 
 | Plan Name                           | Basic                                        | Developer                              | Business                                           | Enterprise                                                                       |
 | ----------------------------------- | -------------------------------------------- | -------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------- |

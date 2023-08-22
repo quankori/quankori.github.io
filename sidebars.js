@@ -125,8 +125,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/concept/concept",
-          label: "Concept",
+          id: "programming/concept/processandthread",
+          label: "Process & Thread",
         },
         {
           type: "doc",
@@ -156,11 +156,6 @@ const sidebars = {
       collapsed: true,
       collapsible: true,
       items: [
-        {
-          type: "doc",
-          id: "programming/go/advanced",
-          label: "Advanced",
-        },
         {
           type: "doc",
           id: "programming/go/concept",

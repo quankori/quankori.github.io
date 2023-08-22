@@ -78,6 +78,33 @@ public class Dog extends Animal {
 
 Instead of using one large interface, we should break it down into smaller interfaces, each with different purposes.
 
+```ts
+// Instead of:
+interface Worker {
+  work(): void;
+  eat(): void;
+}
+
+// Use:
+interface Working {
+  work(): void;
+}
+
+interface Eating {
+  eat(): void;
+}
+
+class Human implements Working, Eating {
+  work() {
+    // human working
+  }
+
+  eat() {
+    // human eating
+  }
+}
+```
+
 ## D - Dependency Inversion Principle
 
 High-level modules should not depend on low-level modules.
