@@ -111,3 +111,5 @@ Immediate;
 However, the order between Next Tick and Immediate is not guaranteed in every scenario, especially when they're invoked from within an I/O cycle. But if run in a context with no I/O, process.nextTick() will always execute before setImmediate().
 
 In practice, when you need to schedule a function to run after the current stack completes but before any I/O operations, use process.nextTick(). When you want to schedule a function to run after all I/O operations, use setImmediate().
+
+## "==" and "==="

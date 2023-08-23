@@ -165,6 +165,74 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Algorithm",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/algorithm/array",
+          label: "Array",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/binary-search-tree",
+          label: "Binary Search Tree",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/binary-tree",
+          label: "Binary Tree",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/data-structure",
+          label: "Data Structure",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/graph",
+          label: "Graph",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/hashing",
+          label: "Hashing",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/heap",
+          label: "Heap",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/linked-list",
+          label: "Linked List",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/matrix",
+          label: "Matrix",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/misc",
+          label: "Misc",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/queue",
+          label: "Queue",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/stack",
+          label: "Stack",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Node.js",
       collapsed: true,
       collapsible: true,
@@ -176,13 +244,46 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/nodejs/processthread",
+          id: "programming/nodejs/process-thread",
           label: "Process & Thread",
         },
         {
           type: "doc",
-          id: "programming/nodejs/nestjs",
-          label: "Nest.js",
+          id: "programming/nodejs/callback",
+          label: "Callbacks",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/copy",
+          label: "Copy in JS",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/functions",
+          label: "Functions",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/modules",
+          label: "Modules",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Nest.js",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/nestjs/di",
+          label: "Dependency Injection (DI)",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/providers",
+          label: "Providers",
         },
       ],
     },
