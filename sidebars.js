@@ -267,6 +267,11 @@ const sidebars = {
           id: "programming/nodejs/modules",
           label: "Modules",
         },
+        {
+          type: "doc",
+          id: "programming/nodejs/scope",
+          label: "Scopes",
+        },
       ],
     },
     {
@@ -284,6 +289,11 @@ const sidebars = {
           type: "doc",
           id: "programming/nestjs/providers",
           label: "Providers",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/pipes",
+          label: "Pipes",
         },
       ],
     },
