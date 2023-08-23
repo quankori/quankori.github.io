@@ -113,3 +113,11 @@ However, the order between Next Tick and Immediate is not guaranteed in every sc
 In practice, when you need to schedule a function to run after the current stack completes but before any I/O operations, use process.nextTick(). When you want to schedule a function to run after all I/O operations, use setImmediate().
 
 ## "==" and "==="
+
+## this, call, apply and bind
+
+## Bitwise Operators
+
+## Side Effects and State Mutation
+
+## Closures

@@ -14,4 +14,6 @@ title: Functions
 
 ## Array.map
 
+# Pure Function
 
+## High Order Functions
