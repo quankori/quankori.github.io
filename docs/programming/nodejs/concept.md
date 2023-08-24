@@ -114,6 +114,10 @@ In practice, when you need to schedule a function to run after the current stack
 
 ## "==" and "==="
 
+"==" Compares values for equality.
+
+"===" Compares both value and type for equality.
+
 ## this, call, apply and bind
 
 ## Bitwise Operators
