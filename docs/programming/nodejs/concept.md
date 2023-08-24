@@ -112,16 +112,35 @@ However, the order between Next Tick and Immediate is not guaranteed in every sc
 
 In practice, when you need to schedule a function to run after the current stack completes but before any I/O operations, use process.nextTick(). When you want to schedule a function to run after all I/O operations, use setImmediate().
 
-## "==" and "==="
+## Side Effects
 
-"==" Compares values for equality.
+A side effect refers to any observable change in the system that is caused by executing a function, other than the value it returns. This could be anything from changing a global variable, making a network request, manipulating the DOM, writing to a file, or printing to the console, among others.
 
-"===" Compares both value and type for equality.
+Side effects are not inherently bad and are often necessary (e.g., we need side effects to update a user interface or save data to a database). However, functions with side effects are typically harder to test, debug, and reason about than pure functions, which have no side effects.
 
-## this, call, apply and bind
+```ts
+let counter: number = 0;
+function increment(): void {
+  counter++; // This is a side effect as it modifies an external variable.
+}
+```
 
-## Bitwise Operators
+## State Mutation
 
-## Side Effects and State Mutation
+State mutation refers to the direct modification or change of a data structure's state. In languages like JavaScript and TypeScript, objects and arrays are mutable by default, meaning their properties and elements can be changed directly after they're created.
 
-## Closures
+State mutation can lead to unpredictable behavior, especially in larger applications or when using certain programming paradigms like functional programming. This is why libraries like Redux emphasize the importance of treating state as immutable and making changes through copies rather than direct mutations.
+
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Alice",
+  age: 25,
+};
+
+user.age = 26; // This is a state mutation.
+```

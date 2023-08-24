@@ -125,7 +125,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/concept/processandthread",
+          id: "programming/concept/process-and-thread",
           label: "Process & Thread",
         },
         {
@@ -137,11 +137,6 @@ const sidebars = {
           type: "doc",
           id: "programming/concept/osimodel",
           label: "OSI Model",
-        },
-        {
-          type: "doc",
-          id: "programming/concept/singleton",
-          label: "Singleton",
         },
         {
           type: "doc",
@@ -233,6 +228,19 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Design Pattern",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/pattern/singleton",
+          label: "Singleton Pattern",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Node.js",
       collapsed: true,
       collapsible: true,
@@ -272,6 +280,16 @@ const sidebars = {
           id: "programming/nodejs/scope",
           label: "Scopes",
         },
+        {
+          type: "doc",
+          id: "programming/nodejs/generics",
+          label: "Generics",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/types-interfaces",
+          label: "Types & Interfaces",
+        },
       ],
     },
     {
@@ -284,16 +302,6 @@ const sidebars = {
           type: "doc",
           id: "programming/nestjs/di",
           label: "Dependency Injection (DI)",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/providers",
-          label: "Providers",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/pipes",
-          label: "Pipes",
         },
       ],
     },
