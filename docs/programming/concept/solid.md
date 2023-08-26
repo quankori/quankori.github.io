@@ -4,7 +4,7 @@ title: SOLID Principle
 
 ## S - Single Responsibility Principle
 
-A class should only have one responsibility (It should only be modified for one reason).
+Một lớp nên chỉ có một trách nhiệm (Nó chỉ nên được sửa đổi vì một lý do).
 
 ```ts
 // Student bây giờ chỉ chứa thông tin
@@ -31,7 +31,7 @@ public class Formatter {
 
 ## O - Open/Closed Principle
 
-It is possible to extend a class, but it is not allowed to modify its contents.
+Có thể mở rộng một lớp, nhưng không được phép sửa đổi nội dung của nó.
 
 ```ts
 interface Shape {
@@ -57,7 +57,7 @@ public class Rectangle implements Shape {
 
 ## L - Liskov’s Substitution Principle
 
-In a program, objects of a subclass can substitute for the superclass without affecting the correctness of the program.
+Trong một chương trình, các đối tượng của một lớp con có thể thay thế lớp cha mà không ảnh hưởng đến tính đúng đắn của chương trình.
 
 ```ts
 public class Animal {
@@ -76,7 +76,7 @@ public class Dog extends Animal {
 
 ## I - Interface Segregation Principle
 
-Instead of using one large interface, we should break it down into smaller interfaces, each with different purposes.
+Thay vì sử dụng một giao diện lớn, chúng ta nên chia thành các giao diện nhỏ hơn, mỗi giao diện có mục đích khác nhau.
 
 ```ts
 // Instead of:
@@ -107,12 +107,12 @@ class Human implements Working, Eating {
 
 ## D - Dependency Inversion Principle
 
-High-level modules should not depend on low-level modules.
-Both should depend on abstractions.
+Các mô-đun cấp cao không nên phụ thuộc vào các mô-đun cấp thấp.
+Cả hai nên phụ thuộc vào trừu tượng.
 
-Abstractions (interfaces) should not depend on details, but rather the other way around.
-(Classes communicate with each other through interfaces,
-not through implementations.)
+Trừu tượng (giao diện) không nên phụ thuộc vào chi tiết, mà ngược lại.
+(Các lớp giao tiếp với nhau thông qua giao diện,
+không thông qua việc thực thi cụ thể.)
 
 ```ts
 // Not apply principle

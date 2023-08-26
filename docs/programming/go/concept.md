@@ -4,21 +4,21 @@ title: Go Concept
 
 ## Context
 
-- The Context is a mechanism in Golang used to manage concurrent tasks and to control the execution and termination of goroutines. It can be utilized to transmit information and control concurrent tasks, helping manage resources and prevent tasks from running for too long.
+The Context là một cơ chế trong Golang được sử dụng để quản lý các nhiệm vụ đồng thời và kiểm soát việc thực hiện và chấm dứt của các goroutine. Nó có thể được sử dụng để truyền thông tin và kiểm soát các nhiệm vụ đồng thời, giúp quản lý tài nguyên và ngăn các nhiệm vụ chạy quá lâu.
 
-- There are three primary Context types in Golang:
+- Có ba loại Context chính trong Golang:
 
-  - **Background**: The default Context used to initiate a new Context.
-  - **TODO**: Used to handle simple and temporary tasks.
-  - **WithCancel**: Allows a task to be cancelled once its Context has expired.
-  - **WithDeadline**: Allows setting a deadline for a task. Once the deadline is reached, the Context will automatically cancel the task.
-  - **WithTimeout**: Sets an execution time limit for a task. Once this time is up, the Context will automatically cancel the task.
+  - **Background**: Context mặc định được sử dụng để khởi tạo một Context mới.
+  - **TODO**: Được sử dụng để xử lý các nhiệm vụ đơn giản và tạm thời.
+  - **WithCancel**:Cho phép hủy một nhiệm vụ sau khi Context của nó đã hết hạn.
+  - **WithDeadline**: Cho phép đặt một hạn chót cho một nhiệm vụ. Khi hạn chót đến, Context sẽ tự động hủy bỏ nhiệm vụ.
+  - **WithTimeout**: Đặt một giới hạn thời gian thực hiện cho một nhiệm vụ. Khi thời gian này kết thúc, Context sẽ tự động hủy bỏ nhiệm vụ.
 
-- Without correctly implementing Context, goroutines might get blocked or might not be properly cancelled. This can lead to resource wastage, decreased application performance, and potential security issues. Therefore, using Context is crucial when developing multi-threaded applications to ensure their correctness and safety.
+Nếu không thực hiện Context đúng cách, các goroutine có thể bị chặn hoặc có thể không bị hủy bỏ đúng. Điều này có thể dẫn đến lãng phí tài nguyên, hiệu suất ứng dụng giảm đi và các vấn đề bảo mật tiềm tàng. Do đó, việc sử dụng Context là rất quan trọng khi phát triển các ứng dụng đa luồng để đảm bảo tính chính xác và an toàn của chúng.
 
 ## Goroutine
 
-Goroutines provide a means to execute tasks concurrently, enhancing the efficiency of an application. When you need to perform tasks concurrently without waiting for a previous task to finish, Goroutines are an excellent choice.
+Goroutines cung cấp một cách thức để thực hiện các nhiệm vụ đồng thời, tăng cường hiệu suất của một ứng dụng. Khi bạn cần thực hiện các nhiệm vụ đồng thời mà không cần chờ đợi cho tác vụ trước đó hoàn thành, Goroutines là một lựa chọn tuyệt vời.
 
 ```go
 func numbers() {
@@ -45,7 +45,7 @@ func goroutines() {
 
 ## Channel
 
-A Channel is a mechanism used to transfer data between Goroutines. It is used to synchronize access to data among Goroutines. When you need to send data between Goroutines without facing problems like deadlocks or race conditions, or when you wish to synchronize concurrent tasks, a channel is a highly useful tool.
+Channel là một cơ chế được sử dụng để truyền dữ liệu giữa các Goroutines. Nó được sử dụng để đồng bộ hóa việc truy cập dữ liệu giữa các Goroutines. Khi bạn cần gửi dữ liệu giữa các Goroutines mà không gặp vấn đề như tắc nghẽn hoặc điều kiện đua, hoặc khi bạn muốn đồng bộ hóa các nhiệm vụ đồng thời, kênh là một công cụ rất hữu ích.
 
 ```go
 func send(c chan int) {
@@ -75,7 +75,7 @@ func channel() {
 
 ## Mutex
 
-Mutex (Mutual Exclusion) is a synchronization mechanism ensuring that only one Goroutine accesses data at any given time, preventing data conflicts when accessed simultaneously by multiple Goroutines. When you need to synchronize data access among Goroutines and ensure data is accessed correctly, Mutex is the right tool.
+Mutex (Mutual Exclusion) là một cơ chế đồng bộ đảm bảo chỉ có một Goroutine truy cập dữ liệu vào bất kỳ thời điểm nào, ngăn ngừa xung đột dữ liệu khi được truy cập cùng lúc bởi nhiều Goroutines. Khi bạn cần đồng bộ hóa việc truy cập dữ liệu giữa các Goroutines và đảm bảo dữ liệu được truy cập đúng cách, Mutex là công cụ đúng đắn.
 
 ```go
 

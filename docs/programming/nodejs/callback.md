@@ -4,19 +4,19 @@ title: Callbacks in Node.js
 
 ## Concept
 
-Callbacks are fundamental to asynchronous programming in Node.js. They allow for non-blocking operations, which can greatly improve performance for I/O-bound tasks. However, due to potential callback nesting, it's essential to be aware of and manage callback hell, using patterns or newer language features to ensure maintainable and readable code.
+Callback là một khái niệm cơ bản trong lập trình bất đồng bộ trong Node.js. Chúng cho phép thực hiện các hoạt động không chặn, có thể cải thiện đáng kể hiệu suất cho các nhiệm vụ liên quan đến I/O. Tuy nhiên, do sự lồng ghép tiềm năng của callback, việc nhận thức và quản lý "callback hell" là rất quan trọng, sử dụng các mẫu hoặc các tính năng ngôn ngữ mới để đảm bảo mã có thể bảo trì và dễ đọc.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/7.png)
 
 ## Promise
 
-A Promise in JavaScript represents a value which might be available now, or in the future, or never. It allows you to write asynchronous code in a more synchronous fashion. It has three states:
+Một Promise trong JavaScript đại diện cho một giá trị có thể có sẵn ngay bây giờ, trong tương lai hoặc không bao giờ. Nó cho phép bạn viết mã bất đồng bộ theo một cách đồng bộ hơn. Promise có ba trạng thái:
 
-**Pending**: The initial state; the promise is neither fulfilled nor rejected.
+**Pending**: Trạng thái ban đầu; promise chưa được thực hiện hoặc bị từ chối.
 
-**Fulfilled**: The operation completed successfully.
+**Fulfilled**: Hoạt động đã được thực hiện thành công.
 
-**Rejected**: The operation failed.
+**Rejected**: Hoạt động thất bại
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -32,11 +32,11 @@ myPromise.then((result) => {
 
 ## Async/Await
 
-async/await is built on top of promises and provides a more readable and clean syntax for dealing with asynchronous operations. A function declared with the async keyword will always return a promise.
+async/await được xây dựng dựa trên promises và cung cấp cú pháp dễ đọc và sạch hơn để xử lý các hoạt động bất đồng bộ. Một hàm được khai báo với từ khóa async luôn luôn trả về một promise.
 
-**async**: This keyword is used to declare an asynchronous function.
+**async**: Từ khóa này được sử dụng để khai báo một hàm bất đồng bộ.
 
-**await**: This keyword can only be used inside an async function and is used to pause the execution of the async function until the promise is resolved or rejected.
+**await**: Từ khóa này chỉ có thể được sử dụng bên trong một hàm async và được sử dụng để tạm dừng việc thực thi của hàm async cho đến khi promise được giải quyết hoặc bị từ chối.
 
 ```js
 async function fetchData() {

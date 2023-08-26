@@ -2,70 +2,70 @@
 title: Open Systems Interconnection Reference Model
 ---
 
-The OSI Model is composed of 7 layers, and when receiving a request, it will go from layer 7 to layer 1, and the response returned will go from layer 1 to layer 7.
+Mô hình OSI bao gồm 7 lớp, và khi nhận một yêu cầu, nó sẽ di chuyển từ lớp 7 đến lớp 1, và phản hồi trả về sẽ di chuyển từ lớp 1 đến lớp 7.
 
 ## Application layer
 
-This layer is the main interface for users to interact with the application program and, through it, with the network.
+Lớp này là giao diện chính cho người dùng tương tác với chương trình ứng dụng và thông qua nó, tương tác với mạng.
 
 ## Presentation layer
 
-On a computer, this layer performs the task of translating data sent from the Application layer into a common format. At the receiving computer, this layer then converts from the common format to the format of the Application layer.
+Trên máy tính, lớp này thực hiện nhiệm vụ chuyển đổi dữ liệu được gửi từ lớp ứng dụng sang một định dạng chung. Trên máy tính nhận, lớp này sau đó chuyển đổi từ định dạng chung sang định dạng của lớp ứng dụng.
 
 ## Session layer
 
-The task of this layer is to establish, maintain and terminate communication with receiving devices.
+Nhiệm vụ của lớp này là thiết lập, duy trì và chấm dứt giao tiếp với các thiết bị nhận.
 
 ## Transport layer
 
-This layer maintains control of the flow of data and performs error checking and data recovery between devices.
+Lớp này duy trì quản lý dòng dữ liệu và thực hiện kiểm tra lỗi và khôi phục dữ liệu giữa các thiết bị.
 
 ## Network layer
 
-This layer provides logical addresses that routers will use to determine the path to the destination.
+Lớp này cung cấp các địa chỉ logic mà các router sẽ sử dụng để xác định đường đi đến điểm đích.
 
 ## Data link layer
 
-This layer ensures the transformation of bit data received from the lower layer (physical layer) into data frames.
+Lớp này đảm bảo việc chuyển đổi dữ liệu bit nhận được từ lớp thấp hơn (lớp vật lý) thành các khung dữ liệu.
 
 ## Physical layer
 
-Establishes or breaks electrical connections with a transmission medium.
+Thiết lập hoặc ngắt kết nối điện với phương tiện truyền tải.
 
-Participates in a process where communication resources are efficiently shared among multiple users. For example, resolving resource contention and traffic control.
+Tham gia vào quá trình mà tài nguyên giao tiếp được chia sẻ một cách hiệu quả giữa nhiều người sử dụng. Ví dụ, giải quyết xung đột tài nguyên và kiểm soát lưu lượng.
 
-Modulates or transforms between the digital data representation of user devices and the corresponding signals transmitted through the communication channel.
+Biến đổi hoặc chuyển đổi giữa biểu diễn dữ liệu số hóa của các thiết bị người dùng và các tín hiệu tương ứng được truyền qua kênh truyền thông.
 
 ## Request
 
-Application layer: Users enter the information they want to send into the computer. This information is usually in the form of images, text, etc. Then, this data is transferred down to the Presentation layer (layer 6).
+**Application layer**: Người dùng nhập thông tin mà họ muốn gửi vào máy tính. Thông tin này thường ở dạng hình ảnh, văn bản, v.v. Sau đó, dữ liệu này được chuyển xuống lớp trình diễn (lớp 6).
 
-Presentation layer: This layer will convert the data into a common format for data encoding and compression. The data is then transferred down to the Session layer (layer 5).
+**Presentation layer**: Lớp này sẽ chuyển đổi dữ liệu thành một định dạng chung để mã hóa và nén dữ liệu. Dữ liệu sau đó được chuyển xuống lớp phiên (lớp 5).
 
-Session layer: This layer is similar to bank employees who verify and add transaction information when you transfer money at the bank. After the Session layer completes its task, it will continue to transfer this data down to the Transport layer (layer 4).
+**Session layer**: Lớp này tương tự như các nhân viên ngân hàng xác minh và thêm thông tin giao dịch khi bạn chuyển tiền tại ngân hàng. Sau khi lớp phiên hoàn thành nhiệm vụ, nó sẽ tiếp tục chuyển dữ liệu này xuống lớp vận chuyển (lớp 4).
 
-Transport layer: At this layer, the data is divided into multiple segments and additional information about data transportation methods is added to ensure security and reliability when transmitting in the network model. Then, the data is transferred down to the Network layer (layer 3).
+**Transport layer**: Tại lớp này, dữ liệu được chia thành nhiều đoạn và thông tin bổ sung về phương pháp vận chuyển dữ liệu được thêm vào để đảm bảo an toàn và đáng tin cậy khi truyền trong mô hình mạng. Sau đó, dữ liệu được chuyển xuống lớp mạng (lớp 3).
 
-Network layer: At this layer, the segments are further divided into different Package packets and routing information is added. The main function of the Network layer is to route the path for packets containing data. The data continues to be transferred down to the Data Link layer (layer 2).
+**Network layer**: Tại lớp này, các đoạn được chia thành các gói tin Package khác nhau và thông tin định tuyến được thêm vào. Chức năng chính của lớp mạng là định tuyến đường dẫn cho các gói tin chứa dữ liệu. Dữ liệu tiếp tục được chuyển xuống lớp liên kết dữ liệu (lớp 2).
 
-Datalink layer: At this layer, each Package packet is hashed into multiple Frames and additional information is added to check the data packets at the receiving end.
+**Datalink layer**: Tại lớp này, mỗi gói tin Package được băm thành nhiều khung Frames và thông tin bổ sung được thêm vào để kiểm tra gói tin dữ liệu ở đầu thu.
 
-Physical layer: Finally, when these Frames are transferred down to the Physical layer (layer 1), they are converted into a series of binary bits (0 1....) and transmitted and signal broken on transmission media (copper cable, fiber optic cable, ...) to transmit data to the receiver.
+**Physical layer**: Cuối cùng, khi những khung Frames này được chuyển xuống lớp vật lý (lớp 1), chúng được chuyển đổi thành một chuỗi các bit nhị phân (0 1....) và được truyền và tín hiệu bị đứt trên phương tiện truyền tải (cáp đồng, cáp quang, ...) để truyền dữ liệu đến người nhận.
 
 ## Resposne
 
-The Physical layer (Layer 1) on the receiving end will check the synchronization process and put the received binary bit strings into the buffer. Then it sends a notification to the Data Link layer (Layer 2) that the data has been received.
+**The Physical layer** (Layer 1) ở bên nhận sẽ kiểm tra quá trình đồng bộ hóa và đưa các chuỗi bit nhị phân nhận được vào bộ đệm. Sau đó, nó gửi thông báo đến lớp liên kết dữ liệu (Lớp 2) rằng dữ liệu đã được nhận.
 
-Next, the Data Link layer will check for errors in the frame created by the sending machine by checking the FCS in the packet attached to the receiving machine.
+**The Datalink layer** dữ liệu sẽ kiểm tra lỗi trong khung được tạo ra bởi máy gửi bằng cách kiểm tra FCS trong gói tin đính kèm vào máy nhận.
 
-The Network layer will check whether the address in this packet is the address of the receiving machine or not.
+**The Network layer** sẽ kiểm tra xem địa chỉ trong gói tin này có phải là địa chỉ của máy nhận hay không.
 
-At the Transport layer, error recovery and error handling are supported by sending ACK and NAK packets (packets used to respond to whether the data-containing packets have been sent to the receiving machine or not).
+**Transport layer** việc khôi phục lỗi và xử lý lỗi được hỗ trợ bằng cách gửi các gói tin ACK và NAK (gói tin được sử dụng để phản hồi liệu các gói tin chứa dữ liệu đã được gửi đến máy nhận hay chưa).
 
-The Session layer is responsible for ensuring the integrity of the data in the received packet. Then it removes the Session layer header and continues to send it up to the Presentation layer.
+**The Session layer** chịu trách nhiệm đảm bảo tính toàn vẹn của dữ liệu trong gói tin nhận được. Sau đó, nó loại bỏ phần tiêu đề của lớp phiên và tiếp tục gửi nó lên lớp trình diễn.
 
-The Presentation layer processes the packet by converting the data formats to the appropriate format. When finished, it will proceed to send it up to the Application layer.
+**The Presentation layer** xử lý gói tin bằng cách chuyển đổi định dạng dữ liệu sang định dạng phù hợp. Khi hoàn thành, nó sẽ tiếp tục gửi lên lớp ứng dụng.
 
-Finally, the Application layer processes and removes the last header. At this point, the receiving machine will receive the data of the transmitted packet.
+**Application layer** xử lý và loại bỏ phần tiêu đề cuối cùng. Tại thời điểm này, máy nhận sẽ nhận dữ liệu của gói tin đã truyền.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/1.jpeg)

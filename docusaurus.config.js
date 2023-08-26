@@ -62,9 +62,9 @@ const config = {
       disableSwitch: false,
     },
     navbar: {
-      title: "Kori Wiki",
+      title: "Kori Blog",
       logo: {
-        alt: "Kori Wiki",
+        alt: "Kori Blog",
         src: "img/icon.png",
         target: "_self",
       },

@@ -4,13 +4,13 @@ title: Blockchain Consensus
 
 ## Proof of Work.
 
-Use computer power to solve the problem.
+Sử dụng sức mạnh máy tính để giải quyết vấn đề.
 
-The miner will find the exact nonce by looping so that the first character is smaller than the target number in hexadecimal.
+Người khai thác (miner) sẽ tìm ra nonce chính xác thông qua việc lặp đi lặp lại sao cho ký tự đầu tiên nhỏ hơn số đích (target number) trong hệ thập lục phân.
 
-The target number is generated independently by the node in the network (following certain rules).
+Số đích được tạo ra độc lập bởi các node trong mạng (tuân theo một số quy tắc cụ thể).
 
-The smaller the target number, the more time it will take. For example, target 0x0001 will take more time than 0x010000.
+Số đích càng nhỏ, thời gian để tìm ra nó càng lâu. Ví dụ, mục tiêu 0x0001 sẽ tốn nhiều thời gian hơn 0x010000.
 
 For example:
 
@@ -47,13 +47,13 @@ For example:
 
 - At this point, the first two characters "08" are smaller than the target "32", so the mining is successful.
 
-Through this basic example, we can understand the mechanism of solving puzzles in the network, but the implementation of the block mining algorithm may vary depending on the network and the participating nodes.
+Qua ví dụ cơ bản này, chúng ta có thể hiểu cơ chế của việc giải quyết các câu đố trong mạng, nhưng việc triển khai thuật toán khai thác block có thể thay đổi tùy thuộc vào mạng và các node tham gia.
 
 ## Proof of Stake
 
-Create a block based on the amount of money in the account
+Tạo một block dựa trên số tiền có trong tài khoản
 
-The algorithm will take the first two characters of the block multiplied by the target, then compare it with the user's money, whoever has more will win.
+Thuật toán sẽ lấy hai ký tự đầu của block nhân với số đích, sau đó so sánh nó với số tiền của người dùng, ai có nhiều hơn sẽ thắng.
 
 For example:
 
@@ -63,6 +63,6 @@ For example:
 - We will take the first two characters, which are 08, multiply it by the target of 5, and the result is 40.
 - We can see that user B only has 15 tokens, so they cannot mine the block, but user A has 52 tokens, so they can mine the block successfully.
 
-Through this basic example, we can understand the mechanism of the network's mining algorithm, but the implementation of the mining algorithm may vary depending on the network and the participating nodes.
+Qua ví dụ cơ bản này, chúng ta có thể hiểu được cơ chế của thuật toán khai thác trong mạng, nhưng việc triển khai thuật toán khai thác có thể thay đổi tùy thuộc vào mạng và các node tham gia.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/6.PNG)

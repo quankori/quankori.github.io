@@ -4,29 +4,29 @@ title: Process and Thread
 
 ## Process
 
-- A process is an independent unit of a running program with its own memory space.
-- Each process has one or more threads.
-- Processes are often less interconnected. Communication between processes typically requires IPC (Inter-process communication) methods such as pipes, sockets, etc.
-- Initializing a new process is generally more resource-intensive and time-consuming than initializing a new thread.
+- Một quy trình là một đơn vị độc lập của một chương trình đang chạy với không gian bộ nhớ riêng của nó.
+- Mỗi quy trình có một hoặc nhiều luồng.
+- Thường thì các quy trình kết nối với nhau ít hơn. Giao tiếp giữa các quy trình thường yêu cầu các phương pháp giao tiếp giữa các quy trình (Inter-process communication - IPC) như ống, socket, v.v.
+- Khởi tạo một quy trình mới thường tốn nhiều tài nguyên hơn và mất thời gian hơn so với việc khởi tạo một luồng mới.
 
 ## Thread
 
-- A thread, also called a lightweight process, is the smallest unit of execution within a process.
-- All threads within the same process share the memory space of that process. This means threads can access and modify shared variables and data structures.
-- Each thread has its own stack, but they share the heap (dynamic memory) and global data.
+- Một luồng, còn được gọi là quy trình nhẹ, là đơn vị thực thi nhỏ nhất trong một quy trình.
+- Tất cả các luồng trong cùng một quy trình chia sẻ không gian bộ nhớ của quy trình đó. Điều này có nghĩa là luồng có thể truy cập và thay đổi các biến chia sẻ và cấu trúc dữ liệu.
+- Mỗi luồng có ngăn xếp riêng của nó, nhưng chúng chia sẻ heap (bộ nhớ động) và dữ liệu toàn cục.
 
 ## When a request is sent to a server
 
-Depending on the server's configuration and architecture, a request can be handled by a specific process or thread. Below is a simple example of how a server operates based on multi-process and multi-thread architectures:
+Tùy theo cấu hình và kiến trúc của máy chủ, một yêu cầu có thể được xử lý bởi một quy trình hoặc một luồng cụ thể. Dưới đây là một ví dụ đơn giản về cách máy chủ hoạt động dựa trên kiến trúc đa quy trình và đa luồng:
 
 ### Multi-Process Architecture:
 
-- For each new request, the server may spawn a new process to handle that request. The Apache HTTP Server, when running in prefork mode (a popular mode), operates this way.
+Đối với mỗi yêu cầu mới, máy chủ có thể tạo ra một quy trình mới để xử lý yêu cầu đó. Ví dụ, máy chủ HTTP Apache, khi hoạt động ở chế độ prefork (chế độ phổ biến), hoạt động theo cách này.
 
 ### Multi-Thread Architecture:
 
-- For a new request, rather than spawning a new process, the server just spawns a new thread (or uses an existing one from a thread pool) within the same process to handle the request. Microsoft's IIS operates this way.
+Đối với một yêu cầu mới, thay vì tạo ra một quy trình mới, máy chủ chỉ tạo ra một luồng mới (hoặc sử dụng một luồng hiện có từ bể luồng) trong cùng một quy trình để xử lý yêu cầu. Ví dụ, dịch vụ IIS của Microsoft hoạt động theo cách này.
 
-Modern servers like Node.js utilize an event-driven model and event loop to handle multiple requests without the need for multiple threads or processes.
+Các máy chủ hiện đại như Node.js sử dụng mô hình dựa trên sự kiện và vòng lặp sự kiện để xử lý nhiều yêu cầu mà không cần nhiều luồng hoặc quy trình.
 
-Depending on the architecture and technology in use, request handling will rely on one or several processes and threads. Each architecture has its pros and cons, and the choice between them often depends on the specific requirements and context of the system.
+Tùy theo kiến trúc và công nghệ được sử dụng, việc xử lý yêu cầu sẽ phụ thuộc vào một hoặc nhiều quy trình và luồng. Mỗi kiến trúc có ưu điểm và nhược điểm riêng, và sự lựa chọn giữa chúng thường phụ thuộc vào yêu cầu cụ thể và ngữ cảnh của hệ thống.

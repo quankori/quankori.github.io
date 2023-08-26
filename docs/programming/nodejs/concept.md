@@ -4,8 +4,8 @@ title: Node.js Concept
 
 ## Node.js structure
 
-- V8 is used to interpret and execute Javascript code
-- Libuv is used for accessing the filesystem and some aspects of concurrency
+- V8 được sử dụng để thông dịch và thực thi mã JavaScript.
+- Libuv được sử dụng để truy cập vào hệ thống tệp và một số khía cạnh của đồng thời.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/3.PNG)
 
@@ -13,58 +13,63 @@ title: Node.js Concept
 
 ## Node.js Fundamentals
 
-1. **Event Loop & Non-Blocking I/O**: Node.js achieves high concurrency using an event loop paired with non-blocking I/O. While JavaScript code runs on a single thread, many operations, especially I/O, are offloaded, allowing the main thread to process other tasks without waiting. This mechanism makes Node.js efficient for I/O-bound applications.
-2. **Worker Threads**: Node.js introduced the "worker_threads" module from version 10.5.0, which provides the ability to run JavaScript in parallel threads, enhancing its capability to handle CPU-bound tasks.
+1. **Event Loop & Non-Blocking I/O**: Node.js đạt được tính đồng thời cao bằng cách sử dụng vòng lặp sự kiện kết hợp với I/O không chặn. Trong khi mã JavaScript chạy trên một luồng duy nhất, nhiều hoạt động, đặc biệt là I/O, được gửi đi, cho phép luồng chính xử lý các nhiệm vụ khác mà không cần chờ đợi. Cơ chế này làm cho Node.js hiệu quả cho các ứng dụng liên quan đến I/O.
+
+2. **Worker Threads**: Node.js giới thiệu mô-đun "worker_threads" từ phiên bản 10.5.0, cung cấp khả năng chạy mã JavaScript trong các luồng song song, nâng cao khả năng xử lý nhiệm vụ liên quan đến CPU.
 
 ## Single-threaded vs Multi-threaded
 
 ### 1. Concurrency Model:
 
-- **Node.js (Single-threaded)**: Relies on an event-driven, non-blocking I/O model, suitable for I/O-bound tasks. CPU-bound tasks can pose a challenge unless using worker threads or clustering.
-- **Other Languages (Multi-threaded)**: Languages like Java or C# use multi-threading, which caters efficiently to both I/O-bound and CPU-bound tasks. However, they introduce challenges such as thread synchronization and potential deadlocks.
+- **Node.js (Single-threaded)**: Dựa vào mô hình sự kiện, I/O không chặn, phù hợp cho các nhiệm vụ liên quan đến I/O. Các nhiệm vụ liên quan đến CPU có thể gặp khó khăn, trừ khi sử dụng luồng công việc (worker threads) hoặc gom cụm (clustering).
+
+- **Other Languages (Multi-threaded)**:Ngôn ngữ như Java hoặc C# sử dụng đa luồng, phù hợp cho cả các nhiệm vụ liên quan đến I/O và CPU. Tuy nhiên, chúng đưa ra các thách t
 
 ### 2. Memory Consumption:
 
-- **Node.js**: Typically lower since there's no need for multiple threads per connection. Yet, one must ensure the event loop isn't blocked to maintain performance.
-- **Multi-threaded Languages**: Might have a higher footprint as each thread maintains its own stack, but can distribute CPU-bound tasks effectively.
+- **Node.js**: Thường thấp hơn do không cần nhiều luồng cho mỗi kết nối. Tuy nhiên, cần đảm bảo vòng lặp sự kiện không bị chặn để duy trì hiệu suất.
+
+- **Multi-threaded Languages**: Có thể có kích thước lớn hơn vì mỗi luồng duy trì một ngăn xếp riêng, nhưng có thể phân phối các nhiệm vụ liên quan đến CPU một cách hiệu quả.
 
 ### 3. Complexity:
 
-- **Node.js**: Generally simpler in terms of concurrency management. One doesn't have to manage thread synchronization in most scenarios. The primary concern is to avoid blocking the event loop.
-- **Multi-threaded Languages**: Can be complex due to explicit thread management, synchronization issues, and potential deadlocks.
+- **Node.js**: Thường đơn giản hơn về quản lý đồng thời. Trong hầu hết các tình huống, không cần phải quản lý đồng bộ hóa luồng. Vấn đề chính là tránh chặn vòng lặp sự kiện.
+
+- **Multi-threaded Languages**: Có thể phức tạp do quản lý luồng tường minh, các vấn đề đồng bộ hóa luồng và nguy cơ tắc nghẽn tiềm tàng.
 
 ### 4. Scalability:
 
-- **Node.js**: Scales horizontally by adding more instances. Achievable through tools like the cluster module or container orchestration utilities.
-- **Multi-threaded Languages**: Can scale both vertically (adding threads) and horizontally (adding machines).
+- **Node.js**: Mở rộng theo chiều ngang bằng cách thêm nhiều phiên bản. Điều này có thể thực hiện thông qua các công cụ như mô-đun gom cụm (cluster module) hoặc các tiện ích triển khai hộp điều khiển (container orchestration).
 
-Node.js can indeed operate in a multi-threaded fashion with the "worker_threads" module. However, its primary design is single-threaded. Implementing multiple threads in Node.js brings forth the challenges typical of multi-threaded programming in other languages.
+- **Multi-threaded Languages**: Có thể mở rộng cả theo chiều dọc (thêm luồng) và chiều ngang (thêm máy).
+
+Node.js thực sự có thể hoạt động theo cách đa luồng với mô-đun "worker_threads". Tuy nhiên, thiết kế chính của nó là đơn luồng. Việc triển khai nhiều luồng trong Node.js đưa ra các thách thức điển hình của lập trình đa luồng trong các ngôn ngữ khác.
 
 ## Event loop
 
-- When an asynchronous request is sent, such as an HTTP request, Node.js does not wait for that request to complete before continuing to execute other requests. Instead, Node.js sends that request to the system and continues to execute other requests. When that request is completed, the system notifies Node.js that the request is complete, and Node.js continues to execute other tasks.
+- Khi gửi một yêu cầu bất đồng bộ, như yêu cầu HTTP, Node.js không đợi yêu cầu đó hoàn thành trước khi tiếp tục thực thi các yêu cầu khác. Thay vào đó, Node.js gửi yêu cầu đó tới hệ thống và tiếp tục thực thi các yêu cầu khác. Khi yêu cầu đó hoàn thành, hệ thống thông báo cho Node.js rằng yêu cầu đã hoàn thành, và Node.js tiếp tục thực thi các nhiệm vụ khác.
 
-- Tasks in the event loop are queued in different queues, including:
+- Các nhiệm vụ trong vòng lặp sự kiện được xếp hàng trong các hàng đợi khác nhau, bao gồm:
 
-  - Task queue (also known as a callback queue): Contains callback functions called when an asynchronous request ends.
+  - Task queue (also known as a callback queue): Chứa các hàm callback được gọi khi một yêu cầu bất đồng bộ kết thúc.
 
-  - Microtask queue: Contains callback functions called when a promise is resolved or rejected.
+  - Microtask queue: Chứa các hàm callback được gọi khi một promise được giải quyết hoặc bị từ chối.
 
-  - Timers queue: Contains callback functions called when a time or timer (timeout or interval) is activated.
+  - Timers queue: Chứa các hàm callback được gọi khi một thời gian hoặc hẹn giờ (timeout hoặc interval) được kích hoạt.
 
-- When the event loop starts, it executes tasks in the microtask queue first, then the task queue, and finally the timers queue.
+- Khi vòng lặp sự kiện bắt đầu, nó thực thi các nhiệm vụ trong hàng đợi microtask trước, sau đó là hàng đợi nhiệm vụ, và cuối cùng là hàng đợi timers.
 
-- When a task is executed, Node.js puts it into an infinite loop to wait for other tasks. While waiting, Node.js continues to execute tasks in the event loop queue.
+- Khi một nhiệm vụ được thực thi, Node.js đặt nó vào một vòng lặp vô tận để đợi các nhiệm vụ khác. Trong lúc đợi, Node.js tiếp tục thực thi các nhiệm vụ trong hàng đợi vòng lặp sự kiện.
 
 ## process.nextTick() and setImmediate() in Event Loop
 
-In Node.js, both process.nextTick() and setImmediate() are used to schedule the execution of a callback function after the current phase of the event loop completes. However, they operate in different parts of the loop.
+Trong Node.js, cả process.nextTick() và setImmediate() được sử dụng để lên lịch thực thi một hàm callback sau khi giai đoạn hiện tại của vòng lặp sự kiện hoàn thành. Tuy nhiên, chúng hoạt động trong các phần khác nhau của vòng lặp.
 
 ### process.nextTick()
 
-**Description**: Schedules a callback to be invoked after the current phase of the event loop completes and before any other I/O operations occur.
+**Description**: Lên lịch một hàm callback được gọi sau khi giai đoạn hiện tại của vòng lặp sự kiện hoàn thành và trước bất kỳ hoạt động I/O nào diễn ra.
 
-**Operation**: The callback is added to a special queue called the "nextTick queue," and will be executed after each phase of the event loop. This means that if you keep adding functions to the "nextTick queue," the event loop can get stuck in the current phase, and other operations (like I/O) may be delayed.
+**Operation**: Hàm callback được thêm vào một hàng đợi đặc biệt được gọi là "nextTick queue," và sẽ được thực thi sau mỗi giai đoạn của vòng lặp sự kiện. Điều này có nghĩa là nếu bạn tiếp tục thêm các hàm vào hàng đợi "nextTick," vòng lặp sự kiện có thể bị mắc kẹt trong giai đoạn hiện tại, và các hoạt động khác (như I/O) có thể bị trì hoãn.
 
 ```js
 console.log("Start");
@@ -86,9 +91,9 @@ Next Tick
 
 ### setImmediate()
 
-**Description**: Schedules a callback to be executed in the "check" phase of the event loop after I/O events are processed.
+**Description**: Lên lịch một hàm callback để thực thi trong giai đoạn "check" của vòng lặp sự kiện sau khi các sự kiện I/O được xử lý.
 
-**Operation**: The callback is added to a separate queue and will be executed after all I/O events are processed.
+**Operation**: Hàm callback được thêm vào một hàng đợi riêng và sẽ được thực thi sau khi tất cả các sự kiện I/O được xử lý.
 
 ```js
 console.log("Start");
@@ -108,15 +113,15 @@ End;
 Immediate;
 ```
 
-However, the order between Next Tick and Immediate is not guaranteed in every scenario, especially when they're invoked from within an I/O cycle. But if run in a context with no I/O, process.nextTick() will always execute before setImmediate().
+Tuy nhiên, thứ tự giữa Next Tick và Immediate không được đảm bảo trong mọi tình huống, đặc biệt khi chúng được gọi từ một chu kỳ I/O. Nhưng nếu chạy trong ngữ cảnh không có I/O, process.nextTick() luôn luôn được thực thi trước setImmediate().
 
-In practice, when you need to schedule a function to run after the current stack completes but before any I/O operations, use process.nextTick(). When you want to schedule a function to run after all I/O operations, use setImmediate().
+Trong thực tế, khi bạn cần lên lịch một hàm chạy sau khi ngăn xếp hiện tại hoàn thành nhưng trước bất kỳ hoạt động I/O nào, hãy sử dụng process.nextTick(). Khi bạn muốn lên lịch một hàm chạy sau tất cả các hoạt động I/O, hãy sử dụng setImmediate().
 
 ## Side Effects
 
-A side effect refers to any observable change in the system that is caused by executing a function, other than the value it returns. This could be anything from changing a global variable, making a network request, manipulating the DOM, writing to a file, or printing to the console, among others.
+Tác động phụ đề cập đến bất kỳ thay đổi có thể quan sát được trong hệ thống do việc thực thi một hàm, ngoại trừ giá trị mà hàm trả về. Điều này có thể là bất kỳ thứ gì, từ thay đổi biến toàn cục, thực hiện yêu cầu mạng, thao tác DOM, ghi vào tệp, hoặc in ra console, và còn nhiều hơn nữa.
 
-Side effects are not inherently bad and are often necessary (e.g., we need side effects to update a user interface or save data to a database). However, functions with side effects are typically harder to test, debug, and reason about than pure functions, which have no side effects.
+Tác động phụ không phải lúc nào cũng xấu và thường cần thiết (ví dụ, chúng ta cần tác động phụ để cập nhật giao diện người dùng hoặc lưu dữ liệu vào cơ sở dữ liệu). Tuy nhiên, các hàm có tác động phụ thường khó kiểm tra, gỡ lỗi và lập luận hơn so với các hàm thuần túy, không có tác động phụ.
 
 ```ts
 let counter: number = 0;
@@ -127,9 +132,9 @@ function increment(): void {
 
 ## State Mutation
 
-State mutation refers to the direct modification or change of a data structure's state. In languages like JavaScript and TypeScript, objects and arrays are mutable by default, meaning their properties and elements can be changed directly after they're created.
+Thay đổi trạng thái đề cập đến việc sửa đổi trực tiếp hoặc thay đổi trạng thái của cấu trúc dữ liệu. Trong các ngôn ngữ như JavaScript và TypeScript, đối tượng và mảng thường là biến đổi theo mặc định, có nghĩa là các thuộc tính và phần tử của chúng có thể được thay đổi trực tiếp sau khi chúng được tạo.
 
-State mutation can lead to unpredictable behavior, especially in larger applications or when using certain programming paradigms like functional programming. This is why libraries like Redux emphasize the importance of treating state as immutable and making changes through copies rather than direct mutations.
+Thay đổi trạng thái có thể dẫn đến hành vi không dự đoán được, đặc biệt trong các ứng dụng lớn hoặc khi sử dụng một số mô hình lập trình như lập trình hàm. Đây là lý do tại sao các thư viện như Redux nhấn mạnh về tầm quan trọng của việc xem xét trạng thái là bất biến và thực hiện thay đổi thông qua các bản sao thay vì thay đổi trực tiếp.
 
 ```ts
 interface User {

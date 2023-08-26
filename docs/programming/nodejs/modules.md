@@ -4,7 +4,7 @@ title: Modules
 
 ## CommonJS
 
-This is the module system used in Node.js. It's synchronous and mainly designed for server-side.
+Đây là hệ thống module được sử dụng trong Node.js. Nó là đồng bộ và chủ yếu được thiết kế cho môi trường máy chủ.
 
 ```js
 // greet.js
@@ -19,7 +19,7 @@ greet();
 
 ## Namespace
 
-Namespaces are a TypeScript-specific way to organize code, using the namespace keyword. While namespaces can help prevent naming collisions, they've become less popular with the advent of ES Modules.
+Namespaces là một cách cụ thể của TypeScript để tổ chức mã, sử dụng từ khóa namespace. Mặc dù namespaces có thể giúp ngăn va chạm tên, nhưng chúng đã trở nên ít phổ biến hơn với sự xuất hiện của ES Modules.
 
 ```ts
 namespace MyNamespace {
@@ -31,7 +31,7 @@ namespace MyNamespace {
 
 ## External Modules (ES Modules)
 
-The module system introduced in ES6 (ES2015) for JavaScript. It's become the standard for client-side modules and is now also supported in Node.js.
+Hệ thống module được giới thiệu trong ES6 (ES2015) cho JavaScript. Nó đã trở thành tiêu chuẩn cho các module phía máy khách và hiện tại cũng được hỗ trợ trong Node.js.
 
 ```ts
 // module.ts

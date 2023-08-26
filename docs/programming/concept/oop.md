@@ -4,7 +4,7 @@ title: Object-oriented programming
 
 ## Inheritance
 
-Reusing a function from another class through inheriting that class.
+Tái sử dụng một hàm từ một lớp khác thông qua việc kế thừa lớp đó.
 
 ```java
 class Animal {
@@ -30,7 +30,7 @@ public class TestInheritance1 {
 
 ## Polymorphism
 
-Polymorphism at runtime is the process of calling an overridden method during the execution of a program. In this process, an overridden method is called through a reference variable of a parent class.
+Đa hình trong thời gian chạy là quá trình gọi một phương thức bị ghi đè trong quá trình thực thi chương trình. Trong quá trình này, một phương thức bị ghi đè được gọi thông qua một biến tham chiếu của lớp cha.
 
 ```java
 class Bike {
@@ -53,9 +53,9 @@ public class Splender extends Bike {
 
 ## Abstraction
 
-Abstraction is a process of hiding the implementation details and showing only the features to the user.
+Trừu tượng là quá trình che giấu chi tiết thực hiện và chỉ hiển thị các tính năng cho người dùng.
 
-There are two ways to achieve abstraction: using interfaces and abstract classes.
+Có hai cách để đạt được trừu tượng: sử dụng giao diện và lớp trừu tượng.
 
 - Abstract
 
@@ -97,9 +97,9 @@ class A6 implements printable {
 
 ## Encapsulation
 
-You can create a read-only or write-only class by implementing a setter or getter method.
+Bạn có thể tạo ra một lớp chỉ cho việc đọc hoặc chỉ cho việc ghi bằng cách thực hiện một phương thức setter hoặc getter.
 
-You can control the data. For example, if you want to set the value of an ID only if it's greater than 100, you can write the logic inside the setter method.
+Bạn có thể kiểm soát dữ liệu. Ví dụ, nếu bạn muốn đặt giá trị của một ID chỉ khi nó lớn hơn 100, bạn có thể viết logic bên trong phương thức setter.
 
 ```java
 public class Student {

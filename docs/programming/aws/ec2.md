@@ -4,58 +4,52 @@ title: Amazon Elastic Compute Cloud
 
 ## Types of EC2
 
-- **On-Demand Instances**: These are the type of EC2 that supports renting virtual machines by the hour without any long-term commitments or upfront agreements. Suitable for applications with high flexibility, short-term usage needs, or significant fluctuations.
+- **On-Demand Instances**: Đây là loại EC2 hỗ trợ thuê máy ảo theo giờ mà không cần các cam kết dài hạn hay thỏa thuận trả trước. Phù hợp cho các ứng dụng có độ linh hoạt cao, nhu cầu sử dụng ngắn hạn, hoặc biến động lớn.
 
 - **Reserved Instances**:
 
-  - **Standard Reserved Instances**: This type of EC2 allows users to pre-order to reserve a spot for virtual machine usage and commit to paying for the usage over a period ranging from 1 to 3 years. Typically used to stabilize costs for applications with continuous usage needs and medium to high usage requirements.
+  - **Standard Reserved Instances**: Loại EC2 này cho phép người dùng đặt trước để giữ chỗ cho việc sử dụng máy ảo và cam kết trả phí cho việc sử dụng trong khoảng thời gian từ 1 đến 3 năm. Thông thường được sử dụng để ổn định chi phí cho các ứng dụng có nhu cầu sử dụng liên tục và yêu cầu sử dụng từ trung bình đến cao.
 
-  - **Convertible Reserved Instances**: Similar to the Standard Reserved Instances, but with a difference: users can convert this instance type to another type to meet the requirements of different applications.
+  - **Convertible Reserved Instances**: Tương tự như các Standard Reserved Instances, nhưng có một sự khác biệt: người dùng có thể chuyển đổi loại phiên bản này sang loại khác để đáp ứng yêu cầu của các ứng dụng khác nhau.
 
-- **Spot Instances**: This type of EC2 allows users to bid on virtual machine usage prices based on current market rates. When the bidding price is more competitive than the pre-ordered price, Spot Instances will be used. However, when the price goes back up, Spot Instances might get terminated.
+- **Spot Instances**: Loại EC2 này cho phép người dùng đấu giá giá cả cho việc sử dụng máy ảo dựa trên tỷ lệ giá cả hiện tại trên thị trường. Khi giá đấu giá cạnh tranh hơn giá đã đặt trước, các Spot Instances sẽ được sử dụng. Tuy nhiên, khi giá tăng trở lại, các Spot Instances có thể bị kết thúc.
 
 ## Payment Types for Reserved Instances
 
-- **Partial Upfront**: This is a payment method for Reserved Instances where users must make an upfront payment at a discounted rate and then pay for the usage for the remaining duration of the reservation.
+- **Partial Upfront**: Đây là phương pháp thanh toán cho các phiên bản Đã Đặt Trước (Reserved Instances) nơi người dùng phải thanh toán trước một khoản tiền với mức giá giảm và sau đó thanh toán cho việc sử dụng trong phần còn lại của thời gian đặt trước.
 
-- **No Upfront**: This type of Reserved Instances does not require any upfront payment. However, the discount rate will be lower compared to Full Upfront and Partial Upfront.
+- **No Upfront**: Loại phiên bản Đã Đặt Trước này không yêu cầu thanh toán trước. Tuy nhiên, mức giảm giá sẽ thấp hơn so với Thanh toán Trước Toàn Bộ và Thanh toán Trước Một Phần
 
-- **Deferred**: This type of Reserved Instances allows users to complete the upfront payment at the end of the reservation period. Before starting to use the Reserved Instances, users only need to pay a small amount and must pay the remaining amount before the reservation period ends.
+- **Deferred**: Loại phiên bản Đã Đặt Trước này cho phép người dùng hoàn tất việc thanh toán trước vào cuối thời gian đặt trước. Trước khi bắt đầu sử dụng các phiên bản Đã Đặt Trước, người dùng chỉ cần phải thanh toán một số tiền nhỏ và phải thanh toán số tiền còn lại trước khi kết thúc thời gian đặt trước.
 
-- **All Upfront**: This is a prepayment method for Reserved Instances where users must pay the entire reservation cost before starting to use the Reserved Instances. With this type, the virtual machine usage cost will be most significantly discounted.
+- **All Upfront**: Đây là phương pháp thanh toán trước cho các phiên bản Đã Đặt Trước nơi người dùng phải trả toàn bộ chi phí đặt trước trước khi bắt đầu sử dụng các phiên bản Đã Đặt Trước. Với loại này, chi phí sử dụng máy ảo sẽ được giảm giá một cách đáng kể nhất.
 
 Best discount type: `All upfront payment for a 3-year term purchase`.
 
 ## Cost Allocation Tags
 
-Cost allocation tags are a feature of AWS that allows you to tag your resources in AWS with labels (tags) to categorize and track the costs of those resources. The tag attached to a resource can contain information about its usage purpose, priority, location classification, project priority, etc.
+Nhãn phân bổ chi phí là một tính năng của AWS cho phép bạn đánh dấu (tag) các tài nguyên của mình trên AWS với các nhãn để phân loại và theo dõi chi phí của những tài nguyên đó. Nhãn đính kèm vào một tài nguyên có thể chứa thông tin về mục đích sử dụng, ưu tiên, phân loại địa điểm, ưu tiên dự án, v.v.
 
-Tagging these resources helps you gain clarity on the costs of each resource, groups of resources, or your entire AWS infrastructure. It also assists you in tracking projects, distributing costs, and managing resources more effectively. Cost allocation tags are a critical tool in managing your expenses on the AWS platform.
+Việc đánh dấu những tài nguyên này giúp bạn có cái nhìn rõ ràng về chi phí của từng tài nguyên, các nhóm tài nguyên, hoặc toàn bộ cơ sở hạ tầng AWS của bạn. Nó cũng hỗ trợ bạn trong việc theo dõi các dự án, phân bổ chi phí, và quản lý tài nguyên một cách hiệu quả hơn. Nhãn phân bổ chi phí là một công cụ quan trọng trong việc quản lý chi tiêu của bạn trên nền tảng AWS.
 
 ## Storage
 
-There are two types of EC2 storage in Amazon Web Services (AWS):
+- **Instance Store**: Là lưu trữ trên đĩa cứng cục bộ của máy ảo EC2, được sử dụng cho các ứng dụng có thể chấp nhận mất dữ liệu và yêu cầu tốc độ cao. Tuy nhiên, dữ liệu sẽ bị mất nếu phiên bản EC2 bị kết thúc hoặc gặp sự cố.
 
-- **Instance Store**: Storage on the local disk of the EC2 virtual machine used for applications that can tolerate data loss and require high speed. However, data will be lost if the EC2 instance is terminated or faces an issue.
+- **Elastic Block Store (EBS)**: Là một dịch vụ lưu trữ block được sử dụng để lưu trữ dữ liệu trên phần cứng riêng biệt, đảm bảo tính liên tục và khả năng sao lưu. EBS có thể được gắn vào và tách ra khỏi các phiên bản EC2 và có nhiều loại khác nhau, bao gồm EBS GP2, EBS Provisioned IOPS, EBS Magnetic, và EBS Throughput Optimized HDD. Lưu trữ dữ liệu trên phần cứng riêng biệt của AWS và gắn vào các phiên bản EC2. Nó cung cấp hiệu suất cao, tính liên tục và khả năng sao lưu. EBS được sử dụng cho các ứng dụng yêu cầu tính toàn vẹn dữ liệu và mất dữ liệu ít hơn.
 
-- **Elastic Block Store (EBS)**: A block storage service used to store data on separate hardware, ensuring continuity and backup capabilities. EBS can be attached and detached from EC2 instances and comes in various types, including EBS GP2, EBS Provisioned IOPS, EBS Magnetic, and EBS Throughput Optimized HDD.
+- **Elastic File System (EFS)**:Lưu trữ dữ liệu qua nhiều phiên bản EC2 và chia sẻ nó qua mạng. Nó cung cấp khả năng mở rộng linh hoạt và quản lý dễ dàng cho các ứng dụng cần chia sẻ dữ liệu qua nhiều phiên bản EC2. EFS có tính năng tự phục hồi và đảm bảo tính toàn vẹn dữ liệu.
 
-The differences between EBS and EFS are:
-
-- **Elastic Block Store (EBS)**: Stores data on AWS's separate hardware and attaches to EC2 instances. It offers high performance, continuity, and backup capabilities. EBS is utilized for applications that require data integrity and lesser data loss.
-
-- **Elastic File System (EFS)**: Stores data across multiple EC2 instances and shares it over the network. It provides flexible scalability and easy management for applications that need data sharing across multiple EC2 instances. EFS features self-recovery and ensures data integrity.
-
-In essence, EBS is used for applications storing data on a single EC2 server, while EFS is utilized for applications sharing data across multiple EC2 servers.
+Về bản chất, EBS được sử dụng cho các ứng dụng lưu trữ dữ liệu trên một máy chủ EC2 duy nhất, trong khi EFS được sử dụng cho các ứng dụng chia sẻ dữ liệu qua nhiều máy chủ EC2.
 
 ## Types of EBS
 
-| EBS Type                 | Cost per GB/month                                           | Max Performance (IOPS) | Max Data Transfer Speed | Main Feature                                               |
-| ------------------------ | ------------------------------------------------------------ | ----------------------- | ----------------------- | ---------------------------------------------------------- |
-| GP2 (SSD)                | $0.10 USD                                                   | 16,000 IOPS             | 250 MB/s               | General-purpose needs, supports burstable performance      |
-| Provisioned IOPS (SSD)   | $0.125 - $0.185 USD (depending on the requested IOPS)       | 64,000 IOPS             | 1,000 MB/s             | For high-performance applications                          |
-| Magnetic                 | $0.05 USD                                                   | 40-200 IOPS             | 100 MB/s               | Low-cost storage or applications with low performance needs|
-| Throughput Optimized HDD | $0.045 USD                                                  | N/A                     | 500 MB/s               | For applications requiring large data processing           |
+| EBS Type                 | Cost per GB/month                                     | Max Performance (IOPS) | Max Data Transfer Speed | Main Feature                                                |
+| ------------------------ | ----------------------------------------------------- | ---------------------- | ----------------------- | ----------------------------------------------------------- |
+| GP2 (SSD)                | $0.10 USD                                             | 16,000 IOPS            | 250 MB/s                | General-purpose needs, supports burstable performance       |
+| Provisioned IOPS (SSD)   | $0.125 - $0.185 USD (depending on the requested IOPS) | 64,000 IOPS            | 1,000 MB/s              | For high-performance applications                           |
+| Magnetic                 | $0.05 USD                                             | 40-200 IOPS            | 100 MB/s                | Low-cost storage or applications with low performance needs |
+| Throughput Optimized HDD | $0.045 USD                                            | N/A                    | 500 MB/s                | For applications requiring large data processing            |
 
 Explanation:
 
@@ -66,14 +60,15 @@ Explanation:
 
 ## EBS Types
 
-| EBS Type                 | Cost per GB/month                                           | Maximum IOPS           | Maximum Data Transfer Rate | Key Feature                                           |
-| ------------------------ | ------------------------------------------------------------ | ----------------------- | -------------------------- | ------------------------------------------------------|
-| GP2 (SSD)                | $0.10 USD                                                   | 16,000 IOPS            | 250 MB/s                  | General purpose, supports burstable performance       |
-| Provisioned IOPS (SSD)   | $0.125 - $0.185 USD (depends on required IOPS)              | 64,000 IOPS            | 1,000 MB/s                | For high-performance applications                     |
-| Magnetic                 | $0.05 USD                                                   | 40-200 IOPS            | 100 MB/s                  | Low-cost storage or applications with low performance |
-| Throughput Optimized HDD | $0.045 USD                                                  | N/A                    | 500 MB/s                  | For big data processing applications                 |
+| EBS Type                 | Cost per GB/month                              | Maximum IOPS | Maximum Data Transfer Rate | Key Feature                                           |
+| ------------------------ | ---------------------------------------------- | ------------ | -------------------------- | ----------------------------------------------------- |
+| GP2 (SSD)                | $0.10 USD                                      | 16,000 IOPS  | 250 MB/s                   | General purpose, supports burstable performance       |
+| Provisioned IOPS (SSD)   | $0.125 - $0.185 USD (depends on required IOPS) | 64,000 IOPS  | 1,000 MB/s                 | For high-performance applications                     |
+| Magnetic                 | $0.05 USD                                      | 40-200 IOPS  | 100 MB/s                   | Low-cost storage or applications with low performance |
+| Throughput Optimized HDD | $0.045 USD                                     | N/A          | 500 MB/s                   | For big data processing applications                  |
 
 **Explanation**:
+
 - **GP2 (SSD)**: For general requirements with burstable performance capabilities.
 - **Provisioned IOPS (SSD)**: For applications requiring high performance and data integrity.
 - **Magnetic**: For applications with low performance requirements wanting to save on costs.
@@ -81,20 +76,15 @@ Explanation:
 
 ## RAID
 
-RAID stands for "Redundant Array of Independent Disks." It's a data storage technique used to improve the reliability and performance of storage systems using multiple hard drives.
+RAID viết tắt của "Redundant Array of Independent Disks," là một kỹ thuật lưu trữ dữ liệu được sử dụng để cải thiện độ tin cậy và hiệu năng của các hệ thống lưu trữ sử dụng nhiều ổ cứng.
 
-The most common RAID types include:
+Các loại RAID phổ biến nhất bao gồm:
 
-- **RAID 0**: Creates a virtual drive by merging two or more physical drives into a group. Data is split into small segments and stored on different drives. RAID 0 lacks data recovery capabilities if a drive fails but offers higher read/write speeds compared to a single drive.
+- **RAID 0**: Tạo một ổ đĩa ảo bằng cách kết hợp hai hoặc nhiều ổ đĩa vật lý thành một nhóm. Dữ liệu được chia thành các phần nhỏ và lưu trữ trên các ổ đĩa khác nhau. RAID 0 không có khả năng khôi phục dữ liệu nếu một ổ đĩa bị hỏng nhưng lại có tốc độ đọc/ghi cao hơn so với một ổ đĩa đơn.
 
-- **RAID 1**: Uses two or more identical drives and mirrors data from one drive to another. RAID 1 can recover data if a drive fails but is costlier than RAID 0 and offers lower read/write speeds.
+- **RAID 1**: Sử dụng hai hoặc nhiều ổ đĩa giống nhau và sao chép dữ liệu từ một ổ đĩa này sang ổ đĩa kia. RAID 1 có thể khôi phục dữ liệu nếu một ổ đĩa bị hỏng nhưng lại có chi phí cao hơn và tốc độ đọc/ghi thấp hơn so với RAID 0.
 
-- **RAID 5**: Uses at least three physical drives and stores parity information across different drives. RAID 5 can recover data if one drive fails and offers relatively high read/write speeds.
-
-- **RAID 6**: Similar to RAID 5 but uses at least four drives to store parity information, enhancing data recovery capabilities compared to RAID 5.
-
-- **RAID 10 (or RAID 1+0)**: A combination of RAID 1 and RAID 0, uses at least four drives and splits data into segments, which are then mirrored onto different drives. RAID 10 offers excellent data recovery capabilities and high read/write speeds, but it's pricier compared to other RAID techniques.
-
+- **RAID 10 (or RAID 1+0)**:Là sự kết hợp của RAID 1 và RAID 0, sử dụng ít nhất bốn ổ đĩa và chia dữ liệu thành các phần, sau đó sao chép các phần này sang các ổ đĩa khác nhau. RAID 10 có khả năng khôi phục dữ liệu xuất sắc và tốc độ đọc/ghi cao, nhưng lại có giá cao hơn so với các kỹ thuật RAID khác.
 
 ## AWS Lambda
 

@@ -4,8 +4,6 @@ title: Functions
 
 ## Regular Functions
 
-Basic operations in any application. For instance, calculating the total price of items in a shopping cart.
-
 ```js
 function calculateTotal(items) {
   let total = 0;
@@ -18,8 +16,6 @@ function calculateTotal(items) {
 
 ## Function Expressions
 
-Event handlers in web applications.
-
 ```js
 const handleClick = function (event) {
   console.log("Button clicked:", event.target);
@@ -29,8 +25,6 @@ button.addEventListener("click", handleClick);
 
 ## Arrow Functions
 
-Short callback functions, especially in array methods like map, filter, etc.
-
 ```js
 const numbers = [1, 2, 3, 4];
 const doubled = numbers.map((num) => num * 2);
@@ -38,7 +32,7 @@ const doubled = numbers.map((num) => num * 2);
 
 ## Immediately Invoked Function Expression (IIFE)
 
-Module encapsulation in older JavaScript codes to prevent polluting the global scope.
+Đóng gói module trong các mã JavaScript cũ hơn để ngăn tràn lan không gian toàn cục.
 
 ```js
 (function () {
@@ -48,8 +42,6 @@ Module encapsulation in older JavaScript codes to prevent polluting the global s
 ```
 
 ## Generator Functions
-
-Producing values on the fly without storing the entire sequence in memory. For example, generating an infinite Fibonacci sequence.
 
 ```js
 function* fibonacci() {
@@ -63,8 +55,6 @@ function* fibonacci() {
 
 ## Async Functions
 
-Fetching data from an API.
-
 ```js
 async function fetchUserData(userId) {
   const response = await fetch(`https://api.example.com/users/${userId}`);
@@ -75,8 +65,6 @@ async function fetchUserData(userId) {
 
 ## Named vs. Anonymous Functions
 
-One-time operations like setTimeout.
-
 ```js
 setTimeout(function () {
   console.log("Executed after 2 seconds");
@@ -85,8 +73,6 @@ setTimeout(function () {
 
 ## Pure Functions
 
-Predictable operations in functional programming. Like, getting a user's full name.
-
 ```js
 function getFullName(firstName, lastName) {
   return `${firstName} ${lastName}`;
@@ -94,8 +80,6 @@ function getFullName(firstName, lastName) {
 ```
 
 ## First-Class Functions
-
-A programming language is said to have First-Class Functions when functions in that language are treated like any other variable
 
 ```js
 const users = [
@@ -133,7 +117,7 @@ const myCar = new Car("Toyota", "Corolla");
 
 ## Function Overloading
 
-TypeScript supports function overloading, where multiple function types are declared for the same function. The implementation must be compatible with all overloads.
+TypeScript hỗ trợ quá tải hàm (function overloading), nơi mà nhiều kiểu hàm được khai báo cho cùng một hàm. Cài đặt phải tương thích với tất cả các kiểu quá tải.
 
 ```ts
 function combine(a: string, b: string): string;
@@ -148,7 +132,7 @@ function combine(a: any, b: any): any {
 
 ## High Order Functions
 
-High Order Functions (HOF) are a fundamental concept in functional programming. A High Order Function is any function which takes one or more functions as arguments, returns a function, or both.
+Hàm Bậc Cao (High Order Functions - HOF) là một khái niệm cơ bản trong lập trình hàm. Một Hàm Bậc Cao là bất kỳ hàm nào nhận một hoặc nhiều hàm làm đối số, trả về một hàm, hoặc cả hai.
 
 ```js
 function greet(whom) {
@@ -163,7 +147,7 @@ greetJohn("Hello"); // Outputs: Hello, John!
 
 ## this, call, apply and bind
 
-In JavaScript, the value of this is determined by how a function is called, not where the function is defined. It can be a source of confusion, especially for those coming from other programming languages.
+Trong JavaScript, giá trị của this được xác định bằng cách gọi một hàm, không phải là nơi mà hàm được định nghĩa. Điều này có thể gây hiểu nhầm, đặc biệt đối với những người đến từ các ngôn ngữ lập trình khác.
 
 ```js
 const person = {
@@ -176,7 +160,7 @@ const person = {
 person.greet(); // Hello, Alice
 ```
 
-The call method allows you to call a function with a given this value and arguments provided individually.
+Phương thức `call` cho phép bạn gọi một hàm với giá trị this và các đối số cung cấp một cách riêng lẻ.
 
 ```js
 function greet(arg1, arg2) {
@@ -188,7 +172,7 @@ const person = { name: "Alice" };
 greet.call(person, "Hello,", "How are you?"); // Hello, Alice How are you?
 ```
 
-The apply method is similar to call, but you pass the arguments as an array.
+Phương thức `apply` tương tự như call, nhưng bạn truyền các đối số dưới dạng một mảng.
 
 ```js
 function greet(arg1, arg2) {
@@ -200,7 +184,7 @@ const person = { name: "Alice" };
 greet.apply(person, ["Hello,", "How are you?"]); // Hello, Alice How are you?
 ```
 
-The bind method creates a new function that, when called, has its this keyword set to the provided value. It essentially binds a function to an object.
+Phương thức `bind` tạo ra một hàm mới mà khi gọi, từ khóa this được thiết lập với giá trị đã cung cấp. Thực chất, nó liên kết một hàm với một đối tượng.
 
 ```js
 function greet() {
@@ -215,7 +199,7 @@ boundGreet(); // Hello, Alice
 
 ## Class
 
-In both JavaScript and TypeScript, a class is a blueprint for creating objects with shared properties and methods. Classes encapsulate data for an object and provide a means to manipulate that data. They support inheritance, one of the fundamental aspects of object-oriented programming.
+Cả trong JavaScript và TypeScript, một lớp (class) là một bản thiết kế để tạo ra các đối tượng có các thuộc tính và phương thức chung. Lớp đóng gói dữ liệu cho một đối tượng và cung cấp cách thức để thao tác với dữ liệu đó. Chúng hỗ trợ tính kế thừa, một trong các khía cạnh cơ bản của lập trình hướng đối tượng.
 
 ```ts
 class Person {

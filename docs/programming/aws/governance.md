@@ -4,34 +4,33 @@ title: Management & Governance
 
 ## Well-Architected infrastructure
 
-The AWS Well-Architected Framework is a guide for designing trustworthy architectures for applications running on the AWS platform. It assists customers in comprehensively assessing the alignment of their current architectures with the standards and best practices defined by AWS.
+Khung kiến trúc AWS Well-Architected là một hướng dẫn để thiết kế các kiến trúc đáng tin cậy cho các ứng dụng chạy trên nền tảng AWS. Nó hỗ trợ khách hàng đánh giá toàn diện việc phù hợp của kiến trúc hiện tại của họ với các tiêu chuẩn và thực tiễn tốt nhất được định rõ bởi AWS.
 
-The main pillars of the Well-Architected Framework include:
+Các trụ cột chính của Khung kiến trúc Well-Architected bao gồm:
 
-- **Operational Excellence**: This pillar focuses on ensuring that systems are deployed and managed effectively to meet business and customer demands.
+- **Operational Excellence**: Trụ cột này tập trung vào việc đảm bảo rằng các hệ thống được triển khai và quản lý hiệu quả để đáp ứng nhu cầu kinh doanh và khách hàng.
 
-- **Security**: This pillar emphasizes ensuring the security of applications and data managed on the AWS platform, encompassing both foundational security solutions and advanced security technologies.
+- **Security**: Trụ cột này nhấn mạnh việc đảm bảo an ninh của các ứng dụng và dữ liệu được quản lý trên nền tảng AWS, bao gồm cả các giải pháp an ninh cơ bản và các công nghệ an ninh tiên tiến.
 
-- **Reliability**: This section centers on guaranteeing that applications consistently operate correctly, with minimal interruptions in the event of incidents.
+- **Reliability**: Phần này tập trung vào việc đảm bảo rằng các ứng dụng hoạt động đều đặn và đúng cách, với ít gián đoạn nhất trong trường hợp xảy ra sự cố.
 
-- **Performance Efficiency**: This pillar concentrates on ensuring that applications are deployed and managed with optimal performance and efficient resource utilization.
+- **Performance Efficiency**: Trụ cột này tập trung vào việc đảm bảo rằng các ứng dụng được triển khai và quản lý với hiệu suất tối ưu và sử dụng tài nguyên hiệu quả.
 
-- **Cost Optimization**: This area zeroes in on making sure applications are deployed and managed at minimal cost while ensuring efficient resource usage.
-
+- **Cost Optimization**:Phần này chỉ rõ việc đảm bảo rằng các ứng dụng được triển khai và quản lý với chi phí tối thiểu trong khi vẫn đảm bảo sử dụng tài nguyên hiệu quả.
 
 ## Support plan
 
-AWS offers different Support Plans to assist users in using AWS services, including:
+AWS cung cấp các gói Hỗ trợ khác nhau để hỗ trợ người dùng trong việc sử dụng các dịch vụ AWS, bao gồm:
 
-- **Basic Support**: This is a free support package provided to all AWS customers. It includes email support utilities, access to forums, and support documentation.
+- **Basic Support**: Đây là gói hỗ trợ miễn phí được cung cấp cho tất cả khách hàng AWS. Nó bao gồm các tiện ích hỗ trợ qua email, quyền truy cập vào diễn đàn và tài liệu hỗ trợ.
 
-- **Developer Support**: This package helps developers address technical issues when using AWS services. This package includes email support utilities, access to forums, tutorial documentation, and direct chat support.
+- **Developer Support**: TGói này giúp các nhà phát triển giải quyết các vấn đề kỹ thuật khi sử dụng các dịch vụ AWS. Gói này bao gồm các tiện ích hỗ trợ qua email, quyền truy cập vào diễn đàn, tài liệu hướng dẫn và hỗ trợ trò chuyện trực tiếp.
 
-- **Business Support**: This is a more premium support package, providing 24/7/365 technical support, prioritized support tickets, assigned support specialists, and many other features.
+- **Business Support**: Đây là một gói hỗ trợ cao cấp hơn, cung cấp hỗ trợ kỹ thuật 24/7/365, ưu tiên các yêu cầu hỗ trợ, chỉ định các chuyên gia hỗ trợ và nhiều tính năng khác.
 
-- **Enterprise Support**: This is AWS's most professional support package. This service package offers advanced features like customized support, assigned technical experts, system health monitoring, and reporting and analysis options.
+- **Enterprise Support**: Đây là gói hỗ trợ chuyên nghiệp nhất của AWS. Gói dịch vụ này cung cấp các tính năng nâng cao như hỗ trợ tùy chỉnh, chỉ định các chuyên gia kỹ thuật, giám sát tình trạng hệ thống và các tùy chọn báo cáo và phân tích.
 
-In summary, AWS offers a range of different support packages to meet the needs and budgets of each customer, from customers needing basic support to large enterprises requiring customized and advanced support.
+Tóm lại, AWS cung cấp một loạt các gói hỗ trợ khác nhau để đáp ứng nhu cầu và ngân sách của từng khách hàng, từ khách hàng cần hỗ trợ cơ bản đến các doanh nghiệp lớn yêu cầu hỗ trợ tùy chỉnh và nâng cao.
 
 | Plan Name                           | Basic                                        | Developer                              | Business                                           | Enterprise                                                                       |
 | ----------------------------------- | -------------------------------------------- | -------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -47,21 +46,21 @@ In summary, AWS offers a range of different support packages to meet the needs a
 
 ### Trusted Advisor
 
-AWS Trusted Advisor is a service provided by Amazon Web Services (AWS) to help its customers optimize their AWS environment. It utilizes the knowledge and experience accumulated from AWS to provide recommendations on resources, performance, security, and cost.
+AWS Trusted Advisor là một dịch vụ được cung cấp bởi Amazon Web Services (AWS) để giúp khách hàng tối ưu hóa môi trường AWS của mình. Nó sử dụng kiến thức và kinh nghiệm tích lũy từ AWS để cung cấp các khuyến nghị về tài nguyên, hiệu suất, bảo mật và chi phí.
 
-AWS Trusted Advisor operates by automatically scanning your AWS environment and comparing it to predefined best practices. It then provides recommendations to improve operations, reduce costs, and enhance the availability of the system.
+AWS Trusted Advisor hoạt động bằng cách tự động quét môi trường AWS của bạn và so sánh nó với các nguyên tắc tốt nhất được định trước. Sau đó, nó cung cấp các khuyến nghị để cải thiện hoạt động, giảm chi phí và tăng cường khả năng sẵn sàng của hệ thống.
 
-The main components of Trusted Advisor include:
+Các thành phần chính của Trusted Advisor bao gồm:
 
-- Cost Optimization: This section checks your resources on AWS and provides recommendations on how to optimize resource usage to reduce costs.
+- Cost Optimization: Phần này kiểm tra tài nguyên của bạn trên AWS và cung cấp các khuyến nghị về cách tối ưu hóa việc sử dụng tài nguyên để giảm chi phí.
 
-- Performance: This section reviews the performance of your AWS system and provides recommendations on how to optimize it.
+- Performance: Phần này xem xét hiệu suất của hệ thống AWS của bạn và cung cấp các khuyến nghị về cách tối ưu hóa nó.
 
-- Security: This section checks your security measures on the AWS platform and provides recommendations on how to enhance security.
+- Security: Phần này kiểm tra các biện pháp bảo mật của bạn trên nền tảng AWS và cung cấp các khuyến nghị về cách tăng cường bảo mật.
 
-- Fault Tolerance: This section reviews the availability and recovery capabilities of your AWS resources and provides recommendations on how to optimize readiness.
+- Fault Tolerance: Phần này xem xét khả năng sẵn sàng và phục hồi của các tài nguyên AWS của bạn và cung cấp các khuyến nghị về cách tối ưu hóa sự sẵn sàng.
 
-- Service Limits: This section checks your service limits on AWS and provides recommendations on how to optimize resource usage to avoid exceeding those limits.
+- Service Limits: Phần này kiểm tra giới hạn dịch vụ của bạn trên AWS và cung cấp các khuyến nghị về cách tối ưu hóa việc sử dụng tài nguyên để tránh vượt quá các giới hạn đó.
 
 ## AWS Organizations
 

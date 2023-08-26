@@ -4,7 +4,7 @@ title: Scopes
 
 ## Global Scope
 
-A variable declared outside any function or block belongs to the global scope. Every script and function can access it.
+Một biến được khai báo bên ngoài bất kỳ hàm hoặc khối nào thuộc phạm vi toàn cầu (global scope). Mọi đoạn mã và hàm có thể truy cập vào nó.
 
 ```js
 let globalVar = "I'm globally scoped";
@@ -18,7 +18,7 @@ showGlobalVar(); // Outputs: "I'm globally scoped"
 
 ## Local (or Function) Scope
 
-Variables declared within a function have local scope. They can't be accessed outside that function.
+Biến được khai báo bên trong một hàm sẽ có phạm vi cục bộ (local scope). Chúng không thể truy cập bên ngoài hàm đó.
 
 ```js
 function localFunction() {
@@ -32,7 +32,7 @@ localFunction(); // Outputs: "I'm locally scoped"
 
 ## Block Scope (Introduced with ES6)
 
-With the introduction of let and const in ES6, JavaScript gained block-level scoping. This means that variables declared with let or const inside a block (like inside an if statement or a for loop) are only accessible within that block.
+Với sự ra đời của let và const trong ES6, JavaScript đã có phạm vi theo khối. Điều này có nghĩa rằng các biến được khai báo với let hoặc const bên trong một khối (như bên trong câu lệnh if hoặc vòng lặp for) chỉ có thể truy cập trong khối đó.
 
 ```js
 if (true) {
@@ -45,7 +45,7 @@ if (true) {
 
 ## Module Scope (With ES6 Modules)
 
-When using ES6 modules, top-level variables (those not exported) have module scope. They're local to the module and aren't accessible in other modules unless explicitly exported.
+Khi sử dụng các module ES6, các biến cấp cao (những biến không được xuất) có phạm vi module. Chúng cục bộ cho module và không thể truy cập vào các module khác trừ khi được xuất cụ thể.
 
 ```js
 let moduleVar = "I'm module-scoped";
@@ -62,7 +62,7 @@ showVar(); // Outputs: "I'm module-scoped"
 
 ## Lexical Scope (Closures)
 
-Functions in JavaScript form closures. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). It gives you access to the outer function's scope from an inner function.
+Trong JavaScript, các hàm tạo thành các closure. Một closure là sự kết hợp của một hàm đóng gói cùng với các tham chiếu đến trạng thái xung quanh của nó (môi trường từ vựng). Nó cho phép bạn truy cập vào phạm vi của hàm bên ngoài từ một hàm bên trong.
 
 ```js
 function outerFunction() {

@@ -4,21 +4,21 @@ title: Cloud Concept
 
 ## Benefis of Cloud Computing
 
-In converting infrastructure and applications from on-premises data centers to AWS, one of the significant financial opportunities is replacing variable operating costs (OPEX) with low initial capital costs (CAPEX).
+Khi chuyển đổi cơ sở hạ tầng và ứng dụng từ các trung tâm dữ liệu tại chỗ (on-premises) sang AWS, một trong những cơ hội tài chính quan trọng là thay thế chi phí hoạt động biến đổi (OPEX) bằng chi phí vốn ban đầu thấp (CAPEX).
 
-With on-premises infrastructure, daily operations related to maintenance, upgrades, and expanding the infrastructure are calculated as OPEX. However, when moving to AWS, these costs can be replaced by low initial capital costs to build and deploy new infrastructure, and then related operating costs will be minimized.
+Với cơ sở hạ tầng tại chỗ, các hoạt động hàng ngày liên quan đến bảo dưỡng, nâng cấp, và mở rộng cơ sở hạ tầng được tính toán như là OPEX. Tuy nhiên, khi chuyển sang AWS, những chi phí này có thể được thay thế bằng chi phí vốn ban đầu thấp để xây dựng và triển khai cơ sở hạ tầng mới, sau đó chi phí hoạt động liên quan sẽ được giảm thiểu.
 
-Using AWS helps organizations save on non-fixed operating costs and minimize initial capital investment. By switching from OPEX to CAPEX, organizations can increase flexibility in managing costs, reduce initial capital investment, and enhance the ability to grow and expand rapidly.
+Sử dụng AWS giúp các tổ chức tiết kiệm được chi phí hoạt động không cố định và giảm thiểu đầu tư vốn ban đầu. Bằng cách chuyển từ OPEX sang CAPEX, các tổ chức có thể tăng cường linh hoạt trong việc quản lý chi phí, giảm đầu tư vốn ban đầu, và nâng cao khả năng phát triển và mở rộng nhanh chóng.
 
 ### OPEX vs CAPEX
 
-OPEX and CAPEX are two financial concepts in business management. Simply put, OPEX (Operational Expenditures) refers to the costs associated with the day-to-day operations of an organization, such as electricity costs, rent, employee salaries, expenses for purchasing components, supplies, and so forth. On the other hand, CAPEX (Capital Expenditures) pertains to costs associated with investing in an organization's fixed assets, like the expenses for construction, purchasing equipment, machinery, etc.
+OPEX và CAPEX là hai khái niệm tài chính trong quản lý doanh nghiệp. Đơn giản, OPEX (Chi phí Hoạt động) ám chỉ các chi phí liên quan đến hoạt động hàng ngày của một tổ chức, chẳng hạn như chi phí điện, tiền thuê, lương nhân viên, chi phí mua sắm linh kiện, nguyên vật liệu, và cetera. Ngược lại, CAPEX (Chi phí Vốn) liên quan đến các chi phí đầu tư vào tài sản cố định của tổ chức, như chi phí xây dựng, mua sắm thiết bị, máy móc, v.v.
 
-A more illustrative way to understand this is to compare the cost of buying a car with the costs of maintaining it. The cost of buying a new car can be seen as an initial capital expenditure (CAPEX), while expenses for gasoline, maintenance, and regular repairs are considered operating costs (OPEX).
+Một cách minh họa dễ hiểu hơn là so sánh chi phí mua xe với chi phí duy trì nó. Chi phí mua một chiếc xe mới có thể được xem như một chi phí vốn ban đầu (CAPEX), trong khi các chi phí cho xăng, bảo dưỡng, và sửa chữa định kỳ được coi là chi phí hoạt động (OPEX).
 
-In the realm of information technology, costs for software, hardware, and cloud services might be considered OPEX, whereas purchasing new servers or networking equipment might be categorized as CAPEX.
+Trong lĩnh vực công nghệ thông tin, chi phí cho phần mềm, phần cứng, và dịch vụ đám mây có thể được coi là OPEX, trong khi việc mua máy chủ mới hoặc thiết bị mạng có thể được phân loại như là CAPEX.
 
-From a business perspective, the choice between OPEX and CAPEX influences how an organization manages and allocates its budget and resources. Utilizing cloud services from AWS helps reduce initial capital expenditures (CAPEX) and shift towards variable operating expenses (OPEX), enabling organizations to save on costs and enhance financial management flexibility.
+Từ góc độ doanh nghiệp, việc lựa chọn giữa OPEX và CAPEX ảnh hưởng đến cách mà một tổ chức quản lý và phân bổ ngân sách và nguồn lực của mình. Sử dụng các dịch vụ đám mây từ AWS giúp giảm thiểu chi phí vốn ban đầu (CAPEX) và chuyển sang chi phí hoạt động biến đổi (OPEX), cho phép các tổ chức tiết kiệm chi phí và tăng cường linh hoạt trong quản lý tài chính.
 
 ## Shared responsibility model
 
@@ -41,15 +41,15 @@ From a business perspective, the choice between OPEX and CAPEX influences how an
 
 - Infrastructure as a Service (IaaS)
 
-IaaS delivers on-demand infrastructure resources, such as compute, storage, networking, and virtualization. With IaaS, the service provider owns and operates the infrastructure, but customers will need to purchase and manage software, such as operating systems, middleware, data, and applications.
+IaaS (Infrastructure as a Service) cung cấp các tài nguyên cơ sở hạ tầng theo yêu cầu, chẳng hạn như tính toán, lưu trữ, mạng và ảo hóa. Với IaaS, nhà cung cấp dịch vụ sở hữu và vận hành cơ sở hạ tầng, nhưng khách hàng sẽ cần phải mua và quản lý phần mềm, chẳng hạn như hệ điều hành, phần mềm trung gian, dữ liệu và ứng dụng.
 
 - Platform as a Service (PaaS)
 
-PaaS delivers and manages hardware and software resources for developing, testing, delivering, and managing cloud applications. Providers typically offer middleware, development tools, and cloud databases within their PaaS offerings.
+PaaS (Platform as a Service) cung cấp và quản lý các tài nguyên phần cứng và phần mềm để phát triển, kiểm thử, cung cấp, và quản lý các ứng dụng đám mây. Các nhà cung cấp thường cung cấp phần mềm trung gian, công cụ phát triển, và cơ sở dữ liệu đám mây trong các dịch vụ PaaS của họ.
 
 - Software as a Service (SaaS)
 
-SaaS provides a full application stack as a service that customers can access and use. SaaS solutions often come as ready-to-use applications, which are managed and maintained by the cloud service provider.
+SaaS (Software as a Service) cung cấp toàn bộ ứng dụng dưới dạng dịch vụ mà khách hàng có thể truy cập và sử dụng. Các giải pháp SaaS thường là các ứng dụng sẵn sàng để sử dụng, được quản lý và duy trì bởi nhà cung cấp dịch vụ đám mây.
 
 ## Global infrastructure
 
@@ -87,12 +87,12 @@ SaaS provides a full application stack as a service that customers can access an
 
 ### Public cloud
 
-Public clouds deliver resources, such as compute, storage, network, develop-and-deploy environments, and applications over the internet. They are owned and run by third-party cloud service providers like AWS.
+Đám mây công cộng cung cấp các tài nguyên, chẳng hạn như tính toán, lưu trữ, mạng, môi trường phát triển và triển khai, cũng như ứng dụng thông qua internet. Chúng được sở hữu và vận hành bởi các nhà cung cấp dịch vụ đám mây bên thứ ba như AWS.
 
 ### Private cloud
 
-Private clouds are built, run, and used by a single organization, typically located on-premises. They provide greater control, customization, and data security but come with similar costs and resource limitations associated with traditional IT environments.
+Đám mây riêng được xây dựng, vận hành và sử dụng bởi một tổ chức duy nhất, thường được đặt tại các trung tâm dữ liệu nội bộ. Chúng cung cấp sự kiểm soát, tùy chỉnh và bảo mật dữ liệu tốt hơn nhưng cũng đi kèm với các chi phí và hạn chế tài nguyên tương tự như môi trường IT truyền thống.
 
 ### Hybrid cloud
 
-Environments that mix at least one private computing environment (traditional IT infrastructure or private cloud, including edge) with one or more public clouds are called hybrid clouds. They allow you to leverage the resources and services from different computing environments and choose which is the most optimal for the workloads.
+Các môi trường kết hợp ít nhất một môi trường tính toán riêng (cơ sở hạ tầng IT truyền thống hoặc đám mây riêng, bao gồm cả edge computing) với một hoặc nhiều đám mây công cộng được gọi là đám mây hỗn hợp (hybrid clouds). Chúng cho phép bạn tận dụng các tài nguyên và dịch vụ từ các môi trường tính toán khác nhau và lựa chọn môi trường nào là tối ưu nhất cho các tác vụ tính toán của bạn.
