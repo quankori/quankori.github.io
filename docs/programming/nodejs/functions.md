@@ -63,7 +63,7 @@ async function fetchUserData(userId) {
 }
 ```
 
-## Named vs. Anonymous Functions
+## Named & Anonymous Functions
 
 ```js
 setTimeout(function () {
@@ -147,7 +147,9 @@ greetJohn("Hello"); // Outputs: Hello, John!
 
 ## this, call, apply and bind
 
-Trong JavaScript, giá trị của this được xác định bằng cách gọi một hàm, không phải là nơi mà hàm được định nghĩa. Điều này có thể gây hiểu nhầm, đặc biệt đối với những người đến từ các ngôn ngữ lập trình khác.
+### this
+
+Trong JavaScript, từ khóa this là một biến đặc biệt cung cấp một cách để truy cập vào ngữ cảnh (context) mà đoạn mã đang thực thi. Giá trị của this phụ thuộc vào cách mà mã được gọi và nó có thể thay đổi trong quá trình thực thi.
 
 ```js
 const person = {
@@ -160,7 +162,15 @@ const person = {
 person.greet(); // Hello, Alice
 ```
 
-Phương thức `call` cho phép bạn gọi một hàm với giá trị this và các đối số cung cấp một cách riêng lẻ.
+```js
+function testFunc() {
+  console.log(this); // 'this' thường sẽ là `window` trong trình duyệt, `global` trong Node.js
+}
+```
+
+### call, apply, bind
+
+Phương thức `call` gọi một hàm và thiết lập giá trị của this trong hàm đó.
 
 ```js
 function greet(arg1, arg2) {
@@ -172,7 +182,17 @@ const person = { name: "Alice" };
 greet.call(person, "Hello,", "How are you?"); // Hello, Alice How are you?
 ```
 
-Phương thức `apply` tương tự như call, nhưng bạn truyền các đối số dưới dạng một mảng.
+```js
+function showDetails(age, country) {
+  console.log(`Name: ${this.name}, Age: ${age}, Country: ${country}`);
+}
+
+const person = { name: "Alice" };
+
+showDetails.call(person, 30, "USA"); // Output: "Name: Alice, Age: 30, Country: USA"
+```
+
+`apply` cũng giống như call, nhưng thay vì truyền các đối số một cách riêng biệt, bạn truyền vào một mảng các đối số.
 
 ```js
 function greet(arg1, arg2) {
@@ -196,6 +216,11 @@ const boundGreet = greet.bind(person);
 
 boundGreet(); // Hello, Alice
 ```
+
+`call` và `apply` đều gọi hàm ngay lập tức, nhưng `apply` cho phép bạn truyền đối số dưới dạng mảng.
+`bind` không gọi hàm ngay lập tức, nó tạo ra một hàm mới với giá trị của this và các đối số cố định, để gọi sau đó.
+
+Cả ba phương thức này đều rất hữu ích khi bạn cần thiết lập giá trị của this trong hàm, hoặc khi bạn muốn tái sử dụng một hàm với các đối số và ngữ cảnh (this) cụ thể.
 
 ## Class
 
@@ -224,4 +249,26 @@ class Person {
 
 const john = new Person("John", 25);
 john.g;
+```
+
+## Getter and setter
+
+**Getter (Phương thức lấy giá trị)**: Getter là một phương thức được sử dụng để trả về giá trị của một thuộc tính. Bạn có thể đặt tên phương thức giống tên thuộc tính mà bạn muốn truy cập.
+
+**Setter (Phương thức gán giá trị)**: Setter là một phương thức được sử dụng để gán giá trị cho một thuộc tính. Cũng giống như getter, bạn có thể đặt tên phương thức giống tên thuộc tính.
+
+```ts
+class Person {
+  constructor(private _firstName: string, private _lastName: string) {}
+
+  get fullName(): string {
+    return this._firstName + " " + this._lastName;
+  }
+
+  set fullName(name: string) {
+    const parts = name.split(" ");
+    this._firstName = parts[0];
+    this._lastName = parts[1];
+  }
+}
 ```

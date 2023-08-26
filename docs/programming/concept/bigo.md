@@ -4,11 +4,11 @@ title: Big O Notation
 
 ## Some common complexities
 
-O(n): Linear complexity. Consider the function that calculates the sum of numbers from 1 to n
+O(n): Độ phức tạp tuyến tính. Xem xét hàm tính tổng của các số từ 1 đến n.
 
-O(1): Constant complexity. It's also the problem of calculating the sum of numbers from 1 to n.
+O(1): Độ phức tạp hằng số. Đây cũng là bài toán tính tổng của các số từ 1 đến n.
 
-O(n²): Commonly occurs when there are two nested loops.
+O(n²): Thường xuất hiện khi có hai vòng lặp lồng nhau.
 
 ## The steps to calculate the complexity of an algorithm are
 
@@ -22,6 +22,6 @@ int sum(int n)
 }
 ```
 
-Based on the above annotations, in this case T = O(1) + n x O(1) + O(1) = n x c + d (using (3), consider O(1) + O(1) as d, where c, d are constants) = n (as mentioned above, n can be considered as +∞, using (4) to remove c, d). = O(n).
+Dựa trên các chú thích ở trên, trong trường hợp này T = O(1) + n x O(1) + O(1) = n x c + d (sử dụng (3), xem O(1) + O(1) như là d, trong đó c, d là hằng số) = n (như đã đề cập ở trên, n có thể coi như +∞, sử dụng (4) để loại bỏ c, d) = O(n).
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/5.png)

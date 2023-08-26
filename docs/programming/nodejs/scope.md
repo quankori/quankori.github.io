@@ -75,3 +75,58 @@ function outerFunction() {
 
 outerFunction(); // Outputs: "I'm in the outer function"
 ```
+
+## Closures
+
+Trong JavaScript, closure là một tính năng ngôn ngữ cho phép một hàm có quyền truy cập vào các biến từ ngữ cảnh mà hàm đó được tạo ra. Closure xuất hiện khi một hàm (được gọi là hàm "inner") được định nghĩa trong một hàm khác (được gọi là hàm "outer") và hàm inner này truy cập các biến của hàm outer.
+
+```js
+function outerFunction(outerVariable) {
+  return function innerFunction(innerVariable) {
+    console.log(`Outer Variable: ${outerVariable}`);
+    console.log(`Inner Variable: ${innerVariable}`);
+  };
+}
+
+const myClosure = outerFunction("outer"); // Tạo một closure
+
+myClosure("inner"); // Sử dụng closure
+
+// Outer Variable: outer
+// Inner Variable: inner
+```
+
+## Private Scope và Public Scope
+
+**Private Scope**: Trong phạm vi riêng tư, các biến và hàm chỉ có thể được truy cập và sử dụng bên trong cùng một "phạm vi" hoặc "đoạn mã" mà chúng được khai báo. Chúng không thể được truy cập từ các phạm vi khác, kể cả các đoạn mã khác trong cùng một tệp hoặc module, cho phép tương tác dễ dàng và chia sẻ dữ liệu và hàm giữa các phần khác nhau của chương trình.
+
+```js
+function Counter() {
+  let count = 0; // Biến count chỉ có thể truy cập trong hàm Counter
+
+  this.increment = function () {
+    count++;
+  };
+
+  this.getCount = function () {
+    return count;
+  };
+}
+
+const counter = new Counter();
+counter.increment();
+console.log(counter.getCount()); // Output: 1
+console.log(counter.count); // Output: undefined (vì count là biến riêng tư)
+```
+
+**Public Scope**: Trong phạm vi công khai, các biến và hàm có thể được truy cập từ bất kỳ nơi nào trong chương trình, bao gồm cả từ các module khác, đảm bảo tính bảo mật và ngăn ngừa việc sửa đổi không cần thiết từ các phạm vi bên ngoài.
+
+```js
+let globalVar = 42; // Biến globalVar có phạm vi công khai và có thể truy cập ở mọi nơi
+
+function printGlobal() {
+  console.log(globalVar);
+}
+
+printGlobal(); // Output: 42
+```

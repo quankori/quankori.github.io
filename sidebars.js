@@ -290,6 +290,11 @@ const sidebars = {
           id: "programming/nodejs/types-interfaces",
           label: "Types & Interfaces",
         },
+        {
+          type: "doc",
+          id: "programming/nodejs/loop",
+          label: "Loop",
+        },
       ],
     },
     {
@@ -311,6 +316,11 @@ const sidebars = {
       type: "doc",
       id: "cheatsheet/aws",
       label: "AWS CLI",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/javascript",
+      label: "JavaScript",
     },
     {
       type: "doc",
