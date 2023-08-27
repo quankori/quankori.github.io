@@ -2,7 +2,7 @@
 title: Functions
 ---
 
-## Regular Functions
+## Fucntion Declaration
 
 ```js
 function calculateTotal(items) {
@@ -271,4 +271,67 @@ class Person {
     this._lastName = parts[1];
   }
 }
+```
+
+## Hoisting JavaScript
+
+Trong JavaScript, "hoisting" là một khái niệm mô tả cách mà các khai báo biến và khai báo hàm được di chuyển (hoist) lên đầu phạm vi của nó trước khi mã code thực sự được thực thi. Điều này có nghĩa là bạn có thể sử dụng một biến hoặc gọi một hàm trước cả khi chúng được khai báo.
+
+Tuy nhiên, cần lưu ý rằng chỉ có khai báo biến và khai báo hàm mới được hoist, không phải các gán giá trị cho biến. Dưới đây là một ví dụ minh họa về hoisting:
+
+```js
+console.log(x); // Kết quả: undefined
+var x = 5;
+
+hoistedFunction(); // Kết quả: "Hello, hoisting!"
+function hoistedFunction() {
+  console.log("Hello, hoisting!");
+}
+```
+
+Trong ví dụ trên:
+
+1. Biến x được khai báo bằng var, và khi chúng ta cố gắng in giá trị của x trước khi gán giá trị cho nó, giá trị được trả về là undefined. Điều này xảy ra vì khai báo biến var x đã được hoist lên đầu phạm vi của nó, nhưng gán giá trị cho x vẫn chưa thực hiện.
+
+2. Hàm hoistedFunction được khai báo sau khi được gọi. Mặc dù vậy, hàm vẫn hoist lên đầu phạm vi của nó, cho phép chúng ta gọi hàm trước khi nó được khai báo trong mã code.
+
+Tuy nhiên, với cách khai báo biến bằng let và const, hoisting cũng xảy ra nhưng chúng sẽ không được gán giá trị ngay lập tức, mà sẽ ở trạng thái "temporal dead zone" cho đến khi đến phần mã code mà chúng được gán giá trị.
+
+Để tránh gây nhầm lẫn và lỗi trong mã code, hãy luôn khai báo biến và hàm trước khi sử dụng chúng, ngay cả khi hoisting có thể xảy ra.
+
+## Currying
+
+Currying là một kỹ thuật lập trình trong JavaScript (và các ngôn ngữ khác) mà cho phép bạn chuyển đổi một hàm có nhiều đối số thành một chuỗi các hàm mà mỗi hàm trong chuỗi chỉ nhận một đối số. Điều này cho phép bạn truyền đối số theo từng bước thay vì cùng một lúc.
+
+Một cách diễn đạt khác, currying biến một hàm có dạng `f(x, y)` thành một chuỗi các hàm `f(x)(y)`.
+
+Dưới đây là một ví dụ minh họa về currying trong JavaScript:
+
+```js
+// Hàm gốc có nhiều đối số
+function add(x, y) {
+  return x + y;
+}
+
+// Currying hàm add
+function curryAdd(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+
+const add5 = curryAdd(5);
+console.log(add5(3)); // Kết quả: 8
+```
+
+```js
+var add = function (a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+};
+console.log(add(2)(3)(4)); //output 9
+console.log(add(3)(4)(5)); //output 12
 ```

@@ -30,6 +30,27 @@ myPromise.then((result) => {
 });
 ```
 
+### Các loại Promise khác
+
+`Promise.race` và `Promise.any` cùng là các phương thức của đối tượng Promise trong JavaScript, nhưng chúng có mục đích và cách hoạt động khác nhau. Tương tự, `Promise.all` và `Promise.allSettled` cũng là hai phương thức khác nhau trong việc xử lý nhiều Promise. Dưới đây là sự so sánh giữa chúng:
+
+- `Promise.race` vs. `Promise.any`:
+
+**Promise.race**: Phương thức này nhận vào một mảng các Promise và trả về Promise mới. Promise này sẽ được giải quyết hoặc bị từ chối ngay khi một Promise trong mảng được giải quyết hoặc từ chối. Kết quả của Promise.race sẽ là kết quả của Promise đầu tiên hoàn thành.
+
+**Promise.any**: Đây là một phương thức mới được giới thiệu trong ES2021. Promise.any cũng nhận vào một mảng các Promise và trả về một Promise mới. Promise này sẽ được giải quyết ngay khi một Promise trong mảng được giải quyết. Tuy nhiên, nếu tất cả các Promise đều bị từ chối, Promise này sẽ bị từ chối và trả về một lỗi chứa mảng các lỗi từ các Promise đã bị từ chối.
+
+- `Promise.all` vs. `Promise.allSettled`:
+
+**Promise.all**: Phương thức này nhận vào một mảng các Promise và trả về một Promise mới. Promise này chỉ được giải quyết khi tất cả các Promise trong mảng đều được giải quyết. Kết quả của Promise.all là một mảng các kết quả tương ứng với các Promise trong mảng ban đầu.
+
+**Promise.allSettled**: Đây là một phương thức khác được giới thiệu trong ES2020. Promise.allSettled cũng nhận vào một mảng các Promise và trả về một Promise mới. Promise này sẽ được giải quyết sau khi tất cả các Promise trong mảng đã được giải quyết hoặc bị từ chối. Kết quả của Promise.allSettled là một mảng các đối tượng mô tả tình trạng của từng Promise, bất kể là đã giải quyết hay từ chối.
+
+Tóm lại:
+
+Promise.race và Promise.any liên quan đến việc xử lý kết quả từ nhiều Promise nhưng có cách hoạt động và ứng xử khác nhau khi có Promise bị từ chối.
+Promise.all và Promise.allSettled đều liên quan đến việc chờ đợi kết quả từ nhiều Promise, nhưng Promise.all bị từ chối khi có ít nhất một Promise bị từ chối, trong khi Promise.allSettled trả về một mảng tình trạng của tất cả Promise dù có bị từ chối hay không.
+
 ## Async/Await
 
 async/await được xây dựng dựa trên promises và cung cấp cú pháp dễ đọc và sạch hơn để xử lý các hoạt động bất đồng bộ. Một hàm được khai báo với từ khóa async luôn luôn trả về một promise.

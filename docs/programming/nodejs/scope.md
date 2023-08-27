@@ -60,21 +60,29 @@ showVar(); // Outputs: "I'm module-scoped"
 // moduleVar isn't directly accessible here
 ```
 
-## Lexical Scope (Closures)
+## Lexical Scope
 
-Trong JavaScript, các hàm tạo thành các closure. Một closure là sự kết hợp của một hàm đóng gói cùng với các tham chiếu đến trạng thái xung quanh của nó (môi trường từ vựng). Nó cho phép bạn truy cập vào phạm vi của hàm bên ngoài từ một hàm bên trong.
+Phạm vi từ vựng (lexical scope), còn được gọi là phạm vi tĩnh, là một khái niệm quan trọng trong lập trình, đặc biệt trong ngôn ngữ lập trình có tương tác với hàm như JavaScript. Lexical scope xác định quyền truy cập của biến hoặc hàm trong mã nguồn dựa trên cách chúng được khai báo và nhóm họp.
+
+Khi một hàm được định nghĩa trong một ngữ cảnh (block hoặc hàm khác), nó sẽ được tạo ra với phạm vi từ vựng, có nghĩa là nó có thể truy cập vào các biến và hàm mà có sẵn trong cùng phạm vi mà nó được định nghĩa, cũng như các phạm vi bọc ngoài nó. Điều này dựa vào cách mã nguồn được viết và cấu trúc tĩnh của nó, chứ không phụ thuộc vào cách mã nguồn được gọi tại thời điểm thực thi.
 
 ```js
-function outerFunction() {
-  let outerVar = "I'm in the outer function";
-  function innerFunction() {
-    console.log(outerVar); // Accessible due to lexical scoping
+function outer() {
+  const outerVar = "I'm from outer";
+
+  function inner() {
+    const innerVar = "I'm from inner";
+    console.log(outerVar); // Truy cập được outerVar từ phạm vi bên ngoài
+    console.log(innerVar); // Truy cập innerVar trong phạm vi hiện tại
   }
-  innerFunction();
+
+  inner();
 }
 
-outerFunction(); // Outputs: "I'm in the outer function"
+outer();
 ```
+
+Điều quan trọng cần nhớ về lexical scope là nó được xác định tại thời điểm định nghĩa hàm, không phải tại thời điểm gọi hàm. Điều này có nghĩa rằng, dù có thể gọi hàm từ một phạm vi khác, các biến và hàm mà hàm đó truy cập sẽ vẫn dựa vào phạm vi khi nó được định nghĩa.
 
 ## Closures
 
