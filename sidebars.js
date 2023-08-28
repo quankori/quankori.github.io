@@ -252,6 +252,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/nodejs/event-loop",
+          label: "Event Loop",
+        },
+        {
+          type: "doc",
           id: "programming/nodejs/process-thread",
           label: "Process & Thread",
         },
