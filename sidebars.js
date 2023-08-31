@@ -300,6 +300,11 @@ const sidebars = {
           id: "programming/nodejs/loop",
           label: "Loop",
         },
+        {
+          type: "doc",
+          id: "programming/nodejs/worker-thread",
+          label: "Worker Thread",
+        },
       ],
     },
     {
@@ -310,8 +315,39 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/nestjs/di",
+          id: "programming/nestjs/dependency-injection",
           label: "Dependency Injection (DI)",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/decorators",
+          label: "Decorators",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/providers",
+          label: "Providers",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/authentication",
+          label: "Authentication",
+        },
+
+        {
+          type: "doc",
+          id: "programming/nestjs/testing",
+          label: "Testing",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/interceptor",
+          label: "Interceptor",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/middlewares",
+          label: "Middlewares",
         },
       ],
     },
@@ -514,6 +550,19 @@ const sidebars = {
           type: "doc",
           id: "english/grammar/pronoun",
           label: "Pronoun (Đại từ)",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Communication",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/communicate/meeting",
+          label: "Meeting",
         },
       ],
     },
