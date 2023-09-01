@@ -2,9 +2,15 @@
 title: Middlewares
 ---
 
+## Concept
+
 Trong NestJS, không có sự phân chia cụ thể giữa "middleware cho response" và "middleware cho request". Middleware trong NestJS thường được sử dụng để thực hiện xử lý trước khi yêu cầu đến tới route handlers, bất kể xử lý đó liên quan đến request hay response.
 
 Tuy nhiên, bạn có thể định hình logic xử lý trong middleware để tùy chỉnh việc thực hiện xử lý trước hoặc sau khi route handler được gọi. Bạn có thể làm điều này bằng cách đặt hàm next() ở vị trí phù hợp trong middleware. Nếu bạn đặt next() ngay sau khi hoàn thành xử lý yêu cầu, thì middleware sẽ hoàn thành trước khi route handler được gọi.
+
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/nestjs/2.png)
+
+## Code
 
 ```ts
 @Injectable()

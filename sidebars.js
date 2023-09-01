@@ -153,8 +153,23 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/go/concept",
-          label: "Concept",
+          id: "programming/go/channel",
+          label: "Channel",
+        },
+        {
+          type: "doc",
+          id: "programming/go/context",
+          label: "Context",
+        },
+        {
+          type: "doc",
+          id: "programming/go/goroutine",
+          label: "Goroutine",
+        },
+        {
+          type: "doc",
+          id: "programming/go/mutex",
+          label: "Mutex",
         },
       ],
     },
@@ -305,28 +320,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/nestjs/decorators",
-          label: "Decorators",
-        },
-        {
-          type: "doc",
           id: "programming/nestjs/providers",
           label: "Providers",
         },
         {
           type: "doc",
-          id: "programming/nestjs/authentication",
-          label: "Authentication",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/testing",
-          label: "Testing",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/interceptor",
-          label: "Interceptor",
+          id: "programming/nestjs/modules",
+          label: "Modules",
         },
         {
           type: "doc",
@@ -335,13 +335,33 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/nestjs/exception-filter",
+          label: "Exception Filters",
+        },
+        {
+          type: "doc",
           id: "programming/nestjs/pipes",
           label: "Pipes",
         },
         {
           type: "doc",
-          id: "programming/nestjs/exception-filter",
-          label: "Exception Filters",
+          id: "programming/nestjs/authentication",
+          label: "Authentication",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/interceptor",
+          label: "Interceptor",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/decorators",
+          label: "Decorators",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/testing",
+          label: "Testing",
         },
       ],
     },

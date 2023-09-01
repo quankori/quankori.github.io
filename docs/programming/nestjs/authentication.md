@@ -14,7 +14,9 @@ Khi một request đến, JWTStrategy (một Passport Strategy) sẽ được k�
 
 Guards trong NestJS là các interceptor để bảo vệ các endpoint khỏi việc truy cập trái phép. Mỗi request sẽ được kiểm tra bởi guards trước khi nó đến tới route handler. Guards kiểm tra xem người dùng có quyền truy cập hay không bằng cách sử dụng xác thực (authentication) hoặc các logic tùy chỉnh khác.
 
-## Explain code  
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/nestjs/5.png)
+
+## Code
 
 **Sign & verify token**
 
@@ -32,17 +34,17 @@ Tạo một Passport Strategy (ví dụ: JWTStrategy) để xác thực user d�
 
 ```ts
 // jwt.strategy.ts
-import { Injectable } from '@nestjs/common';
-import { PassportStrategy } from '@nestjs/passport';
-import { Strategy, ExtractJwt } from 'passport-jwt';
-import { AuthService } from './auth.service';
+import { Injectable } from "@nestjs/common";
+import { PassportStrategy } from "@nestjs/passport";
+import { Strategy, ExtractJwt } from "passport-jwt";
+import { AuthService } from "./auth.service";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'your-secret-key',
+      secretOrKey: "your-secret-key",
     });
   }
 
@@ -58,28 +60,28 @@ Tạo một Guard để sử dụng Strategy đã tạo và kiểm tra xem nó c
 
 ```ts
 // jwt-auth.guard.ts
-import { Injectable } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Injectable } from "@nestjs/common";
+import { AuthGuard } from "@nestjs/passport";
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {}
+export class JwtAuthGuard extends AuthGuard("jwt") {}
 ```
 
 **Router**
 
-Khai báo guard trong router 
+Khai báo guard trong router
 
 ```ts
 // app.controller.ts
-import { Controller, Get, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from './jwt-auth.guard';
+import { Controller, Get, UseGuards } from "@nestjs/common";
+import { JwtAuthGuard } from "./jwt-auth.guard";
 
-@Controller('protected')
+@Controller("protected")
 export class AppController {
   @Get()
   @UseGuards(JwtAuthGuard)
   getProtectedData() {
-    return { message: 'This is protected data.' };
+    return { message: "This is protected data." };
   }
 }
 ```
