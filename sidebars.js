@@ -166,63 +166,43 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/algorithm/array",
-          label: "Array",
+          id: "programming/algorithm/data-structures",
+          label: "Data Structures",
         },
         {
           type: "doc",
-          id: "programming/algorithm/binary-search-tree",
-          label: "Binary Search Tree",
+          id: "programming/algorithm/linked-lists",
+          label: "Linked Lists",
         },
         {
           type: "doc",
-          id: "programming/algorithm/binary-tree",
-          label: "Binary Tree",
+          id: "programming/algorithm/stack-queue",
+          label: "Stack & Queue",
         },
         {
           type: "doc",
-          id: "programming/algorithm/data-structure",
-          label: "Data Structure",
+          id: "programming/algorithm/searching",
+          label: "Searching",
         },
         {
           type: "doc",
-          id: "programming/algorithm/graph",
-          label: "Graph",
+          id: "programming/algorithm/sorting",
+          label: "Sorting",
         },
         {
           type: "doc",
-          id: "programming/algorithm/hashing",
-          label: "Hashing",
+          id: "programming/algorithm/graph-data",
+          label: "Graph Data",
         },
         {
           type: "doc",
-          id: "programming/algorithm/heap",
-          label: "Heap",
+          id: "programming/algorithm/tree-data",
+          label: "Tree Data",
         },
         {
           type: "doc",
-          id: "programming/algorithm/linked-list",
-          label: "Linked List",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/matrix",
-          label: "Matrix",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/misc",
-          label: "Misc",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/queue",
-          label: "Queue",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/stack",
-          label: "Stack",
+          id: "programming/algorithm/recursion",
+          label: "Recursion",
         },
       ],
     },
@@ -320,6 +300,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/nestjs/lifecycle-events",
+          label: "Lifecycle Events",
+        },
+        {
+          type: "doc",
           id: "programming/nestjs/decorators",
           label: "Decorators",
         },
@@ -333,7 +318,6 @@ const sidebars = {
           id: "programming/nestjs/authentication",
           label: "Authentication",
         },
-
         {
           type: "doc",
           id: "programming/nestjs/testing",
@@ -348,6 +332,16 @@ const sidebars = {
           type: "doc",
           id: "programming/nestjs/middlewares",
           label: "Middlewares",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/pipes",
+          label: "Pipes",
+        },
+        {
+          type: "doc",
+          id: "programming/nestjs/exception-filter",
+          label: "Exception Filters",
         },
       ],
     },

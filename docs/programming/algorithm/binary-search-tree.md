@@ -1,3 +1,0 @@
----
-title: Binary Search Tree
----
