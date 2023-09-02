@@ -2,31 +2,26 @@
 title: Process and Thread
 ---
 
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.png)
+
 ## Process
 
-- Một quy trình là một đơn vị độc lập của một chương trình đang chạy với không gian bộ nhớ riêng của nó.
-- Mỗi quy trình có một hoặc nhiều luồng.
-- Thường thì các quy trình kết nối với nhau ít hơn. Giao tiếp giữa các quy trình thường yêu cầu các phương pháp giao tiếp giữa các quy trình (Inter-process communication - IPC) như ống, socket, v.v.
-- Khởi tạo một quy trình mới thường tốn nhiều tài nguyên hơn và mất thời gian hơn so với việc khởi tạo một luồng mới.
+Một process trong ngữ cảnh của hệ điều hành và lập trình máy tính đề cập đến một chương trình đang chạy trên máy tính. Đây là khái niệm quan trọng để hiểu cách hệ điều hành quản lý và thực thi các ứng dụng và tác vụ.
+
+Mỗi khi bạn chạy một ứng dụng trên máy tính, bạn thực chất đang tạo ra một process. Process có thể là một chương trình độc lập hoặc một phần của chương trình lớn hơn. Mỗi process có môi trường thực thi của riêng nó, bao gồm không gian bộ nhớ, tài nguyên hệ thống và dữ liệu tạm thời.
 
 ## Thread
 
-- Một luồng, còn được gọi là quy trình nhẹ, là đơn vị thực thi nhỏ nhất trong một quy trình.
-- Tất cả các luồng trong cùng một quy trình chia sẻ không gian bộ nhớ của quy trình đó. Điều này có nghĩa là luồng có thể truy cập và thay đổi các biến chia sẻ và cấu trúc dữ liệu.
-- Mỗi luồng có ngăn xếp riêng của nó, nhưng chúng chia sẻ heap (bộ nhớ động) và dữ liệu toàn cục.
+Một "thread" trong lập trình là một luồng thực thi độc lập trong một chương trình. Nhiều thread trong một chương trình cho phép cùng lúc thực hiện nhiều tác vụ khác nhau. và 1 process sẽ có nhiều thread chạy độc lập khác nhau.
 
-## When a request is sent to a server
+Trong đời sống hàng ngày, bạn có thể tưởng tượng việc làm việc nhóm trong một nhóm nhiều người. Mỗi người trong nhóm có thể thực hiện một nhiệm vụ riêng biệt cùng một lúc. Ví dụ, trong một bữa tiệc, một người có thể lo việc nấu ăn, một người làm việc trò chuyện với khách, và một người chơi nhạc. Mỗi người tương ứng với một thread, cho phép nhiều hoạt động xảy ra đồng thời.
 
-Tùy theo cấu hình và kiến trúc của máy chủ, một yêu cầu có thể được xử lý bởi một quy trình hoặc một luồng cụ thể. Dưới đây là một ví dụ đơn giản về cách máy chủ hoạt động dựa trên kiến trúc đa quy trình và đa luồng:
+Ví dụ:
 
-### Multi-Process Architecture:
+**Process** (Sự kiện buổi hòa nhạc):
 
-Đối với mỗi yêu cầu mới, máy chủ có thể tạo ra một quy trình mới để xử lý yêu cầu đó. Ví dụ, máy chủ HTTP Apache, khi hoạt động ở chế độ prefork (chế độ phổ biến), hoạt động theo cách này.
+Buổi hòa nhạc chính là một process lớn. Đây là một sự kiện chủ đề với nhiều hoạt động khác nhau, bao gồm sân khấu, ánh sáng, âm thanh, quầy hàng thức ăn, quầy vé, và hơn nữa.
 
-### Multi-Thread Architecture:
+**Thread** (Các hoạt động khác nhau):
 
-Đối với một yêu cầu mới, thay vì tạo ra một quy trình mới, máy chủ chỉ tạo ra một luồng mới (hoặc sử dụng một luồng hiện có từ bể luồng) trong cùng một quy trình để xử lý yêu cầu. Ví dụ, dịch vụ IIS của Microsoft hoạt động theo cách này.
-
-Các máy chủ hiện đại như Node.js sử dụng mô hình dựa trên sự kiện và vòng lặp sự kiện để xử lý nhiều yêu cầu mà không cần nhiều luồng hoặc quy trình.
-
-Tùy theo kiến trúc và công nghệ được sử dụng, việc xử lý yêu cầu sẽ phụ thuộc vào một hoặc nhiều quy trình và luồng. Mỗi kiến trúc có ưu điểm và nhược điểm riêng, và sự lựa chọn giữa chúng thường phụ thuộc vào yêu cầu cụ thể và ngữ cảnh của hệ thống.
+Bên trong buổi hòa nhạc, bạn có thể xem xét mỗi hoạt động như một thread riêng. Ví dụ, có một thread cho quầy vé, một thread khác cho quầy thức ăn, một thread cho việc điều chỉnh ánh sáng trên sân khấu, và một thread cho quá trình phát âm thanh.

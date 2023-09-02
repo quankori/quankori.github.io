@@ -143,6 +143,11 @@ const sidebars = {
           id: "programming/concept/solid",
           label: "SOLID",
         },
+        {
+          type: "doc",
+          id: "programming/concept/staless-stateful",
+          label: "Stateless & Stateful",
+        },
       ],
     },
     {

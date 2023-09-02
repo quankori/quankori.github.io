@@ -6,25 +6,25 @@ title: Object-oriented programming
 
 Tái sử dụng một hàm từ một lớp khác thông qua việc kế thừa lớp đó.
 
-```java
+```ts
 class Animal {
-void eat() {
-    System.out.println("eating...");
-    }
+  eat(): void {
+    console.log("eating...");
+  }
 }
 
 class Dog extends Animal {
-    void bark() {
-        System.out.println("barking...");
-    }
+  bark(): void {
+    console.log("barking...");
+  }
 }
 
-public class TestInheritance1 {
-    public static void main(String args[]) {
-        Dog d = new Dog();
-        d.bark();
-        d.eat();
-    }
+class TestInheritance1 {
+  public static main(args: string[]): void {
+    const d = new Dog();
+    d.bark();
+    d.eat();
+  }
 }
 ```
 
@@ -32,20 +32,20 @@ public class TestInheritance1 {
 
 Đa hình trong thời gian chạy là quá trình gọi một phương thức bị ghi đè trong quá trình thực thi chương trình. Trong quá trình này, một phương thức bị ghi đè được gọi thông qua một biến tham chiếu của lớp cha.
 
-```java
+```ts
 class Bike {
-    void run() {
-        System.out.println("running");
+    run(): void {
+        console.log("running");
     }
 }
 
-public class Splender extends Bike {
-    void run() {
-        System.out.println("running safely with 60km");
+class Splender extends Bike {
+    run(): void {
+        console.log("running safely with 60km");
     }
 
-    public static void main(String args[]) {
-        Bike b = new Splender();
+    public static main(args: string[]): void {
+        const b: Bike = new Splender();
         b.run();
     }
 }
@@ -59,18 +59,18 @@ Có hai cách để đạt được trừu tượng: sử dụng giao diện và
 
 - Abstract
 
-```java
-abstract class Bike{
-    abstract void run();
+```ts
+abstract class BikeAbstract {
+    abstract run(): void;
 }
 
-class Honda4 extends Bike{
-    void run() {
-        System.out.println("running safely..");
+class Honda4 extends BikeAbstract {
+    run(): void {
+        console.log("running safely..");
     }
 
-    public static void main(String args[]) {
-        Bike obj = new Honda4();
+    public static main(args: string[]): void {
+        const obj: BikeAbstract = new Honda4();
         obj.run();
     }
 }
@@ -78,18 +78,18 @@ class Honda4 extends Bike{
 
 - Interface
 
-```java
-interface printable {
-    void print();
+```ts
+interface Printable {
+    print(): void;
 }
 
-class A6 implements printable {
-    public void print() {
-        System.out.println("Hello");
+class A6 implements Printable {
+    print(): void {
+        console.log("Hello");
     }
 
-    public static void main(String args[]){
-        A6 obj = new A6();
+    public static main(args: string[]): void {
+        const obj: Printable = new A6();
         obj.print();
     }
 }
@@ -101,24 +101,24 @@ Bạn có thể tạo ra một lớp chỉ cho việc đọc hoặc chỉ cho vi
 
 Bạn có thể kiểm soát dữ liệu. Ví dụ, nếu bạn muốn đặt giá trị của một ID chỉ khi nó lớn hơn 100, bạn có thể viết logic bên trong phương thức setter.
 
-```java
-public class Student {
-    private String name;
+```ts
+class Student {
+    private name: string;
 
-    public String getName() {
-        return name;
+    getName(): string {
+        return this.name;
     }
 
-    public void setName(String name) {
+    setName(name: string): void {
         this.name = name;
     }
 }
 
 class Test {
-    public static void main(String[] args) {
-        Student s = new Student();
+    public static main(args: string[]): void {
+        const s = new Student();
         s.setName("Hai");
-        System.out.println(s.getName());
+        console.log(s.getName());
     }
 }
 ```
