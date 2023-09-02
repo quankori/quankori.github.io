@@ -9,27 +9,42 @@ Channel là một cơ chế được sử dụng để truyền dữ liệu gi�
 ## Code
 
 ```go
-func send(c chan int) {
-	for i := 0; i < 5; i++ {
-		fmt.Printf("send %v to channel\n", i)
-		c <- i // send i to channel
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func worker(id int, jobs <-chan int, results chan<- int) {
+	for job := range jobs {
+		fmt.Printf("Worker %d started job %d\n", id, job)
+		time.Sleep(time.Second) // Simulate job processing
+		fmt.Printf("Worker %d finished job %d\n", id, job)
+		results <- job * 2
 	}
 }
 
-func receive(c chan int) {
-	for i := 0; i < 5; i++ {
-		time.Sleep(1 * time.Millisecond)
-		s := <-c // receive channel
-		fmt.Println(s)
-	}
-}
+func main() {
+	numJobs := 5
+	numWorkers := 3
 
-// Channel func
-func channel() {
-	c := make(chan int)
-	go send(c)
-	go receive(c)
-	time.Sleep(100 * time.Millisecond)
-	fmt.Println("end")
+	jobs := make(chan int, numJobs)
+	results := make(chan int, numJobs)
+
+	for i := 1; i <= numWorkers; i++ {
+		go worker(i, jobs, results)
+	}
+
+	for j := 1; j <= numJobs; j++ {
+		jobs <- j
+	}
+
+	close(jobs)
+
+	for a := 1; a <= numJobs; a++ {
+		result := <-results
+		fmt.Printf("Received result: %d\n", result)
+	}
 }
 ```
