@@ -158,6 +158,31 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "programming/go/closures-anonymous",
+          label: "Closures & Anonymous Function",
+        },
+        {
+          type: "doc",
+          id: "programming/go/memory-management",
+          label: "Memory Management",
+        },
+        {
+          type: "doc",
+          id: "programming/go/panic-recover",
+          label: "Panic & Recover",
+        },
+        {
+          type: "doc",
+          id: "programming/go/slices-array",
+          label: "Slices & Array",
+        },
+        {
+          type: "doc",
+          id: "programming/go/pointers",
+          label: "Pointers",
+        },
+        {
+          type: "doc",
           id: "programming/go/channel",
           label: "Channel",
         },
