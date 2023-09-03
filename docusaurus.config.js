@@ -77,6 +77,11 @@ const config = {
         },
         {
           type: "docSidebar",
+          label: "English",
+          sidebarId: "english",
+        },
+        {
+          type: "docSidebar",
           label: "Cheatsheet",
           sidebarId: "cheatsheet",
         },
@@ -84,11 +89,6 @@ const config = {
           type: "docSidebar",
           label: "Exampels",
           sidebarId: "examples",
-        },
-        {
-          type: "docSidebar",
-          label: "English",
-          sidebarId: "english",
         },
         {
           type: "search",

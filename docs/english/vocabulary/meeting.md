@@ -2,6 +2,10 @@
 title: Meeting
 ---
 
+## Question
+
+**Appointment**: Cuộc hẹn
+
 **How do you do?**: Hỏi thăm lần đầu gặp mặt
 
 **Pleased to meet you**: Hân hạnh được làm quen
@@ -11,8 +15,6 @@ title: Meeting
 **Nice to meet you**: Rất vui được gặp bạn (lúc gặp)
 
 **Nice meeting you**: Rất vui vì đã được gặp bạn (lúc về)
-
-**Appointment**: Cuộc hẹn
 
 **How are things?**: Mọi chuyện ổn không
 

@@ -396,6 +396,79 @@ const sidebars = {
       ],
     },
   ],
+  english: [
+    {
+      type: "category",
+      label: "Grammar",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/grammar/tenses",
+          label: "12 Basic English Tenses",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/verbs",
+          label: "Verbs (Động từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/nouns",
+          label: "Nouns (Danh từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/adjective",
+          label: "Adjective (Tính từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/adverbs",
+          label: "Adverbs (Trạng từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/conjuction",
+          label: "Conjuction (Liên từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/determiner",
+          label: "Determiner (Từ hạn định)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/injection",
+          label: "Injection (Thán từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/preposition",
+          label: "Preposition (Giới từ)",
+        },
+        {
+          type: "doc",
+          id: "english/grammar/pronoun",
+          label: "Pronoun (Đại từ)",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Vocabulary",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/vocabulary/meeting",
+          label: "Meeting",
+        },
+      ],
+    },
+  ],
   cheatsheet: [
     {
       type: "doc",
@@ -534,79 +607,6 @@ const sidebars = {
           type: "doc",
           id: "examples/docker/mongo_replicate",
           label: "MongoDB Replicate - Database",
-        },
-      ],
-    },
-  ],
-  english: [
-    {
-      type: "category",
-      label: "Grammar",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "english/grammar/tenses",
-          label: "12 Basic English Tenses",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/verbs",
-          label: "Verbs (Động từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/nouns",
-          label: "Nouns (Danh từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/adjective",
-          label: "Adjective (Tính từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/adverbs",
-          label: "Adverbs (Trạng từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/conjuction",
-          label: "Conjuction (Liên từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/determiner",
-          label: "Determiner (Từ hạn định)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/injection",
-          label: "Injection (Thán từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/preposition",
-          label: "Preposition (Giới từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/pronoun",
-          label: "Pronoun (Đại từ)",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Communication",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "english/communicate/meeting",
-          label: "Meeting",
         },
       ],
     },

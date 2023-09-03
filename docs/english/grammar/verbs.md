@@ -16,7 +16,7 @@ Main verb (động từ chính) là động từ trong câu được sử dụng
 
 Ví dụ: "She sings beautifully." Trong câu này, "sings" là main verb, vì nó miêu tả hành động của chủ ngữ "she".
 
-### Auxilixary verbs
+### Auxiliary verbs
 
 Auxiliary verbs (động từ trợ động từ) là các động từ được sử dụng để hỗ trợ cho main verb, giúp xác định thời gian, thể và diễn đạt ý nghĩa của câu. Các auxiliary verb phổ biến nhất là "be", "have" và "do".
 
