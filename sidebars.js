@@ -415,6 +415,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "english/grammar/pronoun",
+          label: "Pronoun (Đại từ)",
+        },
+        {
+          type: "doc",
           id: "english/grammar/nouns",
           label: "Nouns (Danh từ)",
         },
@@ -450,8 +455,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "english/grammar/pronoun",
-          label: "Pronoun (Đại từ)",
+          id: "english/grammar/possessive",
+          label: "Possessive (Sở hữu)",
         },
       ],
     },
