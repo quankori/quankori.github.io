@@ -38,17 +38,17 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              I have 4 years of experience in server-side programming with
-              Node.js and Golang, and within those 4 years, I have spent 2 years
+              I have 5 years of experience in server-side programming with
+              Node.js and Golang, and within those 5 years, I have spent 2 years
               working as a full-stack developer and 1-year building
               infrastructure with Terraform and DevOps on AWS. My main focus has
               been on domains like blockchain, but I also have a strong desire
               to explore and develop expertise in other technology domains. I am
               particularly intrigued by various technologies in fields such as
               server-side, systems, cloud computing, and DevOps. Currently, my
-              strongest skills and depth of knowledge lie in Node.js and cloud
+              strongest skills and depth of knowledge lie in Node.js, Golang and cloud
               technologies. In the future, my aspiration is to grow as a
-              Technical Architect.
+              Technical Architect or Solution Architect
             </Typography>
 
             <Typography mt={5} variant="subtitle1" gutterBottom>
