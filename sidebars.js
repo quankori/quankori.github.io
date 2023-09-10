@@ -183,23 +183,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/go/channel",
-          label: "Channel",
-        },
-        {
-          type: "doc",
           id: "programming/go/context",
           label: "Context",
         },
         {
           type: "doc",
-          id: "programming/go/goroutine",
-          label: "Goroutine",
-        },
-        {
-          type: "doc",
-          id: "programming/go/mutex",
-          label: "Mutex",
+          id: "programming/go/concurrency",
+          label: "Concurrency",
         },
       ],
     },
