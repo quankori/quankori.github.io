@@ -2,21 +2,10 @@
 title: Process and Thread
 ---
 
-## Concept
-
-**Process**: Một tiến trình (process) là một đơn vị độc lập chứa một chương trình đang được thực thi và các tài nguyên của nó. Mỗi tiến trình có không gian địa chỉ riêng, và một tiến trình không thể truy cập trực tiếp vào không gian địa chỉ của một tiến trình khác (trừ khi sử dụng cơ chế IPC).
-
-IPC viết tắt của Inter-Process Communication (Giao tiếp giữa các tiến trình). Đây là một tập hợp các phương pháp cho các tiến trình khác nhau để giao tiếp với nhau. IPC được sử dụng cả trong môi trường hệ thống đơn và đa hệ thống, cho phép các tiến trình chia sẻ dữ liệu, tín hiệu hoặc tin nhắn một cách cùng phối hợp và an toàn.
-
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.png)
-
-**Thread**: Đó là đơn vị nhỏ nhất của mã được thực thi. Một tiến trình có thể chứa nhiều luồng (threads). Tất cả các luồng trong cùng một tiến trình chia sẻ không gian địa chỉ của tiến trình đó, làm cho việc chia sẻ dữ liệu giữa các luồng dễ dàng hơn. Tuy nhiên, điều này cũng mang đến những thách thức về đồng bộ hóa.
-
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/6.png)
 
 ## Child Processes:
 
-Trong Node.js, khi bạn muốn thực thi một lệnh hệ thống, bạn có thể sử dụng mô-đun `child_process`. Mô-đun này cho phép bạn chạy các lệnh hệ thống, quản lý các tiến trình con và giao tiếp với chúng, khi bạn muốn thực thi một lệnh hệ thống hoặc cần tách logic trong một tiến trình hoàn toàn riêng biệt.
+In Node.js, when you want to execute a system command, you can use the child_process module. This module allows you to run system commands, manage `child processes`, and communicate with them when you need to execute a system command or separate logic into a completely separate process.
 
 ```js
 const { exec } = require("child_process");
@@ -52,17 +41,17 @@ process.on("message", (msg) => {
 });
 ```
 
-Khi bạn tạo một tiến trình con, bạn đang khởi chạy một tiến trình hệ thống hoàn toàn mới. Trong môi trường Unix, điều này thường được thực hiện bằng cách sử dụng lệnh fork().
+When you create a child process, you are launching an entirely new system process. In the Unix environment, this is often done using the fork() system call.
 
-fork(): Đây là một lệnh hệ thống được sử dụng để tạo một bản sao của tiến trình hiện tại. Lệnh này trả về hai lần: một lần cho tiến trình gốc (cha) và một lần cho tiến trình con. Trong Node.js, fork() giúp tạo một tiến trình con mới của Node.js và thiết lập một kênh giao tiếp IPC giữa chúng.
+**fork()**: This is a system call used to create a duplicate of the current process. It returns twice: once for the parent process (father) and once for the child process. In Node.js, fork() is used to create a new child process of Node.js and establishes an IPC (Inter-Process Communication) channel between them.
 
-spawn() và exec(): Cả hai phương thức này đều tạo ra một tiến trình con, nhưng chúng khác nhau về giao tiếp và quản lý đầu ra. spawn() trả về một luồng (stream) và phù hợp để xử lý các ứng dụng có lượng dữ liệu lớn. exec() trả về toàn bộ đầu ra dưới dạng một chuỗi khi tiến trình con kết thúc.
+**spawn() and exec()**: Both of these methods create a child process, but they differ in terms of communication and handling output. spawn() returns a stream and is suitable for handling applications with large amounts of data. exec() returns the entire output as a string when the child process exits.
 
-IPC (Inter-Process Communication - Giao tiếp giữa các tiến trình) là một cơ chế cho phép hai (hoặc nhiều) tiến trình giao tiếp và chia sẻ dữ liệu với nhau.
+IPC (Inter-Process Communication) is a mechanism that allows two (or more) processes to communicate and share data with each other.
 
 ## Worker Threads:
 
-Bắt đầu từ phiên bản Node.js 10.5.0, một mô-đun mới được giới thiệu có tên là `worker_threads`. Nó cung cấp một cách để tạo ra các luồng (threads), giúp thực hiện tính toán song song dễ dàng hơn trong môi trường Node.js, khi bạn cần tăng hiệu suất tính toán bằng cách tận dụng các lõi CPU không sử dụng và bạn muốn giữ tất cả logic trong cùng một tiến trình.
+Starting from Node.js version 10.5.0, a new module called `worker_threads` was introduced. It provides a way to create threads, making it easier to perform parallel computations in the Node.js environment when you need to boost computational performance by utilizing unused CPU cores and want to keep all the logic within the same process.
 
 ```js
 const { Worker, isMainThread, parentPort } = require("worker_threads");
@@ -87,22 +76,21 @@ if (isMainThread) {
 }
 ```
 
-Node.js mặc định chạy trên một luồng duy nhất, sử dụng vòng lặp sự kiện để xử lý các hoạt động bất đồng bộ. Tuy nhiên, một số tác vụ, đặc biệt là các tác vụ tính toán, có thể chặn vòng lặp sự kiện, làm giảm hiệu suất.
+Node.js by default runs on a single thread, utilizing an event loop to handle asynchronous operations. However, some tasks, especially computational tasks, can block the event loop, leading to decreased performance.
 
-Đó là lúc worker_threads xuất hiện:
+This is where worker_threads come into play:
 
-- Khi bạn tạo một Worker, một luồng mới được tạo ra, chạy song song với luồng chính.
-- Mỗi worker có vòng lặp sự kiện và ngữ cảnh riêng của nó, có nghĩa là chúng hoạt động độc lập và không chia sẻ trạng thái.
-- Workers có thể giao tiếp với luồng chính và lẫn nhau bằng cơ chế truyền thông điệp.
-- Các đối tượng như ArrayBuffer có thể được chia sẻ giữa các luồng, nhưng việc chia sẻ dữ liệu giữa các luồng yêu cầu cẩn trọng để tránh vấn đề như tình trạng cạnh tranh (race conditions).
-
-Nói chung, "child processes" thích hợp khi bạn cần tách biệt hoàn toàn hoặc khi chạy các tác vụ độc lập với Node.js. Trong khi đó, "worker threads" hữu ích khi bạn muốn tận dụng tất cả các lõi trên CPU mà không cần phải khởi động nhiều phiên bản của Node.js.
-
+- When you create a Worker, a new thread is spawned, running in parallel with the main thread.
+- Each worker has its own event loop and context, meaning they operate independently and don't share state.
+- Workers can communicate with the main thread and each other using a message-passing mechanism.
+- Objects like ArrayBuffer can be shared between threads, but sharing data between threads requires caution to avoid issues like race conditions.
+  
+In summary, "child processes" are suitable when you need complete isolation or want to run independent tasks alongside Node.js. On the other hand, "worker threads" are useful when you want to harness all the CPU cores without the need to start multiple instances of Node.js
 ## Cluster mode
 
-Chế độ cụm (Cluster mode) là một tính năng trong Node.js cho phép bạn tạo nhiều tiến trình con để chạy cùng một ứng dụng Node.js trên một máy tính hoặc mạng. Mỗi tiến trình con có thể chạy trên một CPU hoặc lõi riêng biệt, từ đó tận dụng được sức mạnh của các CPU hoặc lõi trong hệ thống.
+Cluster mode is a feature in Node.js that allows you to create multiple child processes to run the same Node.js application on a single machine or across a network. Each child process can run on a separate CPU or core, effectively harnessing the power of the CPUs or cores in the system.
 
-Trong chế độ cụm, tiến trình chính (master process) có trách nhiệm tạo ra và quản lý các tiến trình con (worker processes). Tiến trình chính chia sẻ các kết nối TCP và UDP với các tiến trình con, cho phép chúng chia sẻ kết nối mạng và xử lý các yêu cầu đồng thời. Khi một yêu cầu được nhận, tiến trình chính phân phối yêu cầu đó tới một trong các tiến trình con đang có sẵn.
+In cluster mode, the main process (master process) is responsible for creating and managing the child processes (worker processes). The main process shares TCP and UDP connections with the child processes, enabling them to share network connections and handle concurrent requests. When a request is received, the main process distributes that request to one of the available child processes.
 
 ```js
 const cluster = require("cluster");
@@ -134,11 +122,12 @@ if (cluster.isMaster) {
 }
 ```
 
-Giải thích:
+1. First, we check if the current process is the main process (master process) by using cluster.isMaster. The main process is responsible for creating child processes (workers).
 
-1. Đầu tiên, chúng ta kiểm tra xem tiến trình hiện tại có phải là tiến trình chính (master process) bằng cách sử dụng cluster.isMaster. Tiến trình chính có trách nhiệm tạo ra các tiến trình con (workers).
-2. Nếu đó là tiến trình chính, chúng ta tạo ra bao nhiêu tiến trình con (workers) tương ứng với số lõi CPU sử dụng cluster.fork().
-3. Chúng ta thiết lập một trình lắng nghe sự kiện trên tiến trình chính để lắng nghe sự kiện exit. Sự kiện này được kích hoạt khi một tiến trình con chết đi.
-4. Nếu đó không phải là tiến trình chính (nghĩa là nó là một tiến trình con), chúng ta thiết lập một máy chủ HTTP lắng nghe trên cổng 8000 và phản hồi với chuỗi "Hello from Node.js!".
+2. If it's the main process, we create as many child processes (workers) as there are CPU cores using cluster.fork().
 
-Ở đây, chúng ta sử dụng cluster để tạo nhiều tiến trình con chạy cùng một ứng dụng, tận dụng sức mạnh của nhiều lõi CPU. Khi một tiến trình con kết thúc hoặc bị tắt, tiến trình chính có thể tạo lại một tiến trình con mới để đảm bảo sẽ luôn có các tiến trình con sẵn sàng để xử lý các yêu cầu.
+3. We set up an event listener on the main process to listen for the 'exit' event. This event is triggered when a child process dies.
+
+4. If it's not the main process (meaning it's a child process), we set up an HTTP server listening on port 8000 and respond with the string "Hello from Node.js!".
+
+Here, we use cluster to create multiple child processes running the same application, taking advantage of the power of multiple CPU cores. When a child process exits or is killed, the main process can create a new child process to ensure that there are always child processes ready to handle requests.

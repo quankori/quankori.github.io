@@ -4,7 +4,7 @@ title: Copy in JavaScript
 
 ## Shallow copy
 
-Một bản sao nông (shallow copy) của một đối tượng hoặc mảng là một bản sao trong đó các phần tử ở cấp trên cùng được nhân bản, nhưng các đối tượng hoặc mảng lồng bên trong thì không. Thay vào đó, các tham chiếu đến các đối tượng hoặc mảng lồng này được sao chép. Kết quả là, nếu bạn thay đổi một đối tượng hoặc mảng lồng trong đối tượng sao chép, đối tượng gốc cũng sẽ phản ánh những thay đổi đó.
+A shallow copy of an object or array is a copy where the top-level elements are duplicated, but nested objects or arrays are not. Instead, references to these nested objects or arrays are copied. As a result, if you modify a nested object or array in the shallow copy, the original object will also reflect those changes.
 
 ```js
 let original = {
@@ -21,13 +21,13 @@ shallowCopy.address.city = "Los Angeles";
 console.log(original.address.city); // Outputs: 'Los Angeles'
 ```
 
-Trong ví dụ ở trên, đối tượng địa chỉ lồng bên trong được chia sẻ giữa đối tượng gốc và bản sao nông. Khi chúng ta thay đổi một thuộc tính trong địa chỉ của shallowCopy, nó cũng thay đổi trong đối tượng gốc.
+In the example above, the address object nested inside is shared between the original object and the shallow copy. When we change a property within the address of shallowCopy, it also changes in the original object.
 
 ## Deep copying
 
-Một bản sao sâu (deep copy) nhân bản một đối tượng hoặc mảng, bao gồm tất cả cấu trúc lồng của nó. Những thay đổi được thực hiện trong cấu trúc lồng trong đối tượng sao chép sẽ không ảnh hưởng đến đối tượng gốc (và ngược lại).
+A deep copy duplicates an object or array, including all of its nested structures. Changes made within the nested structure of the copied object will not affect the original object (and vice versa).
 
-Trong JavaScript, không có phương thức tích hợp để tạo bản sao sâu của đối tượng, nhưng bạn có thể sử dụng nhiều kỹ thuật khác nhau, chẳng hạn như chuyển đối tượng thành chuỗi và sau đó phân tích cú pháp sử dụng các phương thức JSON:
+In JavaScript, there is no built-in method for creating a deep copy of an object, but you can use various techniques, such as converting the object to a string and then parsing it using JSON methods:
 
 ```js
 let deepCopy = JSON.parse(JSON.stringify(original));
@@ -37,11 +37,11 @@ console.log(original.address.city); // Outputs: 'Los Angeles'
 console.log(deepCopy.address.city); // Outputs: 'San Francisco'
 ```
 
-Tuy nhiên, phương pháp JSON này có nhược điểm: nó chỉ hoạt động với các đối tượng an toàn với JSON (do đó, các hàm, undefined, Symbol và một số loại khác không thể được sao chép theo cách này).
+However, this JSON-based method has limitations: it only works with JSON-safe objects (so functions, undefined, Symbols, and some other types cannot be copied this way).
 
 ## Object.assign()
 
-Phương thức Object.assign() được sử dụng để sao chép các giá trị của tất cả các thuộc tính sở hữu có thể liệt kê từ một hoặc nhiều đối tượng nguồn vào một đối tượng đích. Nó sẽ trả về đối tượng đích. Phương pháp này thực hiện việc sao chép nông, như đã minh họa trong ví dụ trước.
+The Object.assign() method is used to copy the values of all enumerable properties that can be enumerated from one or more source objects to a target object. It returns the target object. This method performs a shallow copy, as illustrated in the previous example.
 
 ```js
 let obj1 = { a: 1, b: 2 };
@@ -51,6 +51,6 @@ let combined = Object.assign({}, obj1, obj2);
 console.log(combined); // Outputs: { a: 1, b: 3, c: 4 }
 ```
 
-Trong ví dụ, obj2 ghi đè lên thuộc tính b từ obj1 trong đối tượng kết hợp.
+In the example, obj2 overwrites the b property from obj1 in the merged object.
 
-Khi làm việc với đối tượng và mảng, hiểu sự khác biệt giữa sao chép sâu và nông là cần thiết để ngăn hiệu ứng phụ không mong muốn.
+When working with objects and arrays, understanding the difference between shallow and deep copying is essential to prevent unintended side effects.

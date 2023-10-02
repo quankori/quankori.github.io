@@ -32,7 +32,6 @@ const doubled = numbers.map((num) => num * 2);
 
 ## Immediately Invoked Function Expression (IIFE)
 
-Đóng gói module trong các mã JavaScript cũ hơn để ngăn tràn lan không gian toàn cục.
 
 ```js
 (function () {
@@ -117,7 +116,7 @@ const myCar = new Car("Toyota", "Corolla");
 
 ## Function Overloading
 
-TypeScript hỗ trợ quá tải hàm (function overloading), nơi mà nhiều kiểu hàm được khai báo cho cùng một hàm. Cài đặt phải tương thích với tất cả các kiểu quá tải.
+TypeScript supports function overloading, where multiple function types are declared for the same function. The implementation must be compatible with all overloaded types.
 
 ```ts
 function combine(a: string, b: string): string;
@@ -132,7 +131,7 @@ function combine(a: any, b: any): any {
 
 ## High Order Functions
 
-Hàm Bậc Cao (High Order Functions - HOF) là một khái niệm cơ bản trong lập trình hàm. Một Hàm Bậc Cao là bất kỳ hàm nào nhận một hoặc nhiều hàm làm đối số, trả về một hàm, hoặc cả hai.
+Higher-Order Functions (HOF) are a fundamental concept in functional programming. A Higher-Order Function is any function that takes one or more functions as arguments, returns a function, or both.
 
 ```js
 function greet(whom) {
@@ -149,7 +148,7 @@ greetJohn("Hello"); // Outputs: Hello, John!
 
 ### this
 
-Trong JavaScript, từ khóa this là một biến đặc biệt cung cấp một cách để truy cập vào ngữ cảnh (context) mà đoạn mã đang thực thi. Giá trị của this phụ thuộc vào cách mà mã được gọi và nó có thể thay đổi trong quá trình thực thi.
+In JavaScript, the this keyword is a special variable that provides a way to access the context in which the code is currently executing. The value of `this` depends on how the code is called and can change during execution.
 
 ```js
 const person = {
@@ -170,7 +169,7 @@ function testFunc() {
 
 ### call, apply, bind
 
-Phương thức `call` gọi một hàm và thiết lập giá trị của this trong hàm đó.
+`call` to function and update it
 
 ```js
 function greet(arg1, arg2) {
@@ -192,7 +191,7 @@ const person = { name: "Alice" };
 showDetails.call(person, 30, "USA"); // Output: "Name: Alice, Age: 30, Country: USA"
 ```
 
-`apply` cũng giống như call, nhưng thay vì truyền các đối số một cách riêng biệt, bạn truyền vào một mảng các đối số.
+`apply` is similar to call, but instead of passing arguments individually, you pass an array of arguments.
 
 ```js
 function greet(arg1, arg2) {
@@ -204,7 +203,7 @@ const person = { name: "Alice" };
 greet.apply(person, ["Hello,", "How are you?"]); // Hello, Alice How are you?
 ```
 
-Phương thức `bind` tạo ra một hàm mới mà khi gọi, từ khóa this được thiết lập với giá trị đã cung cấp. Thực chất, nó liên kết một hàm với một đối tượng.
+The `bind` method creates a new function that, when called, has its this keyword set to the provided value. Essentially, it binds a function to an object.
 
 ```js
 function greet() {
@@ -217,14 +216,13 @@ const boundGreet = greet.bind(person);
 boundGreet(); // Hello, Alice
 ```
 
-`call` và `apply` đều gọi hàm ngay lập tức, nhưng `apply` cho phép bạn truyền đối số dưới dạng mảng.
-`bind` không gọi hàm ngay lập tức, nó tạo ra một hàm mới với giá trị của this và các đối số cố định, để gọi sau đó.
+Both `call` and `apply` immediately invoke the function, while `bind` does not call the function immediately but instead creates a new function with the specified `this` value and fixed arguments to be called later.
 
-Cả ba phương thức này đều rất hữu ích khi bạn cần thiết lập giá trị của this trong hàm, hoặc khi bạn muốn tái sử dụng một hàm với các đối số và ngữ cảnh (this) cụ thể.
+All three methods are useful when you need to set the value of `this` in a function or when you want to reuse a function with specific arguments and context.
 
 ## Class
 
-Cả trong JavaScript và TypeScript, một lớp (class) là một bản thiết kế để tạo ra các đối tượng có các thuộc tính và phương thức chung. Lớp đóng gói dữ liệu cho một đối tượng và cung cấp cách thức để thao tác với dữ liệu đó. Chúng hỗ trợ tính kế thừa, một trong các khía cạnh cơ bản của lập trình hướng đối tượng.
+In both JavaScript and TypeScript, a class is a blueprint for creating objects with shared properties and methods. A class encapsulates data for an object and provides a way to manipulate that data. They support inheritance, which is a fundamental aspect of object-oriented programming.
 
 ```ts
 class Person {
@@ -253,9 +251,9 @@ john.g;
 
 ## Getter and setter
 
-**Getter (Phương thức lấy giá trị)**: Getter là một phương thức được sử dụng để trả về giá trị của một thuộc tính. Bạn có thể đặt tên phương thức giống tên thuộc tính mà bạn muốn truy cập.
+**Getter**: A getter method is used to retrieve the value of a property. You can name the getter method the same as the property you want to access.
 
-**Setter (Phương thức gán giá trị)**: Setter là một phương thức được sử dụng để gán giá trị cho một thuộc tính. Cũng giống như getter, bạn có thể đặt tên phương thức giống tên thuộc tính.
+**Setter**: A setter method is used to assign a value to a property. Similar to a getter, you can name the setter method the same as the property you want to assign.
 
 ```ts
 class Person {
@@ -275,9 +273,9 @@ class Person {
 
 ## Hoisting JavaScript
 
-Trong JavaScript, "hoisting" là một khái niệm mô tả cách mà các khai báo biến và khai báo hàm được di chuyển (hoist) lên đầu phạm vi của nó trước khi mã code thực sự được thực thi. Điều này có nghĩa là bạn có thể sử dụng một biến hoặc gọi một hàm trước cả khi chúng được khai báo.
+In JavaScript, "hoisting" is a concept describing how variable and function declarations are moved (hoisted) to the top of their containing scope during compilation before the code is actually executed. This means you can use a variable or call a function before they are declared.
 
-Tuy nhiên, cần lưu ý rằng chỉ có khai báo biến và khai báo hàm mới được hoist, không phải các gán giá trị cho biến. Dưới đây là một ví dụ minh họa về hoisting:
+However, it's essential to note that only variable and function declarations are hoisted, not variable assignments. Here's an example illustrating hoisting:
 
 ```js
 console.log(x); // Kết quả: undefined
@@ -291,21 +289,21 @@ function hoistedFunction() {
 
 Trong ví dụ trên:
 
-1. Biến x được khai báo bằng var, và khi chúng ta cố gắng in giá trị của x trước khi gán giá trị cho nó, giá trị được trả về là undefined. Điều này xảy ra vì khai báo biến var x đã được hoist lên đầu phạm vi của nó, nhưng gán giá trị cho x vẫn chưa thực hiện.
+1. Variable x is declared with var, and when we attempt to print the value of x before assigning it, the returned value is undefined. This happens because the declaration var x is hoisted to the top of its scope, but the assignment to x has not yet been executed.
 
-2. Hàm hoistedFunction được khai báo sau khi được gọi. Mặc dù vậy, hàm vẫn hoist lên đầu phạm vi của nó, cho phép chúng ta gọi hàm trước khi nó được khai báo trong mã code.
+2. The hoistedFunction is declared after it's called. However, the function is still hoisted to the top of its scope, allowing us to call the function before it's declared in the code.
 
-Tuy nhiên, với cách khai báo biến bằng let và const, hoisting cũng xảy ra nhưng chúng sẽ không được gán giá trị ngay lập tức, mà sẽ ở trạng thái "temporal dead zone" cho đến khi đến phần mã code mà chúng được gán giá trị.
+However, with variable declarations using let and const, hoisting still occurs, but they won't be immediately assigned values. They will be in a "temporal dead zone" until they reach the code where they are assigned values.
 
-Để tránh gây nhầm lẫn và lỗi trong mã code, hãy luôn khai báo biến và hàm trước khi sử dụng chúng, ngay cả khi hoisting có thể xảy ra.
+To avoid confusion and errors in your code, always declare variables and functions before using them, even when hoisting might occur.
 
 ## Currying
 
-Currying là một kỹ thuật lập trình trong JavaScript (và các ngôn ngữ khác) mà cho phép bạn chuyển đổi một hàm có nhiều đối số thành một chuỗi các hàm mà mỗi hàm trong chuỗi chỉ nhận một đối số. Điều này cho phép bạn truyền đối số theo từng bước thay vì cùng một lúc.
+Currying is a programming technique in JavaScript (and other languages) that allows you to transform a function that takes multiple arguments into a chain of functions, each of which takes one argument. This enables you to pass arguments one step at a time rather than all at once.
 
-Một cách diễn đạt khác, currying biến một hàm có dạng `f(x, y)` thành một chuỗi các hàm `f(x)(y)`.
+In other words, currying turns a function of the form `f(x, y)` into a chain of functions like `f(x)(y)`.
 
-Dưới đây là một ví dụ minh họa về currying trong JavaScript:
+Here's an example illustrating currying in JavaScript:
 
 ```js
 // Hàm gốc có nhiều đối số

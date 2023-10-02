@@ -8,7 +8,7 @@ title: Process and Thread
 
 A process can be understood simply as a program running on a computer. When we open a web browser to read an Advanced Go book, for example, this is considered a process. When we write a computer program using programming languages like C, Java, or Go, after compiling and running the program, the operating system assigns a certain amount of memory space, a PID (process ID), and so on to the program. Each process has at least one main thread to execute the program, which acts as the backbone of the program. When this main thread stops working, it corresponds to the program being closed.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.png)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/8.PNG)
 
 ## Thread
 

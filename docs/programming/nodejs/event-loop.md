@@ -27,7 +27,7 @@ Here's a simplified order of execution in the event loop:
   
 This event-driven, non-blocking architecture is what allows Node.js to efficiently handle a large number of concurrent connections and perform asynchronous operations while maintaining high performance. Understanding how the event loop works is essential for writing efficient and scalable Node.js applications.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/1.gif)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/9.gif)
 
 
 
