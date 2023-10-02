@@ -32,3 +32,9 @@ go mod tidy
 ```go
 go build
 ```
+
+- Crate workspace Go
+
+```go
+go work init
+```

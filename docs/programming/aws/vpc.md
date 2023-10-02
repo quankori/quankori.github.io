@@ -4,69 +4,69 @@ title: Amazon Virtual Private Cloud
 
 ## Network ACL
 
-Một Network Access Control List (ACL) là một tính năng của Amazon Web Services (AWS) dùng để kiểm soát quyền truy cập vào các tài nguyên mạng. Nó hoạt động ở lớp mạng và được áp dụng cho các tài nguyên trên Amazon Virtual Private Cloud (VPC), bao gồm các subnet và instances.
+A Network Access Control List (ACL) is a feature of Amazon Web Services (AWS) used to control access to network resources. It operates at the network layer and is applied to resources within an Amazon Virtual Private Cloud (VPC), including subnets and instances.
 
-Network ACL hoạt động tương tự như một tường lửa ở cấp độ mạng, cho phép bạn kiểm soát các kết nối truy cập và rời khỏi một subnet hoặc instance trên một VPC. Nó cho phép bạn tạo các quy tắc để cho phép hoặc từ chối kết nối dựa trên địa chỉ IP nguồn và đích, giao thức, và cổng.
+Network ACLs function similarly to a network-level firewall, allowing you to control inbound and outbound connections to and from a subnet or instance within a VPC. It enables you to create rules that either permit or deny connections based on source and destination IP addresses, protocols, and ports.
 
-Mỗi subnet trong một VPC có thể được liên kết với một Network ACL. Nếu một subnet không được liên kết với bất kỳ Network ACL nào, nó sẽ mặc định là Network ACL cho phép tất cả các kết nối đến và đi.
+Each subnet in a VPC can be associated with a Network ACL. If a subnet isn't linked to any Network ACL, it defaults to a Network ACL that permits all incoming and outgoing connections.
 
-Network ACL cho phép bạn kiểm soát quyền truy cập ở lớp mạng, trong khi Security Group của EC2 cho phép bạn kiểm soát quyền truy cập ở lớp instance. Tuy nhiên, điều này không có nghĩa là Network ACL và Security Group thay thế cho nhau. Thay vào đó, chúng bổ sung cho nhau, cung cấp sự bảo vệ toàn diện cho các tài nguyên mạng của bạn trên VPC.
+Network ACLs enable you to control access at the network layer, whereas EC2 Security Groups allow you to control access at the instance level. However, this doesn't mean that Network ACLs and Security Groups are interchangeable. Instead, they complement each other, providing comprehensive protection for your network resources within a VPC.
 
 ## Subnet network
 
-Một subnet network là một phần của một mạng lớn hơn được chia thành các mạng con nhỏ hơn, mỗi mạng con thuộc cùng một dãy địa chỉ IP. Mục đích của việc phân chia một mạng lớn hơn thành các subnet là để quản lý, kiểm soát và bảo mật lưu lượng truy cập giữa các thiết bị trên mạng.
+A subnet network is a portion of a larger network that has been divided into smaller subnetworks, with each subnetwork belonging to the same IP address range. The purpose of subdividing a larger network into subnets is to manage, control, and secure access traffic between devices on the network.
 
-Mỗi subnet network có dãy địa chỉ IP của riêng nó, được xác định bởi một subnet mask. Subnet mask giúp phân biệt các địa chỉ IP trên mạng thành các mạng con khác nhau dựa trên số bit 0 ở phần cuối của địa chỉ IP.
+Each subnet network has its own range of IP addresses, determined by a subnet mask. The subnet mask helps differentiate IP addresses on the network into different subnetworks based on the number of 0 bits at the end of the IP address.
 
-Trong Amazon Web Services (AWS), các subnet network được sử dụng trong Amazon Virtual Private Cloud (VPC), một dịch vụ cho phép người dùng tạo các mạng riêng tư tùy chỉnh trên nền tảng AWS. Các subnet trong VPC có thể được sử dụng để phân chia mạng thành các khu vực với các mức độ riêng tư khác nhau, tăng cường an ninh và nhận diện quyền truy cập.
+In Amazon Web Services (AWS), subnet networks are used within Amazon Virtual Private Cloud (VPC), a service that allows users to create custom private networks on the AWS platform. Subnets within a VPC can be used to partition the network into different zones with varying levels of privacy, enhancing security and access control.
 
 ## CIDR
 
-CIDR (Classless Inter-Domain Routing) là một phương pháp định tuyến IP cho phép phân đoạn dãy địa chỉ IP một cách chi tiết và dễ quản lý hơn. CIDR biểu diễn các dãy địa chỉ IP bằng cách sử dụng một số bit cụ thể từ địa chỉ IP để chỉ định subnet.
+CIDR (Classless Inter-Domain Routing) is a method of IP routing that allows for more detailed and manageable segmentation of IP address ranges. CIDR represents IP address ranges by using specific bits from the IP address to define the subnet.
 
-Địa chỉ IP CIDR được viết dưới dạng (địa chỉ IP)/(số bit của mask). Ví dụ, 192.168.0.0/24 cho thấy 24 bit đầu tiên của địa chỉ IP xác định subnet, trong khi 8 bit còn lại tạo thành các địa chỉ IP riêng lẻ.
+CIDR IP addresses are written in the form (IP address)/(number of mask bits). For example, 192.168.0.0/24 indicates that the first 24 bits of the IP address define the subnet, while the remaining 8 bits make up individual IP addresses.
 
-Trong AWS, CIDR được sử dụng trong Amazon Virtual Private Cloud (VPC) để xác định dãy địa chỉ IP cho các subnet network. Khi tạo một subnet trong VPC, người dùng phải chỉ định một khối CIDR để xác định dãy địa chỉ IP có sẵn cho subnet đó.
+In AWS, CIDR is used within Amazon Virtual Private Cloud (VPC) to define IP address ranges for subnet networks. When creating a subnet within a VPC, users must specify a CIDR block to determine the available IP address range for that subnet.
 
-Để tính toán số lượng địa chỉ IP có sẵn trong một dãy CIDR, có thể sử dụng công thức: 2^(32 - số bit của mask). Ví dụ, trong dãy CIDR 192.168.0.0/24, có tổng cộng 256 địa chỉ IP (2^(32-24)).
+To calculate the number of available IP addresses within a CIDR range, you can use the formula: 2^(32 - number of mask bits). For example, in the CIDR range 192.168.0.0/24, there are a total of 256 IP addresses (2^(32-24)).
 
 ## VPC Peering
 
-VPC Peering là một tính năng trong Amazon Virtual Private Cloud (VPC) cho phép kết nối trực tiếp giữa hai hoặc nhiều VPC khác nhau, ngay cả khi chúng không thuộc cùng một tài khoản AWS. Kết nối này cho phép các VPC truy cập vào tài nguyên của nhau thông qua một kết nối mạng riêng tư và an toàn.
+VPC Peering is a feature within Amazon Virtual Private Cloud (VPC) that allows for direct connectivity between two or more separate VPCs, even if they do not belong to the same AWS account. This connection enables VPCs to access each other's resources through a private and secure network link.
 
-Khi bạn thiết lập VPC Peering, các subnet trong các VPC khác nhau được kết nối với nhau qua một kết nối mạng ảo do AWS quản lý. Điều này cho phép các instances trong các VPC khác nhau trao đổi traffic trực tiếp thông qua một mạng riêng tư, nâng cao tính linh hoạt và hiệu quả của các ứng dụng của bạn.
+When setting up VPC Peering, subnets in different VPCs are connected to each other through a virtual network connection managed by AWS. This allows instances in different VPCs to exchange traffic directly through a private network, enhancing the flexibility and efficiency of your applications.
 
-Một số ưu điểm của VPC Peering bao gồm:
+Some advantages of VPC Peering include:
 
-- **Security**: Các kết nối VPC Peering được mã hóa và truyền qua một mạng riêng tư, đảm bảo dữ liệu được truyền là an toàn.
-- **Flexibility**: VPC Peering cho phép kết nối các VPC khác nhau nằm ở các khu vực khác nhau, các tài khoản khác nhau, hoặc sử dụng các CIDR block khác nhau.
-- **Cost Savings**: VPC Peering cho phép trao đổi traffic giữa các VPC thông qua một mạng riêng tư, giảm nhu cầu sử dụng các cổng ra vào công cộng hoặc các kết nối VPN, do đó tiết kiệm chi phí cho doanh nghiệp.
+- **Security**: VPC Peering connections are encrypted and transmitted through a private network, ensuring the safety of transmitted data.
+- **Flexibility**: VPC Peering allows for connections between VPCs in different regions, different AWS accounts, or with different CIDR blocks.
+- **Cost Savings**: VPC Peering enables the exchange of traffic between VPCs through a private network, reducing the need for public-facing gateways or VPN connections, thus saving costs for businesses.
 
 ## NAT Gateway
 
-NAT Gateway là một dịch vụ do Amazon Web Services (AWS) cung cấp, cho phép các instance trong một Amazon Virtual Private Cloud (VPC) truy cập Internet thông qua một địa chỉ IP duy nhất, tăng cường bảo mật và quản lý lưu lượng mạng.
+NAT Gateway is a service provided by Amazon Web Services (AWS) that allows instances within an Amazon Virtual Private Cloud (VPC) to access the Internet through a single IP address, enhancing security and network traffic management.
 
-Khi một instance trong VPC cần kết nối đến Internet để tải cập nhật, cài đặt phần mềm, hoặc thực hiện các tác vụ mạng khác, NAT Gateway sẽ chuyển tiếp lưu lượng mạng từ instance này đến Internet. NAT Gateway được đặt trong một public subnet, và các instance muốn truy cập Internet nên được đặt trong các private subnets và được liên kết với NAT Gateway.
+When an instance in a VPC needs to connect to the Internet for tasks like software updates or other network-related activities, the NAT Gateway forwards network traffic from that instance to the Internet. NAT Gateway is placed in a public subnet, and instances that need Internet access should be placed in private subnets and associated with the NAT Gateway.
 
-Một số lợi ích của NAT Gateway bao gồm:
+Some benefits of NAT Gateway include:
 
-- **Security**: NAT Gateway giúp che giấu địa chỉ IP thực sự của các instance trong VPC, tăng cường bảo mật hệ thống.
-- **Flexibility**: NAT Gateway có thể xử lý lưu lượng mạng đến và đi từ Internet cho nhiều private subnets trong VPC.
-- **Reliability**: NAT Gateway được triển khai qua nhiều Zones trong một khu vực AWS, tăng cường độ tin cậy và khả năng sẵn sàng của hệ thống.
-- **Automation**: Được quản lý bởi AWS, NAT Gateway giảm bớt các tác vụ quản lý và bảo dưỡng cho người dùng.
+- **Security**: NAT Gateway helps hide the actual IP addresses of instances within the VPC, enhancing system security.
+- **Flexibility**: NAT Gateway can handle network traffic to and from the Internet for multiple private subnets within the VPC.
+- **Reliability**: NAT Gateway is deployed across multiple Availability Zones in an AWS region, increasing system reliability and availability.
+- **Automation**: Managed by AWS, NAT Gateway reduces management and maintenance tasks for users.
 
-Tuy nhiên, NAT Gateway là một dịch vụ trả phí, và người dùng cần phải trả phí hàng tháng tương ứng với lưu lượng mạng được chuyển tiếp thông qua NAT Gateway.
+However, NAT Gateway is a paid service, and users are billed monthly based on the amount of network traffic forwarded through the NAT Gateway.
 
 ## Route Table
 
-Bảng định tuyến (route table) là một thành phần quan trọng trong Amazon Virtual Private Cloud (VPC) của Amazon Web Services (AWS), được sử dụng để xác định cách lưu lượng mạng được định tuyến giữa các subnet hoặc một internet gateway trong VPC.
+A route table is an essential component within Amazon Web Services' (AWS) Amazon Virtual Private Cloud (VPC), used to determine how network traffic is routed between subnets or an internet gateway within the VPC.
 
-Mỗi subnet trong VPC đều có một bảng định tuyến, và bảng định tuyến này chứa các bản ghi định tuyến (route entries) chỉ định cách lưu lượng mạng nên được hướng dẫn. Các bản ghi định tuyến này định nghĩa các điểm đến có thể truy cập từ subnet đó và bước tiếp theo (next hop) nơi lưu lượng mạng sẽ được chuyển tiếp.
+Each subnet in a VPC has a route table, and this route table contains route entries that specify how network traffic should be directed. These route entries define the destinations that can be accessed from that subnet and the next hop where network traffic will be forwarded.
 
-Các bản ghi định tuyến có thể được thiết lập để hướng lưu lượng mạng đến các subnet khác trong VPC, định tuyến lưu lượng mạng đến Internet thông qua một Internet gateway hoặc NAT Gateway, hoặc định tuyến lưu lượng mạng đến các thiết bị mạng khác bên ngoài VPC.
+Route entries can be configured to route network traffic to other subnets within the VPC, route network traffic to the Internet through an Internet gateway or NAT Gateway, or route network traffic to external network devices outside the VPC.
 
-Bảng định tuyến cũng cho phép người dùng tùy chỉnh các bản ghi định tuyến để định tuyến lưu lượng mạng theo ý muốn của họ, mang lại sự linh hoạt và hiệu quả cho hệ thống mạng trong VPC.
+Route tables also allow users to customize route entries to route network traffic as desired, providing flexibility and efficiency for the network system within the VPC.
 
-Tóm lại, Route Table là một thành phần quan trọng trong Amazon Virtual Private Cloud (VPC) giúp định tuyến lưu lượng mạng giữa các subnet hoặc một Internet gateway trong VPC và cho phép người dùng tùy chỉnh các bản ghi định tuyến để định tuyến lưu lượng mạng theo ý muốn của họ.
+In summary, a Route Table is an important component within Amazon Virtual Private Cloud (VPC) used to route network traffic between subnets or an Internet gateway within the VPC. It enables users to customize route entries for routing network traffic as needed.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/aws/1.png)

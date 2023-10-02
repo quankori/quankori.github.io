@@ -104,48 +104,43 @@ const sidebars = {
           type: "doc",
           id: "programming/blockchain/ipfs",
           label: "IPFS",
-        },
-        {
-          type: "doc",
-          id: "programming/blockchain/staking",
-          label: "Staking",
-        },
+        }
       ],
     },
     {
       type: "category",
-      label: "Concept",
+      label: "Fundamental",
       collapsed: true,
       collapsible: true,
       items: [
         {
           type: "doc",
-          id: "programming/concept/bigo",
+          id: "programming/fundamental/bigo",
           label: "Big O",
         },
         {
           type: "doc",
-          id: "programming/concept/process-and-thread",
+          id: "programming/fundamental/process-and-thread",
           label: "Process & Thread",
         },
         {
           type: "doc",
-          id: "programming/concept/oop",
+          id: "programming/fundamental/oop",
           label: "OOP",
         },
         {
           type: "doc",
-          id: "programming/concept/osimodel",
+          id: "programming/fundamental/osimodel",
           label: "OSI Model",
         },
         {
           type: "doc",
-          id: "programming/concept/solid",
+          id: "programming/fundamental/solid",
           label: "SOLID",
         },
         {
           type: "doc",
-          id: "programming/concept/staless-stateful",
+          id: "programming/fundamental/staless-stateful",
           label: "Stateless & Stateful",
         },
       ],
@@ -388,80 +383,59 @@ const sidebars = {
   ],
   english: [
     {
-      type: "category",
-      label: "Grammar",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "english/grammar/tenses",
-          label: "12 Basic English Tenses",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/verbs",
-          label: "Verbs (Động từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/pronoun",
-          label: "Pronoun (Đại từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/nouns",
-          label: "Nouns (Danh từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/adjective",
-          label: "Adjective (Tính từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/adverbs",
-          label: "Adverbs (Trạng từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/conjuction",
-          label: "Conjuction (Liên từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/determiner",
-          label: "Determiner (Từ hạn định)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/injection",
-          label: "Injection (Thán từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/preposition",
-          label: "Preposition (Giới từ)",
-        },
-        {
-          type: "doc",
-          id: "english/grammar/possessive",
-          label: "Possessive (Sở hữu)",
-        },
-      ],
+      type: "doc",
+      id: "english/tenses",
+      label: "12 Basic English Tenses",
     },
     {
-      type: "category",
-      label: "Vocabulary",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "english/vocabulary/meeting",
-          label: "Meeting",
-        },
-      ],
+      type: "doc",
+      id: "english/verbs",
+      label: "Verbs (Động từ)",
+    },
+    {
+      type: "doc",
+      id: "english/pronoun",
+      label: "Pronoun (Đại từ)",
+    },
+    {
+      type: "doc",
+      id: "english/nouns",
+      label: "Nouns (Danh từ)",
+    },
+    {
+      type: "doc",
+      id: "english/adjective",
+      label: "Adjective (Tính từ)",
+    },
+    {
+      type: "doc",
+      id: "english/adverbs",
+      label: "Adverbs (Trạng từ)",
+    },
+    {
+      type: "doc",
+      id: "english/conjuction",
+      label: "Conjuction (Liên từ)",
+    },
+    {
+      type: "doc",
+      id: "english/determiner",
+      label: "Determiner (Từ hạn định)",
+    },
+    {
+      type: "doc",
+      id: "english/injection",
+      label: "Injection (Thán từ)",
+    },
+    {
+      type: "doc",
+      id: "english/preposition",
+      label: "Preposition (Giới từ)",
+    },
+    {
+      type: "doc",
+      id: "english/possessive",
+      label: "Possessive (Sở hữu)",
     },
   ],
   cheatsheet: [
@@ -589,6 +563,11 @@ const sidebars = {
           type: "doc",
           id: "examples/go/pow",
           label: "Proof Of Work - Blockchain",
+        },
+        {
+          type: "doc",
+          id: "examples/go/kafka",
+          label: "Publish & Subscribe - Kafa",
         },
       ],
     },

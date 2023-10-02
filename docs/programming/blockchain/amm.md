@@ -2,18 +2,18 @@
 title: Automated Market Maker
 ---
 
-Thuật toán AMM (Automated Market Maker) có công thức x \*\*\* y = k.
+The Automated Market Maker (AMM) algorithm uses the formula x \* y = k.
 
-Ví dụ:
+For example:
 
-- Chúng ta có một hồ chứa 50 token BUSD và 50 token NEW.
-- Theo công thức, chúng ta có 50 \* 50 = 2500.
-- Kori thêm 5 BUSD vào hồ.
-- Bây giờ hồ sẽ có 55 \* 50 = 2750.
-- Để đạt được giá trị ban đầu của k là 2500, chúng ta phải trả một lượng tương ứng của NEW.
-- KORI nhận được: 50 - (2500 / 55) = 4.54 NEW.
-- Bây giờ hồ sẽ có 55 \* 45.46 = 2500, tương đương với giá trị k ban đầu.
+- We have a pool with 50 BUSD tokens and 50 NEW tokens.
+- According to the formula, we have 50 * 50 = 2500.
+- Kori adds 5 BUSD to the pool.
+- Now the pool will have 55 * 50 = 2750.
+- To maintain the initial value of k, which is 2500, we must exchange a corresponding - amount of NEW tokens.
+- KORI receives: 50 - (2500 / 55) = 4.54 NEW.
+- Now the pool will have 55 * 45.46 = 2500, equivalent to the initial value of k.
 
-Như vậy, thuật toán AMM sử dụng công thức x \* y = k để duy trì sự cân bằng trong hồ token. Khi có sự thay đổi về số lượng token trong hồ (ví dụ: thêm BUSD), thuật toán sẽ tính toán số lượng token tương ứng cần phải được thêm hoặc rút ra (trong trường hợp này là token NEW) để giữ cho giá trị k không đổi. Điều này giúp hệ thống duy trì sự ổn định và cân bằng.
+So, the AMM algorithm uses the x * y = k formula to maintain balance within the token pool. When there is a change in the number of tokens in the pool (e.g., adding BUSD), the algorithm calculates the corresponding amount of tokens to be added or removed (in this case, NEW tokens) to keep the k value unchanged. This helps the system maintain stability and balance.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/2.PNG)

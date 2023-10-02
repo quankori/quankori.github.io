@@ -4,47 +4,54 @@ title: Ethereum Virtual Machine
 
 ## Concept
 
-Đây là một hệ thống thực hiện các hợp đồng được lập trình trước mà không cần đến trung gian, tuy nhiên, vẫn đòi hỏi phí (gas fees) để thực hiện giao dịch cũng như phần thưởng cho các miner.
+This is a system that executes pre-programmed contracts without the need for intermediaries; however, it still requires fees (gas fees) to perform transactions as well as rewards for miners.
 
-Các tương tác với hợp đồng được thực hiện thông qua giao dịch.
+Interactions with contracts are carried out through transactions.
 
-Blockchain chỉ lưu trữ một dấu vết lịch sử và không lưu trữ dữ liệu.
+Blockchain only stores a historical ledger and does not store data.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/3.PNG)
 
 ## Structure
 
-Hash, previous hash, data, nonce
+Hash, previous hash, data, nonce:
 
-Previous hash + data + nonce + block id + hash algorithm = hash được gửi đến node
+**Hash**: A cryptographic hash function applied to data to produce a fixed-size string of characters, which is typically a hexadecimal number. It represents a unique fingerprint of the data.
 
-Genesis block (block đầu tiên), previous hash sẽ là 00000000
+**Previous hash**: The hash of the previous block in the blockchain. It links blocks together in chronological order, forming the blockchain.
 
-Nonce là số lượng giao dịch thành công được thực hiện bởi người dùng, miner sẽ tìm kiếm nonce cho đến khi nó khớp với mã hash được tạo ra bởi hệ thống
+**Data**: Information or transaction data that is stored in the block.
 
-Trong blockchain, SHA256 hash dữ liệu và đây là một loại mã hóa một chiều.
+**Nonce**: A number used in mining to find a suitable hash value. Miners change the nonce to search for a hash that meets certain criteria.
+The formula you mentioned, which includes the previous hash, data, nonce, block id, and hash algorithm, is used to calculate the hash of a block.
 
-Mã hash sẽ được biên dịch thành một số thập phân (từ hệ thập lục phân sang thập phân).
+The "Genesis block" is the first block in a blockchain, and its previous hash is typically set to a predefined value, often "00000000."
+
+The nonce is indeed a value that miners adjust to find a valid hash that meets specific criteria.
+
+In blockchain, the SHA-256 algorithm is commonly used to hash data, and it is a one-way cryptographic hash function.
+
+The resulting hash is often converted into a decimal number, typically from hexadecimal to decimal, for various purposes in blockchain and cryptocurrency systems.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/5.PNG)
 
 ## Characteristics
 
-Hiệu ứng tán loạn (avalanche effect): khi có một thay đổi nhỏ được thực hiện, hash sẽ tạo ra một cái hoàn toàn khác từ hash gốc.
+Avalanche effect: When a small change is made, the hash will generate a completely different output from the original hash.
 
-Phải chịu đựng được va chạm. Byzantine Fault Tolerance
+Must withstand collisions. Byzantine Fault Tolerance.
 
-- Sổ cái không thể thay đổi (Immutable ledger).
-- Ưu điểm so với chứng thực truyền thống.
-- Mạng ngang hàng phân tán (Distributed P2P network).
-- Khi một block được thêm vào mạng, nó sẽ được cập nhật trong toàn bộ mạng (Consensus Protocol).
+- Immutable ledger.
+- Advantages over traditional authentication.
+- Distributed P2P network.
+- When a block is added to the network, it will be updated across the entire network (Consensus Protocol).
 
-Nó có thể bị hack nếu có 51% được chiếm hữu, nhưng nó sẽ rất tốn kém.
+It can be hacked if 51% is controlled, but it will be very costly.
 
-Nếu một node trong mạng bị hack, tất cả các node khác sẽ khôi phục node đó về giá trị gốc của nó.
+If a node in the network is hacked, all other nodes will restore that node to its original value.
 
-Khi một miner thành công thêm một block vào chuỗi, các node còn lại trong mạng sẽ cập nhật tương ứng.
+When a miner successfully adds a block to the chain, the remaining nodes in the network will update accordingly.
 
-Tuy nhiên, một trong những nhược điểm của thời gian khai thác block ngắn là sẽ có nhiều miner tìm thấy một block trong khoảng thời gian rất gần nhau, nhưng chỉ block được tìm thấy sớm nhất mới được thêm vào nhánh chính và các block chậm hơn sẽ bị loại bỏ, được gọi là orphaned blocks.
+However, one of the drawbacks of short block mining times is that many miners may find a block in very close time intervals, but only the earliest found block will be added to the main branch, and the slower blocks will be discarded, known as orphaned blocks.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/4.PNG)

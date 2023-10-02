@@ -2,18 +2,18 @@
 title: Blockchain Trilemma
 ---
 
-Đây là thuật ngữ được sử dụng để chỉ ra rằng chỉ có hai trong ba yếu tố có thể được thực hiện và dễ dàng thất bại nếu cố gắng thực hiện tất cả ba yếu tố cùng một lúc.
+The term used to indicate that only two out of three elements can be achieved, and attempting to achieve all three simultaneously can easily lead to failure.
 
-Ba yếu tố không thể thỏa mãn cùng một lúc trong blockchain bao gồm: Khả năng mở rộ, Bảo mật và Phi tập trung.
+The three elements that cannot be satisfied simultaneously in blockchain are: Decentralization, Security, and Scalability.
 
-- Decentralization: cung cấp một hệ sinh thái có cấu trúc phân cấp và có khả năng kiểm tra mà bất kỳ ai cũng có thể tham gia mà không ảnh hưởng đến hệ thống.
+**Decentralization**: Provides a hierarchical and verifiable ecosystem that anyone can participate in without affecting the system.
 
-- Scalability: khả năng xử lý tình huống mà hàng triệu người dùng internet tham gia vào mạng.
+**Scalability**: The ability to handle situations in which millions of internet users participate in the network.
 
-- Security: khả năng phòng thủ trước các cuộc tấn công như DDoS, Sybil (nguồn gốc của cuộc tấn công 51% attack),...
+**Security**: The ability to defend against attacks such as DDoS, Sybil (the origin of the 51% attack),...
 
-Hiện tại, Bitcoin và Ethereum được thiết kế cho Phi tập trung và Bảo mật, điều này ảnh hưởng đến Khả năng mở rộ.
+Currently, Bitcoin and Ethereum are designed for Decentralization and Security, which affects Scalability.
 
-Trong khi đó, Ripple được thiết kế cho Bảo mật và Khả năng mở rộ, trong khi về mặt Phi tập trung, họ sẽ quyết định ai sẽ tham gia vào mạng.
+On the other hand, Ripple is designed for Security and Scalability, while in terms of Decentralization, they decide who will participate in the network.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/1.png)

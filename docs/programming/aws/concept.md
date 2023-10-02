@@ -4,21 +4,21 @@ title: Cloud Concept
 
 ## Benefis of Cloud Computing
 
-Khi chuyển đổi cơ sở hạ tầng và ứng dụng từ các trung tâm dữ liệu tại chỗ (on-premises) sang AWS, một trong những cơ hội tài chính quan trọng là thay thế chi phí hoạt động biến đổi (OPEX) bằng chi phí vốn ban đầu thấp (CAPEX).
+When transitioning infrastructure and applications from on-premises data centers to AWS, one of the significant financial opportunities is replacing operational expenditure (OPEX) with low initial capital expenditure (CAPEX).
 
-Với cơ sở hạ tầng tại chỗ, các hoạt động hàng ngày liên quan đến bảo dưỡng, nâng cấp, và mở rộng cơ sở hạ tầng được tính toán như là OPEX. Tuy nhiên, khi chuyển sang AWS, những chi phí này có thể được thay thế bằng chi phí vốn ban đầu thấp để xây dựng và triển khai cơ sở hạ tầng mới, sau đó chi phí hoạt động liên quan sẽ được giảm thiểu.
+With on-premises infrastructure, day-to-day activities related to maintenance, upgrades, and infrastructure expansion are considered as OPEX. However, when moving to AWS, these costs can be replaced with lower initial capital expenditure for building and deploying new infrastructure, after which ongoing operational costs will be minimized.
 
-Sử dụng AWS giúp các tổ chức tiết kiệm được chi phí hoạt động không cố định và giảm thiểu đầu tư vốn ban đầu. Bằng cách chuyển từ OPEX sang CAPEX, các tổ chức có thể tăng cường linh hoạt trong việc quản lý chi phí, giảm đầu tư vốn ban đầu, và nâng cao khả năng phát triển và mở rộng nhanh chóng.
+Using AWS helps organizations save on variable operational costs and reduce initial capital investments. By shifting from OPEX to CAPEX, organizations can enhance cost management flexibility, lower initial capital investments, and improve their ability to grow and scale rapidly.
 
 ### OPEX vs CAPEX
 
-OPEX và CAPEX là hai khái niệm tài chính trong quản lý doanh nghiệp. Đơn giản, OPEX (Chi phí Hoạt động) ám chỉ các chi phí liên quan đến hoạt động hàng ngày của một tổ chức, chẳng hạn như chi phí điện, tiền thuê, lương nhân viên, chi phí mua sắm linh kiện, nguyên vật liệu, và cetera. Ngược lại, CAPEX (Chi phí Vốn) liên quan đến các chi phí đầu tư vào tài sản cố định của tổ chức, như chi phí xây dựng, mua sắm thiết bị, máy móc, v.v.
+OPEX and CAPEX are two financial concepts in business management. Simply put, OPEX (Operational Expenditure) refers to the costs associated with the day-to-day operations of an organization, such as electricity costs, rent, employee salaries, expenses for purchasing components, raw materials, and so on. In contrast, CAPEX (Capital Expenditure) relates to costs associated with investments in the fixed assets of an organization, such as construction costs, equipment purchases, machinery, etc.
 
-Một cách minh họa dễ hiểu hơn là so sánh chi phí mua xe với chi phí duy trì nó. Chi phí mua một chiếc xe mới có thể được xem như một chi phí vốn ban đầu (CAPEX), trong khi các chi phí cho xăng, bảo dưỡng, và sửa chữa định kỳ được coi là chi phí hoạt động (OPEX).
+An easy-to-understand illustration is comparing the cost of buying a car to the cost of maintaining it. The cost of buying a new car can be considered an initial capital expenditure (CAPEX), while the costs for fuel, maintenance, and periodic repairs are regarded as operational expenses (OPEX).
 
-Trong lĩnh vực công nghệ thông tin, chi phí cho phần mềm, phần cứng, và dịch vụ đám mây có thể được coi là OPEX, trong khi việc mua máy chủ mới hoặc thiết bị mạng có thể được phân loại như là CAPEX.
+In the field of information technology, expenses for software, hardware, and cloud services can be categorized as OPEX, while acquiring new servers or networking equipment may be classified as CAPEX.
 
-Từ góc độ doanh nghiệp, việc lựa chọn giữa OPEX và CAPEX ảnh hưởng đến cách mà một tổ chức quản lý và phân bổ ngân sách và nguồn lực của mình. Sử dụng các dịch vụ đám mây từ AWS giúp giảm thiểu chi phí vốn ban đầu (CAPEX) và chuyển sang chi phí hoạt động biến đổi (OPEX), cho phép các tổ chức tiết kiệm chi phí và tăng cường linh hoạt trong quản lý tài chính.
+From a business perspective, the choice between OPEX and CAPEX impacts how an organization manages and allocates its budget and resources. Using cloud services from AWS helps minimize initial capital expenditures (CAPEX) and shifts towards operational expenditure (OPEX), allowing organizations to save costs and enhance financial management flexibility.
 
 ## Shared responsibility model
 
@@ -87,12 +87,12 @@ SaaS (Software as a Service) cung cấp toàn bộ ứng dụng dưới dạng d
 
 ### Public cloud
 
-Đám mây công cộng cung cấp các tài nguyên, chẳng hạn như tính toán, lưu trữ, mạng, môi trường phát triển và triển khai, cũng như ứng dụng thông qua internet. Chúng được sở hữu và vận hành bởi các nhà cung cấp dịch vụ đám mây bên thứ ba như AWS.
+The public cloud provides resources such as computing, storage, networking, development and deployment environments, as well as applications over the internet. They are owned and operated by third-party cloud service providers like AWS.
 
 ### Private cloud
 
-Đám mây riêng được xây dựng, vận hành và sử dụng bởi một tổ chức duy nhất, thường được đặt tại các trung tâm dữ liệu nội bộ. Chúng cung cấp sự kiểm soát, tùy chỉnh và bảo mật dữ liệu tốt hơn nhưng cũng đi kèm với các chi phí và hạn chế tài nguyên tương tự như môi trường IT truyền thống.
+Private clouds are built, operated, and used by a single organization, often located in on-premises data centers. They offer better control, customization, and data security but come with similar resource constraints and costs as traditional IT environments.
 
 ### Hybrid cloud
 
-Các môi trường kết hợp ít nhất một môi trường tính toán riêng (cơ sở hạ tầng IT truyền thống hoặc đám mây riêng, bao gồm cả edge computing) với một hoặc nhiều đám mây công cộng được gọi là đám mây hỗn hợp (hybrid clouds). Chúng cho phép bạn tận dụng các tài nguyên và dịch vụ từ các môi trường tính toán khác nhau và lựa chọn môi trường nào là tối ưu nhất cho các tác vụ tính toán của bạn.
+Hybrid clouds combine at least one private computing environment (traditional IT infrastructure or a private cloud, including edge computing) with one or more public clouds, known as hybrid clouds. They allow you to leverage resources and services from different computing environments and choose the most optimal environment for your computing tasks.

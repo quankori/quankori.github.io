@@ -2,9 +2,9 @@
 title: InterPlanetary File System
 ---
 
-Lưu trữ URL hình ảnh bằng nhiều dịch vụ bên thứ ba như AWS S3, Cloudinary, v.v. khá dễ dàng. Tuy nhiên, với dApps, điều này hoàn toàn khác. Chúng ta không thể lưu trữ thông tin URL ở một vị trí tập trung như AWS S3, vì như đã đề cập trước đó, như nhà đầu tư, chúng ta không muốn những thứ chúng ta mua sắm được quản lý bởi một bên thứ ba và có thể bị mất bất cứ lúc nào. Do đó, IPFS ra đời để đáp ứng nhu cầu quản lý thông tin với thuật toán DAGs Merkle, tệp được chuyển đổi thành dạng RAW và Sha256, sau đó được chia thành các phần nhỏ theo thứ tự. Mỗi peer sẽ lưu trữ tối đa 256kb và chia phần còn lại cho các peer tiếp theo.
+Storing image URLs with various third-party services such as AWS S3, Cloudinary, etc. is quite easy. However, with dApps, it's a whole different story. We cannot store URL information in a centralized location like AWS S3 because, as mentioned earlier, as investors, we don't want the things we purchase to be managed by a third party and potentially lost at any time. Therefore, IPFS was created to meet the need for information management with the Merkle DAGs algorithm, where files are converted into RAW and Sha256 formats, and then divided into smaller parts sequentially. Each peer will store a maximum of 256kb and distribute the remaining parts to the next peers.
 
-Khi tải thông tin tệp, máy chủ chỉ cần một đoạn CID để tải các phần nhỏ của tệp và kết hợp chúng lại thành một tệp thông qua một cổng thông tin công cộng:
+When retrieving file information, the server only needs a CID segment to download the smaller parts of the file and assemble them into a file through a public gateway.
 
 ```cmd
 # https://gateway.ipfs.io/ipfs/QmTRRb3F58B1YYgt2tzew1pEopdKFyUo2EifoDBKZjcCBK
@@ -12,20 +12,20 @@ Khi tải thông tin tệp, máy chủ chỉ cần một đoạn CID để tải
 # https://cloudflare-ipfs.com/ipfs/QmTRRb3F58B1YYgt2tzew1pEopdKFyUo2EifoDBKZjcCBK
 ```
 
-- Ưu và nhược điểm của IPFS
+- Advantages and Disadvantages of IPFS:
 
-  - Ưu điểm:
+  - Advantages:
 
-    Phi tập trung, người dùng có thể yên tâm rằng nội dung của họ sẽ không bị xóa một cách đột ngột.
+    Decentralization: IPFS ensures that users can have confidence that their content will not be suddenly deleted, and it does not rely on a specific organization or third-party storage services like AWS.
 
-    Không phụ thuộc vào các dịch vụ bên thứ ba như AWS hoặc dung lượng lưu trữ.
+    Independence from Third-party Services: IPFS allows for storing and accessing content without the need to depend on third-party storage services like AWS or dedicated storage capacity.
 
-  - Nhược điểm:
+  - Disadvantages:
 
-    Thời gian tải chậm vì cần thời gian để cổng thông tin tải xuống, đôi khi có thể hết thời gian kết nối.
+    Slow Loading Times: IPFS can lead to slower loading times compared to traditional services because it takes time for the gateway to fetch information from the IPFS network, and occasional connection delays can occur.
 
-    Với phương pháp OpenSea, hình ảnh phải được tải lên lại S3 và chuyển thành một hình ảnh tập trung được lưu trữ trong cơ sở dữ liệu để tránh thời gian tải lâu.
+    Issues with Platforms like OpenSea: Some applications, such as OpenSea, may need to re-upload images from IPFS and convert them into centralized images stored in a database to avoid long loading times.
 
-    Cần xây dựng một phiên bản IPFS để tối ưu hóa thời gian tải hình ảnh.
+    Need for Image Loading Optimization: To improve performance, it may be necessary to build a customized version of IPFS to optimize image loading times in specific scenarios.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/blockchain/7.png)
