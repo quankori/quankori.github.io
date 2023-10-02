@@ -3,6 +3,105 @@ const sidebars = {
   programming: [
     {
       type: "category",
+      label: "Fundamental",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/fundamental/bigo",
+          label: "Big O",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/process-and-thread",
+          label: "Process & Thread",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/oop",
+          label: "OOP",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/osimodel",
+          label: "OSI Model",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/solid",
+          label: "SOLID",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/staless-stateful",
+          label: "Stateless & Stateful",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Algorithm",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/algorithm/data-structures",
+          label: "Data Structures",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/linked-lists",
+          label: "Linked Lists",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/stack-queue",
+          label: "Stack & Queue",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/searching",
+          label: "Searching",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/sorting",
+          label: "Sorting",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/graph-data",
+          label: "Graph Data",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/tree-data",
+          label: "Tree Data",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/recursion",
+          label: "Recursion",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Design Pattern",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/pattern/singleton",
+          label: "Singleton Pattern",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "AWS",
       collapsed: true,
       collapsible: true,
@@ -104,44 +203,6 @@ const sidebars = {
           type: "doc",
           id: "programming/blockchain/ipfs",
           label: "IPFS",
-        }
-      ],
-    },
-    {
-      type: "category",
-      label: "Fundamental",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/fundamental/bigo",
-          label: "Big O",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/process-and-thread",
-          label: "Process & Thread",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/oop",
-          label: "OOP",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/osimodel",
-          label: "OSI Model",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/solid",
-          label: "SOLID",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/staless-stateful",
-          label: "Stateless & Stateful",
         },
       ],
     },
@@ -190,75 +251,14 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Algorithm",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/algorithm/data-structures",
-          label: "Data Structures",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/linked-lists",
-          label: "Linked Lists",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/stack-queue",
-          label: "Stack & Queue",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/searching",
-          label: "Searching",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/sorting",
-          label: "Sorting",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/graph-data",
-          label: "Graph Data",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/tree-data",
-          label: "Tree Data",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/recursion",
-          label: "Recursion",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Design Pattern",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/pattern/singleton",
-          label: "Singleton Pattern",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Node.js",
       collapsed: true,
       collapsible: true,
       items: [
         {
           type: "doc",
-          id: "programming/nodejs/concept",
-          label: "Concept",
+          id: "programming/nodejs/fundamental",
+          label: "Fundamental",
         },
         {
           type: "doc",
@@ -312,71 +312,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/nodejs/worker-thread",
-          label: "Worker Thread",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Nest.js",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/nestjs/dependency-injection",
-          label: "Dependency Injection (DI)",
+          id: "programming/nodejs/nestjs-di",
+          label: "Nest.js Dependency Injection (DI)",
         },
         {
           type: "doc",
-          id: "programming/nestjs/lifecycle-events",
-          label: "Lifecycle Events",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/providers",
-          label: "Providers",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/modules",
-          label: "Modules",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/middlewares",
-          label: "Middlewares",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/exception-filter",
-          label: "Exception Filters",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/pipes",
-          label: "Pipes",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/authentication",
-          label: "Authentication",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/interceptor",
-          label: "Interceptor",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/decorators",
-          label: "Decorators",
-        },
-        {
-          type: "doc",
-          id: "programming/nestjs/testing",
-          label: "Testing",
+          id: "programming/nodejs/nestjs-providers",
+          label: "Nest.js Providers",
         },
       ],
     },

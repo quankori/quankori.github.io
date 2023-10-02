@@ -1,5 +1,5 @@
 ---
-title: Providers
+title: Nest.js Providers
 ---
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/nestjs/1.png)

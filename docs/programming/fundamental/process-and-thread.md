@@ -2,26 +2,18 @@
 title: Process and Thread
 ---
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.png)
+
 
 ## Process
 
-Một process trong ngữ cảnh của hệ điều hành và lập trình máy tính đề cập đến một chương trình đang chạy trên máy tính. Đây là khái niệm quan trọng để hiểu cách hệ điều hành quản lý và thực thi các ứng dụng và tác vụ.
+A process can be understood simply as a program running on a computer. When we open a web browser to read an Advanced Go book, for example, this is considered a process. When we write a computer program using programming languages like C, Java, or Go, after compiling and running the program, the operating system assigns a certain amount of memory space, a PID (process ID), and so on to the program. Each process has at least one main thread to execute the program, which acts as the backbone of the program. When this main thread stops working, it corresponds to the program being closed.
 
-Mỗi khi bạn chạy một ứng dụng trên máy tính, bạn thực chất đang tạo ra một process. Process có thể là một chương trình độc lập hoặc một phần của chương trình lớn hơn. Mỗi process có môi trường thực thi của riêng nó, bao gồm không gian bộ nhớ, tài nguyên hệ thống và dữ liệu tạm thời.
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.png)
 
 ## Thread
 
-Một "thread" trong lập trình là một luồng thực thi độc lập trong một chương trình. Nhiều thread trong một chương trình cho phép cùng lúc thực hiện nhiều tác vụ khác nhau. và 1 process sẽ có nhiều thread chạy độc lập khác nhau.
+A thread, also known as a sub-process, is a thread within a running process. Threads run in parallel within each process and can access memory areas provided by the process and operating system resources.
 
-Trong đời sống hàng ngày, bạn có thể tưởng tượng việc làm việc nhóm trong một nhóm nhiều người. Mỗi người trong nhóm có thể thực hiện một nhiệm vụ riêng biệt cùng một lúc. Ví dụ, trong một bữa tiệc, một người có thể lo việc nấu ăn, một người làm việc trò chuyện với khách, và một người chơi nhạc. Mỗi người tương ứng với một thread, cho phép nhiều hoạt động xảy ra đồng thời.
+Threads within a process are allocated separate stack memory to store their own variables. A fixed amount of stack memory, typically around 1MB-2MB, is allocated for each thread. In addition, threads share the heap memory space of the process. When a process creates too many threads, it can lead to a stack overflow condition. When threads share memory space, it can easily lead to a race condition. In the following sections, we will explore how Golang handles this to avoid race condition errors.
 
-Ví dụ:
-
-**Process** (Sự kiện buổi hòa nhạc):
-
-Buổi hòa nhạc chính là một process lớn. Đây là một sự kiện chủ đề với nhiều hoạt động khác nhau, bao gồm sân khấu, ánh sáng, âm thanh, quầy hàng thức ăn, quầy vé, và hơn nữa.
-
-**Thread** (Các hoạt động khác nhau):
-
-Bên trong buổi hòa nhạc, bạn có thể xem xét mỗi hoạt động như một thread riêng. Ví dụ, có một thread cho quầy vé, một thread khác cho quầy thức ăn, một thread cho việc điều chỉnh ánh sáng trên sân khấu, và một thread cho quá trình phát âm thanh.
+In the previous sections, we discussed concurrent and parallel processing models, where tasks are performed by different threads. Therefore, concurrency here means handling tasks concurrently or in parallel, which implies that multiple threads are running concurrently or in parallel (multi-threading). The number of threads running simultaneously at any given time will be equal to the number of CPU cores our computer has. Therefore, when programming, creating too many threads does not necessarily make our program run faster; it can actually lead to errors and slow down the program. Based on programming experience, we should only create a number of threads equal to the number of CPU cores multiplied by 2.

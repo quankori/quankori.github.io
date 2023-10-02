@@ -2,15 +2,16 @@
 title: Panic & Recover
 ---
 
-Trong ngôn ngữ Go (Golang), panic và recover là hai cơ chế được sử dụng để xử lý các tình huống không mong muốn và phục hồi từ lỗi trong mã nguồn.
+In the Go (Golang) language, panic and recover are two mechanisms used to handle unexpected situations and recover from errors in source code.
 
 **Panic**:
 
-panic là một hàm được sử dụng để kích hoạt một tình huống không thể xử lý được trong chương trình. Khi một panic được kích hoạt, thực thi chương trình sẽ bị ngừng lại và thông báo lỗi sẽ được in ra. Việc sử dụng panic thường được coi là không nên và nên chỉ được sử dụng trong các tình huống không thể khắc phục được, ví dụ như khi gặp một lỗi nghiêm trọng mà chương trình không thể tiếp tục hoạt động.
+Panic is a function used to trigger an unrecoverable situation in a program. When panic is triggered, the program's execution is halted, and an error message is printed. Using panic is generally considered undesirable and should only be used in situations where recovery is impossible, such as encountering a severe error that the program cannot continue to handle.
 
 **Recover**:
 
-recover là một hàm được sử dụng để phục hồi khỏi tình huống panic và tiếp tục thực thi chương trình. Hàm recover thường được sử dụng trong một khối defer và chỉ có thể hoạt động trong một hàm goroutine. Khi recover được gọi trong khối defer và có một panic xảy ra trong hàm đó hoặc trong một hàm gọi cha của nó, recover sẽ trả về giá trị panic và chương trình sẽ tiếp tục thực thi từ vị trí recover được gọi.
+Recover is a function used to recover from a panic situation and continue program execution. The recover function is typically used within a defer block and can only operate within a goroutine function. When recover is called within a defer block and a panic occurs in that function or in one of its parent calling functions, recover will return the panic value, and the program will continue execution from the point where recover was called.
+
 
 ```go
 func main() {
@@ -26,6 +27,6 @@ func main() {
 }
 ```
 
-Trong ví dụ trên, sau khi xảy ra panic, khối defer sử dụng recover để phục hồi từ tình huống panic và in ra thông báo "Recovered: Something went wrong". Câu lệnh sau panic (fmt.Println("End")) sẽ không được thực thi vì chương trình đã bị ngừng lại khi panic xảy ra.
+In the example above, after a panic occurs, the defer block uses recover to recover from the panic situation and print the message "Recovered: Something went wrong." The statement after panic (fmt.Println("End")) will not be executed because the program was halted when the panic occurred.
 
-Tóm lại, panic và recover là cơ chế cho phép bạn xử lý các tình huống không mong muốn và có thể phục hồi từ các tình huống panic trong mã nguồn Go. Tuy nhiên, việc sử dụng chúng cần được thực hiện cẩn thận và chỉ khi thực sự cần thiết.
+In summary, panic and recover are mechanisms that allow you to handle unexpected situations and potentially recover from panic situations in Go source code. However, their usage should be done carefully and only when truly necessary.

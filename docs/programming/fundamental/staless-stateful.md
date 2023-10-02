@@ -2,18 +2,18 @@
 title: Stateless & Stateful
 ---
 
-"Stateless" và "stateful" là hai khái niệm quan trọng trong lĩnh vực công nghệ thông tin, đặc biệt trong phát triển ứng dụng và mạng. Chúng liên quan đến cách mà hệ thống xử lý và lưu trữ thông tin.
+"Stateless" and "stateful" are two important concepts in the field of information technology, especially in application development and networking. They are related to how a system processes and stores information.
 
-## Stateless (Không lưu trạng thái):
+## Stateless:
 
-Trong mô hình stateless, hệ thống không lưu trữ bất kỳ thông tin trạng thái nào liên quan đến người dùng hoặc phiên làm việc. Mỗi yêu cầu đến hệ thống được xử lý mà không có kiến thức về các yêu cầu trước đó. Các yêu cầu này độc lập và không phụ thuộc vào bất kỳ trạng thái nào được lưu trữ trước đó. Stateless thường dễ dàng mở rộng và phù hợp cho các ứng dụng phân tán.
+In a stateless model, the system does not store any state-related information about users or work sessions. Each request to the system is processed without knowledge of previous requests. These requests are independent and do not depend on any previously stored state. Stateless architectures are often easy to scale and suitable for distributed applications.
 
-Ví dụ: HTTP là một giao thức stateless. Mỗi lần bạn gửi yêu cầu HTTP tới máy chủ, nó không biết về các yêu cầu trước đó của bạn.
+Example: HTTP is a stateless protocol. Each time you send an HTTP request to a server, it has no knowledge of your previous requests.
 
-## Stateful (Lưu trạng thái):
+## Stateful:
 
-Trong mô hình stateful, hệ thống lưu trữ thông tin về trạng thái của người dùng hoặc phiên làm việc. Mỗi yêu cầu đến hệ thống phụ thuộc vào trạng thái trước đó và dữ liệu được lưu trữ. Các ứng dụng stateful thường phức tạp hơn trong việc quản lý trạng thái và có thể gặp khó khăn trong việc mở rộng.
+In a stateful model, the system stores information about the state of users or work sessions. Each request to the system depends on the previous state, and data is stored. Stateful applications are often more complex in managing state and may face challenges in scalability.
 
-Ví dụ: Một ứng dụng gửi email có tính năng "lưu nháp". Khi bạn bắt đầu viết email, nội dung đang trong trạng thái chưa hoàn thành. Hệ thống lưu trữ trạng thái này để bạn có thể tiếp tục viết sau.
+Example: An email application with a "draft" feature. When you start writing an email, the content is in an unfinished state. The system stores this state so that you can continue writing later.
 
-Sự lựa chọn giữa stateless và stateful phụ thuộc vào yêu cầu của ứng dụng và quyết định thiết kế của nhà phát triển.
+The choice between stateless and stateful depends on the requirements of the application and the design decisions of the developer.

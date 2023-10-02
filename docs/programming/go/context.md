@@ -4,14 +4,57 @@ title: Context
 
 ## Concept
 
-The Context là một cơ chế trong Golang được sử dụng để quản lý các nhiệm vụ đồng thời và kiểm soát việc thực hiện và chấm dứt của các goroutine. Nó có thể được sử dụng để truyền thông tin và kiểm soát các nhiệm vụ đồng thời, giúp quản lý tài nguyên và ngăn các nhiệm vụ chạy quá lâu.
+"The Context" is a mechanism in Golang used to manage concurrent tasks and control the execution and termination of goroutines. It can be used to communicate information and control concurrent tasks, helping manage resources and preventing tasks from running for too long.
 
-- Có ba loại Context chính trong Golang:
+There are three main types of Context in Golang:
 
-  - **Background**: Context mặc định được sử dụng để khởi tạo một Context mới.
-  - **TODO**: Được sử dụng để xử lý các nhiệm vụ đơn giản và tạm thời.
-  - **WithCancel**:Cho phép hủy một nhiệm vụ sau khi Context của nó đã hết hạn.
-  - **WithDeadline**: Cho phép đặt một hạn chót cho một nhiệm vụ. Khi hạn chót đến, Context sẽ tự động hủy bỏ nhiệm vụ.
-  - **WithTimeout**: Đặt một giới hạn thời gian thực hiện cho một nhiệm vụ. Khi thời gian này kết thúc, Context sẽ tự động hủy bỏ nhiệm vụ.
+**Background**: The default Context used to initialize a new Context.
+**TODO**: Used for handling simple and temporary tasks.
+**WithCancel**: Allows canceling a task after its Context has expired.
+**WithDeadline**: Allows setting a deadline for a task. When the deadline is reached, the Context will automatically cancel the task.
+**WithTimeout**: Sets a time limit for task execution. When this time expires, the Context will automatically cancel the task.
 
-Nếu không thực hiện Context đúng cách, các goroutine có thể bị chặn hoặc có thể không bị hủy bỏ đúng. Điều này có thể dẫn đến lãng phí tài nguyên, hiệu suất ứng dụng giảm đi và các vấn đề bảo mật tiềm tàng. Do đó, việc sử dụng Context là rất quan trọng khi phát triển các ứng dụng đa luồng để đảm bảo tính chính xác và an toàn của chúng.
+If Context is not implemented correctly, goroutines can be blocked or may not be canceled properly. This can lead to resource wastage, reduced application performance, and potential security issues. Therefore, using Context is crucial when developing multithreaded applications to ensure their accuracy and safety.
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"time"
+)
+
+func doTask(ctx context.Context) {
+	for {
+		select {
+		case <-ctx.Done():
+			fmt.Println("Task canceled.")
+			return
+		default:
+			fmt.Println("Task is still running.")
+			time.Sleep(1 * time.Second)
+		}
+	}
+}
+
+func main() {
+	// Create a context with cancellation capability
+	ctx, cancel := context.WithCancel(context.Background())
+
+	// Start a goroutine to perform the task
+	go doTask(ctx)
+
+	// Allow the task to run for 5 seconds
+	time.Sleep(5 * time.Second)
+
+	// Cancel the task using the cancel function
+	cancel()
+
+	// Give some time for the cancellation to take effect
+	time.Sleep(1 * time.Second)
+
+	fmt.Println("Main function exiting.")
+}
+
+```

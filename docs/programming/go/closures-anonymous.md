@@ -2,11 +2,11 @@
 title: Closures & Anounymous Function
 ---
 
-Closures và Anonymous Functions là hai khái niệm quan trọng trong lập trình Go (Golang) liên quan đến việc xử lý hàm và phạm vi biến.
+"Closures" and "Anonymous Functions" are two important concepts in Go (Golang) programming related to handling functions and variable scope.
 
 **Closures trong Golang**:
 
-Closures trong Go đề cập đến khả năng một hàm (nested function) có thể truy cập và sử dụng các biến bên ngoài phạm vi của nó. Closures cho phép bạn truyền biến cho hàm con và giữ lại trạng thái của các biến đó ngay cả sau khi hàm gốc đã thực thi xong.
+Closures in Go refer to the ability of a function (nested function) to access and use variables outside of its scope. Closures allow you to pass variables to a nested function and retain the state of those variables even after the parent function has finished executing.
 
 ```go
 func main() {
@@ -21,11 +21,11 @@ func main() {
 }
 ```
 
-Trong ví dụ trên, hàm add là một closure có thể truy cập biến x ở phạm vi ngoài.
+In the example above, the "add" function is a closure that can access the variable "x" outside its scope.
 
 **Anonymous Functions trong Golang**:
 
-Anonymous Functions, còn gọi là lambda functions, là các hàm không có tên được định nghĩa và sử dụng trong chỗ mà chúng được tạo ra. Trong Go, bạn có thể khai báo và sử dụng anonymous functions trực tiếp.
+Anonymous Functions, also known as lambda functions, are unnamed functions defined and used at the place where they are created. In Go, you can declare and use anonymous functions directly.
 
 ```go
 func main() {
@@ -38,6 +38,6 @@ func main() {
 }
 ```
 
-Trong ví dụ này, hàm add là một anonymous function được gán cho biến add và sử dụng ngay tại chỗ.
+In this example, the "add" function is an anonymous function assigned to the "add" variable and used right on the spot.
 
-Cả closures và anonymous functions trong Go cung cấp khả năng tạo ra mã nguồn linh hoạt hơn và tối ưu hóa quy trình lập trình bằng cách sử dụng các hàm một cách hiệu quả trong các tình huống cụ thể.
+Both closures and anonymous functions in Go provide the ability to create more flexible source code and optimize the programming process by efficiently using functions in specific situations.

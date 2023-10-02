@@ -4,16 +4,14 @@ title: SOLID Principle
 
 ## S - Single Responsibility Principle
 
-Một lớp nên chỉ có một trách nhiệm (Nó chỉ nên được sửa đổi vì một lý do).
+A class should have only one responsibility (It should only be modified for one reason). 
 
 ```ts
-// Student bây giờ chỉ chứa thông tin
 public class Student {
   public string Name { get; set;}
   public int Age { get; set;}
 }
 
-// Class này chỉ format thông tin hiển thị student
 public class Formatter {
   public string FormatStudentText(Student std) {
     return "Name: " + std.Name + ". Age: " + std.Age;
@@ -31,7 +29,7 @@ public class Formatter {
 
 ## O - Open/Closed Principle
 
-Có thể mở rộng một lớp, nhưng không được phép sửa đổi nội dung của nó.
+A class can be extended, but it should not be modified.
 
 ```ts
 interface Shape {
@@ -57,7 +55,7 @@ public class Rectangle implements Shape {
 
 ## L - Liskov’s Substitution Principle
 
-Trong một chương trình, các đối tượng của một lớp con có thể thay thế lớp cha mà không ảnh hưởng đến tính đúng đắn của chương trình.
+In a program, objects of a child class can replace the parent class without affecting the correctness of the program.
 
 ```ts
 public class Animal {
@@ -76,7 +74,8 @@ public class Dog extends Animal {
 
 ## I - Interface Segregation Principle
 
-Thay vì sử dụng một giao diện lớn, chúng ta nên chia thành các giao diện nhỏ hơn, mỗi giao diện có mục đích khác nhau.
+Instead of using one large interface, we should break it into smaller interfaces, each with a different purpose.
+
 
 ```ts
 // Instead of:
@@ -107,12 +106,9 @@ class Human implements Working, Eating {
 
 ## D - Dependency Inversion Principle
 
-Các mô-đun cấp cao không nên phụ thuộc vào các mô-đun cấp thấp.
-Cả hai nên phụ thuộc vào trừu tượng.
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
 
-Trừu tượng (giao diện) không nên phụ thuộc vào chi tiết, mà ngược lại.
-(Các lớp giao tiếp với nhau thông qua giao diện,
-không thông qua việc thực thi cụ thể.)
+Abstractions (interfaces) should not depend on details, but the other way around. (Classes communicate with each other through interfaces, not through specific implementations.)
 
 ```ts
 // Not apply principle

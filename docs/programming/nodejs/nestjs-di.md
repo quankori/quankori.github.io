@@ -1,5 +1,5 @@
 ---
-title: Dependency Injection (DI)
+title: Nest.js Dependency Injection (DI)
 ---
 
 Dependency Injection (DI) là một mẫu thiết kế trong đó một đối tượng nhận các phụ thuộc của nó từ bên ngoài thay vì tạo chúng bên trong. Nó thúc đẩy nguyên tắc đảo ngược của việc kiểm soát, trong đó việc tạo ra và quản lý các phụ thuộc được chuyển ra bên ngoài lớp. Điều này làm cho hệ thống modul hơn, dễ kiểm tra hơn và thường là gọn gàng hơn về việc tách biệt các vấn đề liên quan.
