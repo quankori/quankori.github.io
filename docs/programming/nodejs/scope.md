@@ -4,7 +4,7 @@ title: Scopes
 
 ## Global Scope
 
-Một biến được khai báo bên ngoài bất kỳ hàm hoặc khối nào thuộc phạm vi toàn cầu (global scope). Mọi đoạn mã và hàm có thể truy cập vào nó.
+A variable declared outside of any function or block belongs to the global scope. Any code and functions can access it.
 
 ```js
 let globalVar = "I'm globally scoped";
@@ -18,7 +18,7 @@ showGlobalVar(); // Outputs: "I'm globally scoped"
 
 ## Local (or Function) Scope
 
-Biến được khai báo bên trong một hàm sẽ có phạm vi cục bộ (local scope). Chúng không thể truy cập bên ngoài hàm đó.
+Variables declared inside a function have local scope. They cannot be accessed outside of that function.
 
 ```js
 function localFunction() {
@@ -32,7 +32,7 @@ localFunction(); // Outputs: "I'm locally scoped"
 
 ## Block Scope (Introduced with ES6)
 
-Với sự ra đời của let và const trong ES6, JavaScript đã có phạm vi theo khối. Điều này có nghĩa rằng các biến được khai báo với let hoặc const bên trong một khối (như bên trong câu lệnh if hoặc vòng lặp for) chỉ có thể truy cập trong khối đó.
+With the introduction of let and const in ES6, JavaScript adopted block scope. This means variables declared with let or const inside a block (such as within an if statement or for loop) can only be accessed within that block.
 
 ```js
 if (true) {
@@ -45,7 +45,7 @@ if (true) {
 
 ## Module Scope (With ES6 Modules)
 
-Khi sử dụng các module ES6, các biến cấp cao (những biến không được xuất) có phạm vi module. Chúng cục bộ cho module và không thể truy cập vào các module khác trừ khi được xuất cụ thể.
+When using ES6 modules, top-level variables (those not exported) have module scope. They are local to the module and cannot be accessed by other modules unless specifically exported.
 
 ```js
 let moduleVar = "I'm module-scoped";
@@ -62,9 +62,9 @@ showVar(); // Outputs: "I'm module-scoped"
 
 ## Lexical Scope
 
-Phạm vi từ vựng (lexical scope), còn được gọi là phạm vi tĩnh, là một khái niệm quan trọng trong lập trình, đặc biệt trong ngôn ngữ lập trình có tương tác với hàm như JavaScript. Lexical scope xác định quyền truy cập của biến hoặc hàm trong mã nguồn dựa trên cách chúng được khai báo và nhóm họp.
+Lexical scope, also known as static scope, is an important concept in programming, especially in languages that interact with functions, such as JavaScript. Lexical scope determines the access rights of variables or functions in source code based on how they are declared and grouped.
 
-Khi một hàm được định nghĩa trong một ngữ cảnh (block hoặc hàm khác), nó sẽ được tạo ra với phạm vi từ vựng, có nghĩa là nó có thể truy cập vào các biến và hàm mà có sẵn trong cùng phạm vi mà nó được định nghĩa, cũng như các phạm vi bọc ngoài nó. Điều này dựa vào cách mã nguồn được viết và cấu trúc tĩnh của nó, chứ không phụ thuộc vào cách mã nguồn được gọi tại thời điểm thực thi.
+When a function is defined within a context (a block or another function), it is created with lexical scope, meaning it can access variables and functions available in the same scope where it was defined, as well as outer enclosing scopes. This depends on how the source code is written and its static structure, not on how the source code is called at runtime.
 
 ```js
 function outer() {
@@ -72,8 +72,8 @@ function outer() {
 
   function inner() {
     const innerVar = "I'm from inner";
-    console.log(outerVar); // Truy cập được outerVar từ phạm vi bên ngoài
-    console.log(innerVar); // Truy cập innerVar trong phạm vi hiện tại
+    console.log(outerVar); 
+    console.log(innerVar); 
   }
 
   inner();
@@ -82,11 +82,11 @@ function outer() {
 outer();
 ```
 
-Điều quan trọng cần nhớ về lexical scope là nó được xác định tại thời điểm định nghĩa hàm, không phải tại thời điểm gọi hàm. Điều này có nghĩa rằng, dù có thể gọi hàm từ một phạm vi khác, các biến và hàm mà hàm đó truy cập sẽ vẫn dựa vào phạm vi khi nó được định nghĩa.
+An important thing to remember about lexical scope is that it is determined at the time of function definition, not at the time of function invocation. This means that, regardless of where the function is called from, the variables and functions it accesses will still depend on the scope where it was defined.
 
 ## Closures
 
-Trong JavaScript, closure là một tính năng ngôn ngữ cho phép một hàm có quyền truy cập vào các biến từ ngữ cảnh mà hàm đó được tạo ra. Closure xuất hiện khi một hàm (được gọi là hàm "inner") được định nghĩa trong một hàm khác (được gọi là hàm "outer") và hàm inner này truy cập các biến của hàm outer.
+In JavaScript, a closure is a language feature that allows a function to access variables from the context in which the function was created. A closure occurs when a function (called the "inner" function) is defined within another function (called the "outer" function), and the inner function accesses variables of the outer function.
 
 ```js
 function outerFunction(outerVariable) {
@@ -106,11 +106,11 @@ myClosure("inner"); // Sử dụng closure
 
 ## Private Scope và Public Scope
 
-**Private Scope**: Trong phạm vi riêng tư, các biến và hàm chỉ có thể được truy cập và sử dụng bên trong cùng một "phạm vi" hoặc "đoạn mã" mà chúng được khai báo. Chúng không thể được truy cập từ các phạm vi khác, kể cả các đoạn mã khác trong cùng một tệp hoặc module, cho phép tương tác dễ dàng và chia sẻ dữ liệu và hàm giữa các phần khác nhau của chương trình.
+**Private Scope**: In private scope, variables and functions can only be accessed and used within the same "scope" or "code block" where they are declared. They cannot be accessed from other scopes, including other code blocks within the same file or module, allowing for easy interaction and sharing of data and functions between different parts of the program.
 
 ```js
 function Counter() {
-  let count = 0; // Biến count chỉ có thể truy cập trong hàm Counter
+  let count = 0;
 
   this.increment = function () {
     count++;
@@ -124,13 +124,13 @@ function Counter() {
 const counter = new Counter();
 counter.increment();
 console.log(counter.getCount()); // Output: 1
-console.log(counter.count); // Output: undefined (vì count là biến riêng tư)
+console.log(counter.count); // Output: undefined 
 ```
 
-**Public Scope**: Trong phạm vi công khai, các biến và hàm có thể được truy cập từ bất kỳ nơi nào trong chương trình, bao gồm cả từ các module khác, đảm bảo tính bảo mật và ngăn ngừa việc sửa đổi không cần thiết từ các phạm vi bên ngoài.
+**Public Scope**: In public scope, variables and functions can be accessed from anywhere in the program, including from other modules, ensuring security and preventing unnecessary modifications from external scopes.
 
 ```js
-let globalVar = 42; // Biến globalVar có phạm vi công khai và có thể truy cập ở mọi nơi
+let globalVar = 42; 
 
 function printGlobal() {
   console.log(globalVar);

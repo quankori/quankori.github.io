@@ -4,7 +4,7 @@ title: Modules
 
 ## CommonJS
 
-Đây là hệ thống module được sử dụng trong Node.js. Nó là đồng bộ và chủ yếu được thiết kế cho môi trường máy chủ.
+This is a module system used in Node.js. It is synchronous and primarily designed for server environments.
 
 ```js
 // greet.js
@@ -19,7 +19,7 @@ greet();
 
 ## Namespace
 
-Namespaces là một cách cụ thể của TypeScript để tổ chức mã, sử dụng từ khóa namespace. Mặc dù namespaces có thể giúp ngăn va chạm tên, nhưng chúng đã trở nên ít phổ biến hơn với sự xuất hiện của ES Modules.
+Namespaces are a specific way in TypeScript to organize code, using the namespace keyword. While namespaces can help avoid naming collisions, they have become less common with the advent of ES Modules.
 
 ```ts
 namespace MyNamespace {
@@ -31,7 +31,7 @@ namespace MyNamespace {
 
 ## External Modules (ES Modules)
 
-Hệ thống module được giới thiệu trong ES6 (ES2015) cho JavaScript. Nó đã trở thành tiêu chuẩn cho các module phía máy khách và hiện tại cũng được hỗ trợ trong Node.js.
+The module system was introduced in ES6 (ES2015) for JavaScript. It has become the standard for client-side modules and is currently also supported in Node.js.
 
 ```ts
 // module.ts
@@ -46,7 +46,7 @@ greet();
 
 ## Export
 
-**Named Export**: Trong JavaScript ES6, named export được sử dụng để xuất nhiều thứ từ một module bằng cách thêm keyword export vào khai báo của chúng. Những thứ được export sẽ được phân biệt bằng tên. Sau đó import những thứ chúng ta cần sử dụng bằng cách bao quanh chúng cặp dấu ngoặc nhọn { }. Tên của module đã nhập phải giống với tên của module đã xuất.
+**Named Export**: In JavaScript ES6, named exports are used to export multiple things from a module by adding the export keyword to their declarations. The exported things are distinguished by their names. Then, we import the things we want to use by surrounding them with curly braces { }. The name of the imported module must match the name of the exported module.
 
 ```js
 //-------util.js------
@@ -56,7 +56,7 @@ export function addTwoNumbers(x, y) {
 export let students = ["wisdom", "bill", "fred", "grim"];
 ```
 
-**Default Export**: trong Javascript ES6 chỉ cho phép xuất một mặc định cho mỗi file. Default Export có thể cho một function, class hoặc một object.
+**Default Export**: In JavaScript ES6, only one default export is allowed per file. The default export can be a function, class, or object.
 
 ```js
 //----myFunction.js ----
@@ -74,9 +74,9 @@ console.log(util.addTwoNumbers(2, 13));
 console.log(util.students);
 ```
 
-Cú pháp ở đây khá đơn giản, nó dạng như thế này: `import * as name from "module-name"`
+The syntax here is quite simple, it looks like this: `import * as name from "module-name"`
 
-Ngoài ra bạn cũng có thể sử dụng alias "as" để định dạnh lại nếu chưa quen thuộc hoặc tuỳ theo dự án của mình. Nếu như bạn có một module export như thế này:
+Additionally, you can use the "as" alias to rename it if you're not familiar with the module's name or depending on your project. If you have a module exported like this:
 
 ```js
 function sayHi(user) {
@@ -89,8 +89,6 @@ function sayBye(user) {
 
 export { sayHi, sayBye }; // a list of exported variables
 ```
-
-Thì việc định danh lại cũng không hề quá khó
 
 ```js
 // main.js

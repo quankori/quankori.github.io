@@ -2,21 +2,21 @@
 title: Nest.js Dependency Injection (DI)
 ---
 
-Dependency Injection (DI) là một mẫu thiết kế trong đó một đối tượng nhận các phụ thuộc của nó từ bên ngoài thay vì tạo chúng bên trong. Nó thúc đẩy nguyên tắc đảo ngược của việc kiểm soát, trong đó việc tạo ra và quản lý các phụ thuộc được chuyển ra bên ngoài lớp. Điều này làm cho hệ thống modul hơn, dễ kiểm tra hơn và thường là gọn gàng hơn về việc tách biệt các vấn đề liên quan.
+Dependency Injection (DI) is a design pattern in which an object receives its dependencies from the outside instead of creating them internally. It promotes the principle of inversion of control, where the creation and management of dependencies are shifted outside the class. This makes the system more modular, easier to test, and often cleaner in terms of separating concerns.
 
-NestJS, một framework Node.js tiến bộ để xây dựng các ứng dụng phía máy chủ có khả năng mở rộng, sử dụng Dependency Injection mạnh mẽ như một trong những tính năng cốt lõi của nó, được truyền cảm hứng từ hệ thống DI của Angular.
+NestJS, an advanced Node.js framework for building scalable server-side applications, uses Dependency Injection as one of its core features, inspired by Angular's DI system.
 
-Dưới đây là cách Dependency Injection hoạt động trong NestJS:
+Here's how Dependency Injection works in NestJS:
 
-**Providers**: Trong NestJS, một provider là một cái gì đó có thể được tiêm vào các hàm khởi tạo của các lớp khác. Providers có thể là các giá trị đơn giản, các lớp, các hàm nhà máy và nhiều hơn nữa.
+**Providers**: In NestJS, a provider is something that can be injected into the constructors of other classes. Providers can be simple values, classes, factory functions, and more.
 
-**Modules**:  Mỗi mô-đun trong NestJS có thể khai báo các thành phần (controllers, providers, vv) thuộc về nó. Khi một mô-đun cần một provider, nó sẽ tìm kiếm trong mô-đun của nó và trong các mô-đun đã được nhập để tìm thấy nó.
+**Modules**: Each module in NestJS can declare components (controllers, providers, etc.) that belong to it. When a module needs a provider, it looks within its own module and in the imported modules to find it.
 
-**Injectors**:  NestJS có một container DI tích hợp sẵn để xử lý việc tạo ra và vòng đời của các đối tượng (hoặc "providers").
+**Injectors**: NestJS has a built-in DI container to handle the creation and lifecycle of objects (or "providers").
 
-**Decorators**: NestJS sử dụng các decorators như @Inject() để xác định thủ công một mã thông báo cung cấp tùy chỉnh cho một provider.
+**Decorators**: NestJS uses decorators like @Inject() to manually specify a custom provider token for a provider.
 
-Hãy xem xét chúng ta có một UserService đơn giản truy vấn dữ liệu người dùng:
+Consider we have a simple UserService that queries user data:
 
 ```ts
 @Injectable()
@@ -27,9 +27,9 @@ export class UserService {
 }
 ```
 
-Dịch vụ này được đánh dấu bằng decorator @Injectable(), biến nó thành một provider có thể được quản lý bởi hệ thống DI của NestJS.
+This service is marked with the @Injectable() decorator, making it a provider managed by NestJS's DI system.
 
-Bây giờ, nếu bạn muốn sử dụng dịch vụ này trong một controller, thay vì tạo một phiên bản UserService thủ công, bạn sẽ làm như sau:
+Now, if you want to use this service in a controller, instead of manually creating a UserService instance, you would do the following:
 
 ```ts
 @Controller("users")
@@ -43,16 +43,16 @@ export class UserController {
 }
 ```
 
-Ở đây, UserController yêu cầu dịch vụ UserService được tiêm vào. Bộ tiêm DI của NestJS chịu trách nhiệm tạo ra một phiên bản của UserService và cung cấp nó cho UserController.
+Here, UserController requests the UserService to be injected. NestJS's DI injector takes care of creating an instance of UserService and providing it to UserController.
 
-Lợi ích trong NestJS:
+Benefits in NestJS:
 
-**Testability**: Với DI, dễ dàng thay thế dịch vụ thực tế bằng phiên bản giả mạo để kiểm tra.
+**Testability**: With DI, it's easy to replace real services with mock versions for testing.
 
-**Modularity**: DI thúc đẩy thiết kế module hơn bằng cách thúc đẩy việc tách biệt các vấn đề.
+**Modularity**: DI promotes a more modular design by encouraging the separation of concerns.
 
-**Reusability**:  Providers (như các dịch vụ) có thể tái sử dụng dễ dàng trong các phần khác nhau của ứng dụng.
+**Reusability**: Providers (like services) can be easily reused in different parts of the application.
 
-**Lifecycles**: NestJS có thể quản lý vòng đời của các providers, tạo chúng theo cách lười biếng hoặc là các singleton, phụ thuộc vào nhu cầu của bạn.
+**Lifecycles**: NestJS can manage the lifecycles of providers, creating them lazily or as singletons, depending on your needs.
 
-Tóm lại, Dependency Injection là một khái niệm cốt lõi trong NestJS, giúp tạo ra các ứng dụng có khả năng mở rộng, dễ bảo trì và dễ kiểm tra.
+In summary, Dependency Injection is a core concept in NestJS that helps create scalable, maintainable, and testable applications.

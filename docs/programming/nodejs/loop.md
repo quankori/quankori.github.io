@@ -2,9 +2,8 @@
 title: Loop
 ---
 
-Trong JavaScript, có nhiều cách để duyệt qua mảng, nhưng hiệu năng có thể khác nhau tùy thuộc vào trình duyệt và phiên bản JavaScript. Dưới đây là một số phương pháp thường được sử dụng:
 
-**For Loop Cổ Điển**: Thường là nhanh nhất nhưng có cú pháp khá đầy đủ.
+**For Loop**: 
 
 ```js
 for (let i = 0; i < arr.length; i++) {
@@ -12,7 +11,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 ```
 
-**For-Of Loop**: Cú pháp sáng sủa hơn, nhưng có thể chậm hơn một chút đối với mảng lớn.
+**For-Of Loop**: 
 
 ```js
 for (const item of arr) {
@@ -20,7 +19,7 @@ for (const item of arr) {
 }
 ```
 
-**forEach Method**: Rõ ràng và thuận tiện, nhưng không thể dừng loop bằng break.
+**forEach Method**: 
 
 ```js
 arr.forEach(function (item) {
@@ -28,29 +27,29 @@ arr.forEach(function (item) {
 });
 ```
 
-**Map Method**: Tạo mảng mới bằng cách áp dụng một hàm lên từng phần tử của mảng gốc.
+**Map Method**: Create a new array by applying a function to each element of the original array.
 
 ```js
 const newArr = arr.map((item) => item * 2);
 ```
 
-**Filter Method**: Tạo mảng mới với các phần tử thỏa mãn điều kiện nào đó.
+**Filter Method**: Create a new array with elements that satisfy a certain condition.
 
 ```js
 const filtered = arr.filter((item) => item > 2);
 ```
 
-**Reduce Method**: Tính toán giá trị tổng hợp từ mảng.
+**Reduce Method**: Compute an aggregated value from the array.
 
 ```js
 const sum = arr.reduce((acc, item) => acc + item, 0);
 ```
 
-Về Hiệu Năng:
+Regarding Performance:
 
-- for loop cổ điển thường là lựa chọn nhanh nhất, nhất là khi bạn cần sử dụng chỉ số của các phần tử trong mảng.
-- for-of và .forEach() có thể chậm hơn một chút và nên được sử dụng cho đọc mã dễ dàng hơn hoặc khi không cần chỉ số.
+- The classic for loop is often the fastest choice, especially when you need to access the indices of elements in the array.
+- for-of and .forEach() may be slightly slower and should be used for easier-to-read code or when the index is not needed.
+  
+If performance is a top priority and your array is very large, using the classic for loop is probably the best choice. However, in many cases, the performance difference between these methods is negligible, and the choice often depends on code clarity and readability.
 
-Nếu hiệu năng là ưu tiên hàng đầu và mảng của bạn rất lớn, sử dụng for loop cổ điển có lẽ là lựa chọn tốt nhất. Tuy nhiên, trong nhiều trường hợp, sự khác biệt về hiệu năng giữa các phương pháp này không đáng kể, và việc chọn lựa thường dựa trên sự rõ ràng và tính đọc được của mã.
-
-Tuy nhiên, sự khác biệt về hiệu năng giữa các phương pháp này thường không đáng kể trong hầu hết các ứng dụng thông thường. Thực tế, trong một số trường hợp, máy ảo JavaScript có thể tối ưu hóa đoạn mã sử dụng map, reduce, hoặc filter đến mức chúng chạy nhanh ngang với vòng lặp for cổ điển.
+However, the performance difference between these methods is usually insignificant in most common applications. In fact, in some cases, the JavaScript virtual machine can optimize code using map, reduce, or filter to the point where they run as fast as classic for loops.

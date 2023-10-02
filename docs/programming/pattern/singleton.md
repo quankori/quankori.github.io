@@ -2,18 +2,18 @@
 title: Singleton Pattern
 ---
 
-Singleton là một trong năm mẫu thiết kế (design pattern) nằm trong nhóm Mẫu Thiết Kế Tạo (Creational Design Pattern).
+Singleton is one of the five design patterns in the Creational Design Pattern group.
 
-Singleton đảm bảo chỉ có một thể hiện (instance) được tạo và cung cấp một phương thức để truy cập thể hiện đó bất kỳ lúc nào và ở bất kỳ phần nào của chương trình.
+Singleton ensures that only one instance is created and provides a method to access that instance at any time and from anywhere in the program.
 
-Singleton được sử dụng khi chúng ta muốn:
+Singleton is used when we want to:
 
-- Đảm bảo chỉ có một thể hiện của một lớp tồn tại.
-- Quản lý quyền truy cập tốt hơn vì chỉ có một thể hiện.
-- Quản lý số lượng thể hiện của một lớp trong một giới hạn cụ thể.
-- Vì một lớp sử dụng Singleton chỉ tồn tại trong một thể hiện duy nhất, nó thường được sử dụng để giải quyết các vấn đề cần truy cập vào các ứng dụng như tài nguyên chia sẻ, logger, cấu hình, caching, thread pool, vv.
-- Một số mẫu thiết kế khác cũng sử dụng Singleton cho việc thực hiện, chẳng hạn như Abstract Factory, Builder, Prototype, Facade, vv.
-- Nó đã được sử dụng trong một số lớp cốt lõi của Java như java.lang.Runtime, java.awt.Desktop.
+- Ensure that only one instance of a class exists.
+- Manage access control better because there is only one instance.
+- Control the number of instances of a class within a specific limit.
+- Since a Singleton class only exists in a single instance, it is often used to address issues that require access to applications such as shared resources, loggers, configurations, caching, thread pools, etc.
+- Some other design patterns also use Singleton for implementation, such as Abstract Factory, Builder, Prototype, Facade, etc.
+- It has been used in some core Java classes like java.lang.Runtime, java.awt.Desktop.
 
 Code example:
 

@@ -4,7 +4,7 @@ title: Generics
 
 ## Basic Usage
 
-Trong hàm đồng nhất (identity function), T là một biến kiểu (type variable). Khi chúng ta gọi hàm với một chuỗi, T sẽ được thay thế bằng chuỗi. Khi chúng ta gọi nó với một số, T sẽ được thay thế bằng số.
+In the identity function, T is a type variable. When we call the function with a string, T will be replaced by a string. When we call it with a number, T will be replaced by a number.
 
 ```ts
 function identity<T>(arg: T): T {
@@ -52,9 +52,10 @@ stringNumeric.add = function (x, y) {
 
 ## Constraints
 
-Đôi khi, bạn muốn hạn chế các loại kiểu có thể được phép trong một ngữ cảnh cụ thể. Bạn có thể làm điều này bằng một khái niệm gọi là "ràng buộc" (constraints).
+Sometimes, you may want to restrict the types that are allowed in a specific context. You can do this using a concept called "constraints."
 
-Dưới đây là một ví dụ trong đó chúng ta ràng buộc kiểu chung đến các loại có thuộc tính .length:
+Here is an example where we constrain the generic type to types that have the .length property:
+
 
 ```ts
 interface Lengthwise {
@@ -67,4 +68,4 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 }
 ```
 
-Bây giờ, nếu bạn cố gọi loggingIdentity với số hoặc bất kỳ loại nào không có thuộc tính .length, TypeScript sẽ tạo ra một lỗi.
+Now, if you try to call loggingIdentity with a number or any type that doesn't have the .length property, TypeScript will produce an error.
