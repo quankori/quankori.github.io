@@ -10,12 +10,10 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import Chip from "@mui/joy/Chip";
 import timelines from "../json/timelines.json";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 
 export default function Home(): JSX.Element {
-
   return (
     <Layout
       title={`About me`}
@@ -45,8 +43,8 @@ export default function Home(): JSX.Element {
               to explore and develop expertise in other technology domains. I am
               particularly intrigued by various technologies in fields such as
               server-side, systems, cloud computing, and DevOps. Currently, my
-              strongest skills and depth of knowledge lie in Node.js, Golang and cloud
-              technologies. In the future, my aspiration is to grow as a
+              strongest skills and depth of knowledge lie in Node.js, Golang and
+              cloud technologies. In the future, my aspiration is to grow as a
               Technical Architect or Solution Architect
             </Typography>
 

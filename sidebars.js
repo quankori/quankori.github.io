@@ -527,6 +527,21 @@ const sidebars = {
       ],
     },
   ],
+  travel: [
+    {
+      type: "category",
+      label: "Travel",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "examples/devops/githubactions",
+          label: "Github Action - Github",
+        },
+      ],
+    },
+  ],
 };
 
 module.exports = sidebars;
