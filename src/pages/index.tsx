@@ -129,6 +129,20 @@ export default function Home(): JSX.Element {
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  width={50}
+                />
+                <p>React.js</p>
+              </Grid>
+              <Grid item xs={1} sm={1} className="grid-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
+                  width={50}
+                />
+                <p>Redux</p>
+              </Grid>
+              <Grid item xs={1} sm={1} className="grid-item">
+                <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
                   width={50}
                 />

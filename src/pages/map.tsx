@@ -43,7 +43,7 @@ export default function Map(): JSX.Element {
                       />
                       <ImageListItemBar
                         title={item.title}
-                        subtitle={item.author}
+                        subtitle={item.date}
                         style={{ borderRadius: "10px" }}
                         actionIcon={
                           <IconButton
@@ -67,23 +67,25 @@ export default function Map(): JSX.Element {
                       component="div"
                       sx={{ color: "error.main", fontWeight: "bold" }}
                     >
-                      FREE TRAVEL PHOTOS
+                      The Joy of Discovery
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      We have an impressive collection of over 20,000+ free
-                      creative commons (CC BY-NC 4.0 Attribution-NonCommercial)
-                      travel photos from around the world that anyone can
-                      utilize. If you're seeking higher-definition versions of
-                      these photos, please{" "}
-                      <Box
-                        component="span"
-                        sx={{ color: "primary.main", cursor: "pointer" }}
-                        onClick={() => {
-                          /* handle contact action */
-                        }}
-                      >
-                        contact me.
-                      </Box>
+                      I am captivated by the beauty of nature in its myriad
+                      forms. Be it mountains, oceans, forests, or deserts, each
+                      landscape tells its own story. I seek to immerse myself in
+                      these natural wonders, finding a sense of peace and awe
+                      that only nature can provide.
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      style={{ marginTop: "10px" }}
+                    >
+                      Travel is a transformative experience. It has taught me
+                      resilience, open-mindedness, and the value of living in
+                      the moment. Each journey is a new chapter of
+                      self-discovery, teaching me lessons that I carry with me
+                      long after I return home.
                     </Typography>
                   </CardContent>
                 </Card>
@@ -98,13 +100,28 @@ export default function Map(): JSX.Element {
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
-    author: "@bkristastucchio",
+    img: "https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/travels/Dalat_3.jpg",
+    title: "Da Lat - Tổ Chim",
+    date: "06/2023",
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
-    author: "@rollelflex_graphy726",
+    img: "https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/travels/Sapa.jpg",
+    title: "Sapa",
+    date: "09/2022",
+  },
+  {
+    img: "https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/travels/Dalat_1.jpg",
+    title: "Da Lat - Hồ Tuyền Lâm",
+    date: "07/2022",
+  },
+  {
+    img: "https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/travels/DakLak.jpg",
+    title: "Daklak - DraySap",
+    date: "09/2021",
+  },
+  {
+    img: "https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/travels/Dalat_2.jpg",
+    title: "Da Lat - Đồi Thiên Phúc Đức",
+    date: "01/2020",
   },
 ];
