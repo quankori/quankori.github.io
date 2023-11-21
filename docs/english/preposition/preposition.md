@@ -1,5 +1,5 @@
 ---
-title: Preposition
+title: Nouns
 ---
 
 Trong ngữ pháp tiếng Anh, "preposition" là một loại từ dùng để chỉ sự vị trí hoặc mối quan hệ giữa các đối tượng trong câu. Preposition thường đứng trước một danh từ (noun) hoặc một đại từ (pronoun), tạo thành một cụm từ (phrase) có thể đóng vai trò làm trạng ngữ (adverbial) hoặc bổ ngữ (adjectival) trong câu.

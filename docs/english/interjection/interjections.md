@@ -1,5 +1,5 @@
 ---
-title: Injection
+title: Interjection
 ---
 
 Trong ngữ pháp tiếng Anh, "interjection" (còn được gọi là "exclamation") là một loại từ tường minh cảm xúc hoặc thái độ của người nói. Interjection không có chức năng cú pháp trong câu và thường được sử dụng như một lời nói riêng, để diễn đạt sự ngạc nhiên, vui mừng, khó chịu, đau đớn hoặc các cảm xúc khác.

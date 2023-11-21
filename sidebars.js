@@ -325,59 +325,279 @@ const sidebars = {
   ],
   english: [
     {
-      type: "doc",
-      id: "english/tenses",
-      label: "12 Basic English Tenses",
+      type: "category",
+      label: "Verbs",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/verbs/tenses",
+          label: "12 Basic English Tenses",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/auxiliary",
+          label: "Auxiliary Verbs",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/catenative",
+          label: "Catenative Verbs",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/conditionals",
+          label: "Conditionals",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/modal-verbs",
+          label: "Modal Verbs",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/passive",
+          label: "Passive Voice",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/phrasal",
+          label: "Phrasal Verbs",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/tag-question",
+          label: "Tag Question",
+        },
+        {
+          type: "doc",
+          id: "english/verbs/time",
+          label: "Time",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/verbs",
-      label: "Verbs (Động từ)",
+      type: "category",
+      label: "Adverbs",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/adverbs/form",
+          label: "Adverbs Form",
+        },
+        {
+          type: "doc",
+          id: "english/adverbs/comparative",
+          label: "Comparative",
+        },
+        {
+          type: "doc",
+          id: "english/adverbs/frequency",
+          label: "Frequency",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/pronoun",
-      label: "Pronoun (Đại từ)",
+      type: "category",
+      label: "Nouns",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/nouns/nouns",
+          label: "Nouns",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/nouns",
-      label: "Nouns (Danh từ)",
+      type: "category",
+      label: "Pronouns",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/pronoun/demonstative",
+          label: "Demonstative Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/dummy-subject",
+          label: "Dummy Subject",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/indefinite",
+          label: "Indefinite Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/one-and-ones",
+          label: "One and Ones",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/personal",
+          label: "Personal Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/questions",
+          label: "Questions Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/reciprocal",
+          label: "Reciprocal Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/reflexive",
+          label: "Reflexive Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/pronoun/relative",
+          label: "Relative Pronouns",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/adjective",
-      label: "Adjective (Tính từ)",
+      type: "category",
+      label: "Adjectives",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/adjective/comparative",
+          label: "Comparative Adjectives",
+        },
+        {
+          type: "doc",
+          id: "english/adjective/intensifiers",
+          label: "Intensifiers",
+        },
+        {
+          type: "doc",
+          id: "english/adjective/mitigators",
+          label: "Mitigators",
+        },
+        {
+          type: "doc",
+          id: "english/adjective/order",
+          label: "Order of Adjectives",
+        },
+        {
+          type: "doc",
+          id: "english/adjective/proper",
+          label: "Proper Adjectives",
+        },
+        {
+          type: "doc",
+          id: "english/adjective/superlative",
+          label: "Superlative Adjectives",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/adverbs",
-      label: "Adverbs (Trạng từ)",
+      type: "category",
+      label: "Interjections",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/interjection/interjections",
+          label: "Interjections",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/conjuction",
-      label: "Conjuction (Liên từ)",
+      type: "category",
+      label: "Conjunctions",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/conjuction/because",
+          label: "Because, because of, although",
+        },
+        {
+          type: "doc",
+          id: "english/conjuction/others",
+          label: "Provided that, as long as, in order that, so that",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/determiner",
-      label: "Determiner (Từ hạn định)",
+      type: "category",
+      label: "Determiners",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/determiner/general",
+          label: "General Determiners",
+        },
+        {
+          type: "doc",
+          id: "english/determiner/interrogative",
+          label: "Interrogative Determiners",
+        },
+        {
+          type: "doc",
+          id: "english/determiner/specific",
+          label: "Specific Determiners",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/injection",
-      label: "Injection (Thán từ)",
+      type: "category",
+      label: "Prepositions",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/preposition/preposition",
+          label: "Prepositions",
+        },
+      ],
     },
     {
-      type: "doc",
-      id: "english/preposition",
-      label: "Preposition (Giới từ)",
-    },
-    {
-      type: "doc",
-      id: "english/possessive",
-      label: "Possessive (Sở hữu)",
+      type: "category",
+      label: "Possessives",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "english/possessive/adjectives",
+          label: "Adjectives",
+        },
+        {
+          type: "doc",
+          id: "english/possessive/nouns",
+          label: "Nouns",
+        },
+        {
+          type: "doc",
+          id: "english/possessive/pronouns",
+          label: "Pronouns",
+        },
+        {
+          type: "doc",
+          id: "english/possessive/questions",
+          label: "Questions",
+        },
+      ],
     },
   ],
   cheatsheet: [
@@ -523,21 +743,6 @@ const sidebars = {
           type: "doc",
           id: "examples/docker/mongo_replicate",
           label: "MongoDB Replicate - Database",
-        },
-      ],
-    },
-  ],
-  travel: [
-    {
-      type: "category",
-      label: "Travel",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "examples/devops/githubactions",
-          label: "Github Action - Github",
         },
       ],
     },
