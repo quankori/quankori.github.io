@@ -1,5 +1,12 @@
 // @ts-check
 const sidebars = {
+  blogs: [
+    {
+      type: "doc",
+      id: "blog/process-nodejs",
+      label: "Process & Thread Node.js",
+    },
+  ],
   programming: [
     {
       type: "category",
@@ -36,54 +43,6 @@ const sidebars = {
           type: "doc",
           id: "programming/fundamental/staless-stateful",
           label: "Stateless & Stateful",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Algorithm",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "programming/algorithm/data-structures",
-          label: "Data Structures",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/linked-lists",
-          label: "Linked Lists",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/stack-queue",
-          label: "Stack & Queue",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/searching",
-          label: "Searching",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/sorting",
-          label: "Sorting",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/graph-data",
-          label: "Graph Data",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/tree-data",
-          label: "Tree Data",
-        },
-        {
-          type: "doc",
-          id: "programming/algorithm/recursion",
-          label: "Recursion",
         },
       ],
     },

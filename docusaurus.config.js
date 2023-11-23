@@ -72,6 +72,11 @@ const config = {
       items: [
         {
           type: "docSidebar",
+          label: "My Blog",
+          sidebarId: "blogs",
+        },
+        {
+          type: "docSidebar",
           label: "Programming",
           sidebarId: "programming",
         },

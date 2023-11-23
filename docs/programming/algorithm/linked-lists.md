@@ -1,5 +1,0 @@
----
-title: Linked Lists
----
-
-## Concept
