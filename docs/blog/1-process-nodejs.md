@@ -35,15 +35,19 @@ Và ngoài ra các thread sẽ xài chung vùng bộ nhớ chung là Heap (vùng
 
 ## Worker Threads là gì
 
-(Tác giả để trống...)
+Trong một số khái niệm cốt lõi của Node.js là Single Thread, nhưng sau cho co
+
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/worker-thread.jpg)
 
 ## Child Process
 
-(Tác giả để trống...)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/child-process.jpg)
 
 ## Cluster trong Node.js
 
-(Tác giả để trống...)
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/cluster.jpg)
+
+## Tóm tắt
 
 ## Nguồn
 
