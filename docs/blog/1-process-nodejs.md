@@ -35,9 +35,61 @@ Và ngoài ra các thread sẽ xài chung vùng bộ nhớ chung là Heap (vùng
 
 ## Worker Threads là gì
 
-Trong một số khái niệm cốt lõi của Node.js là Single Thread, nhưng sau cho co
+Trong một số khái niệm cốt lõi của Node.js, một thời gian dài nó được xem là một môi trường đơn luồng (single thread). Tuy nhiên, từ phiên bản 10.5 trở đi, Node.js đã giới thiệu tính năng `worker_thread` và từ phiên bản 12, tính năng này đã trở thành ổn định. Điều này đã mở ra cánh cửa cho một sự cải tiến mới về việc sử dụng đa luồng (multi-thread) trong Node.js.
+
+Nhưng tại sao lại cần tính năng đa luồng (worker_thread) khi Node.js đang có ưu điểm là đơn luồng?
+
+Trước khi nói về lợi ích của worker_thread, chúng ta hãy xem xét các hạn chế và điểm yếu của việc sử dụng đơn luồng. Dù thực hiện các tác vụ không đồng bộ (non-blocking) giúp định hình sức mạnh của đơn luồng, nhưng nó vẫn bị giới hạn trong việc xử lý các tác vụ nặng về CPU. Điều này có thể gây ảnh hưởng tới hiệu suất của Event Loop bằng cách làm chậm hoặc chặn nó. Vì vậy, worker_thread ra đời nhằm khắc phục hạn chế này bằng cách tạo ra những luồng riêng biệt, giúp giảm tải cho Event Loop chính và cải thiện hiệu suất.
+
+Khi được tạo ra, mỗi luồng trong worker_thread sẽ có một vùng nhớ stack và heap riêng, giúp tránh các lỗi liên quan đến `stack overflow`. Thông qua việc truyền tin nhắn (message passing), các luồng này có thể tương tác với nhau mà không gặp những vấn đề thông thường của đa luồng như deadlocks hay race conditions. Tuy nhiên, quá trình chuyển đổi ngữ cảnh (`context switching`) giữa các luồng cũng có thể làm giảm hiệu suất khi có quá nhiều luồng được tạo ra.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/worker-thread.jpg)
+
+Một ví dụ về Worker Threads trong bài toán nén file
+
+`child-thread.js`
+
+```js
+const { parentPort } = require("worker_threads");
+const JSZip = require("jszip");
+const fs = require("fs");
+const path = require("path");
+
+parentPort.on("message", async () => {
+  const imagesDirectory = path.join(__dirname, "images");
+  const zip = new JSZip();
+
+  fs.readdirSync(imagesDirectory).forEach((file) => {
+    const filePath = path.join(imagesDirectory, file);
+    const data = fs.readFileSync(filePath);
+    zip.file(file, data);
+  });
+
+  const zipData = await zip.generateAsync({ type: "nodebuffer" });
+  fs.writeFileSync(path.join(__dirname, "output.zip"), zipData);
+  parentPort.postMessage("File zip đã được tạo: output.zip");
+});
+```
+
+`main-thread.js`
+
+```js
+const { Worker } = require("worker_threads");
+
+// Tạo Worker Thread thứ nhất
+const worker1 = new Worker("./src/worker-thread/child-thread.js");
+worker1.on("message", (message) =>
+  console.log("Tin nhắn từ Worker 1:", message)
+);
+worker1.postMessage("Dữ liệu cho Worker 1");
+
+// Tạo Worker Thread thứ hai
+const worker2 = new Worker("./src/worker-thread/child-thread.js");
+worker2.on("message", (message) =>
+  console.log("Tin nhắn từ Worker 2:", message)
+);
+worker2.postMessage("Dữ liệu cho Worker 2");
+```
 
 ## Child Process
 
