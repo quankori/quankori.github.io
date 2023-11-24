@@ -43,6 +43,12 @@ Trước khi nói về lợi ích của worker_thread, chúng ta hãy xem xét c
 
 Khi được tạo ra, mỗi luồng trong worker_thread sẽ có một vùng nhớ stack và heap riêng, giúp tránh các lỗi liên quan đến `stack overflow`. Thông qua việc truyền tin nhắn (message passing), các luồng này có thể tương tác với nhau mà không gặp những vấn đề thông thường của đa luồng như deadlocks hay race conditions. Tuy nhiên, quá trình chuyển đổi ngữ cảnh (`context switching`) giữa các luồng cũng có thể làm giảm hiệu suất khi có quá nhiều luồng được tạo ra.
 
+**Use Case**:
+
+- Tính Toán Song Song: Khi bạn cần thực hiện các tác vụ tính toán phức tạp mà có thể chia nhỏ và thực hiện song song, như xử lý ảnh hoặc tính toán khoa học.
+- Tối Ưu Hiệu Suất CPU Đa Lõi: Khi bạn muốn tận dụng tối đa sức mạnh của CPU đa lõi bằng cách phân phối các tác vụ tính toán tới các luồng khác nhau.
+- Trao Đổi Dữ Liệu Nhanh Chóng: Khi cần trao đổi dữ liệu giữa các luồng một cách nhanh chóng và hiệu quả thông qua SharedArrayBuffer.
+
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/worker-thread.jpg)
 
 Một ví dụ về Worker Threads trong bài toán nén file
@@ -81,6 +87,12 @@ const worker1 = new Worker("./src/worker-thread/child-thread.js");
 worker1.on("message", (message) =>
   console.log("Tin nhắn từ Worker 1:", message)
 );
+worker1.on("error", (error) => {
+  console.error(error);
+});
+worker1.on("exit", (code) => {
+  if (code !== 0) console.error(`Worker stopped with exit code ${code}`);
+});
 worker1.postMessage("Dữ liệu cho Worker 1");
 
 // Tạo Worker Thread thứ hai
@@ -93,13 +105,29 @@ worker2.postMessage("Dữ liệu cho Worker 2");
 
 ## Child Process
 
+**Use Case**:
+
+- Thực Hiện Tác Vụ Độc Lập: Khi bạn cần thực hiện tác vụ không liên quan trực tiếp tới logic chính của ứng dụng của bạn, như việc chạy một script shell hoặc giao tiếp với các ứng dụng khác.
+- Xử Lý Tác Vụ Nặng: Khi một tác vụ cần nhiều tài nguyên CPU hoặc bộ nhớ và bạn không muốn nó ảnh hưởng tới tiến trình chính.
+- Cô Lập Tác Vụ: Đối với các tác vụ mà bạn muốn cô lập hoàn toàn với môi trường của tiến trình chính, như xử lý dữ liệu nhạy cảm.
+
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/child-process.jpg)
 
 ## Cluster trong Node.js
 
+**Use Case**:
+
+- Xử Lý Công Việc Song Song ở Cấp Độ Tiến Trình: Khi bạn muốn phân phối các yêu cầu mạng tới nhiều tiến trình con để tăng hiệu suất xử lý và khả năng chịu tải.
+- Tăng Khả Năng Chịu Lỗi: Khi một tiến trình con gặp sự cố và cần khởi động lại, các tiến trình khác trong cluster vẫn có thể tiếp tục xử lý yêu cầu.
+- Phân Phối Tải Trong Ứng Dụng Web: Sử dụng cluster trong một ứng dụng web có lưu lượng truy cập cao để phân phối tải giữa các tiến trình và tối ưu hiệu suất.
+
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/cluster.jpg)
 
 ## Tóm tắt
+
+- **Child Process**: Tốt cho việc cô lập và chạy tác vụ độc lập hoặc tương tác với các tiến trình khác bên ngoài.
+- **Worker Threads**: Phù hợp cho việc xử lý song song và tối ưu hiệu suất trên các máy tính có CPU đa lõi.
+- **Cluster**: Lý tưởng cho việc xử lý nhiều yêu cầu mạng song song, tăng khả năng chịu tải và khả năng chịu lỗi cho ứng dụng.
 
 ## Nguồn
 
