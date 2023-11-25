@@ -43,13 +43,13 @@ Trước khi nói về lợi ích của worker_thread, chúng ta hãy xem xét c
 
 Khi được tạo ra, mỗi luồng trong worker_thread sẽ có một vùng nhớ stack và heap riêng, giúp tránh các lỗi liên quan đến `stack overflow`. Thông qua việc truyền tin nhắn (message passing), các luồng này có thể tương tác với nhau mà không gặp những vấn đề thông thường của đa luồng như deadlocks hay race conditions. Tuy nhiên, quá trình chuyển đổi ngữ cảnh (`context switching`) giữa các luồng cũng có thể làm giảm hiệu suất khi có quá nhiều luồng được tạo ra.
 
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/worker-thread.jpg)
+
 **Use Case**:
 
 - Tính Toán Song Song: Khi bạn cần thực hiện các tác vụ tính toán phức tạp mà có thể chia nhỏ và thực hiện song song, như xử lý ảnh hoặc tính toán khoa học.
 - Tối Ưu Hiệu Suất CPU Đa Lõi: Khi bạn muốn tận dụng tối đa sức mạnh của CPU đa lõi bằng cách phân phối các tác vụ tính toán tới các luồng khác nhau.
 - Trao Đổi Dữ Liệu Nhanh Chóng: Khi cần trao đổi dữ liệu giữa các luồng một cách nhanh chóng và hiệu quả thông qua SharedArrayBuffer.
-
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/worker-thread.jpg)
 
 Một ví dụ về Worker Threads trong bài toán nén file
 
@@ -105,15 +105,87 @@ worker2.postMessage("Dữ liệu cho Worker 2");
 
 ## Child Process
 
+Theo mô hình trên thì child process là việc chúng ta tách từ 1 process chính ra 1 process con khác và chạy độc lập kể cả khi process chính đã xong hoặc ngủm. Nhưng mà tại sao đã có worker-thread này lại thêm child-process?
+
+Bản chất cả 2 cũng khá khác nhau, child-process thì tạo ra 1 process khác có bộ nhớ riêng, biến môi trường riêng và không ảnh hưởng nhau, trong process chính còn worker thread thì tạo ra 1 thread khác nhưng vẫn tồn tại trên process chính.
+
+Tuy nhiên nó cũng sẽ có một vài rũi ro nhất định như là: ảnh hưởng IPC, child process không kết thúc hay là việc khởi tạo quá nhiều process do code cũng sẽ ảnh hưởng khá nhiều đến việc sủ dụng quá nhiều tài nguyên CPU server.
+
+Đây là một ví dụ xem thửu child process hoạt động
+
+```js
+const { spawn } = require("child_process");
+
+// Khởi tạo child process để thực hiện một tác vụ (ví dụ: sleep trong bash)
+const child = spawn("sleep", ["5"]); // 'sleep 5' là lệnh để chờ 5 giây
+
+// Lắng nghe sự kiện khi child process kết thúc
+child.on("exit", function (code, signal) {
+  console.log("Child process exited with code", code);
+});
+
+// Main process ghi ra console ngay lập tức
+console.log("Main process logged this message first.");
+```
+
+Một ví dụ về child process với IPC (Inter-Process Communication)
+
+```js
+const { fork } = require("child_process");
+
+const child = fork("path/to/child_script.js");
+
+// Gửi tin nhắn từ parent process đến child process
+child.send({ hello: "world" });
+
+// Nhận tin nhắn từ child process
+child.on("message", (message) => {
+  console.log("Message from child", message);
+});
+
+// Trong child script
+process.on("message", (message) => {
+  console.log("Message from parent:", message);
+
+  // Gửi tin nhắn trở lại parent process
+  process.send({ foo: "bar" });
+});
+```
+
+Một ví dụ khác về thư thi mã linux
+
+```js
+const { exec } = require("child_process");
+
+// Thực thi một lệnh Linux
+exec("ls", (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+
+  if (stderr) {
+    console.error(`stderr: ${stderr}`);
+    return;
+  }
+
+  console.log(`stdout: ${stdout}`);
+});
+```
+
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/child-process.jpg)
+
 **Use Case**:
 
 - Thực Hiện Tác Vụ Độc Lập: Khi bạn cần thực hiện tác vụ không liên quan trực tiếp tới logic chính của ứng dụng của bạn, như việc chạy một script shell hoặc giao tiếp với các ứng dụng khác.
 - Xử Lý Tác Vụ Nặng: Khi một tác vụ cần nhiều tài nguyên CPU hoặc bộ nhớ và bạn không muốn nó ảnh hưởng tới tiến trình chính.
 - Cô Lập Tác Vụ: Đối với các tác vụ mà bạn muốn cô lập hoàn toàn với môi trường của tiến trình chính, như xử lý dữ liệu nhạy cảm.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/child-process.jpg)
-
 ## Cluster trong Node.js
+
+(Tác giả lười...)
+
+![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/cluster.jpg)
 
 **Use Case**:
 
@@ -121,7 +193,9 @@ worker2.postMessage("Dữ liệu cho Worker 2");
 - Tăng Khả Năng Chịu Lỗi: Khi một tiến trình con gặp sự cố và cần khởi động lại, các tiến trình khác trong cluster vẫn có thể tiếp tục xử lý yêu cầu.
 - Phân Phối Tải Trong Ứng Dụng Web: Sử dụng cluster trong một ứng dụng web có lưu lượng truy cập cao để phân phối tải giữa các tiến trình và tối ưu hiệu suất.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/cluster.jpg)
+### PM2
+
+(Tác giả lười...)
 
 ## Tóm tắt
 
