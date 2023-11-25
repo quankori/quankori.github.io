@@ -183,7 +183,43 @@ exec("ls", (error, stdout, stderr) => {
 
 ## Cluster trong Node.js
 
-(Tác giả lười...)
+Cluster là một trong những tính năng khá thú vị của Node.js, khi server Node.js nó chỉ tốn 1 core trong CPU, nhưng nó sẽ khá lãng phí những core còn lại và từ đó Cluster ra đời nằm mục đích clone server node.js ra các core còn lại trong CPU tăng khả năng chịu tải giúp có thể xử lý nhiều request nhưng tất nhiên nó vẫn bị giới hạn theo số core của CPU. Với CPU đơn core thì xác định 😂
+
+Về sự khác biệt với child-process thì Cluster sẽ clone server node.js trên 1 core khác của CPU cũng có worker process riêng và hoạt động độc lập, bộ nhớ riêng và hoàn toàn độc lập. Về cách thức hoạt động thì cluster sẽ tạo ra
+
+Đây là 1 một ví dụ về load balancing qua cách sử dụng Cluster của Node.js. Nhưng hiện nay với xu hướng xài ECS thì Cluster này không còn được sử dụng nhiều nữa, hay vào đó là ALB và ASG cho việc scale một server node để chịu tải.
+
+```js
+const cluster = require("cluster");
+const totalCPUs = require("os").cpus().length;
+const express = require("express");
+
+if (cluster.isMaster) {
+  console.log(`Number of CPUs is ${totalCPUs}`);
+  console.log(`Master ${process.pid} is running`);
+
+  // Fork workers.
+  for (let i = 0; i < totalCPUs; i++) {
+    cluster.fork();
+  }
+
+  cluster.on("exit", (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} died`);
+    console.log("Let's fork another worker!");
+    cluster.fork();
+  });
+} else {
+  const app = express();
+
+  app.get("/", (req, res) => {
+    res.send(`Hello from Worker ${process.pid}`);
+  });
+
+  app.listen(3000, () => {
+    console.log(`Worker ${process.pid} started`);
+  });
+}
+```
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/cluster.jpg)
 
@@ -192,10 +228,6 @@ exec("ls", (error, stdout, stderr) => {
 - Xử Lý Công Việc Song Song ở Cấp Độ Tiến Trình: Khi bạn muốn phân phối các yêu cầu mạng tới nhiều tiến trình con để tăng hiệu suất xử lý và khả năng chịu tải.
 - Tăng Khả Năng Chịu Lỗi: Khi một tiến trình con gặp sự cố và cần khởi động lại, các tiến trình khác trong cluster vẫn có thể tiếp tục xử lý yêu cầu.
 - Phân Phối Tải Trong Ứng Dụng Web: Sử dụng cluster trong một ứng dụng web có lưu lượng truy cập cao để phân phối tải giữa các tiến trình và tối ưu hiệu suất.
-
-### PM2
-
-(Tác giả lười...)
 
 ## Tóm tắt
 
