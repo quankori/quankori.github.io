@@ -567,11 +567,6 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "cheatsheet/javascript",
-      label: "JavaScript",
-    },
-    {
-      type: "doc",
       id: "cheatsheet/docker",
       label: "Docker",
     },
@@ -585,7 +580,6 @@ const sidebars = {
       id: "cheatsheet/git",
       label: "GIT",
     },
-
     {
       type: "doc",
       id: "cheatsheet/solidity",
@@ -626,84 +620,10 @@ const sidebars = {
       id: "cheatsheet/package",
       label: "Package",
     },
-  ],
-  examples: [
     {
-      type: "category",
-      label: "DevOPS",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "examples/devops/githubactions",
-          label: "Github Action - Github",
-        },
-        {
-          type: "doc",
-          id: "examples/devops/assumerole",
-          label: "Assume Role - AWS",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Node.js",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "examples/nodejs/mongodbjoin",
-          label: "Relationsship Query - MongoDB",
-        },
-        {
-          type: "doc",
-          id: "examples/nodejs/signmessage",
-          label: "Sign & Verify Message - EVM",
-        },
-        {
-          type: "doc",
-          id: "examples/nodejs/uniswap",
-          label: "Get price on Uniswap - EVM",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Go",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "examples/go/hdwallet",
-          label: "HD Wallet - Blockchain",
-        },
-        {
-          type: "doc",
-          id: "examples/go/pow",
-          label: "Proof Of Work - Blockchain",
-        },
-        {
-          type: "doc",
-          id: "examples/go/kafka",
-          label: "Publish & Subscribe - Kafa",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Docker",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "examples/docker/mongo_replicate",
-          label: "MongoDB Replicate - Database",
-        },
-      ],
+      type: "doc",
+      id: "cheatsheet/assumerole",
+      label: "Assume Role - AWS",
     },
   ],
 };

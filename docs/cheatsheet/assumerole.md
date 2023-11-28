@@ -1,5 +1,5 @@
 ---
-title: Assume Role Example
+title: Assume Role
 ---
 
 Install package assume-role
