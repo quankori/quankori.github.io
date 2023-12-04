@@ -10,7 +10,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import timelines from "../json/timelines.json";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 
 export default function Home(): JSX.Element {
@@ -35,33 +34,22 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              I have 5 years of experience in server-side programming with
-              Node.js and Golang, and within those 5 years, I have spent 2 years
-              working as a full-stack developer and 2 years building
+              have 5 years of experience in server-side programming with Node.js
+              and Golang, and within those 5 years, I have spent 2 years working
+              as a full-stack developer with React.js and a year building
               infrastructure with Terraform and DevOps on AWS. My main focus has
-              been on domains like blockchain, but I also have a strong desire
-              to explore and develop expertise in other technology domains. I am
-              particularly intrigued by various technologies in fields such as
-              server-side, systems, cloud computing, and DevOps. Currently, my
-              strongest skills and depth of knowledge lie in Node.js, Golang and
-              cloud technologies. In the future, my aspiration is to grow as a
-              Technical Architect or Solution Architect
-            </Typography>
-
-            <Typography mt={5} variant="subtitle1" gutterBottom>
-              I am experienced in working on development projects from the
-              ground up. I have the ability to translate customer ideas into
-              workflows within the system and build a suitable database for the
-              concept. I can understand and analyze customer requirements and
-              apply appropriate development processes to complete the project.
-              By working closely with customers, I ensure that their ideas are
-              optimized and meet the project requirements
+              been on domains like blockchain and fintech, but I also have a
+              strong desire to explore and develop expertise in other technology
+              domains. I am particularly intrigued by various technologies in
+              fields such as server-side, systems, cloud computing, and DevOps.
+              In the future, I aspire to grow as a Technical Architect or
+              Solution Architect.
             </Typography>
           </section>
 
           <section>
             <Typography mt={5} variant="h5" align="center">
-              My Technical
+              My Technical Skills
             </Typography>
             <Grid mt={10} container spacing={2}>
               <Grid item xs={1} sm={1} className="grid-item">
@@ -185,37 +173,6 @@ export default function Home(): JSX.Element {
                 />
               </a>
             </Box>
-          </section>
-          <section>
-            <Typography mt={5} variant="h5" align="center">
-              Timeline
-            </Typography>
-            {timelines.reverse().map((timeline) => {
-              return (
-                <TimelineItem key={timeline.year}>
-                  <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
-                    {timeline.year}
-                  </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineConnector />
-                    {timeline.company ? (
-                      <TimelineDot color="success">
-                        <ApartmentIcon />
-                      </TimelineDot>
-                    ) : (
-                      <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                      </TimelineDot>
-                    )}
-                    <TimelineConnector />
-                  </TimelineSeparator>
-                  <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography fontWeight="bold">{timeline.name}</Typography>
-                    <Typography>{timeline.description}</Typography>
-                  </TimelineContent>
-                </TimelineItem>
-              );
-            })}
           </section>
         </div>
       </main>
