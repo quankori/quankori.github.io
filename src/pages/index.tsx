@@ -34,16 +34,18 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              have 5 years of experience in server-side programming with Node.js
-              and Golang, and within those 5 years, I have spent 2 years working
-              as a full-stack developer with React.js and a year building
-              infrastructure with Terraform and DevOps on AWS. My main focus has
-              been on domains like blockchain and fintech, but I also have a
-              strong desire to explore and develop expertise in other technology
-              domains. I am particularly intrigued by various technologies in
-              fields such as server-side, systems, cloud computing, and DevOps.
-              In the future, I aspire to grow as a Technical Architect or
-              Solution Architect.
+              I have accumulated 5 years of experience in server-side
+              programming, focusing on Node.js and Golang. Within this period, 3
+              years were dedicated to blockchain technologies, including 2 years
+              of developing smart contracts using Solidity. My skill set extends
+              to AWS, where I have utilized Terraform for infrastructure
+              building. My expertise primarily lies in the fintech and
+              blockchain sectors, yet I am keen on broadening my horizons across
+              various technology fields. I have a particular interest in
+              server-side development, system architecture, cloud computing, and
+              DevOps. Moving forward, I aspire to evolve into a role as a
+              Technical Architect or Solution Architect, leveraging my deep
+              understanding and innovative approach to technology.
             </Typography>
           </section>
 
@@ -61,7 +63,7 @@ export default function Home(): JSX.Element {
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
                   width={50}
                 />
                 <p>Nest.js</p>
@@ -89,7 +91,7 @@ export default function Home(): JSX.Element {
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
                   width={50}
                 />
                 <p>AWS</p>
