@@ -281,6 +281,19 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Rust",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "programming/rust/syntax",
+          label: "Syntax",
+        },
+      ],
+    },
   ],
   english: [
     {
