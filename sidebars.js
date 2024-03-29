@@ -630,6 +630,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      id: "cheatsheet/rust",
+      label: "Rust",
+    },
+    {
+      type: "doc",
       id: "cheatsheet/package",
       label: "Package",
     },
