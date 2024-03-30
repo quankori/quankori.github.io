@@ -80,11 +80,11 @@ const config = {
           label: "Programming",
           sidebarId: "programming",
         },
-        {
-          type: "docSidebar",
-          label: "English",
-          sidebarId: "english",
-        },
+        // {
+        //   type: "docSidebar",
+        //   label: "English",
+        //   sidebarId: "english",
+        // },
         {
           type: "docSidebar",
           label: "Cheatsheet",
