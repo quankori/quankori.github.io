@@ -635,6 +635,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      id: "cheatsheet/solana",
+      label: "Solana",
+    },
+    {
+      type: "doc",
       id: "cheatsheet/package",
       label: "Package",
     },
