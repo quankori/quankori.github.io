@@ -95,11 +95,11 @@ const config = {
           position: "right",
           className: "navbar-search",
         },
-        {
-          position: "right",
-          label: "My Travel",
-          to: "/map",
-        },
+        // {
+        //   position: "right",
+        //   label: "My Travel",
+        //   to: "/map",
+        // },
         {
           href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
           position: "right",

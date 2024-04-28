@@ -35,7 +35,7 @@ export default function Home(): JSX.Element {
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
               I have accumulated 5 years of experience in server-side
-              programming, focusing on Node.js and Golang. Within this period, 3
+              programming, focusing on Node.js and Golang. Within this period, 4
               years were dedicated to blockchain technologies, including 2 years
               of developing smart contracts using Solidity. My skill set extends
               to AWS, where I have utilized Terraform for infrastructure
@@ -52,6 +52,9 @@ export default function Home(): JSX.Element {
           <section>
             <Typography mt={5} variant="h5" align="center">
               My Technical Skills
+            </Typography>
+            <Typography mt={1} variant="h6" align="left">
+              Server Side
             </Typography>
             <Grid mt={10} container spacing={2}>
               <Grid item xs={1} sm={1} className="grid-item">
@@ -74,6 +77,13 @@ export default function Home(): JSX.Element {
                   width={50}
                 />
                 <p>Go</p>
+              </Grid>
+              <Grid item xs={1} sm={1} className="grid-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
+                  width={50}
+                />
+                <p>Rust</p>
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
@@ -105,10 +115,10 @@ export default function Home(): JSX.Element {
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
                   width={50}
                 />
-                <p>MySQL</p>
+                <p>PostgreSQL</p>
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
@@ -116,20 +126,6 @@ export default function Home(): JSX.Element {
                   width={50}
                 />
                 <p>Docker</p>
-              </Grid>
-              <Grid item xs={1} sm={1} className="grid-item">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  width={50}
-                />
-                <p>React.js</p>
-              </Grid>
-              <Grid item xs={1} sm={1} className="grid-item">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
-                  width={50}
-                />
-                <p>Redux</p>
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img
