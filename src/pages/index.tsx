@@ -1,16 +1,7 @@
 import React from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import imgAvatar from "../images/home/avatar.jpg";
 import { Avatar, Typography, Grid, Box } from "@mui/material";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import ApartmentIcon from "@mui/icons-material/Apartment";
 
 export default function Home(): JSX.Element {
   return (
@@ -34,17 +25,13 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              I have accumulated 5 years of experience in server-side
-              programming, focusing on Node.js and Golang. Within this period, 4
-              years were dedicated to blockchain technologies, including 2 years
-              of developing smart contracts using Solidity. My skill set extends
-              to AWS, where I have utilized Terraform for infrastructure
-              building. My expertise primarily lies in the fintech and
-              blockchain sectors, yet I am keen on broadening my horizons across
-              various technology fields. I have a particular interest in
-              server-side development, system architecture, cloud computing, and
-              DevOps. Moving forward, I aspire to evolve into a role as a
-              Technical Architect or Solution Architect, leveraging my deep
+              With 6 years of experience in server-side programming,
+              specializing in Node.js and Golang, I have developed a strong
+              foundation in the fintech and blockchain sectors. My expertise
+              includes server-side development, system architecture and cloud
+              computing. I am eager to expand my knowledge across various
+              technology fields. As I progress in my career, I aspire to become
+              a Technical Architect or Solution Architect, leveraging my deep
               understanding and innovative approach to technology.
             </Typography>
           </section>

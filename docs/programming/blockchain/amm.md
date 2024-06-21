@@ -1,5 +1,5 @@
 ---
-title: Automated Market Maker
+title: Automated Market Maker (AMM)
 ---
 
 The Automated Market Maker (AMM) algorithm uses the formula x \* y = k.

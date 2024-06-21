@@ -17,17 +17,37 @@ const sidebars = {
         {
           type: "doc",
           id: "programming/fundamental/bigo",
-          label: "Big O",
+          label: "BigO",
         },
         {
           type: "doc",
-          id: "programming/fundamental/process-and-thread",
-          label: "Process & Thread",
+          id: "programming/fundamental/bitwise",
+          label: "Bitwise",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/concurrency-parallelism",
+          label: "Concurrency & Parallelism",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/distributed-system",
+          label: "Distributed System",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/dns",
+          label: "Domain Name System (DNS)",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/domain-driven-design",
+          label: "Domain Driven Design (DDD)",
         },
         {
           type: "doc",
           id: "programming/fundamental/oop",
-          label: "OOP",
+          label: "Object-oriented programming (OOP)",
         },
         {
           type: "doc",
@@ -36,8 +56,18 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/fundamental/process-and-thread",
+          label: "Process & Thread",
+        },
+        {
+          type: "doc",
           id: "programming/fundamental/solid",
           label: "SOLID",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/ssl",
+          label: "Secure Sockets Layer (SSL)",
         },
         {
           type: "doc",
@@ -48,87 +78,67 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Design Pattern",
+      label: "Algorithm",
       collapsed: true,
       collapsible: true,
       items: [
         {
           type: "doc",
-          id: "programming/pattern/singleton",
-          label: "Singleton Pattern",
+          id: "programming/algorithm/graphs",
+          label: "Graphs",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/searching",
+          label: "Searching",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/sorting",
+          label: "Sorting",
+        },
+        {
+          type: "doc",
+          id: "programming/algorithm/tree",
+          label: "Tree",
         },
       ],
     },
     {
       type: "category",
-      label: "AWS",
+      label: "Database",
       collapsed: true,
       collapsible: true,
       items: [
         {
           type: "doc",
-          id: "programming/aws/concept",
-          label: "Cloud Concept",
+          id: "programming/database/acid",
+          label: "ACID",
         },
         {
           type: "doc",
-          id: "programming/aws/cost",
-          label: "Cost Management & Optimize",
+          id: "programming/database/indexes",
+          label: "Indexes",
         },
         {
           type: "doc",
-          id: "programming/aws/governance",
-          label: "Management & Governance",
+          id: "programming/database/lock-transaction",
+          label: "Lock Transaction",
         },
         {
           type: "doc",
-          id: "programming/aws/ec2",
-          label: "EC2",
+          id: "programming/database/redis",
+          label: "Redis",
         },
         {
           type: "doc",
-          id: "programming/aws/s3",
-          label: "S3",
+          id: "programming/database/scaling",
+          label: "Scaling",
         },
         {
           type: "doc",
-          id: "programming/aws/database",
-          label: "Database",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/container",
-          label: "Containers",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/vpc",
-          label: "VPC",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/artificialintelligence",
-          label: "Artificial Intelligence",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/security",
-          label: "Security",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/migration",
-          label: "Migration & Transfer",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/networking",
-          label: "Networking",
-        },
-        {
-          type: "doc",
-          id: "programming/aws/analytics",
-          label: "Analytics",
+          id: "programming/database/types-data",
+          label: "Types of data",
         },
       ],
     },
@@ -141,7 +151,7 @@ const sidebars = {
         {
           type: "doc",
           id: "programming/blockchain/amm",
-          label: "AMM",
+          label: "Automated Market Maker (AMM)",
         },
         {
           type: "doc",
@@ -150,18 +160,18 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/blockchain/trilemma",
-          label: "Trilemma",
-        },
-        {
-          type: "doc",
           id: "programming/blockchain/evm",
-          label: "EVM",
+          label: "Ethereum Virtual Machine (EVM)",
         },
         {
           type: "doc",
           id: "programming/blockchain/ipfs",
           label: "IPFS",
+        },
+        {
+          type: "doc",
+          id: "programming/blockchain/trilemma",
+          label: "Trilemma",
         },
       ],
     },
@@ -173,8 +183,23 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "programming/go/closures-anonymous",
-          label: "Closures & Anonymous Function",
+          id: "programming/go/concurrency",
+          label: "Concurrency",
+        },
+        {
+          type: "doc",
+          id: "programming/go/context",
+          label: "Context",
+        },
+        {
+          type: "doc",
+          id: "programming/go/function",
+          label: "Function",
+        },
+        {
+          type: "doc",
+          id: "programming/go/length-capacity",
+          label: "Length & Capacity",
         },
         {
           type: "doc",
@@ -188,23 +213,18 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/go/slices-array",
-          label: "Slices & Array",
-        },
-        {
-          type: "doc",
           id: "programming/go/pointers",
           label: "Pointers",
         },
         {
           type: "doc",
-          id: "programming/go/context",
-          label: "Context",
+          id: "programming/go/slices-array",
+          label: "Slices & Array",
         },
         {
           type: "doc",
-          id: "programming/go/concurrency",
-          label: "Concurrency",
+          id: "programming/go/testing",
+          label: "Testing",
         },
       ],
     },
@@ -214,21 +234,6 @@ const sidebars = {
       collapsed: true,
       collapsible: true,
       items: [
-        {
-          type: "doc",
-          id: "programming/nodejs/fundamental",
-          label: "Fundamental",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/event-loop",
-          label: "Event Loop",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/process-thread",
-          label: "Process & Thread",
-        },
         {
           type: "doc",
           id: "programming/nodejs/callback",
@@ -241,18 +246,18 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/nodejs/event-loop",
+          label: "Event Loop",
+        },
+        {
+          type: "doc",
           id: "programming/nodejs/functions",
           label: "Functions",
         },
         {
           type: "doc",
-          id: "programming/nodejs/modules",
-          label: "Modules",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/scope",
-          label: "Scopes",
+          id: "programming/nodejs/fundamental",
+          label: "Fundamental",
         },
         {
           type: "doc",
@@ -261,13 +266,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/nodejs/types-interfaces",
-          label: "Types & Interfaces",
+          id: "programming/nodejs/loop",
+          label: "Loop",
         },
         {
           type: "doc",
-          id: "programming/nodejs/loop",
-          label: "Loop",
+          id: "programming/nodejs/modules",
+          label: "Modules",
         },
         {
           type: "doc",
@@ -279,18 +284,25 @@ const sidebars = {
           id: "programming/nodejs/nestjs-providers",
           label: "Nest.js Providers",
         },
-      ],
-    },
-    {
-      type: "category",
-      label: "Rust",
-      collapsed: true,
-      collapsible: true,
-      items: [
         {
           type: "doc",
-          id: "programming/rust/syntax",
-          label: "Syntax",
+          id: "programming/nodejs/nestjs-testing",
+          label: "Nest.js Testing",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/process-thread",
+          label: "Process & Thread",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/scope",
+          label: "Scopes",
+        },
+        {
+          type: "doc",
+          id: "programming/nodejs/types-interfaces",
+          label: "Types & Interfaces",
         },
       ],
     },

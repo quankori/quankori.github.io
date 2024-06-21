@@ -37,3 +37,7 @@ Comparison and Use Cases:
 **Performance**: During compilation, `interface` is slightly faster because it requires less computation compared to `type`. However, this difference is often negligible for most projects.
 
 In summary, while there is some overlap in many of their capabilities, the choice between `type` and `interface` depends on the specific use case. As a general rule, for object shapes, especially shapes that may be extended or implemented, interface is often preferred. For `type` definitions, unions, intersections, or mapped types, type is the top choice.
+
+## Any and Unknown
+
+## Intersection 

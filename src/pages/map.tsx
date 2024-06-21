@@ -30,7 +30,7 @@ export default function Map(): JSX.Element {
                       sx={{
                         transition: "0.3s",
                         "&:hover": {
-                          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.5)", // Bóng đổ khi hover
+                          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.5)",
                         },
                       }}
                       style={{ margin: "10px", borderRadius: "10px" }}

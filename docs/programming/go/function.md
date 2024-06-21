@@ -1,5 +1,5 @@
 ---
-title: Closures & Anounymous Function
+title: Function
 ---
 
 "Closures" and "Anonymous Functions" are two important concepts in Go (Golang) programming related to handling functions and variable scope.

@@ -4,125 +4,124 @@ title: Big O Notation
 
 ## Concept
 
-Big O is a concept in the field of computing and algorithm analysis used to assess the performance of an algorithm based on the size of its input. Big O is often used to measure the time complexity of an algorithm, which means how the execution time of the algorithm increases as the input size grows.
-
+Big O notation describes the performance or complexity of an algorithm. It provides a way to express the growth rate of the execution time or memory usage of an algorithm as the input size increases.
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/5.png)
 
-**O(n)**: This is a linear time complexity, meaning the execution time of the algorithm increases linearly at a constant rate with the size of the input. For example, if you have a list with n elements and you need to iterate through each element, the execution time of the algorithm will increase linearly with n.
+**O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n) < O(n!)**
 
-```python
-def example_linear_time_algorithm(arr):
-    total = 0
-    for num in arr:
-        total += num
-    return total
+O(1): Constant time - the execution time does not change with the input size.
 
-arr = [1, 2, 3, 4, 5]
-result = example_linear_time_algorithm(arr)
-print(result)
+```go
+func getFirstElement(arr []int) int {
+    return arr[0]
+}
 ```
 
-**O(n^2)**: Quadratic time complexity, meaning the execution time of the algorithm increases quadratically with the size of the input. For example, the Bubble Sort algorithm.
+O(log n): Logarithmic time - the execution time grows logarithmically with the input size (e.g., binary search).
 
-```python
-def example_quadratic_time_algorithm(arr):
-    total = 0
-    for i in arr:
-        for j in arr:
-            total += i * j
-    return total
-
-arr = [1, 2, 3, 4]
-result = example_quadratic_time_algorithm(arr)
-print(result)
+```go
+func binarySearch(arr []int, target int) bool {
+    left, right := 0, len(arr)-1
+    for left <= right {
+        mid := (left + right) / 2
+        if arr[mid] == target {
+            return true
+        } else if arr[mid] < target {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return false
+}
 ```
 
-**O(2^n)**: Exponential time complexity, where the execution time increases exponentially with the input size. For example, solving the Tower of Hanoi problem.
+O(n): Linear time - the execution time grows linearly with the input size (e.g., traversing an array).
 
-```python
-def recursive_fibonacci(n):
-    if n <= 1:
+```go
+func findMax(arr []int) int {
+    maxVal := arr[0]
+    for _, val := range arr {
+        if val > maxVal {
+            maxVal = val
+        }
+    }
+    return maxVal
+}
+```
+
+O(n log n): Linearithmic time - the execution time grows in a combination of linear and logarithmic times (e.g., merge sort, quicksort).
+
+```go
+func mergeSort(arr []int) []int {
+    if len(arr) <= 1 {
+        return arr
+    }
+    mid := len(arr) / 2
+    left := mergeSort(arr[:mid])
+    right := mergeSort(arr[mid:])
+    return merge(left, right)
+}
+
+func merge(left, right []int) []int {
+    result := make([]int, 0)
+    i, j := 0, 0
+    for i < len(left) && j < len(right) {
+        if left[i] < right[j] {
+            result = append(result, left[i])
+            i++
+        } else {
+            result = append(result, right[j])
+            j++
+        }
+    }
+    result = append(result, left[i:]...)
+    result = append(result, right[j:]...)
+    return result
+}
+```
+
+O(n^2): Quadratic time - the execution time grows quadratically with the input size (e.g., bubble sort, selection sort).
+
+```go
+func bubbleSort(arr []int) {
+    n := len(arr)
+    for i := 0; i < n; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            }
+        }
+    }
+}
+```
+
+O(2^n): Exponential time - the execution time grows exponentially with the input size (e.g., some recursive algorithms).
+
+```go
+func fibonacci(n int) int {
+    if n <= 1 {
         return n
-    else:
-        return recursive_fibonacci(n-1) + recursive_fibonacci(n-2)
-
-result = recursive_fibonacci(5)
-print(result)
+    }
+    return fibonacci(n-1) + fibonacci(n-2)
+}
 ```
 
-**O(n!)**: Factorial time complexity, where the execution time grows according to the factorial of the input size. For example, computing permutations of n elements.
+O(n!): Factorial time - the execution time grows factorially with the input size (e.g., backtracking algorithms for permutations).
 
-**O(log n)**: This is logarithmic time complexity, meaning the execution time of the algorithm grows slower than the size of the input. It often occurs when an algorithm divides data efficiently and eliminates a portion of data in each step, such as the binary search algorithm in a sorted list. This means that doubling the size of the input may only increase the execution time by a constant factor compared to the previous execution time.
-
-```python
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return -1
-
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-target = 6
-result = binary_search(arr, target)
-print(result)
+```go
+func permutations(str string) []string {
+    if len(str) == 0 {
+        return []string{""}
+    }
+    var result []string
+    for i := 0; i < len(str); i++ {
+        remaining := str[:i] + str[i+1:]
+        for _, perm := range permutations(remaining) {
+            result = append(result, string(str[i])+perm)
+        }
+    }
+    return result
+}
 ```
-
-**O(n log n)**: This is a nearly linear time complexity, but it is faster than O(n^2) (quadratic) for sorting and processing large data. Merge Sort and Quick Sort algorithms are common examples of this complexity.
-
-Now, to explain Logarithm (log) and why it's important in algorithm analysis:
-
-**Logarithm (log)**: Logarithm is a mathematical operation used to find the exponent needed to raise a specific base to obtain a particular number. Specifically, the log with base a of number b (denoted as log_a(b)) is the exponent that a must be raised to in order to equal b.
-
-For example, log_2(8) = 3, because 2^3 = 8
-
-When it comes to algorithm analysis, log n is often associated with how efficiently an algorithm divides data and reduces the size of data to be processed after each step. This significantly reduces the execution time of the algorithm as the input size increases.
-
-A specific example: The binary search algorithm uses log n. If you have a list of 1000 elements and you want to find an element in it, the binary search algorithm will take a maximum of about 10 steps (log_2(1000) ≈ 10) to find the result. In contrast, a linear search algorithm (O(n)) would require a maximum of 1000 steps.
-
-In summary, log n and n log n are important complexity classes in algorithm analysis, playing a crucial role in evaluating and comparing the performance of different algorithms.
-
-## Best Case and Worst Case
-
-**Best Case Scenario (Best-Case Time Complexity)**: This represents the minimum amount of time an algorithm takes to complete its task for a given input. In other words, it describes the most favorable conditions for the algorithm. The best-case time complexity is denoted as O(f(n)), where f(n) represents the minimum number of basic operations (comparisons, assignments, etc.) required to solve the problem.
-
-For example, consider a linear search algorithm that searches for a specific element in an array. In the best-case scenario, the element is found at the beginning of the array, and the algorithm only needs to make one comparison. Therefore, the best-case time complexity of this algorithm is O(1).
-
-**Worst Case Scenario (Worst-Case Time Complexity)**: This represents the maximum amount of time an algorithm takes to complete its task for a given input. It describes the least favorable conditions for the algorithm. The worst-case time complexity is also denoted as O(g(n)), where g(n) represents the maximum number of basic operations required to solve the problem.
-
-For example, consider the same linear search algorithm. In the worst-case scenario, the element is either not present in the array or is found at the end of the array. In this case, the algorithm must iterate through the entire array, making n comparisons. Therefore, the worst-case time complexity of this algorithm is O(n).
-
-```python
-# Binary Search Algorithm (Assumes sorted array)
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return -1  # Element not found
-
-arr = [1, 2, 3, 4, 5, 6]
-target = 3
-
-# Best Case: Element is found in the middle
-best_case_result = binary_search(arr, 3)
-
-# Worst Case: Element is not present or found at the ends
-worst_case_result = binary_search(arr, 7)
-
-print("Best Case Result:", best_case_result)  # O(1)
-print("Worst Case Result:", worst_case_result)  # O(log n)
-```
-
-

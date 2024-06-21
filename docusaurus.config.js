@@ -72,19 +72,14 @@ const config = {
       items: [
         {
           type: "docSidebar",
-          label: "My Blog",
-          sidebarId: "blogs",
-        },
-        {
-          type: "docSidebar",
           label: "Programming",
           sidebarId: "programming",
         },
-        // {
-        //   type: "docSidebar",
-        //   label: "English",
-        //   sidebarId: "english",
-        // },
+        {
+          type: "docSidebar",
+          label: "English",
+          sidebarId: "english",
+        },
         {
           type: "docSidebar",
           label: "Cheatsheet",
@@ -97,14 +92,14 @@ const config = {
         },
         // {
         //   position: "right",
-        //   label: "My Travel",
+        //   label: "My Hobbies",
         //   to: "/map",
         // },
-        {
-          href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
-          position: "right",
-          label: "My Resume",
-        },
+        // {
+        //   href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
+        //   position: "right",
+        //   label: "My Resume",
+        // },
         {
           href: "https://www.linkedin.com/in/quankori/",
           position: "right",
