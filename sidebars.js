@@ -89,6 +89,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "programming/algorithm/linked-list",
+          label: "Linked List",
+        },
+        {
+          type: "doc",
           id: "programming/algorithm/searching",
           label: "Searching",
         },
