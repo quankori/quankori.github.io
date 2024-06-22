@@ -6,11 +6,11 @@ title: Domain Name System
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/2.webp)
 
-### How DNS Works from Client Call to IP Resolution
+## How DNS Works from Client Call to IP Resolution
 
 DNS (Domain Name System) is the system that translates domain names into IP addresses that computers can use to communicate with each other. Below is a detailed explanation of the process from the moment a client requests a domain name to the point it receives the corresponding IP address.
 
-### Detailed Steps of DNS Resolution:
+## Detailed Steps of DNS Resolution:
 
 1. **Client Requests Domain Name**:
 
@@ -60,7 +60,7 @@ DNS (Domain Name System) is the system that translates domain names into IP addr
 10. **Connect to Destination Server**:
     - The browser uses this IP address to establish a TCP connection with the destination server and sends an HTTP (or HTTPS) request to load the webpage.
 
-### Process Illustration (DNS Resolution Steps)
+## Process Illustration (DNS Resolution Steps)
 
 ```plaintext
 Client -> Browser Cache -> OS Cache -> DNS Resolver Cache
@@ -68,7 +68,7 @@ Client -> Browser Cache -> OS Cache -> DNS Resolver Cache
        -> DNS Resolver -> OS -> Browser -> Server
 ```
 
-### Specific Example:
+## Specific Example:
 
 Let's say you enter `www.example.com` into your browser:
 
@@ -82,5 +82,3 @@ Let's say you enter `www.example.com` into your browser:
 8. The DNS resolver returns the IP address `93.184.216.34` to the OS.
 9. The OS returns the IP address `93.184.216.34` to the browser.
 10. The browser connects to the server at `93.184.216.34` and loads the webpage.
-
-I hope this explanation helps you understand how DNS works from the moment a client requests a domain name to the point it receives the corresponding IP address.

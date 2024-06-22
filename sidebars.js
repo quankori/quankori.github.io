@@ -1,12 +1,5 @@
 // @ts-check
 const sidebars = {
-  blogs: [
-    {
-      type: "doc",
-      id: "blog/process-nodejs",
-      label: "Process & Thread Node.js",
-    },
-  ],
   programming: [
     {
       type: "category",
@@ -23,11 +16,6 @@ const sidebars = {
           type: "doc",
           id: "programming/fundamental/bitwise",
           label: "Bitwise",
-        },
-        {
-          type: "doc",
-          id: "programming/fundamental/concurrency-parallelism",
-          label: "Concurrency & Parallelism",
         },
         {
           type: "doc",
@@ -63,6 +51,11 @@ const sidebars = {
           type: "doc",
           id: "programming/fundamental/solid",
           label: "SOLID",
+        },
+        {
+          type: "doc",
+          id: "programming/fundamental/ssh",
+          label: "Secure Shell (SSH)",
         },
         {
           type: "doc",
@@ -203,11 +196,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/go/length-capacity",
-          label: "Length & Capacity",
-        },
-        {
-          type: "doc",
           id: "programming/go/memory-management",
           label: "Memory Management",
         },
@@ -246,38 +234,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "programming/nodejs/copy",
-          label: "Copy in JS",
-        },
-        {
-          type: "doc",
           id: "programming/nodejs/event-loop",
           label: "Event Loop",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/functions",
-          label: "Functions",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/fundamental",
-          label: "Fundamental",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/generics",
-          label: "Generics",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/loop",
-          label: "Loop",
-        },
-        {
-          type: "doc",
-          id: "programming/nodejs/modules",
-          label: "Modules",
         },
         {
           type: "doc",

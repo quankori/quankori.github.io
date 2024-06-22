@@ -2,32 +2,231 @@
 title: Event Loop
 ---
 
-## Fundamental
+## Event Loop in Node.js
 
-In Node.js, the event loop is a fundamental concept that plays a crucial role in managing asynchronous operations. The event loop is responsible for handling non-blocking I/O operations, timers, and callbacks in an efficient manner, allowing Node.js to handle a large number of concurrent connections without blocking the execution of other code.
+The event loop is a fundamental concept in Node.js that allows for asynchronous programming. It enables Node.js to handle many operations concurrently, without having to create multiple threads. Understanding the event loop is crucial for writing efficient and non-blocking code.
 
-Here's a high-level overview of how the event loop works in Node.js:
+## Key Concepts of the Event Loop
 
-**Event Loop**: The event loop is a continuous process that keeps running in the background of a Node.js application. It constantly checks whether there are any pending events or callbacks in the queue.
+1. **Single-Threaded Architecture**
+2. **Asynchronous I/O**
+3. **Phases of the Event Loop**
+4. **Callbacks and Task Queues**
+5. **Timers**
 
-**Callback Queue**: When asynchronous operations are performed, such as reading from a file, making a network request, or setting a timer, the associated callback functions are placed in a callback queue. These callbacks are executed once the main thread is free, and the event loop checks the callback queue.
+### 1. Single-Threaded Architecture
 
-**Macro Queue (Task Queue)**: This is where the callback functions related to I/O operations, timers, and some other asynchronous tasks are queued. The event loop checks the macro queue after it has finished executing the current task in the callback queue. Tasks in the macro queue have a slightly higher priority than those in the micro queue.
+**Definition**:
 
-**Micro Queue (Microtask Queue)**: The micro queue is a queue that contains microtasks. Microtasks are usually callback functions that are meant to be executed immediately after the current operation in the event loop is completed. Microtasks have a higher priority than the tasks in the macro queue. Promises and certain API functions (e.g., process.nextTick) are typically executed as microtasks.
+- Node.js operates on a single-threaded event-driven architecture. This means that it uses a single main thread to execute JavaScript code.
 
-Here's a simplified order of execution in the event loop:
+**Implications**:
 
-- The event loop starts.
-- It checks the callback queue for pending callbacks.
-- If there are callbacks in the callback queue, they are executed one by one.
-- After each callback is executed, the event loop checks the micro queue for microtasks.
-- If there are microtasks in the micro queue, they are executed immediately, without returning to the callback queue.
-- The event loop repeats this process, checking the callback queue, then the micro queue, until there are no more pending tasks.
-  
-This event-driven, non-blocking architecture is what allows Node.js to efficiently handle a large number of concurrent connections and perform asynchronous operations while maintaining high performance. Understanding how the event loop works is essential for writing efficient and scalable Node.js applications.
+- Despite being single-threaded, Node.js can handle multiple operations concurrently thanks to the event loop.
+
+### 2. Asynchronous I/O
+
+**Definition**:
+
+- Node.js uses non-blocking asynchronous I/O operations. Instead of waiting for an I/O operation to complete, Node.js uses callbacks to continue execution.
+
+**Example**:
+
+```javascript
+const fs = require("fs");
+
+fs.readFile("file.txt", "utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+console.log("Reading file...");
+```
+
+In this example, `console.log('Reading file...');` executes before the file reading completes.
+
+### 3. Phases of the Event Loop
+
+The event loop consists of multiple phases, each handling different types of callbacks:
+
+1. **Timers Phase**:
+
+   - Executes callbacks scheduled by `setTimeout` and `setInterval`.
+
+2. **Pending Callbacks Phase**:
+
+   - Executes I/O callbacks deferred to the next loop iteration.
+
+3. **Idle, Prepare Phase**:
+
+   - Internal use, typically ignored by most applications.
+
+4. **Poll Phase**:
+
+   - Retrieves new I/O events, executes I/O-related callbacks.
+
+5. **Check Phase**:
+
+   - Executes callbacks from `setImmediate`.
+
+6. **Close Callbacks Phase**:
+   - Executes callbacks related to closed connections, such as `socket.on('close', ...)`.
+
+### 4. Callbacks and Task Queues
+
+**Definition**:
+
+- Callbacks are functions that are executed at a later time. Task queues store these callbacks until they are executed in the appropriate phase of the event loop.
+
+**Example**:
+
+```javascript
+setTimeout(() => {
+  console.log("Timeout callback");
+}, 1000);
+
+setImmediate(() => {
+  console.log("Immediate callback");
+});
+
+console.log("Main script");
+```
+
+The output will be:
+
+```
+Main script
+Immediate callback
+Timeout callback
+```
+
+### 5. Timers
+
+**Definition**:
+
+- Timers allow scheduling of functions to be executed after a certain period of time or at regular intervals.
+
+**Functions**:
+
+- `setTimeout`: Schedules a callback to run after a specified delay.
+- `setInterval`: Schedules a callback to run repeatedly with a fixed time delay between each call.
+- `setImmediate`: Schedules a callback to run immediately after the current event loop phase.
+
+**Example**:
+
+```javascript
+setTimeout(() => {
+  console.log("Executed after 1000 ms");
+}, 1000);
+
+setInterval(() => {
+  console.log("Executed every 1000 ms");
+}, 1000);
+
+setImmediate(() => {
+  console.log("Executed immediately");
+});
+```
+
+## Event Loop Workflow
+
+Here's a simplified representation of the event loop workflow:
+
+```plaintext
+        ┌───────────────────────────┐
+    ┌─> │           Timers          │
+    │   └─────────────┬─────────────┘
+    │   ┌─────────────┴─────────────┐
+    ├─> │     Pending Callbacks     │
+    │   └─────────────┬─────────────┘
+    │   ┌─────────────┴─────────────┐
+    ├─> │      Idle, Prepare        │
+    │   └─────────────┬─────────────┘
+    │   ┌─────────────┴─────────────┐
+    ├─> │          Poll             │
+    │   └─────────────┬─────────────┘
+    │   ┌─────────────┴─────────────┐
+    ├─> │          Check            │
+    │   └─────────────┬─────────────┘
+    │   ┌─────────────┴─────────────┐
+    └─> │    Close Callbacks        │
+        └───────────────────────────┘
+```
 
 ![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/9.gif)
 
+## Example: Understanding the Event Loop
 
+**Example Code**:
 
+```javascript
+const fs = require("fs");
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout callback");
+}, 0);
+
+setImmediate(() => {
+  console.log("Immediate callback");
+});
+
+fs.readFile(__filename, () => {
+  console.log("File read callback");
+});
+
+console.log("End");
+```
+
+**Explanation**:
+
+1. **Synchronous Code Execution**:
+
+   - `console.log('Start');` executes and prints `Start`.
+   - `console.log('End');` executes and prints `End`.
+
+2. **Timers and Immediate Callbacks**:
+
+   - `setTimeout(() => { console.log('Timeout callback'); }, 0);` schedules the callback to be executed after the poll phase.
+   - `setImmediate(() => { console.log('Immediate callback'); });` schedules the callback to be executed after the poll phase.
+
+3. **File Read Callback**:
+   - `fs.readFile(__filename, () => { console.log('File read callback'); });` schedules a callback to be executed when the file read operation completes, which will happen in the poll phase.
+
+**Expected Output**:
+
+```
+Start
+End
+Immediate callback
+File read callback
+Timeout callback
+```
+
+## Summary
+
+- **Event Loop**:
+
+  - Handles asynchronous operations in Node.js using a single-threaded, non-blocking architecture.
+  - Manages the execution of callbacks from various sources like timers, I/O operations, and other events.
+
+- **Phases of the Event Loop**:
+
+  1. **Timers**: Executes callbacks from `setTimeout` and `setInterval`.
+  2. **Pending Callbacks**: Executes I/O callbacks deferred to the next loop iteration.
+  3. **Idle, Prepare**: Internal use for system tasks.
+  4. **Poll**: Retrieves new I/O events, executes I/O-related callbacks.
+  5. **Check**: Executes `setImmediate` callbacks.
+  6. **Close Callbacks**: Executes callbacks for closed connections.
+
+- **Asynchronous I/O**:
+
+  - Allows Node.js to perform non-blocking I/O operations, improving efficiency and scalability.
+
+- **Timers**:
+
+  - `setTimeout`, `setInterval`, and `setImmediate` are used for scheduling future execution of code.
+
+- **Callback Execution Order**:
+  - `setImmediate` callbacks execute before `setTimeout` callbacks scheduled with a delay of 0 milliseconds.

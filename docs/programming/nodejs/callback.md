@@ -6,8 +6,6 @@ title: Callbacks in Node.js
 
 Callback is a fundamental concept in asynchronous programming in Node.js. It allows you to perform non-blocking operations, significantly improving performance for I/O-related tasks. However, due to the potential nesting of callbacks, understanding and managing "callback hell" is essential. Using patterns or new language features ensures that the code remains maintainable and readable.
 
-![Image](https://raw.githubusercontent.com/quankori/quankori.github.io/master/src/images/programming/7.png)
-
 ## Promise
 
 A Promise in JavaScript represents a value that may be available now, in the future, or never. It allows you to write asynchronous code in a more synchronous style. A Promise has three states: Pending, Rejected, and Fulfilled.
@@ -40,7 +38,7 @@ Promise.race and Promise.any are both methods of the Promise object in JavaScrip
 
 **Promise.allSettled**: This is another method introduced in ES2020. Promise.allSettled also takes an array of Promises and returns a new Promise. This Promise is resolved after all Promises in the array have been resolved or rejected. The result of Promise.allSettled is an array of objects describing the status of each Promise, whether it was resolved or rejected.
 
-*In summary:*
+_In summary:_
 
 Promise.race and Promise.any deal with handling results from multiple Promises but behave differently when there are rejections.
 

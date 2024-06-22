@@ -104,7 +104,7 @@ myClosure("inner"); // Sử dụng closure
 // Inner Variable: inner
 ```
 
-## Private Scope và Public Scope
+## Private Scope and Public Scope
 
 **Private Scope**: In private scope, variables and functions can only be accessed and used within the same "scope" or "code block" where they are declared. They cannot be accessed from other scopes, including other code blocks within the same file or module, allowing for easy interaction and sharing of data and functions between different parts of the program.
 

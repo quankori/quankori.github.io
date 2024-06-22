@@ -9,9 +9,13 @@ title: Context
 There are three main types of Context in Golang:
 
 **Background**: The default Context used to initialize a new Context.
+
 **TODO**: Used for handling simple and temporary tasks.
+
 **WithCancel**: Allows canceling a task after its Context has expired.
+
 **WithDeadline**: Allows setting a deadline for a task. When the deadline is reached, the Context will automatically cancel the task.
+
 **WithTimeout**: Sets a time limit for task execution. When this time expires, the Context will automatically cancel the task.
 
 If Context is not implemented correctly, goroutines can be blocked or may not be canceled properly. This can lead to resource wastage, reduced application performance, and potential security issues. Therefore, using Context is crucial when developing multithreaded applications to ensure their accuracy and safety.

@@ -2,7 +2,7 @@
 title: Big O Notation
 ---
 
-## Concept
+## Key Concepts of Big O
 
 Big O notation describes the performance or complexity of an algorithm. It provides a way to express the growth rate of the execution time or memory usage of an algorithm as the input size increases.
 
