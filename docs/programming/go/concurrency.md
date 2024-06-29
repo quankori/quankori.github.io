@@ -144,7 +144,7 @@ func Sync() {
 }
 ```
 
-## Deadlocks
+## Example 
 
 ```go
 package main
