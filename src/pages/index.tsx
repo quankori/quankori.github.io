@@ -25,23 +25,25 @@ export default function Home(): JSX.Element {
 
           <section>
             <Typography mt={5} variant="subtitle1" gutterBottom>
-              With 6 years of experience in server-side programming,
-              specializing in Node.js and Golang, I have developed a strong
-              foundation in the fintech and blockchain sectors. My expertise
-              includes server-side development, system architecture and cloud
-              computing. I am eager to expand my knowledge across various
-              technology fields. As I progress in my career, I aspire to become
-              a Technical Architect or Solution Architect, leveraging my deep
-              understanding and innovative approach to technology.
+              I am a Full-Stack Software Engineer with 6 years of experience in
+              backend development, focusing on Golang and Node.js. I have strong
+              skills in designing and building scalable systems, especially in
+              the fintech and blockchain domain. My main expertise includes
+              server-side development, system architecture, and cloud computing,
+              where I consistently deliver reliable and efficient solutions.
+            </Typography>
+            <Typography mt={5} variant="subtitle1" gutterBottom>
+              I am passionate about learning and staying up-to-date with new
+              technologies, and I am always looking to improve my skills. My
+              long-term goal is to grow into a Technical Architect role, where I
+              can use my technical knowledge and strategic thinking to create
+              innovative solutions.
             </Typography>
           </section>
 
           <section>
             <Typography mt={5} variant="h5" align="center">
               My Technical Skills
-            </Typography>
-            <Typography mt={1} variant="h6" align="left">
-              Server Side
             </Typography>
             <Grid mt={10} container spacing={2}>
               <Grid item xs={1} sm={1} className="grid-item">
@@ -57,6 +59,20 @@ export default function Home(): JSX.Element {
                   width={50}
                 />
                 <p>Nest.js</p>
+              </Grid>
+              <Grid item xs={1} sm={1} className="grid-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                  width={50}
+                />
+                <p>React.js</p>
+              </Grid>
+              <Grid item xs={1} sm={1} className="grid-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
+                  width={50}
+                />
+                <p>Vue.js</p>
               </Grid>
               <Grid item xs={1} sm={1} className="grid-item">
                 <img

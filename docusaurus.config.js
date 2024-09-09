@@ -77,29 +77,14 @@ const config = {
         },
         // {
         //   type: "docSidebar",
-        //   label: "English",
-        //   sidebarId: "english",
+        //   label: "Cheatsheet",
+        //   sidebarId: "cheatsheet",
         // },
-        {
-          type: "docSidebar",
-          label: "Cheatsheet",
-          sidebarId: "cheatsheet",
-        },
         {
           type: "search",
           position: "right",
           className: "navbar-search",
         },
-        // {
-        //   position: "right",
-        //   label: "My Hobbies",
-        //   to: "/map",
-        // },
-        // {
-        //   href: "https://www.topcv.vn/xem-cv/CAMABAEGAwZQW1EGWgZSUQVXBQZTC1ZTDlZQUQf466",
-        //   position: "right",
-        //   label: "My Resume",
-        // },
         {
           href: "https://www.linkedin.com/in/quankori/",
           position: "right",
