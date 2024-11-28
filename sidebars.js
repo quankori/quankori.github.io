@@ -2,6 +2,11 @@
 const sidebars = {
   programming: [
     {
+      type: "doc",
+      id: "home",
+      label: "About Me",
+    },
+    {
       type: "category",
       label: "Fundamental",
       collapsed: true,
@@ -270,83 +275,83 @@ const sidebars = {
       ],
     },
   ],
-  // cheatsheet: [
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/aws",
-  //     label: "AWS CLI",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/docker",
-  //     label: "Docker",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/installdocker",
-  //     label: "Install Docker",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/git",
-  //     label: "GIT",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/solidity",
-  //     label: "Solidity",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/golang",
-  //     label: "Go",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/mongodb",
-  //     label: "MongoDB",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/mysql",
-  //     label: "MySQL",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/network",
-  //     label: "Network",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/ssh",
-  //     label: "SSH",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/terraform",
-  //     label: "Terraform",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/rust",
-  //     label: "Rust",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/solana",
-  //     label: "Solana",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/package",
-  //     label: "Package",
-  //   },
-  //   {
-  //     type: "doc",
-  //     id: "cheatsheet/assumerole",
-  //     label: "Assume Role - AWS",
-  //   },
-  // ],
+  cheatsheet: [
+    {
+      type: "doc",
+      id: "cheatsheet/aws",
+      label: "AWS CLI",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/docker",
+      label: "Docker",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/installdocker",
+      label: "Install Docker",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/git",
+      label: "GIT",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/solidity",
+      label: "Solidity",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/golang",
+      label: "Go",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/mongodb",
+      label: "MongoDB",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/mysql",
+      label: "MySQL",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/network",
+      label: "Network",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/ssh",
+      label: "SSH",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/terraform",
+      label: "Terraform",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/rust",
+      label: "Rust",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/solana",
+      label: "Solana",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/package",
+      label: "Package",
+    },
+    {
+      type: "doc",
+      id: "cheatsheet/assumerole",
+      label: "Assume Role - AWS",
+    },
+  ],
 };
 
 module.exports = sidebars;
