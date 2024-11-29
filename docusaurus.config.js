@@ -72,14 +72,9 @@ const config = {
       items: [
         {
           type: "docSidebar",
-          label: "Programming",
-          sidebarId: "programming",
+          label: "My Cheatsheet",
+          sidebarId: "cheatsheet",
         },
-        // {
-        //   type: "docSidebar",
-        //   label: "Cheatsheet",
-        //   sidebarId: "cheatsheet",
-        // },
         {
           type: "search",
           position: "right",
