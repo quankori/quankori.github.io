@@ -14,6 +14,21 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "cheatsheet/nodejs/core",
+          label: "Core Concept",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/nodejs/javascript",
+          label: "JavaScript",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/nodejs/typescript",
+          label: "TypeScript",
+        },
+        {
+          type: "doc",
           id: "cheatsheet/nodejs/nestjs",
           label: "Nest.js",
         },
@@ -21,6 +36,24 @@ const sidebars = {
           type: "doc",
           id: "cheatsheet/nodejs/rxjs",
           label: "RxJS",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Fundamental",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "cheatsheet/fundamental/core",
+          label: "Core Concept",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/fundamental/algorithm",
+          label: "Algorithm",
         },
       ],
     },

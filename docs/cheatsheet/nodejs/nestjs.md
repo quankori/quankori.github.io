@@ -1,8 +1,8 @@
 ---
-title: Cheatsheet Nest.js
+title: Nest.js CheatSheet
 ---
 
-### Schematics 
+### Schematics
 
 ### Lazy-loading Module
 
@@ -24,12 +24,10 @@ export class AppController {
 
 ### Accessing IoC container
 
-- ModuleRef
+#### ModuleRef
 
-### Reflector 
+### Reflector
 
-### Circuit Breaker 
+### Circuit Breaker
 
 ### Composition with Mixins
-
-### Datbase

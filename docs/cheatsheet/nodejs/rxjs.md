@@ -1,10 +1,10 @@
 ---
-title: Cheatsheet RxJS
+title: RxJS CheatSheet
 ---
 
 ### Observables
 
-- Create observables
+#### Create observables
 
 ```ts
 import { Observable } from "rxjs";
@@ -17,7 +17,7 @@ const observable = new Observable((subscriber) => {
 });
 ```
 
-- Register observables
+#### Register observables
 
 ```ts
 observable.subscribe({
@@ -33,7 +33,7 @@ observable.subscribe({
 });
 ```
 
-- Cold (not share)
+#### Cold (not share)
 
 ```ts
 import { Observable } from "rxjs";
@@ -60,7 +60,7 @@ coldObservable.subscribe({
 });
 ```
 
-- Hot (share)
+#### Hot (share)
 
 ```ts
 import { Subject } from "rxjs";
@@ -92,7 +92,7 @@ hotObservable.complete();
 
 ### Creation Operators
 
-- of
+#### of
 
 ```ts
 import { of } from "rxjs";
@@ -101,7 +101,7 @@ of(1, 2, 3).subscribe(console.log);
 // Output: 1, 2, 3
 ```
 
-- from
+#### from
 
 ```ts
 import { from } from "rxjs";
@@ -110,7 +110,7 @@ from([10, 20, 30]).subscribe(console.log);
 // Output: 10, 20, 30
 ```
 
-- interval
+#### interval
 
 ```ts
 import { interval } from "rxjs";
@@ -120,7 +120,7 @@ source.subscribe((val) => console.log(val));
 // Output: 0, 1, 2, 3, ...
 ```
 
-- timer
+#### timer
 
 ```ts
 import { timer } from "rxjs";
@@ -132,7 +132,7 @@ source.subscribe((val) => console.log(val));
 
 ### Transformation Operators
 
-- map
+#### map
 
 ```ts
 import { of } from "rxjs";
@@ -144,7 +144,7 @@ of(1, 2, 3)
 // Output: 10, 20, 30
 ```
 
-- pluck
+#### pluck
 
 ```ts
 import { of } from "rxjs";
@@ -156,7 +156,7 @@ of({ name: "Alice" }, { name: "Bob" })
 // Output: 'Alice', 'Bob'
 ```
 
-- scan
+#### scan
 
 ```ts
 import { of } from "rxjs";
@@ -170,7 +170,7 @@ of(1, 2, 3, 4)
 
 ### Filtering Operators
 
-- filter
+#### filter
 
 ```ts
 import { of } from "rxjs";
@@ -182,7 +182,7 @@ of(1, 2, 3, 4, 5)
 // Output: 2, 4
 ```
 
-- take
+#### take
 
 ```ts
 import { interval } from "rxjs";
@@ -192,7 +192,7 @@ interval(1000).pipe(take(3)).subscribe(console.log);
 // Output: 0, 1, 2
 ```
 
-- debounceTime
+#### debounceTime
 
 ```ts
 import { fromEvent } from "rxjs";
@@ -205,7 +205,7 @@ result.subscribe((x) => console.log("Clicked!"));
 
 ### Subjects
 
-- Create subjects
+#### Create subjects
 
 ```ts
 import { Subject } from "rxjs";
@@ -230,7 +230,7 @@ subject.next(2);
 // Observer B: 2
 ```
 
-- BehaviorSubject
+#### BehaviorSubject
 
 ```ts
 import { BehaviorSubject } from "rxjs";
@@ -254,7 +254,7 @@ behaviorSubject.next(3);
 // Subscriber 2: 3
 ```
 
-- ReplaySubject
+#### ReplaySubject
 
 ```ts
 const replaySubject = new ReplaySubject<number>(2); // Lưu lại 2 giá trị gần nhất

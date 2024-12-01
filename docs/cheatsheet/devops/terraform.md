@@ -1,8 +1,8 @@
 ---
-title: Terraform
+title: Terraform CheatSheet
 ---
 
-- Basic command line
+#### Basic command line
 
 ```bash
 terraform init
@@ -10,7 +10,7 @@ terraform apply -auto-approve
 terraform destroy
 ```
 
-- Log and debug
+#### Log and debug
 
 ```bash
 terraform plan
@@ -20,7 +20,7 @@ terraform plan -out plan.out
 terraform show -json plan.out > plan.json
 ```
 
-- State
+#### State
 
 ```bash
 terraform import
@@ -30,19 +30,19 @@ terraform state list
 terraform state rm
 ```
 
-- Check version
+#### Check version
 
 ```bash
 curl -sL https://checkpoint-api.hashicorp.com/v1/check/terraform | jq -r '.current_version'
 ```
 
-- Download version
+#### Download version
 
 ```bash
 wget https://releases.hashicorp.com/terraform/....
 ```
 
-- Unzip and move to local bin
+#### Unzip and move to local bin
 
 ```bash
 unzip unzip terraform_VERSION_linux_amd64.zip
@@ -50,7 +50,7 @@ unzip unzip terraform_VERSION_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 ```
 
-- Terraform init state
+#### Terraform init state
 
 Mục đích của tùy chọn này là giúp bạn di chuyển trạng thái từ một backend cấu hình cũ sang một backend cấu hình mới mà không cần phải thực hiện công việc này một cách thủ công.
 

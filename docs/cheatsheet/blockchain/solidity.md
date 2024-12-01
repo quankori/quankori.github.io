@@ -1,5 +1,5 @@
 ---
-title: Solidity Basic
+title: Solidity CheatSheet
 ---
 
 ### Basic syntax

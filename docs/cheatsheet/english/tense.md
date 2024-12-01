@@ -1,5 +1,5 @@
 ---
-title: Tense
+title: Tense CheatSheet
 ---
 
 | **Thì**                                                            | **Cấu trúc**                           | **Trường hợp sử dụng**                                                                                                                                                          | **Ví dụ**                                                                                                                       |

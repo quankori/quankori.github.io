@@ -4,19 +4,19 @@ title: SSH CheatSheet
 
 ### Generate SSH
 
-- Generate SSH (Default OpenSSH)
+Generate SSH (Default OpenSSH)
 
 ```bash
 ssh-keygen -f <path>
 ```
 
-- Generate SSH PEM (Privacy-Enhanced Mail)
+Generate SSH PEM (Privacy-Enhanced Mail)
 
 ```bash
 ssh-keygen -t rsa -m PEM -f <path>
 ```
 
-- Generate SSH GIT (ED25519)
+Generate SSH GIT (ED25519)
 
 ```bash
 ssh-keygen -t ed25519 -C "minhquan.k0r1@gmail.com"
