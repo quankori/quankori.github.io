@@ -109,6 +109,66 @@ console.log("End");
 
 The Event Loop consists of multiple phases such as timers, pending callbacks, idle/prepare, poll, check, and close callbacks. Each phase handles different types of callbacks.
 
+```js
+const fs = require('fs');
+
+// Giai đoạn: Timers
+setTimeout(() => {
+  console.log('setTimeout callback (Timers)');
+}, 0);
+
+// Giai đoạn: Check
+setImmediate(() => {
+  console.log('setImmediate callback (Check)');
+});
+
+// Giai đoạn: Poll (I/O)
+fs.readFile(__filename, () => {
+  console.log('fs.readFile callback (Poll)');
+
+  // Giai đoạn: Check sau I/O
+  setImmediate(() => {
+    console.log('setImmediate inside fs.readFile (Check)');
+  });
+
+  // Giai đoạn: Timers sau I/O
+  setTimeout(() => {
+    console.log('setTimeout inside fs.readFile (Timers)');
+  }, 0);
+});
+
+// Giai đoạn: Pending Callbacks
+// Để minh họa, chúng ta sẽ tạo một lỗi trong I/O callback
+fs.readFile('nonexistentfile.txt', () => {
+  // Không xử lý lỗi để callback này được đưa vào Pending Callbacks
+});
+
+// Giai đoạn: process.nextTick
+process.nextTick(() => {
+  console.log('process.nextTick callback');
+});
+
+// Giai đoạn: Promises (microtasks)
+Promise.resolve().then(() => {
+  console.log('Promise.then callback');
+});
+
+// Để giữ chương trình chạy một thời gian ngắn
+setTimeout(() => {
+  console.log('Final setTimeout to end the program');
+}, 100);
+
+// Output:
+// process.nextTick callback
+// Promise.then callback
+// setTimeout callback (Timers)
+// fs.readFile callback (Poll)
+// setImmediate callback (Check)
+// setImmediate inside fs.readFile (Check)
+// setTimeout inside fs.readFile (Timers)
+// Final setTimeout to end the program
+```
+
 ### Callback
 
 #### Callback Function
