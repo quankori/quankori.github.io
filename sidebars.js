@@ -147,11 +147,6 @@ const sidebars = {
           id: "cheatsheet/english/tense",
           label: "Tense",
         },
-        {
-          type: "doc",
-          id: "cheatsheet/english/vocabulary",
-          label: "Vocabulary",
-        },
       ],
     },
   ],
