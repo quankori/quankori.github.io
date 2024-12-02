@@ -144,6 +144,11 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "cheatsheet/english/cheatsheet",
+          label: "Cheatseet",
+        },
+        {
+          type: "doc",
           id: "cheatsheet/english/tense",
           label: "Tense",
         },
