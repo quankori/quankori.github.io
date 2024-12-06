@@ -52,8 +52,31 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "cheatsheet/fundamental/algorithm",
-          label: "Algorithm",
+          id: "cheatsheet/fundamental/database",
+          label: "Database",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Algorithm",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "cheatsheet/algorithm/hash-map",
+          label: "Hash & Map",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/algorithm/two-pointer",
+          label: "Two Pointer",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/algorithm/sliding-window",
+          label: "Sliding Window",
         },
       ],
     },
