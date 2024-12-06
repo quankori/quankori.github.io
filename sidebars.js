@@ -59,6 +59,19 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Go",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "cheatsheet/go/core",
+          label: "Core Concept",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Algorithm",
       collapsed: true,
       collapsible: true,
