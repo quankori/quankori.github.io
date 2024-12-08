@@ -328,3 +328,189 @@ title: English CheatSheet
   - A **beautiful** (Opinion) **large** (Size) **old** (Age) **round** (Shape) **blue** (Color) **Italian** (Origin) **wooden** (Material) **dining** (Purpose) table.
 
 - **Use case:** Sắp xếp các tính từ đúng thứ tự khi mô tả danh từ để câu được tự nhiên và đúng ngữ pháp.
+
+### Do So
+
+- **Định nghĩa:** Sử dụng "do so" để thay thế cho động từ hoặc cụm động từ đã nhắc đến trước đó.
+- **Cú pháp:** Chủ ngữ + do/does/did + so + phần còn lại của câu.
+- **Use case:** Tránh lặp lại động từ hoặc cụm động từ trong câu.
+
+  **Ví dụ:**
+
+  - If you want to go to the party, you should do so.
+  - She decided to help, and I will do so as well.
+
+### 'Except for' and 'Besides'
+
+- **Định nghĩa:**
+  - **Except for:** Ngoại trừ.
+  - **Besides:** Bên cạnh, ngoài ra.
+- **Cú pháp:**
+  - **Except for:** [Danh từ/động từ] + except for + [đối tượng].
+  - **Besides:** [Danh từ/động từ] + besides + [đối tượng].
+- **Use case:**
+
+  - **Except for:** Để loại trừ một phần hoặc một trường hợp cụ thể.
+  - **Besides:** Để thêm thông tin hoặc đối tượng vào câu.
+
+  **Ví dụ:**
+
+  - Everyone except for John was present.
+  - Besides studying, she also works part-time.
+
+### Future Perfect
+
+- **Định nghĩa:** Diễn tả hành động sẽ hoàn thành trước một thời điểm hoặc hành động khác trong tương lai.
+- **Cú pháp:** will have + V3.
+- **Use case:** Nói về sự hoàn thành của một hành động trong tương lai trước một thời điểm nhất định.
+
+  **Ví dụ:**
+
+  - By next year, I will have graduated.
+  - She will have finished the project by the deadline.
+
+### Needn't
+
+- **Định nghĩa:** Dùng để diễn đạt rằng không cần phải làm gì đó.
+- **Cú pháp:** need + not + V nguyên thể (chủ ngữ) [usually trong câu phủ định].
+- **Use case:** Thể hiện sự không cần thiết hoặc không bắt buộc.
+
+  **Ví dụ:**
+
+  - You needn't worry about the exam.
+  - He needn't come if he's busy.
+
+### Passives
+
+- **Định nghĩa:** Thể bị động, nơi chủ ngữ nhận hành động thay vì thực hiện hành động.
+- **Cú pháp:** am/is/are + V3 (for hiện tại) hoặc was/were + V3 (cho quá khứ).
+- **Use case:** Khi không biết hoặc không cần nhấn mạnh người thực hiện hành động.
+
+  **Ví dụ:**
+
+  - The cake was eaten by the children.
+  - A new bridge is being built in the city.
+
+### Past Perfect
+
+- **Định nghĩa:** Diễn tả hành động đã hoàn thành trước một hành động khác trong quá khứ.
+- **Cú pháp:** had + V3.
+- **Use case:** Nói về thứ tự các sự kiện trong quá khứ.
+
+  **Ví dụ:**
+
+  - She had left before he arrived.
+  - They had finished the meal when we joined them.
+
+### Relative Clauses with 'Whose'
+
+- **Định nghĩa:** Mệnh đề quan hệ sử dụng "whose" để chỉ sự sở hữu.
+- **Cú pháp:** [Danh từ] + whose + [danh từ] + [động từ].
+- **Use case:** Cung cấp thông tin về sự sở hữu liên quan đến danh từ chính.
+
+  **Ví dụ:**
+
+  - The man whose car was stolen reported it to the police.
+  - She is the author whose book won the award.
+
+### 'Since' and 'Seeing that'
+
+- **Định nghĩa:**
+  - **Since:** Vì, do.
+  - **Seeing that:** Vì, do (thường dùng trong văn viết trang trọng).
+- **Cú pháp:**
+  - **Since:** Since + mệnh đề.
+  - **Seeing that:** Seeing that + mệnh đề.
+- **Use case:** Đưa ra lý do hoặc nguyên nhân cho hành động hoặc tình trạng.
+
+  **Ví dụ:**
+
+  - Since it’s raining, we should stay indoors.
+  - Seeing that the project is delayed, we need to extend the deadline.
+
+### 'So as to' and 'In Order to'
+
+- **Định nghĩa:** Cả hai cụm từ đều dùng để chỉ mục đích.
+- **Cú pháp:**
+  - **So as to:** So as to + V nguyên thể.
+  - **In order to:** In order to + V nguyên thể.
+- **Use case:** Diễn đạt mục đích hoặc lý do cho một hành động.
+
+  **Ví dụ:**
+
+  - She studied hard so as to pass the exam.
+  - They left early in order to catch the first train.
+
+### Such
+
+- **Định nghĩa:** Dùng để nhấn mạnh tính chất hoặc mức độ của danh từ.
+- **Cú pháp:** such + [determiner] + [adjective] + noun.
+- **Use case:** Nhấn mạnh đặc điểm, thường dùng với tính từ và danh từ.
+
+  **Ví dụ:**
+
+  - It was such a beautiful day.
+  - She is such a talented artist.
+
+### Three-word Phrasal Verbs
+
+- **Định nghĩa:** Cụm động từ gồm ba từ, thường bao gồm động từ + giới từ + trạng từ hoặc danh từ.
+- **Cú pháp:** Verb + Preposition + Particle/Noun.
+- **Use case:** Thể hiện ý nghĩa phức tạp hoặc cụ thể hơn so với phrasal verbs ngắn.
+
+  **Ví dụ:**
+
+  - Look forward to
+  - Get along with
+  - Run out of
+
+### Unless
+
+- **Định nghĩa:** Dùng để chỉ điều kiện phủ định, tương đương với "if not".
+- **Cú pháp:** Unless + hiện tại đơn, Chủ ngữ + sẽ + động từ nguyên thể.
+- **Use case:** Diễn đạt điều kiện mà nếu không xảy ra, hành động sẽ xảy ra.
+
+  **Ví dụ:**
+
+  - You won’t pass the exam unless you study.
+  - Unless it stops raining, we will stay home.
+
+### Whether
+
+- **Định nghĩa:** Dùng để diễn đạt sự lựa chọn giữa hai khả năng hoặc để giới thiệu mệnh đề phụ.
+- **Cú pháp:** Whether + [điều kiện hoặc lựa chọn].
+- **Use case:** Diễn đạt sự lựa chọn hoặc không chắc chắn về điều gì đó.
+
+  **Ví dụ:**
+
+  - I don’t know whether he will come.
+  - She asked whether I needed any help.
+
+### 'Would' to Talk about the Past
+
+- **Định nghĩa:** Dùng "would" để diễn đạt hành động thường xuyên trong quá khứ hoặc để nói về tương lai trong quá khứ.
+- **Cú pháp:** would + V nguyên thể.
+- **Use case:** Diễn tả thói quen hoặc hành động lặp đi lặp lại trong quá khứ.
+
+  **Ví dụ:**
+
+  - When we were kids, we would play outside every day.
+  - He said he would call me later.
+
+### 'Hardly' and 'No Sooner'
+
+- **Định nghĩa:**
+  - **Hardly:** Gần như không, chẳng.
+  - **No sooner:** Không sớm hơn, chẳng bao giờ.
+- **Cú pháp:**
+  - **Hardly:** Hardly + trợ động từ + chủ ngữ + động từ.
+  - **No sooner:** No sooner + trợ động từ + chủ ngữ + động từ + than + mệnh đề.
+- **Use case:**
+
+  - **Hardly:** Nhấn mạnh sự khan hiếm hoặc gần như không có điều gì đó.
+  - **No sooner:** Diễn đạt sự kiện xảy ra ngay lập tức sau sự kiện khác.
+
+  **Ví dụ:**
+
+  - He had hardly left when it started to rain.
+  - No sooner had she arrived than the meeting began.
