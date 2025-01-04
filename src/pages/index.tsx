@@ -3,7 +3,6 @@
 import React from "react";
 import { Box, Avatar, Typography, Button, IconButton } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import backgroundImage from "../images/home/mountain.jpg";
 import avatarImage from "../images/home/avatar.jpg";
 
 function App() {
@@ -24,11 +23,7 @@ function App() {
           left: 0,
           height: "100%",
           width: "100%",
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "blur(8px)",
-          transform: "scale(1.1)", // Slightly scale to cover the edges after blur
+          background: "linear-gradient(135deg, #6a11cb, #2575fc)", // Beautiful gradient
           zIndex: 1,
         }}
       />
@@ -77,9 +72,7 @@ function App() {
           variant="contained"
           color="primary"
           sx={{ mt: 2 }}
-          onClick={() =>
-            (window.location.href = "/docs/home")
-          }
+          onClick={() => (window.location.href = "/docs/home")}
         >
           Go To My Page
         </Button>

@@ -52,6 +52,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "cheatsheet/fundamental/design-pattern",
+          label: "Design Pattern",
+        },
+        {
+          type: "doc",
           id: "cheatsheet/fundamental/database",
           label: "Database",
         },
@@ -156,6 +161,11 @@ const sidebars = {
           type: "doc",
           id: "cheatsheet/database/mysql",
           label: "MySQL",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/database/sql-optimize",
+          label: "SQL Optimize",
         },
       ],
     },
