@@ -8,34 +8,72 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Node.js",
+      label: "System Design",
       collapsed: true,
       collapsible: true,
       items: [
         {
           type: "doc",
-          id: "cheatsheet/nodejs/core",
-          label: "Core Concept",
+          id: "cheatsheet/system-design/monolithic",
+          label: "Monolithic Architecture",
         },
         {
           type: "doc",
-          id: "cheatsheet/nodejs/javascript",
-          label: "JavaScript",
+          id: "cheatsheet/system-design/domain-centric",
+          label: "Domain Centric Architecture",
         },
         {
           type: "doc",
-          id: "cheatsheet/nodejs/typescript",
-          label: "TypeScript",
+          id: "cheatsheet/system-design/event-driven",
+          label: "Event Driven Architecture",
         },
         {
           type: "doc",
-          id: "cheatsheet/nodejs/nestjs",
+          id: "cheatsheet/system-design/microservices",
+          label: "Microservices Architecture",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/system-design/serverless",
+          label: "Serverless Architecture",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Programming Language",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "cheatsheet/programming/nodejs",
+          label: "Node.js",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/programming/nestjs",
           label: "Nest.js",
         },
         {
           type: "doc",
-          id: "cheatsheet/nodejs/rxjs",
+          id: "cheatsheet/programming/golang",
+          label: "Golang",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/programming/rxjs",
           label: "RxJS",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/programming/java",
+          label: "Java",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/programming/spring",
+          label: "Spring Boot",
         },
       ],
     },
@@ -47,8 +85,8 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          id: "cheatsheet/fundamental/core",
-          label: "Core Concept",
+          id: "cheatsheet/fundamental/computer-science",
+          label: "Computer Science",
         },
         {
           type: "doc",
@@ -57,92 +95,18 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "cheatsheet/fundamental/database",
-          label: "Database",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Go",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "cheatsheet/go/core",
-          label: "Core Concept",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Algorithm",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "cheatsheet/algorithm/hash-map",
-          label: "Hash & Map",
+          id: "cheatsheet/fundamental/programming-design-pattern",
+          label: "Programming Design Pattern",
         },
         {
           type: "doc",
-          id: "cheatsheet/algorithm/two-pointer",
-          label: "Two Pointer",
+          id: "cheatsheet/fundamental/design-principle",
+          label: "Design Principle",
         },
         {
           type: "doc",
-          id: "cheatsheet/algorithm/sliding-window",
-          label: "Sliding Window",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "DevOPS",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "cheatsheet/devops/assume-role",
-          label: "Assume Role",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/aws",
-          label: "AWS",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/setup-docker",
-          label: "Setup Docker",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/docker",
-          label: "Docker",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/git",
-          label: "GIT",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/network",
-          label: "Network",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/ssh",
-          label: "SSH",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/devops/terraform",
-          label: "Terraform",
+          id: "cheatsheet/fundamental/message-queue",
+          label: "Message Queue",
         },
       ],
     },
@@ -154,31 +118,23 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "cheatsheet/database/common-concept",
+          label: "Common Concept",
+        },
+        {
+          type: "doc",
+          id: "cheatsheet/database/postgresql",
+          label: "PostgreSQL",
+        },
+        {
+          type: "doc",
           id: "cheatsheet/database/mongodb",
           label: "MongoDB",
         },
         {
           type: "doc",
-          id: "cheatsheet/database/mysql",
-          label: "MySQL",
-        },
-        {
-          type: "doc",
-          id: "cheatsheet/database/sql-optimize",
-          label: "SQL Optimize",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Blockchain",
-      collapsed: true,
-      collapsible: true,
-      items: [
-        {
-          type: "doc",
-          id: "cheatsheet/blockchain/solidity",
-          label: "Solidity",
+          id: "cheatsheet/database/redis",
+          label: "Redis",
         },
       ],
     },

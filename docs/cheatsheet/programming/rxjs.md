@@ -1,5 +1,5 @@
 ---
-title: RxJS CheatSheet
+title: RxJS
 ---
 
 ### Observables
