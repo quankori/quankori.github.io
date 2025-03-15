@@ -2,15 +2,126 @@
 title: Spring Boots
 ---
 
-## Overview
-
-**Spring Boot** is a Java-based framework built on the Spring ecosystem, designed to simplify the development of scalable, production-ready applications with minimal configuration. It leverages **Inversion of Control (IoC)**, **auto-configuration**, and a rich set of tools to support enterprise-grade solutions, REST APIs, microservices, and reactive systems.
+## Core Architecture
 
 **Core architecture**:
 
 - **Spring framework**: Provides foundational IoC, DI, and AOP.
 - **Auto-configuration**: Streamlines setup with starters and embedded servers.
 - **Language features**: Integrates Java/Kotlin with annotations and reactive support.
+
+### Spring Framework Service
+
+```java
+// src/main/java/com/example/core/SpringFrameworkService.java (**Spring framework**)
+package com.example.core;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Service
+public class SpringFrameworkService {
+    private final Dependency dependency;
+
+    @Autowired
+    public SpringFrameworkService(Dependency dependency) {
+        this.dependency = dependency;
+    }
+
+    public String processData() {
+        return "Processed with " + dependency.getData();
+    }
+}
+
+class Dependency {
+    public String getData() {
+        return "Dependency Data";
+    }
+}
+
+@Configuration
+class Config {
+    @Bean
+    public Dependency dependency() {
+        return new Dependency();
+    }
+}
+```
+
+**Spring Framework Service Details**:
+
+- **Purpose**: Demonstrates IoC and Dependency Injection (DI) using Spring annotations.
+- **Explanation**: The `@Service` annotation marks `SpringFrameworkService` as a Spring-managed bean. `@Autowired` injects the `Dependency` bean, defined in a `@Configuration` class with a `@Bean` method, showcasing IoC and DI. `processData` uses the injected dependency to return a result.
+- **Spring Framework Details**:
+  - **Inversion of Control (IoC)**: Spring container manages bean lifecycle and dependencies.
+  - **Dependency Injection (DI)**: Beans are injected via constructor, setter, or field injection (here, constructor).
+  - **Aspect-Oriented Programming (AOP)**: Not shown but enables cross-cutting concerns (e.g., logging, security) via aspects.
+
+### Auto-Configuration Service
+
+```java
+// src/main/java/com/example/core/AutoConfigService.java (**Auto-configuration**)
+package com.example.core;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "app")
+public class AutoConfigService {
+    private String setting;
+
+    public void setSetting(String setting) {
+        this.setting = setting;
+    }
+
+    public String getSetting() {
+        return "Setting: " + setting;
+    }
+}
+```
+
+**Auto-Configuration Service Details**:
+
+- **Purpose**: Shows auto-configuration with Spring Boot’s `@ConfigurationProperties`.
+- **Explanation**: `@Component` registers the class as a bean, and `@ConfigurationProperties` binds properties from `application.properties` (e.g., `app.setting=value`) to the `setting` field, demonstrating auto-configuration without manual setup.
+- **Auto-Configuration Details**:
+  - **Starter Dependencies**: Pre-configured libraries (e.g., `spring-boot-starter-web`) include defaults.
+  - **Embedded Servers**: Tomcat/Jetty run within the app (e.g., no external server needed).
+  - **Convention over Configuration**: Sensible defaults reduce manual configuration.
+
+### Language Features Service
+
+```java
+// src/main/java/com/example/core/LanguageFeaturesService.java (**Language features**)
+package com.example.core;
+
+import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
+
+@Service
+public class LanguageFeaturesService {
+    public Mono<String> processReactively(String input) {
+        return Mono.just("Processed: " + input);
+    }
+}
+```
+
+**Language Features Service Details**:
+
+- **Purpose**: Highlights reactive programming support with annotations.
+- **Explanation**: `@Service` marks the class as a Spring bean, and `processReactively` returns a `Mono` (reactive type from Project Reactor), simulating async processing with a simple string transformation.
+- **Language Features Details**:
+  - **Java Integration**: Uses Java with Spring annotations (e.g., `@Service`).
+  - **Kotlin Support**: Not shown but natively supported (e.g., `class MyService` in Kotlin).
+  - **Annotations**: Simplifies configuration (e.g., `@Autowired`, `@Bean`).
+  - **Reactive Programming**: WebFlux enables non-blocking operations (e.g., `Mono`, `Flux`).
+
+---
+
+## Performance Optimization
 
 **Performance optimization**:
 
@@ -19,114 +130,39 @@ title: Spring Boots
 - **Caching**: Enhances speed with Spring Cache.
 - **Database access**: Optimizes data operations with Hibernate and pooling.
 
-**Scaling**:
-
-- **Horizontal scaling**: Scales with Spring Cloud and microservices.
-- **Vertical scaling**: Boosts single-instance performance via JVM tuning.
-- **Distributed systems**: Integrates messaging and caching for distribution.
-
-**Ecosystem & tools**:
-
-- **Build tools**: Uses Maven, Gradle, or CLI for builds.
-- **Libraries/frameworks**: Offers MVC, Data, and Security modules.
-- **Testing**: Ensures quality with JUnit and Spring Test.
-- **Debugging & monitoring**: Monitors with Actuator and VisualVM.
-- **Deployment**: Supports JAR/WAR, Docker, and cloud platforms.
-
-**Design patterns**:
-
-- **Singleton**: Manages bean scopes.
-- **Factory**: Creates beans dynamically.
-- **Proxy**: Implements AOP proxies.
-- **Observer**: Handles events with listeners.
-- **Decorator**: Enhances with filters.
-
-**Use cases**:
-
-- **Enterprise REST APIs**: Builds robust HTTP services.
-- **Microservices**: Implements distributed architectures.
-- **Batch processing**: Processes data in batches.
-- **Reactive applications**: Handles asynchronous workloads.
-
-**Source Tree** (Java Example):
-
-```
-src/main/java/com/example/
-├── core/
-│   └── CoreService.java
-├── perf/
-│   ├── CacheService.java
-│   ├── ConcurrencyService.java
-├── scale/
-│   └── MicroService.java
-├── patterns/
-│   └── SingletonService.java
-└── Application.java
-```
-
-**Bash Scripts & Commands**:
-
-- **Setup Redis for Caching (Bash Script)**:
-
-  ```bash
-  #!/bin/bash
-  redis-server --port 6379 --dir data/redis --daemonize yes
-  ```
-
-- **Build and Run with Docker (Bash Script)**:
-
-  ```bash
-  #!/bin/bash
-  mvn clean package
-  echo "FROM openjdk:17
-  COPY target/myapp.jar /app.jar
-  CMD [\"java\", \"-jar\", \"/app.jar\"]" > Dockerfile
-  docker build -t springboot-app .
-  docker run -p 8080:8080 springboot-app
-  ```
-
-- **Spring Boot Commands**:
-
-  ```bash
-  # Run with Maven
-  mvn spring-boot:run
-
-  # Build JAR
-  mvn clean package
-
-  # Run with JVM tuning
-  java -Xms512m -Xmx1024m -jar target/myapp.jar
-  ```
-
-**Spring Boot Example** (Java):
+### Memory Service
 
 ```java
-// src/main/java/com/example/core/CoreService.java (**Spring framework**)
-package com.example.core;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class CoreService {
-    public String processData(int id) {
-        return "Processed " + id; // **Dependency injection** via @Service
-    }
-}
-
-// src/main/java/com/example/perf/CacheService.java (**Caching**)
+// src/main/java/com/example/perf/MemoryService.java (**Memory management**)
 package com.example.perf;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CacheService {
-    @Cacheable("dataCache") // **Spring Cache**
-    public String getCachedData(String key) {
-        return "Cached " + key; // Simulated with Redis in practice
+public class MemoryService {
+    public void allocateMemory() {
+        Object[] objects = new Object[1000000];
+        for (int i = 0; i < objects.length; i++) {
+            objects[i] = new Object();
+        }
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemory = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used memory: " + usedMemory);
     }
 }
+```
 
+**Memory Service Details**:
+
+- **Purpose**: Demonstrates heap allocation and memory usage reporting.
+- **Explanation**: Allocates a large array on the heap, fills it with objects, and uses `Runtime` to report used memory, simulating memory-intensive operations manageable via JVM tuning.
+- **Memory Management Details**:
+  - **JVM Tuning**: Adjusts heap size with `-Xms` (initial) and `-Xmx` (max), e.g., `-Xms512m -Xmx1024m`.
+  - **Garbage Collection**: G1 or ZGC manages memory; triggered by heap pressure or `System.gc()`.
+
+### Concurrency Service
+
+```java
 // src/main/java/com/example/perf/ConcurrencyService.java (**Concurrency**)
 package com.example.perf;
 
@@ -135,19 +171,100 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 public class ConcurrencyService {
-    public CompletableFuture<String> asyncTask(int id) {
-        return CompletableFuture.supplyAsync(() -> { // **CompletableFuture**
+    public CompletableFuture<String> asyncOperation(String input) {
+        return CompletableFuture.supplyAsync(() -> {
             try {
-                Thread.sleep(1000); // Simulate work
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            return "Task " + id;
+            return "Processed: " + input;
         });
     }
 }
+```
 
-// src/main/java/com/example/scale/MicroService.java (**Microservices**)
+**Concurrency Service Details**:
+
+- **Purpose**: Shows asynchronous processing with CompletableFuture.
+- **Explanation**: Uses `CompletableFuture.supplyAsync` to run a task asynchronously, simulating a 1-second delay and returning a processed string, leveraging thread pools implicitly.
+- **Concurrency Details**:
+  - **Threads**: Managed by JVM thread pools (e.g., ForkJoinPool by default).
+  - **Reactive Streams**: Not shown but supported via Reactor (e.g., `Mono`, `Flux`).
+
+### Cache Service
+
+```java
+// src/main/java/com/example/perf/CacheService.java (**Caching**)
+package com.example.perf;
+
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CacheService {
+    @Cacheable("data")
+    public String getData(String key) {
+        return "Cached Data: " + key;
+    }
+}
+```
+
+**Cache Service Details**:
+
+- **Purpose**: Implements caching with Spring Cache.
+- **Explanation**: `@Cacheable` caches the method result under the "data" cache name, returning a string with the key; subsequent calls with the same key retrieve the cached value instead of recomputing.
+- **Caching Details**:
+  - **Spring Cache**: Uses Ehcache or Redis (configurable via `CacheManager`).
+  - **Annotations**: `@Cacheable` simplifies caching logic.
+
+### Database Service
+
+```java
+// src/main/java/com/example/perf/DatabaseService.java (**Database access**)
+package com.example.perf;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DatabaseService {
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public DatabaseService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public String fetchData() {
+        return jdbcTemplate.queryForObject("SELECT name FROM users WHERE id = 1", String.class);
+    }
+}
+```
+
+**Database Service Details**:
+
+- **Purpose**: Demonstrates database access with JDBC and pooling.
+- **Explanation**: Uses `JdbcTemplate` (injected via `@Autowired`) to query a database table, leveraging HikariCP (default in Spring Boot) for connection pooling, returning a single string result.
+- **Database Access Details**:
+  - **Hibernate/JPA**: Not shown but optimizes ORM (e.g., `@Entity` mapping).
+  - **Connection Pooling**: HikariCP manages database connections efficiently.
+
+---
+
+## Scaling
+
+**Scaling**:
+
+- **Horizontal scaling**: Scales with Spring Cloud and microservices.
+- **Vertical scaling**: Boosts single-instance performance via JVM tuning.
+- **Distributed systems**: Integrates messaging and caching for distribution.
+
+### Scale Service
+
+```java
+// src/main/java/com/example/scale/ScaleService.java (**Distributed systems**)
 package com.example.scale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -155,133 +272,58 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MicroService {
+public class ScaleService {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate; // **Messaging**
-
-    public void sendEvent(String topic, String data) {
-        kafkaTemplate.send(topic, data);
-        System.out.println("Event sent to " + topic + ": " + data);
-    }
-}
-
-// src/main/java/com/example/patterns/SingletonService.java (**Singleton**)
-package com.example.patterns;
-
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Service;
-
-@Service
-@Scope("singleton") // **Singleton**
-public class SingletonService {
-    public String getData() {
-        return "Singleton Data";
-    }
-}
-
-// src/main/java/com/example/Application.java
-package com.example;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.core.ProducerFactory;
-
-@SpringBootApplication
-@EnableCaching // **Caching**
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    public ScaleService(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
     }
 
-    @Bean
-    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
-        return new KafkaTemplate<>(producerFactory); // **Kafka integration**
-    }
-}
-
-// src/main/java/com/example/MainController.java (Example Usage)
-package com.example;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.example.core.CoreService;
-import com.example.perf.CacheService;
-import com.example.perf.ConcurrencyService;
-import com.example.scale.MicroService;
-import com.example.patterns.SingletonService;
-
-@RestController
-public class MainController {
-    @Autowired
-    private CoreService coreService;
-    @Autowired
-    private CacheService cacheService;
-    @Autowired
-    private ConcurrencyService concurrencyService;
-    @Autowired
-    private MicroService microService;
-    @Autowired
-    private SingletonService singletonService;
-
-    @GetMapping("/run")
-    public String run() throws Exception {
-        // **Core architecture**
-        String coreResult = coreService.processData(1);
-
-        // **Caching**
-        String cached = cacheService.getCachedData("key");
-
-        // **Concurrency**
-        String asyncResult = concurrencyService.asyncTask(2).get();
-
-        // **Microservices**
-        microService.sendEvent("test_topic", "Event Data");
-
-        // **Singleton**
-        String singletonData = singletonService.getData();
-
-        return String.format("Core: %s, Cached: %s, Async: %s, Singleton: %s", coreResult, cached, asyncResult, singletonData);
+    public void sendMessage(String topic, String message) {
+        kafkaTemplate.send(topic, message);
+        System.out.println("Message sent to " + topic + ": " + message);
     }
 }
 ```
 
-**Notes**:
+**Scale Service Details**:
 
-- Install dependencies via Maven:
+- **Purpose**: Sends messages to Kafka for distributed communication.
+- **Explanation**: Uses `KafkaTemplate` (injected via `@Autowired`) to send a message to a specified topic, logging the action for confirmation.
+- **Scaling Details**:
+  - **Horizontal Scaling**: Spring Cloud enables load balancing and microservices.
+  - **Vertical Scaling**: JVM tuning (e.g., `-Xmx`) enhances single-instance capacity.
+  - **Distributed Systems**: Kafka for messaging, Redis for caching, not shown but Hazelcast could cluster data.
+
+---
+
+## Scope Details
+
+- **Global Scope**: Static fields or variables outside methods/classes (e.g., `public static int x;`).
+- **Closure Scope**: Simulated with lambdas capturing variables (e.g., `int x = 1; Runnable r = () -> System.out.println(x);`).
+- **Class Scope**: Instance or static fields within a class (e.g., `private int y;`).
+- **Method Scope**: Local variables within a method (e.g., `int z = 1;`).
+- **Block Scope**: Variables within `{}` blocks (e.g., `for (int i = 0; i < 10; i++) {}`).
+- **Spring Scopes**:
+  - **Singleton**: One instance app-wide (default).
+  - **Prototype**: New instance per request.
+  - **Request**: New instance per HTTP request (web context).
+
+## Notes
+
+- Dependencies (Maven):
   ```xml
-  <!-- pom.xml -->
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-cache</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.kafka</groupId>
-      <artifactId>spring-kafka</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jdbc</artifactId>
+    <groupId>org.springframework.kafka</groupId>
+    <artifactId>spring-kafka</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
   </dependencies>
   ```
-- Requires Redis (`localhost:6379`) for caching and Kafka (`localhost:9092`) for messaging.
-- Bash scripts assume Maven and Docker installed; adjust paths as needed.
+- Requires Kafka (`localhost:9092`), Redis (`localhost:6379`), and a database (e.g., H2 in-memory).
 - Run with `mvn spring-boot:run`.
-
-## Key Differences
-
-- **Core Architecture**: Auto-configured with IoC and embedded servers.
-- **Performance Optimization**: JVM-based with caching and concurrency.
-- **Scaling**: Horizontal via Spring Cloud, distributed with messaging.
-- **Ecosystem & Tools**: Rich Java ecosystem with robust tools.
-- **Design Patterns**: Leverages IoC, AOP, and singleton scopes.
-- **Use Cases**: Enterprise APIs, microservices, and reactive systems.

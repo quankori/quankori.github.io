@@ -2,9 +2,7 @@
 title: Design Pattern
 ---
 
-## Design Pattern
-
-**Overview**: Design Patterns provide reusable solutions to common software design problems, enhancing modularity, scalability, and maintainability across various architectural styles and paradigms.
+## CQRS
 
 **CQRS**:
 
@@ -16,70 +14,29 @@ title: Design Pattern
   - **Queries**: Retrieve data from snapshot.
   - **Event sourcing integration**: Uses events to update snapshots.
 
-**Saga**:
-
-- **Distributed transactions**: Manages transactions across services.
-- **Choreography**: Event-driven coordination using Kafka.
-- **Orchestration**: Centralized control with rollback.
-- **Compensation transaction**: Reverses actions on failure.
-
-**Backends for frontend**: Tailors backend APIs for frontends via GraphQL.
-
-**Transactional outbox and inbox**:
-
-- **Outbox pattern**: Ensures reliable event publishing with DB transactions.
-- **Inbox pattern**: Guarantees idempotent event consumption.
-
-**Fan-out/fan-in**: Distributes tasks (fan-out) and aggregates results (fan-in).
-
-**Shared database anti-pattern**: Avoids single DB across services due to coupling.
-
-**Source Tree**:
-
-```
-src/
-├── cqrs/
-│   ├── commands/
-│   │   └── create-user.command.ts
-│   ├── queries/
-│   │   └── get-user.query.ts
-│   ├── snapshot.service.ts
-├── saga/
-│   ├── choreography.saga.ts
-│   ├── orchestration.saga.ts
-│   ├── kafka.service.ts
-├── bff/
-│   ├── graphql.module.ts
-│   ├── user.resolver.ts
-├── outbox-inbox/
-│   ├── outbox.service.ts
-│   ├── inbox.service.ts
-├── fan/
-│   └── fan.service.ts
-└── app.module.ts
-```
-
-**NestJS Example**:
+### Command Service
 
 ```typescript
-// src/cqrs/commands/create-user.command.ts (**Commands**)
+// src/cqrs/command.service.ts (**Commands**)
 import { Injectable } from "@nestjs/common";
 import { Pool } from "pg";
-import { SnapshotService } from "../snapshot.service";
+import { SnapshotService } from "./snapshot.service";
 
 @Injectable()
-export class CreateUserCommand {
-  private pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "mydb",
-    password: "password",
-    port: 5432,
-  });
+export class CommandService {
+  private pool: Pool;
 
-  constructor(private snapshotService: SnapshotService) {}
+  constructor(private snapshotService: SnapshotService) {
+    this.pool = new Pool({
+      user: "postgres",
+      host: "localhost",
+      database: "mydb",
+      password: "password",
+      port: 5432,
+    });
+  }
 
-  async execute(id: number, name: string): Promise<void> {
+  async createUser(id: number, name: string): Promise<void> {
     const client = await this.pool.connect();
     try {
       await client.query("BEGIN");
@@ -88,8 +45,8 @@ export class CreateUserCommand {
         name,
       ]);
       await client.query("COMMIT");
-      this.snapshotService.updateSnapshot(id, name); // Update read snapshot
-      console.log(`User ${id} created in PostgreSQL`);
+      this.snapshotService.updateSnapshot(id, name);
+      console.log(`User created in PostgreSQL: ${id}, ${name}`);
     } catch (e) {
       await client.query("ROLLBACK");
       throw e;
@@ -98,206 +55,255 @@ export class CreateUserCommand {
     }
   }
 }
+```
 
+**Command Service Details**:
+
+- **Purpose**: Handles write operations to a PostgreSQL database with event sourcing integration.
+- **Explanation**: Initializes a PostgreSQL connection pool, uses a transaction to insert a user into the `users` table, updates the snapshot via `SnapshotService`, and logs the action. Errors trigger a rollback for consistency.
+- **CQRS Details**:
+  - **Separation of Database**: Writes to PostgreSQL as the command store.
+  - **Commands**: Modifies state with transactional integrity.
+
+### Query Service
+
+```typescript
+// src/cqrs/query.service.ts (**Queries**)
+import { Injectable } from "@nestjs/common";
+import { SnapshotService } from "./snapshot.service";
+
+@Injectable()
+export class QueryService {
+  constructor(private snapshotService: SnapshotService) {}
+
+  async getUser(id: number): Promise<string> {
+    const data = this.snapshotService.getUser(id);
+    console.log(`Query from snapshot: ${data}`);
+    return data;
+  }
+}
+```
+
+**Query Service Details**:
+
+- **Purpose**: Retrieves data from an in-memory snapshot store.
+- **Explanation**: Uses `SnapshotService` to fetch user data by ID from the snapshot, logging and returning the result, keeping read operations separate from the write database.
+- **CQRS Details**:
+  - **Separation of Concerns**: Queries read from a snapshot, not the write store.
+  - **Event Sourcing Integration**: Relies on snapshot updates from events.
+
+### Snapshot Service
+
+```typescript
 // src/cqrs/snapshot.service.ts (**Event sourcing integration**)
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class SnapshotService {
-  private users: { id: number; name: string }[] = [];
-
-  updateSnapshot(id: number, name: string) {
-    const existing = this.users.find((u) => u.id === id);
-    if (existing) {
-      existing.name = name;
-    } else {
-      this.users.push({ id, name });
-    }
-  }
-
-  getUser(id: number) {
-    return this.users.find((u) => u.id === id);
-  }
-}
-
-// src/cqrs/queries/get-user.query.ts (**Queries**)
-import { Injectable } from "@nestjs/common";
-import { SnapshotService } from "../snapshot.service";
-
-@Injectable()
-export class GetUserQuery {
-  constructor(private snapshotService: SnapshotService) {}
-
-  async execute(id: number): Promise<{ id: number; name: string } | undefined> {
-    const user = this.snapshotService.getUser(id);
-    console.log(`Query: User ${id} from snapshot:`, user);
-    return user;
-  }
-}
-
-// src/saga/kafka.service.ts (Kafka Setup for Choreography)
-import { Injectable, OnModuleInit } from "@nestjs/common";
-import { Kafka, Producer, Consumer } from "kafkajs";
-
-@Injectable()
-export class KafkaService implements OnModuleInit {
-  private kafka = new Kafka({
-    clientId: "my-app",
-    brokers: ["localhost:9092"],
-  });
-  private producer: Producer;
-  private consumer: Consumer;
+  private snapshot: Map<number, string>;
 
   constructor() {
-    this.producer = this.kafka.producer();
-    this.consumer = this.kafka.consumer({ groupId: "saga-group" });
+    this.snapshot = new Map();
+  }
+
+  updateSnapshot(id: number, name: string): void {
+    this.snapshot.set(id, name);
+    console.log(`Snapshot updated: ${id}, ${name}`);
+  }
+
+  getUser(id: number): string {
+    return this.snapshot.get(id) || "User not found";
+  }
+}
+```
+
+**Snapshot Service Details**:
+
+- **Purpose**: Manages an in-memory snapshot for read operations.
+- **Explanation**: Uses a `Map` to store user data, `updateSnapshot` adds or updates entries (simulating event-driven updates), and `getUser` retrieves data, providing a fallback if not found.
+- **CQRS Details**: Acts as the read model, updated via events from commands.
+
+---
+
+## Saga
+
+**Saga**:
+
+- **Distributed transactions**: Manages transactions across services.
+- **Choreography**: Event-driven coordination using Kafka.
+- **Orchestration**: Centralized control with rollback.
+- **Compensation transaction**: Reverses actions on failure.
+
+### Choreography Service
+
+```typescript
+// src/saga/choreography.service.ts (**Choreography**)
+import { Injectable, OnModuleInit } from "@nestjs/common";
+import { ClientKafka } from "@nestjs/microservices";
+
+@Injectable()
+export class ChoreographyService implements OnModuleInit {
+  private kafkaClient: ClientKafka;
+
+  constructor() {
+    this.kafkaClient = new ClientKafka({
+      client: { brokers: ["localhost:9092"] },
+      consumer: { groupId: "saga-group" },
+    });
   }
 
   async onModuleInit() {
-    await this.producer.connect();
-    await this.consumer.connect();
-    await this.consumer.subscribe({
-      topic: "order-events",
-      fromBeginning: true,
-    });
+    await this.kafkaClient.connect();
   }
 
-  async emitEvent(event: { type: string; orderId: number }) {
-    await this.producer.send({
-      topic: "order-events",
-      messages: [{ value: JSON.stringify(event) }],
-    });
-  }
-
-  async subscribe(callback: (event: any) => void) {
-    await this.consumer.run({
-      eachMessage: async ({ message }) => {
-        const event = JSON.parse(message.value.toString());
-        callback(event);
-      },
-    });
+  async startOrder(orderID: number): Promise<void> {
+    await this.kafkaClient
+      .emit("order-events", { key: String(orderID), value: "OrderStarted" })
+      .toPromise();
+    console.log(`Order started, event published: ${orderID}`);
+    // Simulate failure and compensation
+    await this.kafkaClient
+      .emit("order-events", { key: String(orderID), value: "OrderCancelled" })
+      .toPromise();
+    console.log(`Compensation: Order cancelled: ${orderID}`);
   }
 }
+```
 
-// src/saga/choreography.saga.ts (**Choreography**)
+**Choreography Service Details**:
+
+- **Purpose**: Implements event-driven coordination with Kafka.
+- **Explanation**: Initializes a Kafka client, connects on module init, and `startOrder` publishes an "OrderStarted" event, followed by a simulated failure with an "OrderCancelled" compensating event, logged for visibility.
+- **Saga Details**:
+  - **Choreography**: Kafka events drive coordination across services.
+  - **Compensation Transaction**: "OrderCancelled" reverses the initial action.
+
+### Orchestration Service
+
+```typescript
+// src/saga/orchestration.service.ts (**Orchestration**)
 import { Injectable } from "@nestjs/common";
-import { KafkaService } from "./kafka.service";
 
 @Injectable()
-export class ChoreographySaga {
-  constructor(private kafkaService: KafkaService) {
-    this.kafkaService.subscribe(async (event) => {
-      if (event.type === "OrderStarted") {
-        console.log(`[Choreography] Processing order ${event.orderId}`);
-        try {
-          // Simulate payment failure
-          throw new Error("Payment failed");
-        } catch (e) {
-          // **Compensation transaction**
-          await this.kafkaService.emitEvent({
-            type: "OrderCancelled",
-            orderId: event.orderId,
-          });
-          console.log(
-            `[Choreography] Compensating: Cancel order ${event.orderId}`
-          );
+export class OrchestrationService {
+  private steps = [
+    {
+      action: "Create order",
+      rollback: (id: number) => console.log(`Rollback: Cancel order ${id}`),
+    },
+    {
+      action: "Process payment",
+      rollback: (id: number) => console.log(`Rollback: Refund payment ${id}`),
+    },
+  ];
+
+  async processOrder(orderID: number): Promise<void> {
+    for (let i = 0; i < this.steps.length; i++) {
+      const step = this.steps[i];
+      console.log(`Executing: ${step.action}`);
+      if (step.action === "Process payment") {
+        for (let j = i; j >= 0; j--) {
+          this.steps[j].rollback(orderID);
         }
-      }
-    });
-  }
-
-  async startOrder(orderId: number) {
-    await this.kafkaService.emitEvent({ type: "OrderStarted", orderId });
-  }
-}
-
-// src/saga/orchestration.saga.ts (**Orchestration**)
-import { Injectable } from "@nestjs/common";
-
-@Injectable()
-export class OrchestrationSaga {
-  async processOrder(orderId: number) {
-    const steps: { action: string; rollback?: () => void }[] = [
-      {
-        action: "Create order",
-        rollback: () => console.log(`Rollback: Cancel order ${orderId}`),
-      },
-      {
-        action: "Process payment",
-        rollback: () => console.log(`Rollback: Refund payment ${orderId}`),
-      },
-    ];
-
-    console.log(`[Orchestration] Order ${orderId} started`);
-    for (const step of steps) {
-      try {
-        console.log(`[Orchestration] ${step.action}`);
-        if (step.action === "Process payment")
-          throw new Error("Payment failed");
-      } catch (e) {
-        // **Compensation transaction**
-        steps
-          .slice(0, steps.indexOf(step) + 1)
-          .reverse()
-          .forEach((s) => s.rollback && s.rollback());
-        throw e;
+        throw new Error(`Payment failed for order ${orderID}`);
       }
     }
   }
 }
+```
 
-// src/bff/graphql.module.ts (**Backends for frontend** - GraphQL)
-import { Module } from "@nestjs/common";
-import { GraphQLModule } from "@nestjs/graphql";
-import { ApolloDriver } from "@nestjs/apollo";
-import { UserResolver } from "./user.resolver";
+**Orchestration Service Details**:
 
-@Module({
-  imports: [
-    GraphQLModule.forRoot({
-      driver: ApolloDriver,
-      autoSchemaFile: "schema.gql",
-    }),
-  ],
-  providers: [UserResolver],
-})
-export class BffModule {}
+- **Purpose**: Manages a centralized transaction with rollback capabilities.
+- **Explanation**: Defines steps with actions and rollback functions, `processOrder` executes them sequentially, simulates a failure at "Process payment," and triggers rollbacks in reverse order, throwing an error to indicate failure.
+- **Saga Details**:
+  - **Orchestration**: Central control over transaction steps.
+  - **Compensation Transaction**: Rollbacks reverse actions on failure.
 
-// src/bff/user.resolver.ts
-import { Resolver, Query, Args } from "@nestjs/graphql";
+---
 
-@Resolver("User")
-export class UserResolver {
-  @Query(() => String)
-  async user(@Args("id") id: number) {
-    return JSON.stringify({ id, name: "John" }); // Same for mobile/web
+## Backends for Frontend
+
+**Backends for frontend**: Tailors backend APIs for frontends via GraphQL.
+
+### BFF Service
+
+```typescript
+// src/bff/bff.service.ts (**Backends for frontend**)
+import { Injectable } from "@nestjs/common";
+import {
+  GraphQLObjectType,
+  GraphQLSchema,
+  GraphQLString,
+  graphql,
+} from "graphql";
+
+@Injectable()
+export class BFFService {
+  async queryGraphQL(): Promise<string> {
+    const schema = new GraphQLSchema({
+      query: new GraphQLObjectType({
+        name: "Query",
+        fields: {
+          user: {
+            type: GraphQLString,
+            resolve: () => "John Doe",
+          },
+        },
+      }),
+    });
+    const result = await graphql({ schema, source: "{ user }" });
+    return `GraphQL result: ${result.data.user}`;
   }
 }
+```
 
-// src/outbox-inbox/outbox.service.ts (**Outbox pattern**)
+**BFF Service Details**:
+
+- **Purpose**: Provides a GraphQL API tailored for frontends.
+- **Explanation**: Defines a GraphQL schema with a `user` field resolving to "John Doe," executes a query, and returns the result, offering a flexible API for frontend consumption.
+- **BFF Details**: GraphQL enables tailored responses for frontend needs (e.g., mobile, web).
+
+---
+
+## Transactional Outbox and Inbox
+
+**Transactional outbox and inbox**:
+
+- **Outbox pattern**: Ensures reliable event publishing with DB transactions.
+- **Inbox pattern**: Guarantees idempotent event consumption.
+
+### Outbox Service
+
+```typescript
+// src/outbox/outbox.service.ts (**Outbox pattern**)
 import { Injectable } from "@nestjs/common";
 import { Pool } from "pg";
 
 @Injectable()
 export class OutboxService {
-  private pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "mydb",
-    password: "password",
-    port: 5432,
-  });
+  private pool: Pool;
 
-  async publishEvent(event: { type: string; data: any }) {
+  constructor() {
+    this.pool = new Pool({
+      user: "postgres",
+      host: "localhost",
+      database: "mydb",
+      password: "password",
+      port: 5432,
+    });
+  }
+
+  async publishEvent(eventType: string, payload: string): Promise<void> {
     const client = await this.pool.connect();
     try {
       await client.query("BEGIN");
       await client.query(
         "INSERT INTO outbox (event_type, payload) VALUES ($1, $2)",
-        [event.type, JSON.stringify(event.data)]
+        [eventType, payload]
       );
       await client.query("COMMIT");
-      console.log("Event published to outbox:", event);
+      console.log(`Event published to outbox: ${eventType}, ${payload}`);
     } catch (e) {
       await client.query("ROLLBACK");
       throw e;
@@ -306,128 +312,83 @@ export class OutboxService {
     }
   }
 }
+```
 
-// src/outbox-inbox/inbox.service.ts (**Inbox pattern**)
+**Outbox Service Details**:
+
+- **Purpose**: Ensures reliable event publishing within a database transaction.
+- **Explanation**: Initializes a PostgreSQL pool, `publishEvent` starts a transaction, inserts an event into an `outbox` table, and commits it, ensuring atomicity with any related write operation, logging the action.
+- **Outbox Details**: Ties event publishing to DB transactions for reliability.
+
+### Inbox Service
+
+```typescript
+// src/inbox/inbox.service.ts (**Inbox pattern**)
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class InboxService {
-  private processedEvents: Set<string> = new Set();
+  private processedEvents: Set<string>;
 
-  async processEvent(eventId: string, event: { type: string; data: any }) {
-    if (this.processedEvents.has(eventId)) {
-      console.log(`Event ${eventId} already processed (idempotent)`);
+  constructor() {
+    this.processedEvents = new Set();
+  }
+
+  processEvent(eventID: string, eventType: string): void {
+    if (this.processedEvents.has(eventID)) {
+      console.log(`Event already processed (idempotent): ${eventID}`);
       return;
     }
-    console.log(`Processing event ${eventId}:`, event);
-    this.processedEvents.add(eventId);
+    console.log(`Processing event: ${eventID}, ${eventType}`);
+    this.processedEvents.add(eventID);
   }
 }
+```
 
+**Inbox Service Details**:
+
+- **Purpose**: Ensures idempotent event consumption.
+- **Explanation**: Uses a `Set` to track processed event IDs, `processEvent` checks if an event has been processed, skips it if so (idempotency), otherwise processes and logs it, adding the ID to the set.
+- **Inbox Details**: Prevents duplicate event processing (e.g., from retries).
+
+---
+
+## Fan-out/Fan-in
+
+**Fan-out/fan-in**: Distributes tasks (fan-out) and aggregates results (fan-in).
+
+### Fan Service
+
+```typescript
 // src/fan/fan.service.ts (**Fan-out/fan-in**)
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class FanService {
-  async processTasks(tasks: number[]) {
-    // Fan-out: Distribute tasks
+  async processTasks(tasks: number[]): Promise<number> {
     const promises = tasks.map(async (task) => {
-      console.log(`Processing task ${task}`);
+      console.log(`Processing task: ${task}`);
       return task * 2;
     });
-
-    // Fan-in: Aggregate results
     const results = await Promise.all(promises);
-    console.log("Aggregated results:", results);
-    return results.reduce((sum, val) => sum + val, 0);
+    const sum = results.reduce((acc, val) => acc + val, 0);
+    console.log(`Fan-out/fan-in result: ${sum}`);
+    return sum;
   }
 }
-
-// src/app.module.ts
-import { Module } from "@nestjs/common";
-import { CreateUserCommand } from "./cqrs/commands/create-user.command";
-import { GetUserQuery } from "./cqrs/queries/get-user.query";
-import { SnapshotService } from "./cqrs/snapshot.service";
-import { ChoreographySaga } from "./saga/choreography.saga";
-import { OrchestrationSaga } from "./saga/orchestration.saga";
-import { KafkaService } from "./saga/kafka.service";
-import { BffModule } from "./bff/graphql.module";
-import { OutboxService } from "./outbox-inbox/outbox.service";
-import { InboxService } from "./outbox-inbox/inbox.service";
-import { FanService } from "./fan/fan.service";
-
-@Module({
-  imports: [BffModule],
-  providers: [
-    CreateUserCommand,
-    GetUserQuery,
-    SnapshotService,
-    ChoreographySaga,
-    OrchestrationSaga,
-    KafkaService,
-    OutboxService,
-    InboxService,
-    FanService,
-  ],
-})
-export class AppModule {}
-
-// src/main.ts
-import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
-import { CreateUserCommand } from "./cqrs/commands/create-user.command";
-import { GetUserQuery } from "./cqrs/queries/get-user.query";
-import { ChoreographySaga } from "./saga/choreography.saga";
-import { OrchestrationSaga } from "./saga/orchestration.saga";
-import { OutboxService } from "./outbox-inbox/outbox.service";
-import { InboxService } from "./outbox-inbox/inbox.service";
-import { FanService } from "./fan/fan.service";
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const commandService = app.get(CreateUserCommand);
-  const queryService = app.get(GetUserQuery);
-  const choreographySaga = app.get(ChoreographySaga);
-  const orchestrationSaga = app.get(OrchestrationSaga);
-  const outboxService = app.get(OutboxService);
-  const inboxService = app.get(InboxService);
-  const fanService = app.get(FanService);
-
-  // CQRS
-  await commandService.execute(1, "John"); // Write to PostgreSQL
-  console.log(await queryService.execute(1)); // Read from snapshot
-
-  // Saga
-  await choreographySaga.startOrder(1); // Kafka-based Choreography
-  try {
-    await orchestrationSaga.processOrder(2); // Orchestration
-  } catch (e) {
-    console.log(e.message);
-  }
-
-  // Outbox & Inbox
-  await outboxService.publishEvent({ type: "UserCreated", data: { id: 1 } });
-  await inboxService.processEvent("event-1", {
-    type: "UserCreated",
-    data: { id: 1 },
-  });
-  await inboxService.processEvent("event-1", {
-    type: "UserCreated",
-    data: { id: 1 },
-  }); // Idempotent
-
-  // Fan-Out/Fan-In
-  await fanService.processTasks([1, 2, 3]);
-
-  await app.listen(3000);
-}
-bootstrap();
 ```
 
-## Key Differences
+**Fan Service Details**:
 
-- **CQRS**: Separates writes (PostgreSQL) and reads (snapshot) with NestJS.
-- **Saga**: Choreography (Kafka) vs Orchestration with compensation in NestJS.
-- **BFF**: GraphQL serves all frontends in NestJS.
-- **Outbox/Inbox**: Reliable, idempotent event handling in NestJS.
-- **Fan-Out/Fan-In**: Task distribution and aggregation in NestJS.
+- **Purpose**: Implements fan-out/fan-in for task distribution and aggregation.
+- **Explanation**: `processTasks` maps tasks to async operations (fan-out) that double each value, uses `Promise.all` to await all results, and reduces them to a sum (fan-in), logging the final result.
+- **Fan-out/Fan-in Details**: Distributes work across concurrent tasks and aggregates results efficiently.
+
+---
+
+## Shared Database Anti-Pattern
+
+**Shared database anti-pattern**: Avoids single DB across services due to coupling.
+
+- **Purpose**: Highlights the anti-pattern conceptually.
+- **Shared Database Anti-Pattern Details**: Using a single DB across microservices leads to tight coupling, schema conflicts, and scaling challenges.
