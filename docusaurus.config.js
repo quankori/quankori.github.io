@@ -42,6 +42,7 @@ const config = {
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
           ],
+          routeBasePath: "/",
         },
         theme: {
           customCss: require.resolve("./src/style/index.scss"),
@@ -72,8 +73,8 @@ const config = {
       items: [
         {
           type: "docSidebar",
-          label: "My Cheatsheet",
-          sidebarId: "cheatsheet",
+          label: "My Note",
+          sidebarId: "blog",
         },
         {
           type: "search",
