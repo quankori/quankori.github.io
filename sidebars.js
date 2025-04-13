@@ -42,107 +42,66 @@ const sidebars = {
           id: "blog/system-design/serverless",
           label: "Serverless Architecture",
         },
+        {
+          type: "doc",
+          id: "blog/system-design/system-design-pattern",
+          label: "System Design Pattern",
+        },
+        {
+          type: "doc",
+          id: "blog/system-design/database",
+          label: "Database",
+        },
       ],
     },
-    // {
-    //   type: "category",
-    //   label: "Programming Language",
-    //   collapsed: true,
-    //   collapsible: true,
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/nodejs",
-    //       label: "Node.js",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/nestjs",
-    //       label: "Nest.js",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/golang",
-    //       label: "Golang",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/rxjs",
-    //       label: "RxJS",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/java",
-    //       label: "Java",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/programming/spring",
-    //       label: "Spring Boot",
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Fundamental",
-    //   collapsed: true,
-    //   collapsible: true,
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       id: "blog/fundamental/computer-science",
-    //       label: "Computer Science",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/fundamental/design-pattern",
-    //       label: "Design Pattern",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/fundamental/programming-design-pattern",
-    //       label: "Programming Design Pattern",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/fundamental/design-principle",
-    //       label: "Design Principle",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/fundamental/message-queue",
-    //       label: "Message Queue",
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Database",
-    //   collapsed: true,
-    //   collapsible: true,
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       id: "blog/database/common-concept",
-    //       label: "Common Concept",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/database/postgresql",
-    //       label: "PostgreSQL",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/database/mongodb",
-    //       label: "MongoDB",
-    //     },
-    //     {
-    //       type: "doc",
-    //       id: "blog/database/redis",
-    //       label: "Redis",
-    //     },
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "Programming Language",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "blog/programming/nodejs",
+          label: "Node.js",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/nestjs",
+          label: "Nest.js",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/golang",
+          label: "Golang",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/message-queue",
+          label: "Message Queue",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/redis",
+          label: "Redis",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/computer-science",
+          label: "Computer Science",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/programming-design-pattern",
+          label: "Programming Design Pattern",
+        },
+        {
+          type: "doc",
+          id: "blog/programming/design-principle",
+          label: "Design Principle",
+        },
+      ],
+    },
     // {
     //   type: "category",
     //   label: "English",

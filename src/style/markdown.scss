@@ -37,18 +37,6 @@
     display: block;
   }
 
-  strong {
-    color: var(--ifm-color-primary-light);
-  }
-
-  code {
-    color: var(--ifm-color-primary);
-    font-weight: normal;
-    font-size: 16px;
-    font-family: "Fira Code", monospace;
-    font-variant-ligatures: none; // Fira Code has ligatures, it should be disabled.
-  }
-
   pre {
     code {
       font-size: 14px;

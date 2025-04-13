@@ -186,15 +186,3 @@ my-hexagonal-app/
 ├── package.json
 └── tsconfig.json
 ```
-
-## CQRS (Command Query Responsibility Segregation)
-
-Là một mẫu (pattern) tách biệt hoàn toàn trách nhiệm giữa việc thay đổi trạng thái hệ thống (thông qua các Commands) và việc truy vấn trạng thái hệ thống (thông qua các Queries)
-
-Commands: Đại diện cho ý định thay đổi trạng thái (ví dụ: CreateUserCommand, UpdateProductPriceCommand). Chúng thường không trả về dữ liệu mà chỉ báo thành công/thất bại. Logic xử lý command có thể phức tạp.
-
-Queries: Đại diện cho yêu cầu lấy dữ liệu (ví dụ: GetUserByIdQuery, GetProductsByCategoryQuery). Chúng chỉ đọc dữ liệu và không làm thay đổi trạng thái. Logic xử lý query thường đơn giản hơn.
-
-Mô hình dữ liệu riêng biệt (Optional but common): Thường đi kèm với việc sử dụng các mô hình dữ liệu (data models) khác nhau cho việc ghi (write model - tối ưu cho việc ghi và đảm bảo tính nhất quán) và việc đọc (read model(s) - tối ưu cho việc truy vấn nhanh, có thể là các view được chuẩn bị sẵn, denormalized). Dữ liệu từ write model thường được cập nhật sang read model(s) một cách bất đồng bộ (ví dụ: thông qua events).
-
-Lợi ích: Tối ưu hóa độc lập cho việc đọc và ghi, cải thiện hiệu năng, khả năng mở rộng (có thể scale riêng phần đọc và phần ghi), đơn giản hóa các mô hình dữ liệu phức tạp.
