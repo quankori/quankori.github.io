@@ -67,11 +67,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "blog/programming/nestjs",
-          label: "Nest.js",
-        },
-        {
-          type: "doc",
           id: "blog/programming/golang",
           label: "Golang",
         },
