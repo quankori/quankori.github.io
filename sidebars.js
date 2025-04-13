@@ -97,19 +97,19 @@ const sidebars = {
         },
       ],
     },
-    // {
-    //   type: "category",
-    //   label: "English",
-    //   collapsed: true,
-    //   collapsible: true,
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       id: "blog/english/cheatsheet",
-    //       label: "Cheatsheet",
-    //     },
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "English",
+      collapsed: true,
+      collapsible: true,
+      items: [
+        {
+          type: "doc",
+          id: "blog/english/cheatsheet",
+          label: "Cheatsheet",
+        },
+      ],
+    },
   ],
 };
 
