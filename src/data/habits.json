@@ -1,0 +1,29 @@
+{
+  "habits": [
+    {
+      "name": "Open Source Contribution",
+      "description": "Active contributor to various blockchain and web3 projects",
+      "icon": "github"
+    },
+    {
+      "name": "Technical Writing",
+      "description": "Writing technical articles about blockchain and microservices",
+      "icon": "book-open"
+    },
+    {
+      "name": "Mentoring",
+      "description": "Mentoring junior developers in blockchain and backend development",
+      "icon": "users"
+    },
+    {
+      "name": "Blockchain Research",
+      "description": "Researching new blockchain protocols and DeFi innovations",
+      "icon": "search"
+    },
+    {
+      "name": "System Architecture",
+      "description": "Designing scalable microservices architectures",
+      "icon": "layers"
+    }
+  ]
+} 

@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "name": "HiYield",
+      "company": "LydiaLabs",
+      "description": "High-yield DeFi platform with advanced yield optimization strategies",
+      "technologies": ["Node.js", "Solidity", "React", "PostgreSQL"],
+      "year": "2023",
+      "url": "https://hiyield.com"
+    },
+    {
+      "name": "Rakkar Digital",
+      "company": "Rakkar Digital",
+      "description": "Digital asset management platform with real-time portfolio tracking",
+      "technologies": ["Golang", "Vue.js", "Redis", "Docker"],
+      "year": "2022",
+      "url": "https://rakkar.digital"
+    },
+    {
+      "name": "KardiaChain Membership App",
+      "company": "KardiaChain",
+      "description": "Blockchain-based membership management system with NFT integration",
+      "technologies": ["Rust", "React Native", "IPFS", "Ethereum"],
+      "year": "2021",
+      "url": "https://kardiachain.io"
+    }
+  ]
+} 
