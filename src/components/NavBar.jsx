@@ -44,6 +44,22 @@ export default function NavBar() {
             Trips
           </NavLink>
           <NavLink
+            to="/journal"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            Journal
+          </NavLink>
+          <NavLink
+            to="/tech"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            Tech
+          </NavLink>
+          <NavLink
             to="/about"
             className={({ isActive }) =>
               isActive ? `${styles.link} ${styles.active}` : styles.link
