@@ -15,6 +15,22 @@ import styles from './TravelMap.module.css'
 const VIETNAM_CENTER = [15.5, 107.8]
 const INITIAL_ZOOM = 5
 
+// Vietnamese island territories shown as informational markers
+const ISLAND_MARKERS = [
+  { id: 'hoang-sa', name: 'Hoàng Sa', coords: [16.5, 112.0] },
+  { id: 'truong-sa', name: 'Trường Sa', coords: [9.0, 113.5] },
+]
+
+function createIslandIcon(name) {
+  return L.divIcon({
+    className: 'island-pin-wrap',
+    html: `<div class="island-pin">${name}</div>`,
+    iconSize: null,
+    iconAnchor: null,
+    tooltipAnchor: [0, -8],
+  })
+}
+
 const tripIcon = L.divIcon({
   className: 'trip-pin-wrap',
   html: '<div class="trip-pin"></div>',
@@ -56,6 +72,19 @@ export default function TravelMap({ trips }) {
           subdomains="abcd"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
+        {ISLAND_MARKERS.map(island => (
+          <Marker
+            key={island.id}
+            position={island.coords}
+            icon={createIslandIcon(island.name)}
+            interactive={false}
+          >
+            <Tooltip className="trip-tooltip island-tooltip" direction="top" offset={[0, -6]} permanent={false}>
+              {island.name}
+            </Tooltip>
+          </Marker>
+        ))}
+
         <MarkerClusterGroup
           iconCreateFunction={createClusterIcon}
           showCoverageOnHover={false}

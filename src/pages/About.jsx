@@ -63,6 +63,45 @@ export default function About() {
           </div>
 
           <Link to="/" className={styles.cta}>View the trips →</Link>
+
+          <div className={styles.social}>
+            <p className={styles.socialHeading}>Find me on</p>
+            <div className={styles.socialList}>
+              <a
+                href="https://www.linkedin.com/in/quankori"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+              >
+                <span className={styles.socialName}>LinkedIn</span>
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/quankori"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+              >
+                <span className={styles.socialName}>GitHub</span>
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="https://www.flickr.com/photos/144992510@N06/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+              >
+                <span className={styles.socialName}>Flickr</span>
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </motion.main>

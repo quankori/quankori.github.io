@@ -92,6 +92,45 @@ img {
   transform: rotate(-45deg) scale(1.12);
 }
 
+/* Island territory markers (Hoàng Sa, Trường Sa) */
+.island-pin-wrap {
+  background: none;
+  border: none;
+}
+
+.island-pin {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid #ccc8c2;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  color: #7a746c;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.leaflet-tooltip.island-tooltip {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.leaflet-tooltip.island-tooltip::before {
+  display: none;
+}
+
 /* Cluster bubble */
 .cluster-pin-wrap {
   background: none;

@@ -1,0 +1,180 @@
+.prose {
+  font-size: 1rem;
+  line-height: 1.82;
+  color: var(--text);
+}
+
+.prose :global(h1),
+.prose :global(h2),
+.prose :global(h3),
+.prose :global(h4) {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.prose :global(h1) {
+  font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  margin: 2rem 0 0.9rem;
+}
+
+.prose :global(h2) {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  margin: 2.8rem 0 0.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.prose :global(h3) {
+  font-size: 1.15rem;
+  margin: 2rem 0 0.65rem;
+}
+
+.prose :global(h4) {
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.8rem 0 0.6rem;
+}
+
+.prose :global(p) {
+  margin-bottom: 1.3rem;
+}
+
+.prose :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.prose :global(ul),
+.prose :global(ol) {
+  padding-left: 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+.prose :global(li) {
+  margin-bottom: 0.35rem;
+}
+
+.prose :global(li::marker) {
+  color: var(--accent);
+}
+
+.prose :global(strong) {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.prose :global(em) {
+  font-style: italic;
+}
+
+.prose :global(a) {
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s;
+}
+
+.prose :global(a:hover) {
+  opacity: 0.65;
+}
+
+.prose :global(hr) {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+
+.blockquote {
+  border-left: 3px solid var(--accent-soft);
+  margin: 1.8rem 0;
+  padding: 0.5rem 0 0.5rem 1.4rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.blockquote :global(p) {
+  margin: 0;
+}
+
+.inlineCode {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.12em 0.42em;
+  font-size: 0.86em;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  color: var(--text);
+}
+
+.preWrap {
+  margin: 1.5rem 0;
+}
+
+.preWrap > div {
+  margin: 0 !important;
+}
+
+/* Single image from markdown */
+.imgBlock {
+  display: block;
+  margin: 1.8rem 0;
+}
+
+.img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.imgCaption {
+  display: block;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table :global(th),
+.table :global(td) {
+  padding: 0.62rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.table :global(th) {
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface);
+  border-bottom: 2px solid var(--line);
+}
+
+.table :global(tr:last-child td) {
+  border-bottom: none;
+}
+
+.table :global(tbody tr:hover) {
+  background: var(--surface);
+}

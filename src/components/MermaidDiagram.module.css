@@ -1,0 +1,33 @@
+.wrap {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.loading {
+  margin: 1.6rem 0;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.error {
+  margin: 1.6rem 0;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #c0392b;
+  background: #fdf0ef;
+  border: 1px solid #f5c6c4;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
