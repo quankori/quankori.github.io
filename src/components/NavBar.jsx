@@ -44,12 +44,12 @@ export default function NavBar() {
             Trips
           </NavLink>
           <NavLink
-            to="/journal"
+            to="/photography"
             className={({ isActive }) =>
               isActive ? `${styles.link} ${styles.active}` : styles.link
             }
           >
-            Journal
+            Photography
           </NavLink>
           <NavLink
             to="/tech"

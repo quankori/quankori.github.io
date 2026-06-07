@@ -2,9 +2,9 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts, groupByYear } from '../utils/markdown.js'
-import styles from './TravelBlog.module.css'
+import styles from './PhotographyBlog.module.css'
 
-const rawModules = import.meta.glob('/src/content/travel/*.md', {
+const rawModules = import.meta.glob('/src/content/photography/*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
@@ -16,17 +16,26 @@ const pageIn = {
   exit: { opacity: 0, transition: { duration: 0.2 } },
 }
 
-export default function TravelBlog() {
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  try {
+    return new Date(dateStr).toLocaleDateString('en', { month: 'short', day: 'numeric' })
+  } catch {
+    return dateStr
+  }
+}
+
+export default function PhotographyBlog() {
   const posts = useMemo(() => loadPosts(rawModules), [])
   const grouped = useMemo(() => groupByYear(posts), [posts])
 
   return (
     <motion.main className={styles.page} {...pageIn}>
       <header className={styles.header}>
-        <p className={styles.overline}>Journal</p>
-        <h1 className={styles.title}>Travel Stories</h1>
+        <p className={styles.overline}>Field Notes</p>
+        <h1 className={styles.title}>Photography</h1>
         <p className={styles.subtitle}>
-          Notes from the road — places, light, and the moments in between.
+          Notes on light, color, gear, and the craft behind the frame.
         </p>
       </header>
 
@@ -36,23 +45,14 @@ export default function TravelBlog() {
             <span className={styles.yearLabel}>{year}</span>
             <div className={styles.yearLine} />
           </div>
-          <div className={styles.postGrid}>
+          <div className={styles.postList}>
             {yearPosts.map(post => (
-              <Link key={post.slug} to={`/journal/${post.slug}`} className={styles.card}>
-                {post.coverImage && (
-                  <div className={styles.cardCover}>
-                    <img src={post.coverImage} alt={post.title} loading="lazy" />
-                  </div>
-                )}
-                <div className={styles.cardBody}>
-                  <div className={styles.cardMeta}>
-                    {post.country && <span className={styles.metaCountry}>{post.country}</span>}
-                    {post.country && <span className={styles.metaDot}>·</span>}
-                    <span className={styles.metaDate}>{post.date}</span>
-                  </div>
-                  <h2 className={styles.cardTitle}>{post.title}</h2>
+              <Link key={post.slug} to={`/photography/${post.slug}`} className={styles.postRow}>
+                <time className={styles.date}>{formatDate(post.date)}</time>
+                <div className={styles.rowBody}>
+                  <h2 className={styles.postTitle}>{post.title}</h2>
                   {post.summary && (
-                    <p className={styles.cardSummary}>{post.summary}</p>
+                    <p className={styles.postSummary}>{post.summary}</p>
                   )}
                   {Array.isArray(post.tags) && post.tags.length > 0 && (
                     <div className={styles.tags}>
@@ -61,8 +61,8 @@ export default function TravelBlog() {
                       ))}
                     </div>
                   )}
-                  <span className={styles.readMore}>Read more →</span>
                 </div>
+                <span className={styles.arrow}>→</span>
               </Link>
             ))}
           </div>

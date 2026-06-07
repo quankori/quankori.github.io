@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts } from '../utils/markdown.js'
 import MarkdownRenderer from '../components/MarkdownRenderer.jsx'
-import styles from './TravelBlogPost.module.css'
+import styles from './PhotographyBlogPost.module.css'
 
-const rawModules = import.meta.glob('/src/content/travel/*.md', {
+const rawModules = import.meta.glob('/src/content/photography/*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
@@ -17,7 +17,7 @@ const pageIn = {
   exit: { opacity: 0, transition: { duration: 0.2 } },
 }
 
-export default function TravelBlogPost() {
+export default function PhotographyBlogPost() {
   const { slug } = useParams()
   const posts = useMemo(() => loadPosts(rawModules), [])
   const post = posts.find(p => p.slug === slug)
@@ -25,7 +25,7 @@ export default function TravelBlogPost() {
   if (!post) {
     return (
       <motion.main className={styles.page} {...pageIn}>
-        <Link to="/journal" className={styles.back}>← Journal</Link>
+        <Link to="/photography" className={styles.back}>← Photography</Link>
         <p className={styles.notFound}>Post not found.</p>
       </motion.main>
     )
@@ -33,7 +33,7 @@ export default function TravelBlogPost() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
-      <Link to="/journal" className={styles.back}>← Journal</Link>
+      <Link to="/photography" className={styles.back}>← Photography</Link>
 
       {post.coverImage && (
         <div className={styles.hero}>
@@ -65,7 +65,7 @@ export default function TravelBlogPost() {
       </div>
 
       <footer className={styles.footer}>
-        <Link to="/journal" className={styles.back}>← Back to Journal</Link>
+        <Link to="/photography" className={styles.back}>← Back to Photography</Link>
       </footer>
     </motion.main>
   )
