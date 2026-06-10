@@ -6,6 +6,7 @@ import TripPage from './pages/TripPage.jsx'
 import About from './pages/About.jsx'
 import PhotographyBlog from './pages/PhotographyBlog.jsx'
 import PhotographyBlogPost from './pages/PhotographyBlogPost.jsx'
+import StreetPhotography from './pages/StreetPhotography.jsx'
 import TechBlog from './pages/TechBlog.jsx'
 import TechBlogPost from './pages/TechBlogPost.jsx'
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/trip/:id" element={<TripPage />} />
           <Route path="/photography" element={<PhotographyBlog />} />
           <Route path="/photography/:slug" element={<PhotographyBlogPost />} />
+          <Route path="/street-photography" element={<StreetPhotography />} />
           <Route path="/tech" element={<TechBlog />} />
           <Route path="/tech/:slug" element={<TechBlogPost />} />
         </Routes>

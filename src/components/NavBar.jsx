@@ -49,7 +49,17 @@ export default function NavBar() {
               isActive ? `${styles.link} ${styles.active}` : styles.link
             }
           >
-            Photography
+            <span className={styles.full}>Photography Blog</span>
+            <span className={styles.short}>Photography</span>
+          </NavLink>
+          <NavLink
+            to="/street-photography"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            <span className={styles.full}>Street Photography</span>
+            <span className={styles.short}>Street</span>
           </NavLink>
           <NavLink
             to="/tech"
@@ -57,7 +67,8 @@ export default function NavBar() {
               isActive ? `${styles.link} ${styles.active}` : styles.link
             }
           >
-            Tech
+            <span className={styles.full}>Tech Blog</span>
+            <span className={styles.short}>Tech</span>
           </NavLink>
           <NavLink
             to="/about"
