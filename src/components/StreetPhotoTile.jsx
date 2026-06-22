@@ -11,24 +11,21 @@ const item = {
   },
 }
 
-export default function StreetPhotoTile({ photo, size, onClick }) {
+export default function StreetPhotoTile({ photo, onClick }) {
   return (
     <motion.div
-      className={`${styles.tile} ${styles[size]}`}
+      className={styles.tile}
       variants={item}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: '80px' }}
-      whileHover="hover"
       onClick={onClick}
     >
-      <motion.img
+      <img
         src={photo.thumb}
         alt={photo.description || ''}
         className={styles.img}
         loading="lazy"
-        variants={{ hover: { scale: 1.07, filter: 'brightness(0.86)' } }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className={styles.gradient} />
       <span className={styles.expand} aria-hidden="true">⤢</span>

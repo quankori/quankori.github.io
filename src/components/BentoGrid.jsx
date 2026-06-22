@@ -1,5 +1,4 @@
 import StreetPhotoTile from './StreetPhotoTile.jsx'
-import { bentoSize } from '../utils/bento.js'
 import styles from './BentoGrid.module.css'
 
 export default function BentoGrid({ photos, onPhotoClick }) {
@@ -9,7 +8,6 @@ export default function BentoGrid({ photos, onPhotoClick }) {
         <StreetPhotoTile
           key={photo.thumb}
           photo={photo}
-          size={bentoSize(i)}
           onClick={() => onPhotoClick(i)}
         />
       ))}

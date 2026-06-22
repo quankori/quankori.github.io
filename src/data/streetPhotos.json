@@ -1,162 +1,182 @@
 [
   {
-    "thumb": "https://live.staticflickr.com/65535/55317363308_0e5c218a50_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317363308_b1bfafd7e8_k.jpg",
-    "description": "Chasing the clouds over Cầu Đất tea hills",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro Max"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55317430559_2ee5fe4840_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317430559_2e0d074699_k.jpg",
-    "description": "Tuyền Lâm Lake from above",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55317430554_46dc027b25_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317430554_23dc8c7deb_k.jpg",
-    "description": "Wind turbines standing over the tea hills",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55316295942_83a8122dd1_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55316295942_bc68bec033_k.jpg",
-    "description": "A little mobile café beneath the turbines",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55317614435_b534b06ccd_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317614435_462afb6e4d_k.jpg",
-    "description": "A sea of clouds at first light, Cầu Đất",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55317363378_94e3b1d3cc_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317363378_74a0036246_k.jpg",
-    "description": "Campfire night up on the tea hills",
-    "location": "Đà Lạt, Vietnam",
-    "date": "2026",
-    "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55296927544_36292fe918_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55296927544_934765d9d8_k.jpg",
-    "description": "Waves rolling into Bikini Beach",
-    "location": "Phan Thiết, Vietnam",
+    "thumb": "https://live.staticflickr.com/65535/55332003820_23fa1ebe0b_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55332003820_23fa1ebe0b_b.jpg",
+    "description": "Ba Son Bridge",
+    "location": "Ho Chi Minh City, Vietnam",
     "date": "2026",
     "exif": {
       "camera": "Fujifilm X-M5",
-      "lens": "XC 15-45mm f/3.5-5.6",
-      "f": "5.6",
-      "ss": "1/2000",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "13",
+      "ss": "1/125",
       "iso": "160",
-      "focal": "29mm"
+      "focal": "28mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55296927559_dd4dbba221_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55296927559_0ab7cb1293_k.jpg",
-    "description": "Turquoise water at Bikini Beach",
-    "location": "Phan Thiết, Vietnam",
+    "thumb": "https://live.staticflickr.com/65535/55333873745_46bfd678a2_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333873745_46bfd678a2_b.jpg",
+    "description": "Ho Chi Minh City Opera House",
+    "location": "Ho Chi Minh City, Vietnam",
     "date": "2026",
     "exif": {
       "camera": "Fujifilm X-M5",
-      "lens": "XC 15-45mm f/3.5-5.6",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5.6",
+      "ss": "1/800",
+      "iso": "200",
+      "focal": "35mm"
+    }
+  },
+  {
+    "thumb": "https://live.staticflickr.com/65535/55333449511_194c8ab9ab_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333449511_194c8ab9ab_b.jpg",
+    "description": "42 Ton That Thiep Apartment Building",
+    "location": "Ho Chi Minh City, Vietnam",
+    "date": "2026",
+    "exif": {
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5.6",
+      "ss": "1/640",
+      "iso": "1000",
+      "focal": "34mm"
+    }
+  },
+  {
+    "thumb": "https://live.staticflickr.com/65535/55333448501_5947c737e2_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333448501_5947c737e2_b.jpg",
+    "description": "Ho Chi Minh City People's Committee Hall",
+    "location": "Ho Chi Minh City, Vietnam",
+    "date": "2026",
+    "exif": {
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5.6",
+      "ss": "1/1000",
+      "iso": "160",
+      "focal": "50mm"
+    }
+  },
+  {
+    "thumb": "https://live.staticflickr.com/65535/55333664574_a3372b71a9_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333664574_a3372b71a9_b.jpg",
+    "description": "Ho Chi Minh City People's Committee Hall, wide angle",
+    "location": "Ho Chi Minh City, Vietnam",
+    "date": "2026",
+    "exif": {
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5.6",
+      "ss": "1/1000",
+      "iso": "160",
+      "focal": "24mm"
+    }
+  },
+  {
+    "thumb": "https://live.staticflickr.com/65535/55333658664_d1a682746d_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333658664_d1a682746d_b.jpg",
+    "description": "A cyclo on the city streets",
+    "location": "Ho Chi Minh City, Vietnam",
+    "date": "2026",
+    "exif": {
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5.6",
+      "ss": "1/640",
+      "iso": "160",
+      "focal": "50mm"
+    }
+  },
+  {
+    "thumb": "https://live.staticflickr.com/65535/55333538946_61e5177b89_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55333538946_61e5177b89_b.jpg",
+    "description": "Ho Chi Minh City People's Committee Hall at noon",
+    "location": "Ho Chi Minh City, Vietnam",
+    "date": "2026",
+    "exif": {
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
       "f": "5.6",
       "ss": "1/1250",
       "iso": "160",
-      "focal": "45mm"
+      "focal": "50mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55297103930_9097b7f89c_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55297103930_3f5cd0cd3a_k.jpg",
-    "description": "A weathered railing along the bridge",
-    "location": "Phan Thiết, Vietnam",
+    "thumb": "https://live.staticflickr.com/65535/55348247291_7b01a4e301_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55348247291_7b01a4e301_b.jpg",
+    "description": "A train rolling through Phu Yen",
+    "location": "Tuy Hòa, Vietnam",
     "date": "2026",
     "exif": {
       "camera": "Fujifilm X-M5",
-      "lens": "XC 15-45mm f/3.5-5.6",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
       "f": "5.6",
-      "ss": "1/1250",
-      "iso": "160",
-      "focal": "45mm"
+      "ss": "1/1000",
+      "iso": "640",
+      "focal": "50mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55296927549_2e4460d5bb_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55296927549_8ec766bc69_k.jpg",
-    "description": "Long, calm swell at Bikini Beach",
-    "location": "Phan Thiết, Vietnam",
+    "thumb": "https://live.staticflickr.com/65535/55348406168_3ace02c919_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55348406168_3ace02c919_b.jpg",
+    "description": "A Japanese-style eatery",
+    "location": "Tuy Hòa, Vietnam",
     "date": "2026",
     "exif": {
       "camera": "Fujifilm X-M5",
-      "lens": "XC 15-45mm f/3.5-5.6",
-      "f": "11",
-      "ss": "1/170",
-      "iso": "160",
-      "focal": "45mm"
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "4.5",
+      "ss": "1/250",
+      "iso": "200",
+      "focal": "37mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55317189356_6be2b7a9ba_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317189356_e529fcf92f_k.jpg",
-    "description": "Fire dancing on the beach at night",
-    "location": "Ko Samet, Thailand",
-    "date": "2025",
+    "thumb": "https://live.staticflickr.com/65535/55348247601_00f596fb36_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55348247601_00f596fb36_b.jpg",
+    "description": "Inside a Japanese-style eatery",
+    "location": "Tuy Hòa, Vietnam",
+    "date": "2026",
     "exif": {
-      "camera": "iPhone 17 Pro"
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5",
+      "ss": "1/250",
+      "iso": "320",
+      "focal": "33mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55317189326_0b3f3c3719_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317189326_3d1f99aa9d_k.jpg",
-    "description": "Island-hopping around the bays of Ko Samet",
-    "location": "Ko Samet, Thailand",
-    "date": "2025",
+    "thumb": "https://live.staticflickr.com/65535/55348248686_7e0a5585ff_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55348248686_7e0a5585ff_b.jpg",
+    "description": "Inside the train carriage",
+    "location": "Tuy Hòa, Vietnam",
+    "date": "2026",
     "exif": {
-      "camera": "iPhone 17 Pro"
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "5",
+      "ss": "1/1000",
+      "iso": "2000",
+      "focal": "32mm"
     }
   },
   {
-    "thumb": "https://live.staticflickr.com/65535/55316278782_42aa4f1fcf_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55316278782_6e6c491a44_k.jpg",
-    "description": "Ko Chan rising in the distance",
-    "location": "Ko Samet, Thailand",
-    "date": "2025",
+    "thumb": "https://live.staticflickr.com/65535/55348688915_64196381ac_c.jpg",
+    "full": "https://live.staticflickr.com/65535/55348688915_64196381ac_b.jpg",
+    "description": "A golden dog on the street",
+    "location": "Tuy Hòa, Vietnam",
+    "date": "2026",
     "exif": {
-      "camera": "iPhone 17 Pro"
-    }
-  },
-  {
-    "thumb": "https://live.staticflickr.com/65535/55317413759_cef37cd230_c.jpg",
-    "full": "https://live.staticflickr.com/65535/55317413759_1f0bbfd1d8_k.jpg",
-    "description": "Aboard a squid-fishing boat after dark",
-    "location": "Ko Samet, Thailand",
-    "date": "2025",
-    "exif": {
-      "camera": "iPhone 17 Pro"
+      "camera": "Fujifilm X-M5",
+      "lens": "SIGMA 18-50mm F2.8 DC DN",
+      "f": "2.8",
+      "ss": "1/125",
+      "iso": "640",
+      "focal": "50mm"
     }
   }
 ]

@@ -116,6 +116,293 @@
     ]
   },
   {
+    "id": "phu-yen",
+    "name": "Phú Yên",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [13.0882, 109.0929],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667085_370c979f76_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667085_370c979f76_b.jpg",
+            "description": "Looking out across the water",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "10",
+              "ss": "1/800",
+              "iso": "800",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247451_8d12cc1419_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247451_8d12cc1419_b.jpg",
+            "description": "Nghinh Phong Tower Square",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/250",
+              "iso": "160",
+              "focal": "34mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667060_cc8fbee64d_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667060_cc8fbee64d_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "640",
+              "focal": "28mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348405783_f74f405b0c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348405783_f74f405b0c_b.jpg",
+            "description": "Panoramic view of the Phú Yên coastline",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/800",
+              "iso": "800",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315227_84477cec0c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315227_84477cec0c_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/400",
+              "iso": "1250",
+              "focal": "34mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667570_c8c392cc17_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667570_c8c392cc17_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/1600",
+              "iso": "1250",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667275_0c914ecacd_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667275_0c914ecacd_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4",
+              "ss": "1/2000",
+              "iso": "640",
+              "focal": "33mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465099_1e23d1c4b8_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465099_1e23d1c4b8_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4",
+              "ss": "1/2000",
+              "iso": "640",
+              "focal": "22mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465089_ab5d61b5d5_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465089_ab5d61b5d5_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/2000",
+              "iso": "1000",
+              "focal": "35mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315747_ba30950850_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315747_ba30950850_b.jpg",
+            "description": "Cape Dai Lanh",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/200",
+              "iso": "160",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348466229_0690ec73ee_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348466229_0690ec73ee_b.jpg",
+            "description": "Pristine beach at Dai Lanh Cape",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/200",
+              "iso": "250",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348406908_40d5b10efa_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348406908_40d5b10efa_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/1250",
+              "iso": "1000",
+              "focal": "24mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348248256_0379e0a136_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348248256_0379e0a136_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/1250",
+              "iso": "2000",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465864_5490e66666_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465864_5490e66666_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/500",
+              "iso": "640",
+              "focal": "24mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667815_71506c5dda_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667815_71506c5dda_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/500",
+              "iso": "1000",
+              "focal": "32mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348248246_d8609ac1b9_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348248246_d8609ac1b9_b.jpg",
+            "description": "Cape Dien, the easternmost point of Vietnam",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/320",
+              "iso": "320",
+              "focal": "44mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315317_78a7db9abc_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315317_78a7db9abc_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/400",
+              "iso": "800",
+              "focal": "28mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315912_cc5b9afc91_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315912_cc5b9afc91_b.jpg",
+            "description": "Dai Lanh Lighthouse",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/200",
+              "iso": "160",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347314732_0108aa3ea5_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347314732_0108aa3ea5_b.jpg",
+            "description": "Tuy Hoa Train Station",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "200",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247311_544e72e367_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247311_544e72e367_b.jpg",
+            "description": "Tuy Hoa Train Station",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "320",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247706_7c04b63ba1_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247706_7c04b63ba1_b.jpg",
+            "description": "Torii gate path at Canary Garden, Phu Yen",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4.5",
+              "ss": "1/250",
+              "iso": "640",
+              "focal": "34mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ko-samet",
     "name": "Ko Samet",
     "country": "Thailand",
