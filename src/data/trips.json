@@ -403,6 +403,151 @@
     ]
   },
   {
+    "id": "can-gio",
+    "name": "Cần Giờ",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [10.4109, 106.9544],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55362201335_f2cee2e815_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55362201335_f2cee2e815_b.jpg",
+            "description": "Inside Sac Forest",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/640",
+              "iso": "6400",
+              "focal": "33mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361943338_93c88c67a2_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361943338_93c88c67a2_b.jpg",
+            "description": "Soldiers at the Sac Forest Museum",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361978919_0d1156033d_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361978919_0d1156033d_b.jpg",
+            "description": "A family of monkeys in the wild",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361940843_3c25f4077c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361940843_3c25f4077c_b.jpg",
+            "description": "A family of monkeys in the wild",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361781881_7483222085_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361781881_7483222085_b.jpg",
+            "description": "Sac Forest Museum",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/640",
+              "iso": "1250",
+              "focal": "50mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vung-tau",
+    "name": "Vũng Tàu",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [10.3460, 107.0843],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55362209205_16c0fd4715_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55362209205_16c0fd4715_b.jpg",
+            "description": "A boat at sea",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/600",
+              "iso": "160",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361792616_696f3ee96e_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361792616_696f3ee96e_b.jpg",
+            "description": "Tran Phu Street from above",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/1000",
+              "iso": "640",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55360837357_d3ddfa4695_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55360837357_d3ddfa4695_b.jpg",
+            "description": "Tam Thang Tower",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/2500",
+              "iso": "800",
+              "focal": "41mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361933803_e4959a327a_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361933803_e4959a327a_b.jpg",
+            "description": "Hon Ba Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/1000",
+              "iso": "640",
+              "focal": "50mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ko-samet",
     "name": "Ko Samet",
     "country": "Thailand",
