@@ -43,6 +43,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -55,6 +60,53 @@ button {
 img {
   display: block;
   max-width: 100%;
+}
+
+.route-loading,
+.route-not-found {
+  min-height: calc(100svh - var(--nav-h));
+  padding: calc(var(--nav-h) + 4rem) 1.5rem 4rem;
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.route-loading {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.route-not-found h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.route-not-found__code {
+  color: var(--accent);
+  letter-spacing: 0.28em;
+}
+
+.route-not-found a {
+  margin-top: 0.8rem;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ---------- Leaflet pin markers (injected as divIcons — must be global) ---------- */

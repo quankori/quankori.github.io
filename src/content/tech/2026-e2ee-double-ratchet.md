@@ -6,8 +6,6 @@ summary: "X3DH gets a 1:1 conversation started with one shared secret. The Doubl
 tags: ["e2ee", "cryptography", "golang", "vue", "double-ratchet", "x3dh"]
 ---
 
-# After the Handshake: How the Double Ratchet Gives Every Message Its Own Key
-
 In [the X3DH post](/tech/2026-e2ee-1to1-x3dh), Alice and Bob worked hard to agree on one shared secret, `SK`, before either of them sent a single message. It would be a shame to waste all that effort by just... reusing `SK` to encrypt everything. If that one key ever leaked — a stolen device, a buggy backup — an attacker would be able to read the entire conversation: every message already sent, and every message still to come.
 
 The **Double Ratchet** (the other half of the Signal protocol, also used by WhatsApp and countless others) is what stands between "one good key" and "a fresh key for every single message, in both directions, that heals itself after a compromise." This post covers how it does that — with two ratchets working together, each with a different job.

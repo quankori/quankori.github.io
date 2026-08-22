@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import TravelMap from '../components/TravelMap.jsx'
 import MetroGrid from '../components/MetroGrid.jsx'
+import Seo, { SITE_URL } from '../components/Seo.jsx'
 import trips from '../data/trips.json'
 import styles from './Home.module.css'
 
@@ -15,6 +16,19 @@ export default function Home() {
       animate={{ opacity: 1, transition: { duration: 0.4 } }}
       exit={{ opacity: 0, transition: { duration: 0.22 } }}
     >
+      <Seo
+        title="Travels"
+        description="A quiet travel photo archive by Quan Kori, documenting landscapes, cities, islands, and everyday moments across Vietnam and beyond."
+        path="/"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Quan Kori',
+          url: SITE_URL,
+          description: 'Travel photography, field notes, and writing about code and systems.',
+          author: { '@type': 'Person', name: 'Quan Kori' },
+        }}
+      />
       <section className={styles.intro}>
         <p className={styles.overline}>Travel photo archive</p>
         <h1 className={styles.title}>Places I've been</h1>

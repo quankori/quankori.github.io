@@ -6,7 +6,7 @@ export default function BentoGrid({ photos, onPhotoClick }) {
     <div className={styles.grid}>
       {photos.map((photo, i) => (
         <StreetPhotoTile
-          key={photo.thumb}
+          key={photo.id || photo.thumb}
           photo={photo}
           onClick={() => onPhotoClick(i)}
         />

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import PhotoGrid from '../components/PhotoGrid.jsx'
 import HeroMap from '../components/HeroMap.jsx'
+import Seo, { SITE_URL } from '../components/Seo.jsx'
 import trips from '../data/trips.json'
 import {
   tripVisitsDesc,
@@ -25,6 +26,12 @@ export default function TripPage() {
   if (!trip) {
     return (
       <motion.main className={styles.notFound} {...pageIn}>
+        <Seo
+          title="Trip not found"
+          description="The requested travel gallery does not exist."
+          path={`/trip/${id}`}
+          noIndex
+        />
         <p className={styles.nfTitle}>Not found</p>
         <p className={styles.nfText}>This trip doesn't exist.</p>
         <Link to="/" className={styles.nfLink}>← Back home</Link>
@@ -39,16 +46,40 @@ export default function TripPage() {
   const heroMeta = multi
     ? `${visits.length} visits · ${total} ${photoWord}`
     : `${formatMonth(tripLatestDate(trip))} · ${total} ${photoWord}`
+  const leadPhoto = firstPhoto(trip)
+  const description = `${trip.name}${trip.country ? `, ${trip.country}` : ''} — ${total} travel ${photoWord} by Quan Kori.`
 
   return (
     <motion.main {...pageIn}>
+      <Seo
+        title={`${trip.name} Travel Photography`}
+        description={description}
+        path={`/trip/${trip.id}`}
+        image={leadPhoto?.full}
+        imageAlt={leadPhoto?.description || `${trip.name} travel photography`}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'ImageGallery',
+          name: `${trip.name} Travel Photography`,
+          description,
+          url: `${SITE_URL}/trip/${trip.id}/`,
+          contentLocation: trip.country
+            ? { '@type': 'Place', name: `${trip.name}, ${trip.country}` }
+            : { '@type': 'Place', name: trip.name },
+          numberOfItems: total,
+          image: visits.flatMap(visit =>
+            visit.photos.slice(0, 8).map(photo => photo.full)
+          ),
+          author: { '@type': 'Person', name: 'Quan Kori' },
+        }}
+      />
       {/* Hero — a zoomed-in map of the location (falls back to a photo) */}
       <header className={styles.hero}>
         {trip.coords ? (
           <HeroMap coords={trip.coords} zoom={12} />
         ) : (
           <img
-            src={trip.cover || firstPhoto(trip)?.full}
+            src={trip.cover || leadPhoto?.full}
             alt={trip.name}
             className={styles.heroImg}
             loading="eager"

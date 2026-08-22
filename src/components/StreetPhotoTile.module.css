@@ -1,4 +1,5 @@
 .tile {
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -7,6 +8,7 @@
   break-inside: avoid;
   margin-bottom: 12px;
   display: block;
+  text-align: left;
 }
 
 .img {
@@ -17,7 +19,8 @@
               filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.tile:hover .img {
+.tile:hover .img,
+.tile:focus-visible .img {
   transform: scale(1.05);
   filter: brightness(0.82);
 }
@@ -36,7 +39,8 @@
   pointer-events: none;
 }
 
-.tile:hover .gradient {
+.tile:hover .gradient,
+.tile:focus-visible .gradient {
   opacity: 1;
 }
 
@@ -55,7 +59,8 @@
   pointer-events: none;
 }
 
-.tile:hover .caption {
+.tile:hover .caption,
+.tile:focus-visible .caption {
   transform: translateY(0);
   opacity: 1;
 }
@@ -99,9 +104,15 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.tile:hover .expand {
+.tile:hover .expand,
+.tile:focus-visible .expand {
   opacity: 1;
   transform: scale(1);
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 @media (hover: none) {

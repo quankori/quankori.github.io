@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { photoDimensions, photoSrcSet } from '../utils/photo.js'
 import styles from './StreetPhotoTile.module.css'
 
 const item = {
@@ -13,19 +14,25 @@ const item = {
 
 export default function StreetPhotoTile({ photo, onClick }) {
   return (
-    <motion.div
+    <motion.button
+      type="button"
       className={styles.tile}
       variants={item}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: '80px' }}
       onClick={onClick}
+      aria-label={`Open photo${photo.description ? `: ${photo.description}` : ''}`}
     >
       <img
         src={photo.thumb}
+        srcSet={photoSrcSet(photo)}
+        sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw"
+        {...photoDimensions(photo)}
         alt={photo.description || ''}
         className={styles.img}
         loading="lazy"
+        decoding="async"
       />
       <div className={styles.gradient} />
       <span className={styles.expand} aria-hidden="true">⤢</span>
@@ -35,6 +42,6 @@ export default function StreetPhotoTile({ photo, onClick }) {
           {photo.description && <span className={styles.desc}>{photo.description}</span>}
         </div>
       )}
-    </motion.div>
+    </motion.button>
   )
 }

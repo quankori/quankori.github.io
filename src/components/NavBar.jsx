@@ -18,7 +18,7 @@ export default function NavBar() {
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
           <span className={styles.dot} />
-          TRAVELS
+          <span className={styles.brandText}>TRAVELS</span>
         </Link>
 
         {trip && (
@@ -51,6 +51,23 @@ export default function NavBar() {
           >
             <span className={styles.full}>Street Photography</span>
             <span className={styles.short}>Street</span>
+          </NavLink>
+          <NavLink
+            to="/photography"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            <span className={styles.full}>Photography</span>
+            <span className={styles.short}>Photo</span>
+          </NavLink>
+          <NavLink
+            to="/tech"
+            className={({ isActive }) =>
+              isActive ? `${styles.link} ${styles.active}` : styles.link
+            }
+          >
+            Tech
           </NavLink>
           <NavLink
             to="/about"

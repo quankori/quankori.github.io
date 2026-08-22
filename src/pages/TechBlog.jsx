@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts, groupByYear } from '../utils/markdown.js'
+import Seo from '../components/Seo.jsx'
 import styles from './TechBlog.module.css'
 
 const rawModules = import.meta.glob('/src/content/tech/*.md', {
@@ -31,6 +32,11 @@ export default function TechBlog() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title="Tech Notes"
+        description="Technical writing by Quan Kori about software engineering, cryptography, secure messaging, and systems."
+        path="/tech"
+      />
       <header className={styles.header}>
         <p className={styles.overline}>Writing</p>
         <h1 className={styles.title}>Tech Notes</h1>

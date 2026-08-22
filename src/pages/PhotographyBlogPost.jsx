@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts } from '../utils/markdown.js'
 import MarkdownRenderer from '../components/MarkdownRenderer.jsx'
+import Seo, { DEFAULT_IMAGE, SITE_URL } from '../components/Seo.jsx'
 import styles from './PhotographyBlogPost.module.css'
 
 const rawModules = import.meta.glob('/src/content/photography/*.md', {
@@ -25,6 +26,12 @@ export default function PhotographyBlogPost() {
   if (!post) {
     return (
       <motion.main className={styles.page} {...pageIn}>
+        <Seo
+          title="Photography note not found"
+          description="The requested photography note does not exist."
+          path={`/photography/${slug}`}
+          noIndex
+        />
         <Link to="/photography" className={styles.back}>← Photography</Link>
         <p className={styles.notFound}>Post not found.</p>
       </motion.main>
@@ -33,6 +40,25 @@ export default function PhotographyBlogPost() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title={post.title}
+        description={post.summary || `A photography field note by Quan Kori: ${post.title}.`}
+        path={`/photography/${post.slug}`}
+        image={post.coverImage || DEFAULT_IMAGE}
+        imageAlt={post.title}
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.summary,
+          datePublished: post.date,
+          image: post.coverImage || DEFAULT_IMAGE,
+          url: `${SITE_URL}/photography/${post.slug}/`,
+          author: { '@type': 'Person', name: 'Quan Kori' },
+          keywords: Array.isArray(post.tags) ? post.tags.join(', ') : post.tags,
+        }}
+      />
       <Link to="/photography" className={styles.back}>← Photography</Link>
 
       {post.coverImage && (

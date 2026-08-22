@@ -6,7 +6,49 @@ Live at **https://quankori.github.io**
 
 ---
 
-## Adding a trip
+## Flickr sync (recommended)
+
+Photo records no longer need to be maintained field by field. The build-time
+sync can read a Flickr album and fill in:
+
+- every photo in the album, in the album's Flickr order
+- description/title and date taken
+- camera, lens, aperture, shutter speed, ISO, and focal length
+- the correct Flickr URLs for every available size
+- image width/height, responsive `srcset`, location/tags, and the Flickr page URL
+
+The API key is used only by the Node sync script. It is never bundled into the
+browser application.
+
+1. Apply for a non-commercial Flickr API key.
+2. Copy `.env.example` to `.env` and provide `FLICKR_API_KEY`, or export the
+   variable in your shell.
+3. Add the album ID to a visit:
+
+```json
+{
+  "date": "2026-07",
+  "flickrAlbumId": "72177720300000000",
+  "photos": []
+}
+```
+
+4. Run `npm run sync:flickr`.
+
+The trip's editorial fields (`id`, `name`, `country`, and `coords`) stay local
+because Flickr albums do not provide reliable trip-level country/coordinate
+metadata. The photo list and photo metadata are replaced from Flickr.
+
+For the street gallery, set `streetAlbumId` in
+[`src/data/flickr.config.json`](src/data/flickr.config.json). If an album ID is
+not configured, the sync still refreshes every existing photo by extracting its
+Flickr ID from the saved URL.
+
+For GitHub Pages, add `FLICKR_API_KEY` under **Settings → Secrets and variables
+→ Actions**. The deploy workflow syncs Flickr when the secret exists and falls
+back to the committed JSON when it does not.
+
+## Adding a trip manually
 
 Edit [`src/data/trips.json`](src/data/trips.json) and append a new object. A trip is **a place**, and a place can hold several dated **visits** — handy when you go back to the same spot. The gallery splits each visit into its own dated section.
 
@@ -44,7 +86,7 @@ Edit [`src/data/trips.json`](src/data/trips.json) and append a new object. A tri
 }
 ```
 
-The `id` becomes the URL slug: `/#/trip/phan-thiet`. Keep it lowercase, hyphen-separated, unique.
+The `id` becomes the URL slug: `/trip/phan-thiet/`. Keep it lowercase, hyphen-separated, unique.
 
 | Field | Required | Notes |
 |-------|----------|-------|
@@ -74,7 +116,9 @@ Each photo can carry an optional `exif` object. When present it shows in the lig
 | `camera` | `"Fujifilm X-T4"` | device line |
 | `lens` | `"XF 16-55mm f/2.8"` | device line |
 
-> Why typed by hand instead of read from the image? Flickr (and most web resizers) **strip EXIF from the downscaled `_b`/`_k` versions**, so reading it from the displayed image is unreliable. Storing it in JSON always works. Copy the values from Flickr's photo page or your editor. (If you'd rather auto-extract from originals that still keep EXIF, that can be wired up with the `exifr` library — ask.)
+> Flickr's resized image files often omit embedded EXIF, so the website does
+> not try to parse the displayed JPEG. `npm run sync:flickr` uses
+> `flickr.photos.getExif` and writes the normalized values into JSON instead.
 
 ### The home map
 
@@ -86,7 +130,7 @@ The map opens **centred on Vietnam** and you can **scroll-zoom** in/out. To re-c
 
 - `/` — home: map + metro grid of all places
 - `/about` — short bio ([`src/pages/About.jsx`](src/pages/About.jsx))
-- `/trip/:id` — a place's gallery, split by visit, with an EXIF lightbox
+- `/trip/:id/` — a place's gallery, split by visit, with an EXIF lightbox
 
 ---
 
@@ -116,7 +160,8 @@ Example (same photo, note the differing secrets):
 Push to `main` or `master` → GitHub Actions runs automatically:
 
 1. `npm ci` — install deps
-2. `npm run build` — Vite builds to `dist/`
+2. `npm run build` — Vite builds to `dist/`, then creates route-specific HTML,
+   canonical/OG metadata, `sitemap.xml`, `robots.txt`, and the Pages fallback
 3. Artifact uploaded and deployed to GitHub Pages
 
 **First-time setup:** go to **Settings → Pages → Source → GitHub Actions** in the repo settings and save.
@@ -137,7 +182,8 @@ npm run preview    # preview the build locally
 ## Stack
 
 - **React 18** + **Vite 5**
-- **React Router v6** with `HashRouter` — F5/refresh works on any deep URL
+- **React Router v6** with clean `BrowserRouter` URLs; the build generates an
+  `index.html` for every known route so GitHub Pages deep links work
 - **Leaflet** + **react-leaflet-cluster** — home map with clustered pins (free tiles, no key)
 - **Framer Motion** — staggered tile entrance, page transitions, lightbox
 - **Plain CSS Modules** — light palette, Playfair Display + Jost, liquid-glass touches

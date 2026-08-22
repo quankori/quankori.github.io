@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts, groupByYear } from '../utils/markdown.js'
+import Seo from '../components/Seo.jsx'
 import styles from './PhotographyBlog.module.css'
 
 const rawModules = import.meta.glob('/src/content/photography/*.md', {
@@ -31,6 +32,11 @@ export default function PhotographyBlog() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title="Photography Notes"
+        description="Field notes by Quan Kori on light, color, camera technique, visual storytelling, and the craft behind a photograph."
+        path="/photography"
+      />
       <header className={styles.header}>
         <p className={styles.overline}>Field Notes</p>
         <h1 className={styles.title}>Photography</h1>

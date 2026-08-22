@@ -24,7 +24,7 @@ export default function PhotoGrid({ photos }) {
       >
         {photos.map((photo, i) => (
           <PhotoThumb
-            key={i}
+            key={photo.id || photo.thumb || i}
             photo={photo}
             onClick={() => setLightboxIndex(i)}
           />

@@ -1,10 +1,12 @@
 .thumb {
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 7px;
   background: var(--surface);
   cursor: pointer;
   aspect-ratio: 4 / 3;
+  text-align: left;
 }
 
 .img {
@@ -18,6 +20,11 @@
 .thumb:hover .img {
   transform: scale(1.05);
   filter: brightness(0.9);
+}
+
+.thumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Liquid-glass caption strip — slides up on hover */
@@ -40,7 +47,8 @@
   line-height: 1.4;
 }
 
-.thumb:hover .caption {
+.thumb:hover .caption,
+.thumb:focus-visible .caption {
   transform: translateY(0);
 }
 
@@ -65,7 +73,8 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.thumb:hover .expand {
+.thumb:hover .expand,
+.thumb:focus-visible .expand {
   opacity: 1;
   transform: scale(1);
 }

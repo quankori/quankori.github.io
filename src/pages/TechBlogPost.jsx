@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { loadPosts } from '../utils/markdown.js'
 import MarkdownRenderer from '../components/MarkdownRenderer.jsx'
+import Seo, { DEFAULT_IMAGE, SITE_URL } from '../components/Seo.jsx'
 import styles from './TechBlogPost.module.css'
 
 const rawModules = import.meta.glob('/src/content/tech/*.md', {
@@ -25,6 +26,12 @@ export default function TechBlogPost() {
   if (!post) {
     return (
       <motion.main className={styles.page} {...pageIn}>
+        <Seo
+          title="Tech note not found"
+          description="The requested technical note does not exist."
+          path={`/tech/${slug}`}
+          noIndex
+        />
         <Link to="/tech" className={styles.back}>← Tech Notes</Link>
         <p className={styles.notFound}>Post not found.</p>
       </motion.main>
@@ -33,6 +40,25 @@ export default function TechBlogPost() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title={post.title}
+        description={post.summary || `A technical note by Quan Kori: ${post.title}.`}
+        path={`/tech/${post.slug}`}
+        image={post.coverImage || DEFAULT_IMAGE}
+        imageAlt={post.title}
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'TechArticle',
+          headline: post.title,
+          description: post.summary,
+          datePublished: post.date,
+          image: post.coverImage || DEFAULT_IMAGE,
+          url: `${SITE_URL}/tech/${post.slug}/`,
+          author: { '@type': 'Person', name: 'Quan Kori' },
+          keywords: Array.isArray(post.tags) ? post.tags.join(', ') : post.tags,
+        }}
+      />
       <Link to="/tech" className={styles.back}>← Tech Notes</Link>
 
       <header className={styles.header}>

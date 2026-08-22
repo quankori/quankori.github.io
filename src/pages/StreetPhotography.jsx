@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import BentoGrid from '../components/BentoGrid.jsx'
 import Lightbox from '../components/Lightbox.jsx'
+import Seo, { SITE_URL } from '../components/Seo.jsx'
 import photos from '../data/streetPhotos.json'
 import styles from './StreetPhotography.module.css'
 
@@ -43,6 +44,22 @@ export default function StreetPhotography() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title="Street Photography"
+        description="Candid street photography by Quan Kori: fleeting light, architecture, people, and the everyday rhythm of cities in Vietnam."
+        path="/street-photography"
+        image={photos[0]?.full}
+        imageAlt={photos[0]?.description || 'Street photography by Quan Kori'}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'ImageGallery',
+          name: 'Street Photography by Quan Kori',
+          url: `${SITE_URL}/street-photography/`,
+          numberOfItems: photos.length,
+          image: photos.slice(0, 12).map(photo => photo.full),
+          author: { '@type': 'Person', name: 'Quan Kori' },
+        }}
+      />
       <header className={styles.header}>
         <p className={styles.overline}>On the Streets</p>
         <h1 className={styles.title}>Street Photography</h1>

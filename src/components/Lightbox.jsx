@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { photoDimensions, photoSourceUrl, photoSrcSet } from '../utils/photo.js'
 import styles from './Lightbox.module.css'
 
 function ExifStrip({ exif }) {
@@ -30,6 +31,8 @@ function ExifStrip({ exif }) {
 export default function Lightbox({ photos, startIndex, onClose }) {
   const [index, setIndex] = useState(startIndex)
   const touchStartX = useRef(null)
+  const dialogRef = useRef(null)
+  const closeRef = useRef(null)
 
   const prev = useCallback(
     () => setIndex(i => (i - 1 + photos.length) % photos.length),
@@ -41,13 +44,32 @@ export default function Lightbox({ photos, startIndex, onClose }) {
   )
 
   useEffect(() => {
+    const previouslyFocused = document.activeElement
+    closeRef.current?.focus()
+
     const onKey = e => {
       if (e.key === 'ArrowLeft') prev()
       else if (e.key === 'ArrowRight') next()
       else if (e.key === 'Escape') onClose()
+      else if (e.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll('button, a[href]')
+        if (!focusable?.length) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      previouslyFocused?.focus?.()
+    }
   }, [prev, next, onClose])
 
   useEffect(() => {
@@ -57,10 +79,15 @@ export default function Lightbox({ photos, startIndex, onClose }) {
   }, [])
 
   const photo = photos[index]
+  const sourceUrl = photoSourceUrl(photo)
 
   return (
     <motion.div
+      ref={dialogRef}
       className={styles.backdrop}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo viewer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -77,6 +104,7 @@ export default function Lightbox({ photos, startIndex, onClose }) {
     >
       {/* Close */}
       <button
+        ref={closeRef}
         className={styles.close}
         onClick={e => { e.stopPropagation(); onClose() }}
         aria-label="Close"
@@ -108,18 +136,32 @@ export default function Lightbox({ photos, startIndex, onClose }) {
         >
           <img
             src={photo.full}
+            srcSet={photoSrcSet(photo)}
+            sizes="100vw"
+            {...photoDimensions(photo)}
             alt={photo.description || ''}
             className={styles.img}
             loading="eager"
+            decoding="async"
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Caption + EXIF — fixed to the viewport so it's never clipped */}
-      {(photo.description || photo.exif) && (
+      {(photo.description || photo.exif || sourceUrl) && (
         <div className={styles.caption} onClick={e => e.stopPropagation()}>
           {photo.description && <p className={styles.capText}>{photo.description}</p>}
           {photo.exif && <ExifStrip exif={photo.exif} />}
+          {sourceUrl && (
+            <a
+              className={styles.source}
+              href={sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on Flickr ↗
+            </a>
+          )}
         </div>
       )}
 
@@ -136,7 +178,7 @@ export default function Lightbox({ photos, startIndex, onClose }) {
 
       {/* Counter */}
       {photos.length > 1 && (
-        <div className={styles.counter}>
+        <div className={styles.counter} aria-live="polite">
           {index + 1} / {photos.length}
         </div>
       )}

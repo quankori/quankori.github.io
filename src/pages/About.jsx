@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import trips from '../data/trips.json'
 import { tripPhotoCount } from '../utils/trip.js'
+import Seo, { SITE_URL } from '../components/Seo.jsx'
 import styles from './About.module.css'
 
 const pageIn = {
@@ -17,6 +18,23 @@ export default function About() {
 
   return (
     <motion.main className={styles.page} {...pageIn}>
+      <Seo
+        title="About"
+        description="Quan Kori is a software developer and photographer documenting travel, landscapes, street life, and the ideas behind code and systems."
+        path="/about"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Quan Kori',
+          url: `${SITE_URL}/about/`,
+          sameAs: [
+            'https://github.com/quankori',
+            'https://www.linkedin.com/in/quankori',
+            'https://www.flickr.com/photos/144992510@N06/',
+          ],
+          jobTitle: 'Software Developer',
+        }}
+      />
       <div className={styles.grid}>
         <div className={styles.portraitWrap}>
           <img

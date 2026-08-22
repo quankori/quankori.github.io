@@ -1,0 +1,32 @@
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+}
+
+.inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.flickr {
+  max-width: 560px;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .inner {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .flickr { text-align: left; }
+}

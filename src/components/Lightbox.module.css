@@ -94,6 +94,22 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+.source {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.source:hover,
+.source:focus-visible {
+  color: #fff;
+  border-color: #fff;
+}
+
 /* Close button */
 .close {
   position: absolute;
