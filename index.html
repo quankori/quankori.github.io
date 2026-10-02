@@ -2,43 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Quan Kori — Travels, Photography & Tech</title>
-    <meta name="description" content="Quan Kori's personal site — a quiet travel photo archive, field notes on photography and light, and writing on code, cryptography, and systems." />
-    <meta name="author" content="Quan Kori" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="color-scheme" content="light" />
+    <title>Quan Nguyen · The Climb</title>
+    <meta name="description" content="Quan Nguyen, Senior Software Engineer (Go, Node.js, Rust, E2EE, distributed systems). An interactive 3D climb through a career, one step at a time." />
+    <meta name="author" content="Quan Nguyen" />
+    <meta name="theme-color" content="#12182e" />
     <link rel="canonical" href="https://quankori.github.io/" />
 
-    <!-- Open Graph (Facebook, LinkedIn, Zalo, Discord, ...) -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Quan Kori" />
-    <meta property="og:title" content="Quan Kori — Travels, Photography & Tech" />
-    <meta property="og:description" content="A quiet travel photo archive, field notes on photography and light, and writing on code, cryptography, and systems." />
+    <meta property="og:site_name" content="Quan Nguyen" />
+    <meta property="og:title" content="Quan Nguyen · There is no elevator." />
+    <meta property="og:description" content="A 3D climb through ~10 years of building secure, distributed systems: thorns, scratches, and a backpack of knowledge." />
     <meta property="og:url" content="https://quankori.github.io/" />
-    <meta property="og:image" content="https://live.staticflickr.com/65535/55317363308_b1bfafd7e8_k.jpg" />
-    <meta property="og:image:alt" content="Travel photography by Quan Kori" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Quan Kori — Travels, Photography & Tech" />
-    <meta name="twitter:description" content="A quiet travel photo archive, field notes on photography and light, and writing on code, cryptography, and systems." />
-    <meta name="twitter:image" content="https://live.staticflickr.com/65535/55317363308_b1bfafd7e8_k.jpg" />
-    <meta name="twitter:image:alt" content="Travel photography by Quan Kori" />
+    <meta name="twitter:card" content="summary" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div id="vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Quan Nguyen">
+        <span class="brand__mark">Q</span>
+        <span class="brand__text"><b>Quan Nguyen</b><small>Senior Software Engineer</small></span>
+      </a>
+    </header>
+
+    <section id="hero" class="hero"></section>
+    <div id="cards" class="cards"></div>
+    <aside id="altimeter" class="alt" aria-label="Timeline"></aside>
+    <aside id="stats" class="stats" aria-live="polite"></aside>
+    <div id="progress" class="progress"></div>
+    <div id="floaters" aria-hidden="true"></div>
+    <div id="bubble" class="bubble" aria-hidden="true"></div>
+    <div id="toast" class="toast" role="status"></div>
+    <section id="outro" class="outro"></section>
+
+    <div id="loader" class="loader"><div class="loader__stairs"><i></i><i></i><i></i><i></i></div><p id="loader-text"></p></div>
+    <div id="scroll-space"></div>
+
+    <noscript>
+      <p style="padding:24px;font-family:sans-serif">Quan Nguyen, Senior Software Engineer (Backend Systems). This page needs JavaScript and WebGL. Contact: minhquan.k0r1@gmail.com</p>
+    </noscript>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

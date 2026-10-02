@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [react()],
   base: '/',
+  // three.js alone is ~600 kB; one chunk is fine for a single-page experience
+  build: { chunkSizeWarningLimit: 900 },
 })
