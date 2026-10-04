@@ -1,0 +1,187 @@
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  padding: 40px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #001d66 0%, #0958d9 55%, #4096ff 100%);
+  color: #fff;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: -40% -10% auto auto;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 65%);
+  pointer-events: none;
+}
+
+.portrait {
+  flex: none;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.heroText {
+  position: relative;
+  min-width: 0;
+}
+
+.hello {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 15px;
+}
+
+.name {
+  margin: 2px 0 4px !important;
+  color: #fff !important;
+  font-size: clamp(28px, 4vw, 40px) !important;
+}
+
+.role {
+  margin-bottom: 16px !important;
+  color: #bae0ff !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lead {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.meta {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stats {
+  margin-top: 16px;
+}
+
+.sectionTitle {
+  margin: 40px 0 16px !important;
+}
+
+.categoryCard {
+  height: 100%;
+  border-top: 3px solid var(--accent, #1677ff);
+}
+
+.english {
+  --accent: #722ed1;
+  --accent-bg: #f9f0ff;
+}
+
+.travel {
+  --accent: #fa8c16;
+  --accent-bg: #fff7e6;
+}
+
+.technology {
+  --accent: #13c2c2;
+  --accent-bg: #e6fffb;
+}
+
+.categoryIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  background: var(--accent-bg, #e6f4ff);
+  color: var(--accent, #1677ff);
+  font-size: 22px;
+}
+
+.categoryTitle {
+  margin-top: 0 !important;
+}
+
+.categoryPages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categoryPages li {
+  padding: 6px 0;
+  border-top: 1px dashed rgba(5, 5, 5, 0.08);
+}
+
+.categoryPages a {
+  color: var(--accent, #1677ff);
+}
+
+.more {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+}
+
+.timelineCard {
+  padding-top: 8px;
+}
+
+.job {
+  padding-bottom: 8px;
+}
+
+.period {
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.jobTitle {
+  margin: 2px 0 6px !important;
+}
+
+.story {
+  margin-bottom: 8px !important;
+}
+
+.gains {
+  margin: 0 0 10px;
+  padding-inline-start: 18px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.gains li {
+  margin: 2px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 20px;
+  }
+
+  .portrait {
+    width: 96px !important;
+    height: 96px !important;
+  }
+}

@@ -1,0 +1,114 @@
+.root {
+  min-height: 100vh;
+}
+
+.sider {
+  position: fixed !important;
+  inset: 0 auto 0 0;
+  height: 100vh;
+  border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
+  z-index: 10;
+}
+
+.siderInner {
+  /* Clicking a menu item focuses it; never show a text caret or selection there. */
+  caret-color: transparent;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.brandSub {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menuScroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu {
+  border-inline-end: none !important;
+}
+
+.siderFooter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  border-top: 1px solid rgba(5, 5, 5, 0.06);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.siderFooter a {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.siderFooter a:hover {
+  color: #1677ff;
+}
+
+.siderFooter span {
+  margin-inline-start: auto;
+}
+
+.mobileHeader {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 56px;
+  padding: 0 8px;
+  line-height: normal;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.mobileHeader .brand {
+  padding: 0;
+}
+
+.mainDesktop {
+  margin-inline-start: 260px;
+}
+
+.content {
+  min-width: 0;
+  padding: 32px 40px 64px;
+}
+
+@media (max-width: 991px) {
+  .content {
+    padding: 20px 16px 48px;
+  }
+}

@@ -1,0 +1,27 @@
+.narrow,
+.wide {
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 880px;
+}
+
+.wide {
+  max-width: 1200px;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  margin: 16px 0 8px !important;
+}
+
+.description {
+  max-width: 720px;
+  margin-bottom: 0 !important;
+  font-size: 15px;
+}
+

@@ -1,0 +1,588 @@
+[
+  {
+    "id": "da-lat",
+    "name": "Đà Lạt",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [11.9404, 108.4583],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317363308_0e5c218a50_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317363308_b1bfafd7e8_k.jpg",
+            "description": "Chasing the clouds over Cầu Đất tea hills",
+            "exif": { "camera": "iPhone 17 Pro Max" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317430559_2ee5fe4840_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317430559_2e0d074699_k.jpg",
+            "description": "Tuyền Lâm Lake from above",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317430554_46dc027b25_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317430554_23dc8c7deb_k.jpg",
+            "description": "Wind turbines standing over the tea hills",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55316295942_83a8122dd1_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55316295942_bc68bec033_k.jpg",
+            "description": "A little mobile café beneath the turbines",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317614435_b534b06ccd_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317614435_462afb6e4d_k.jpg",
+            "description": "A sea of clouds at first light, Cầu Đất",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317363378_94e3b1d3cc_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317363378_74a0036246_k.jpg",
+            "description": "Campfire night up on the tea hills",
+            "exif": { "camera": "iPhone 17 Pro" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phan-thiet",
+    "name": "Phan Thiết",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [10.9289, 108.1022],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55296927544_36292fe918_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55296927544_934765d9d8_k.jpg",
+            "description": "Waves rolling into Bikini Beach",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "XC 15-45mm f/3.5-5.6",
+              "f": "5.6",
+              "ss": "1/2000",
+              "iso": "160",
+              "focal": "29mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55296927559_dd4dbba221_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55296927559_0ab7cb1293_k.jpg",
+            "description": "Turquoise water at Bikini Beach",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "XC 15-45mm f/3.5-5.6",
+              "f": "5.6",
+              "ss": "1/1250",
+              "iso": "160",
+              "focal": "45mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55297103930_9097b7f89c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55297103930_3f5cd0cd3a_k.jpg",
+            "description": "A weathered railing along the bridge",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "XC 15-45mm f/3.5-5.6",
+              "f": "5.6",
+              "ss": "1/1250",
+              "iso": "160",
+              "focal": "45mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55296927549_2e4460d5bb_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55296927549_8ec766bc69_k.jpg",
+            "description": "Long, calm swell at Bikini Beach",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "XC 15-45mm f/3.5-5.6",
+              "f": "11",
+              "ss": "1/170",
+              "iso": "160",
+              "focal": "45mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phu-yen",
+    "name": "Phú Yên",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [13.0882, 109.0929],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667085_370c979f76_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667085_370c979f76_b.jpg",
+            "description": "Looking out across the water",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "10",
+              "ss": "1/800",
+              "iso": "800",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247451_8d12cc1419_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247451_8d12cc1419_b.jpg",
+            "description": "Nghinh Phong Tower Square",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/250",
+              "iso": "160",
+              "focal": "34mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667060_cc8fbee64d_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667060_cc8fbee64d_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "640",
+              "focal": "28mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348405783_f74f405b0c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348405783_f74f405b0c_b.jpg",
+            "description": "Panoramic view of the Phú Yên coastline",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/800",
+              "iso": "800",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315227_84477cec0c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315227_84477cec0c_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/400",
+              "iso": "1250",
+              "focal": "34mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667570_c8c392cc17_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667570_c8c392cc17_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/1600",
+              "iso": "1250",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667275_0c914ecacd_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667275_0c914ecacd_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4",
+              "ss": "1/2000",
+              "iso": "640",
+              "focal": "33mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465099_1e23d1c4b8_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465099_1e23d1c4b8_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4",
+              "ss": "1/2000",
+              "iso": "640",
+              "focal": "22mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465089_ab5d61b5d5_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465089_ab5d61b5d5_b.jpg",
+            "description": "The coast at Rosa Alba Resort",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/2000",
+              "iso": "1000",
+              "focal": "35mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315747_ba30950850_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315747_ba30950850_b.jpg",
+            "description": "Cape Dai Lanh",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/200",
+              "iso": "160",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348466229_0690ec73ee_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348466229_0690ec73ee_b.jpg",
+            "description": "Pristine beach at Dai Lanh Cape",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/200",
+              "iso": "250",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348406908_40d5b10efa_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348406908_40d5b10efa_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/1250",
+              "iso": "1000",
+              "focal": "24mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348248256_0379e0a136_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348248256_0379e0a136_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/1250",
+              "iso": "2000",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348465864_5490e66666_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348465864_5490e66666_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/500",
+              "iso": "640",
+              "focal": "24mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348667815_71506c5dda_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348667815_71506c5dda_b.jpg",
+            "description": "Hon Nua Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/500",
+              "iso": "1000",
+              "focal": "32mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348248246_d8609ac1b9_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348248246_d8609ac1b9_b.jpg",
+            "description": "Cape Dien, the easternmost point of Vietnam",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/320",
+              "iso": "320",
+              "focal": "44mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315317_78a7db9abc_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315317_78a7db9abc_b.jpg",
+            "description": "Cape Dien",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/400",
+              "iso": "800",
+              "focal": "28mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347315912_cc5b9afc91_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347315912_cc5b9afc91_b.jpg",
+            "description": "Dai Lanh Lighthouse",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "8",
+              "ss": "1/200",
+              "iso": "160",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55347314732_0108aa3ea5_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55347314732_0108aa3ea5_b.jpg",
+            "description": "Tuy Hoa Train Station",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "200",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247311_544e72e367_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247311_544e72e367_b.jpg",
+            "description": "Tuy Hoa Train Station",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "320",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55348247706_7c04b63ba1_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55348247706_7c04b63ba1_b.jpg",
+            "description": "Torii gate path at Canary Garden, Phu Yen",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "4.5",
+              "ss": "1/250",
+              "iso": "640",
+              "focal": "34mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "can-gio",
+    "name": "Cần Giờ",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [10.4109, 106.9544],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55362201335_f2cee2e815_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55362201335_f2cee2e815_b.jpg",
+            "description": "Inside Sac Forest",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/640",
+              "iso": "6400",
+              "focal": "33mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361943338_93c88c67a2_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361943338_93c88c67a2_b.jpg",
+            "description": "Soldiers at the Sac Forest Museum",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361978919_0d1156033d_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361978919_0d1156033d_b.jpg",
+            "description": "A family of monkeys in the wild",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361940843_3c25f4077c_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361940843_3c25f4077c_b.jpg",
+            "description": "A family of monkeys in the wild",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5",
+              "ss": "1/800",
+              "iso": "6400",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361781881_7483222085_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361781881_7483222085_b.jpg",
+            "description": "Sac Forest Museum",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/640",
+              "iso": "1250",
+              "focal": "50mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vung-tau",
+    "name": "Vũng Tàu",
+    "country": "Vietnam",
+    "date": "2026",
+    "coords": [10.3460, 107.0843],
+    "visits": [
+      {
+        "date": "2026",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55362209205_16c0fd4715_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55362209205_16c0fd4715_b.jpg",
+            "description": "A boat at sea",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/600",
+              "iso": "160",
+              "focal": "50mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361792616_696f3ee96e_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361792616_696f3ee96e_b.jpg",
+            "description": "Tran Phu Street from above",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "7.1",
+              "ss": "1/1000",
+              "iso": "640",
+              "focal": "18mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55360837357_d3ddfa4695_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55360837357_d3ddfa4695_b.jpg",
+            "description": "Tam Thang Tower",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "5.6",
+              "ss": "1/2500",
+              "iso": "800",
+              "focal": "41mm"
+            }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55361933803_e4959a327a_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55361933803_e4959a327a_b.jpg",
+            "description": "Hon Ba Islet",
+            "exif": {
+              "camera": "Fujifilm X-M5",
+              "lens": "SIGMA 18-50mm F2.8 DC DN",
+              "f": "9",
+              "ss": "1/1000",
+              "iso": "640",
+              "focal": "50mm"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ko-samet",
+    "name": "Ko Samet",
+    "country": "Thailand",
+    "date": "2025",
+    "coords": [12.5685, 101.4569],
+    "visits": [
+      {
+        "date": "2025",
+        "photos": [
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317189356_6be2b7a9ba_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317189356_e529fcf92f_k.jpg",
+            "description": "Fire dancing on the beach at night",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317189326_0b3f3c3719_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317189326_3d1f99aa9d_k.jpg",
+            "description": "Island-hopping around the bays of Ko Samet",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55316278782_42aa4f1fcf_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55316278782_6e6c491a44_k.jpg",
+            "description": "Ko Chan rising in the distance",
+            "exif": { "camera": "iPhone 17 Pro" }
+          },
+          {
+            "thumb": "https://live.staticflickr.com/65535/55317413759_cef37cd230_c.jpg",
+            "full": "https://live.staticflickr.com/65535/55317413759_1f0bbfd1d8_k.jpg",
+            "description": "Aboard a squid-fishing boat after dark",
+            "exif": { "camera": "iPhone 17 Pro" }
+          }
+        ]
+      }
+    ]
+  }
+]

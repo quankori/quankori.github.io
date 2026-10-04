@@ -1,17 +1,14 @@
-# The Climb · Quan Nguyen
+# Quan Kori · Notebook
 
-A scroll-driven 3D landing page: my CV told as a climb up an endless spiral staircase.
-Each landing is a year or milestone. Between landings there are thorns and bad weather,
-and the climber collects scratches on the way. At each landing they pick up an item and new
-skills (orbs that circle them). There is no summit: the stairs keep going into the night sky.
+My personal site at **https://quankori.github.io**: an Ant Design style layout with a menu on the left and
+the page on the right.
 
-Live at **https://quankori.github.io**
+- **About me**: the home page
+- **English**: grammar made visual, from sentence structure and tenses to clauses, inversion and punctuation
+- **Travel**: one gallery per place, plus random frames
+- **Technology**: interactive explainers for X3DH and MLS
 
-## Stack
-
-- [Vite](https://vite.dev) + vanilla JS
-- [three.js](https://threejs.org): everything is procedural, with no 3D model files
-- [Lenis](https://github.com/darkroomengineering/lenis) for smooth scrolling
+Every page is its own lazy-loaded React component with its own design.
 
 ## Develop
 
@@ -20,28 +17,12 @@ npm install
 npm run dev
 ```
 
-## Editing the story
+## Add a page
 
-All content (English only) is in [`src/data/journey.js`](src/data/journey.js). UI strings live in `UI` in the same file.
+1. Write `src/content/<category>/<Name>.jsx` (+ optional `<Name>.module.css`).
+2. Register it in [`src/content/registry.js`](src/content/registry.js).
+3. `node scripts/check-page.mjs src/content/<category>/<Name>.jsx`
 
-| field     | what it does                                                       |
-|-----------|--------------------------------------------------------------------|
-| `thorns`  | hardships shown on the card                                        |
-| `gains`   | achievements shown on the card                                     |
-| `skills`  | chips on the card; each one becomes an orb around the climber      |
-| `scars`   | thorn clusters (and scratches) on the climb **up to** this landing |
-| `item`    | what the climber picks up here (see `ITEMS`)                       |
-| `weather` | `calm` · `wind` · `rain` · `storm` · `snow` for the climb up here  |
-| `quote`   | the speech bubble shown when the visitor stops scrolling here      |
-
-Adding a milestone automatically adds a landing, a monument and a step on the altimeter.
-
-## Code map
-
-- `src/path.js`: helix geometry, landings, scar points and the scroll timeline
-- `src/scene/world.js`: sky, spire, stairs, thorns, clouds, weather, campfire
-- `src/scene/climber.js`: the character, wear & tear, inventory and skill orbs
-- `src/ui/hud.js`: cards, stats HUD, altimeter, floaters, toasts
-- `src/main.js`: render loop, camera rig and events
+See [`CLAUDE.md`](CLAUDE.md) for the page conventions.
 
 Deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `master`.

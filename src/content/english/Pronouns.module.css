@@ -1,0 +1,934 @@
+/* ------------------------------------------------------------------ */
+/*  Pronouns — signature: periodic-table style pronoun matrix          */
+/* ------------------------------------------------------------------ */
+
+.page {
+  --ink: #212529;
+  --muted: #555e68;
+  --paper: #ffffff;
+  --graph: #f6f7fb;
+  --grid-line: #e3e7f1;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.page h2,
+.page h3,
+.page p,
+.page ul,
+.page ol,
+.page figure {
+  margin: 0;
+}
+
+.page ul,
+.page ol {
+  padding: 0;
+  list-style: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.hl {
+  --hl: #1864ab;
+  background: color-mix(in srgb, var(--hl) 14%, #fff);
+  color: color-mix(in srgb, var(--hl) 85%, #000);
+  box-shadow: inset 0 -2px 0 var(--hl);
+  padding: 0 3px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+/* ---------------- Section heads / cards ---------------- */
+
+.sectionHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sectionIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.sectionSub {
+  margin-top: 2px !important;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.card {
+  padding: 20px;
+  border-radius: 14px;
+  background: var(--paper);
+  border: 1px solid var(--grid-line);
+  box-shadow: 0 1px 2px rgba(33, 37, 41, 0.04);
+}
+
+/* ---------------- Matrix (signature) ---------------- */
+
+.matrixPanel {
+  padding: 20px;
+  border-radius: 18px;
+  background-color: var(--graph);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  border: 1px solid #d5dbe8;
+}
+
+.matrixHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5f3dc4;
+}
+
+.matrixTitle {
+  margin-top: 2px !important;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.matrixHint {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 340px;
+}
+
+.gridScroll {
+  overflow-x: auto;
+  padding: 4px;
+  margin: -4px;
+  border-radius: 12px;
+}
+
+.gridScroll:focus-visible {
+  outline: 3px solid #4263eb;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 96px repeat(5, minmax(88px, 1fr));
+  gap: 6px;
+  min-width: 560px;
+}
+
+.gridRow {
+  display: contents;
+}
+
+.corner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4px 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.colHeadWrap,
+.rowHeadWrap,
+.cellWrap {
+  display: block;
+  min-width: 0;
+}
+
+.colHead,
+.rowHead,
+.cell {
+  width: 100%;
+  height: 100%;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, opacity 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.colHead {
+  --col: #1864ab;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 8px 8px 7px;
+  border: none;
+  border-top: 5px solid var(--col);
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  box-shadow: 0 1px 0 var(--grid-line);
+}
+
+.colLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--col);
+  line-height: 1.3;
+}
+
+.colVi {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.rowHead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px 8px;
+  border: 1px solid #d5dbe8;
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+}
+
+.rowLabel {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.rowPerson {
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.headOn {
+  background: var(--ink) !important;
+  color: #fff !important;
+  border-color: var(--ink) !important;
+}
+
+.headOn .colLabel,
+.headOn .rowPerson {
+  color: #dee2e6;
+}
+
+.cell {
+  --col: #1864ab;
+  min-height: 52px;
+  padding: 6px 4px;
+  border: 1px solid color-mix(in srgb, var(--col) 22%, #fff);
+  background: #fff;
+  color: color-mix(in srgb, var(--col) 80%, #000);
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.cell:hover {
+  border-color: var(--col);
+}
+
+.cellLit {
+  background: color-mix(in srgb, var(--col) 12%, #fff);
+  border-color: color-mix(in srgb, var(--col) 45%, #fff);
+}
+
+.cellFocus {
+  background: var(--col);
+  border-color: var(--col);
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px -8px color-mix(in srgb, var(--col) 80%, #000);
+  position: relative;
+  z-index: 1;
+}
+
+.cellDim {
+  opacity: 0.55;
+}
+
+.cellEmpty {
+  font-weight: 400;
+}
+
+.colHead:focus-visible,
+.rowHead:focus-visible,
+.cell:focus-visible,
+.indefBtn:focus-visible {
+  outline: 3px solid #4263eb;
+  outline-offset: 2px;
+}
+
+.detail {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #d5dbe8;
+  min-height: 120px;
+}
+
+.detailCell {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tile {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 118px;
+  min-height: 118px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--col);
+  color: #fff;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.tileTag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.tileWord {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.tilePerson {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.detailRule {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.detailFormula {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f1f3f5;
+  color: var(--muted);
+}
+
+.detailEn {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.detailVi {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.detailHead {
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 8px !important;
+}
+
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px !important;
+}
+
+.detailList li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 2px 10px;
+  padding: 6px 0 6px 10px;
+  border-left: 4px solid var(--col);
+}
+
+.listTag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--col);
+  padding-top: 2px;
+}
+
+.listEn {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.listVi {
+  grid-column: 2;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.matrixTip {
+  margin-top: 12px !important;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------------- Demonstratives ---------------- */
+
+.demoControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.scene {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #eef3ff 0%, #fdfdfd 100%);
+  border: 1px solid var(--grid-line);
+}
+
+.sceneSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.zone,
+.zoneOn {
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+.zone {
+  fill: transparent;
+  stroke: #ced4da;
+}
+
+.zoneOn {
+  fill: rgba(95, 61, 196, 0.1);
+  stroke: #5f3dc4;
+}
+
+.zoneLabel {
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--muted);
+}
+
+.ground {
+  stroke: #adb5bd;
+  stroke-width: 2;
+}
+
+.figure {
+  fill: #fff;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.figureLine {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.pointer {
+  stroke: #5f3dc4;
+  stroke-width: 2.5;
+  stroke-dasharray: 4 4;
+}
+
+.arrowHead {
+  fill: #5f3dc4;
+}
+
+.ball,
+.ballOn {
+  stroke-width: 2;
+  transition: fill 0.3s;
+}
+
+.ball {
+  fill: #e9ecef;
+  stroke: #adb5bd;
+}
+
+.ballOn {
+  fill: #f59f00;
+  stroke: #c25e00;
+}
+
+.demoWordBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.demoWord {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  color: #5f3dc4;
+  letter-spacing: -0.02em;
+}
+
+.demoEx {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.demoVi {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.demoTable {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 14px;
+  border-collapse: separate;
+  border-spacing: 4px;
+  font-size: 15px;
+}
+
+.demoTable th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: left;
+  padding: 4px 6px;
+}
+
+.demoTable td {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f1f3f5;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.demoTable td.demoCellOn {
+  background: #5f3dc4;
+  color: #fff;
+}
+
+.noteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 8px;
+  margin-top: 14px !important;
+}
+
+.noteGrid li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--grid-line);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.noteGrid strong {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------------- Indefinites ---------------- */
+
+.indefWrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.indefTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
+  table-layout: fixed;
+}
+
+.indefTable th {
+  padding: 4px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  vertical-align: bottom;
+  color: var(--ink);
+}
+
+.indefTable th small {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.indefTable tbody th {
+  vertical-align: middle;
+  width: 26%;
+}
+
+.indefTable td {
+  padding: 0;
+}
+
+.indefBtn {
+  width: 100%;
+  min-height: 46px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #d5dbe8;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.indefBtn:hover {
+  border-color: #1864ab;
+}
+
+.indefBtn[aria-pressed='true'] {
+  background: #1864ab;
+  border-color: #1864ab;
+  color: #fff;
+}
+
+.indefDetail {
+  padding: 16px;
+  border-radius: 12px;
+  background: #e7f0fb;
+  border-left: 5px solid #1864ab;
+}
+
+.indefWord {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1864ab;
+}
+
+.indefVi {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 2px !important;
+}
+
+.indefEx {
+  margin-top: 10px !important;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ruleList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px !important;
+}
+
+.ruleList li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ruleList li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+/* ---------------- Reciprocal ---------------- */
+
+.recip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.recipFig {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fafbfd;
+  border: 1px solid var(--grid-line);
+}
+
+.recipSvg {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.personA,
+.personB {
+  stroke-width: 3;
+}
+
+.personA {
+  fill: #fff3bf;
+  stroke: #e67700;
+}
+
+.personB {
+  fill: #d3f9d8;
+  stroke: #2b8a3e;
+}
+
+.personText {
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.recipArrow,
+.selfArrow {
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.recipArrow {
+  stroke: #a61e4d;
+}
+
+.selfArrow {
+  stroke: #5f3dc4;
+}
+
+.recipFig figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.recipFig figcaption span:last-child {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------------- Notes ---------------- */
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 10px;
+}
+
+.note {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--grid-line);
+  border-top: 4px solid #5f3dc4;
+  background: #fff;
+}
+
+.noteTitle {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.noteBody {
+  margin-top: 4px !important;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.noteEx {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px !important;
+}
+
+.noteEx li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 10px;
+  border-left: 2px solid var(--grid-line);
+}
+
+/* ---------------- Mistakes ---------------- */
+
+.mistakes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 8px;
+}
+
+.mistake {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--grid-line);
+}
+
+.bad {
+  font-size: 14px;
+  color: #a61e4d;
+}
+
+.good {
+  margin-top: 4px !important;
+  font-size: 14px;
+  color: #2b8a3e;
+}
+
+.why {
+  margin-top: 6px !important;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------------- Practice — slot cards ---------------- */
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 680px) {
+  .scene,
+  .indefWrap,
+  .recip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .matrixPanel,
+  .card {
+    padding: 16px 14px;
+  }
+
+  .matrixTitle {
+    font-size: 21px;
+  }
+
+  .detailCell {
+    flex-direction: column;
+  }
+
+  .tile {
+    width: 100%;
+    min-height: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+  }
+
+  .detailList li {
+    grid-template-columns: 1fr;
+  }
+
+  .listVi {
+    grid-column: 1;
+  }
+
+  .indefBtn {
+    font-size: 12px;
+    min-height: 52px;
+  }
+
+  .indefTable th {
+    font-size: 12px;
+  }
+
+  .noteGrid,
+  .notes,
+  .mistakes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

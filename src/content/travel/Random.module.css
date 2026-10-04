@@ -1,0 +1,183 @@
+.page {
+  --paper: #f3efe6;
+  --film: #121212;
+  --edge: #e3a33f;
+  --grease: #d4452f;
+  --ink: #2b2a27;
+  --muted: #7b766c;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+
+  min-width: 0;
+}
+
+.sheet {
+  padding: 28px 28px 36px;
+  border-radius: 6px;
+  background: var(--paper);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sheetHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0 0 22px;
+  font: 11px/1.6 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sheetLabel {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.frames {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  column-gap: 0;
+  row-gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.frame {
+  min-width: 0;
+}
+
+/* A slice of film: sprocket holes top and bottom, edge print under the frame. */
+.strip {
+  position: relative;
+  padding: 22px 7px 34px;
+  background: var(--film);
+}
+
+.strip::before,
+.strip::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 9px;
+  background-image: linear-gradient(90deg, transparent 5px, var(--paper) 5px, var(--paper) 13px, transparent 13px);
+  background-size: 18px 9px;
+  background-repeat: repeat-x;
+  opacity: 0.92;
+}
+
+.strip::before {
+  top: 7px;
+}
+
+.strip::after {
+  bottom: 7px;
+}
+
+.shot {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: #2a2a2a;
+  cursor: zoom-in;
+  aspect-ratio: 3 / 2;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+  filter: saturate(0.92);
+  transition: filter 0.25s ease;
+}
+
+/* Grease-pencil mark on the chosen frame. */
+.shot::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--grease);
+  border-radius: 10px 14px 9px 16px;
+  opacity: 0;
+  transform: rotate(-0.6deg);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.shot:hover img,
+.shot:focus-visible img {
+  filter: none;
+}
+
+.shot:hover::after,
+.shot:focus-visible::after {
+  opacity: 1;
+}
+
+.shot:focus-visible {
+  outline: none;
+}
+
+.edge {
+  position: absolute;
+  right: 12px;
+  bottom: 17px;
+  left: 12px;
+  display: flex;
+  justify-content: space-between;
+  font: 700 9px/12px var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--edge);
+  pointer-events: none;
+}
+
+.caption {
+  padding: 10px 10px 0;
+  font-family: var(--mono);
+  color: var(--ink);
+}
+
+.capTitle {
+  margin: 0 0 3px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.capNum {
+  margin-right: 8px;
+  color: var(--grease);
+  font-weight: 700;
+}
+
+.capLine {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 640px) {
+  .sheet {
+    padding: 18px 12px 24px;
+  }
+
+  .frames {
+    row-gap: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot img,
+  .shot::after {
+    transition: none;
+  }
+}

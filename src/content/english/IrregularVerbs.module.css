@@ -1,0 +1,601 @@
+.page {
+  --ink: #1c1917;
+  --muted: #57534e;
+  --paper: #fffdf7;
+  --rule: #e7e1d3;
+  --chip: #44403c;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------------- Toolbar ---------------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.search {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: 340px;
+}
+
+.hideKnown {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: auto;
+  min-width: 150px;
+}
+
+.progressText {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.progressText strong {
+  color: #15803d;
+}
+
+.progressBar {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: #ece7da;
+  overflow: hidden;
+}
+
+.progressBar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #0f766e, #15803d);
+  transition: width 0.3s ease;
+}
+
+/* ---------------- Pattern filter ---------------- */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1.5px solid #d6d3d1;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--chip);
+}
+
+.chip:focus-visible,
+.knownBtn:focus-visible,
+.tableKnown:focus-visible {
+  outline: 2px solid var(--chip);
+  outline-offset: 2px;
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--chip);
+  border-color: var(--chip);
+  color: #fff;
+}
+
+.chipCount {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.07);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.chip[aria-pressed='true'] .chipCount {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.chipLetters {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.chipLetters span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.letterA {
+  background: #e7e5e4;
+  color: #292524;
+}
+
+.letterB {
+  background: color-mix(in srgb, var(--chip) 22%, #fff);
+  color: color-mix(in srgb, var(--chip) 80%, #000);
+}
+
+.letterC {
+  background: var(--chip);
+  color: #fff;
+}
+
+.chip[aria-pressed='true'] .letterA {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.chip[aria-pressed='true'] .letterC {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.subChip {
+  padding: 5px 11px;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.intro {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--paper);
+  border: 1px dashed #d6cfbd;
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
+.patternPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--chip) 8%, #fff), #fff 70%);
+  border: 1px solid color-mix(in srgb, var(--chip) 25%, #fff);
+  border-left: 5px solid var(--chip);
+}
+
+.patternHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bigLetters {
+  display: flex;
+  gap: 6px;
+}
+
+.bigLetter {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 46px;
+  border-radius: 9px;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.patternDesc {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.rule {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.ruleSample {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--chip);
+  background: none;
+}
+
+.ruleDesc {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ---------------- Flashcards ---------------- */
+
+.gridBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gridCount {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 168px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  perspective: 900px;
+  border-radius: 14px;
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--chip);
+  outline-offset: 3px;
+}
+
+.inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.3, 0.7, 0.3, 1);
+}
+
+.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 12px;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-align: center;
+  overflow: hidden;
+}
+
+.front {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, #efe8d6 27px 28px),
+    var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 6px solid var(--chip);
+  box-shadow: 0 6px 14px -10px rgba(28, 25, 23, 0.45);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: var(--chip);
+  color: #fff;
+  box-shadow: 0 10px 20px -12px var(--chip);
+}
+
+.faceTag {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  right: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--chip);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.base {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  line-height: 1.15;
+}
+
+.meaning {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.flipHint {
+  position: absolute;
+  bottom: 8px;
+  font-size: 11px;
+  color: #78716c;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.formRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.formLabel {
+  flex: none;
+  width: 24px;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.75;
+  text-align: left;
+}
+
+.formValue {
+  flex: 1;
+  min-width: 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  word-break: break-word;
+  line-height: 1.25;
+}
+
+.diff {
+  padding: 0 2px;
+  border-radius: 4px;
+  background: #fde68a;
+  color: #1c1917;
+}
+
+.slash {
+  margin: 0 3px;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.backMeaning {
+  margin-top: 6px;
+  font-size: 12.5px;
+  opacity: 0.9;
+}
+
+.knownBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px dashed #d6d3d1;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.knownBtn:hover {
+  border-color: #15803d;
+  color: #15803d;
+}
+
+.knownBtn[aria-pressed='true'] {
+  border-style: solid;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.isKnown .front::after {
+  content: '✓';
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #15803d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* ---------------- Table ---------------- */
+
+.table {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.table .diff {
+  background: #fef3c7;
+}
+
+.tablePattern {
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: 8px;
+  border-left: 3px solid var(--chip);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.3;
+  color: var(--chip);
+}
+
+.tablePattern small {
+  font-weight: 500;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.tableKnown {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #d6d3d1;
+  background: #fff;
+  color: #a8a29e;
+  cursor: pointer;
+  --chip: #15803d;
+}
+
+.tableKnown[aria-pressed='true'] {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+/* ---------------- Practice ---------------- */
+
+.empty {
+  margin: 0;
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--muted);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px dashed var(--rule);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 600px) {
+  .progress {
+    margin-left: 0;
+    flex: 1 1 100%;
+  }
+
+  .search {
+    max-width: none;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card {
+    height: 156px;
+  }
+
+  .base {
+    font-size: 21px;
+  }
+
+  .formValue {
+    font-size: 15px;
+  }
+
+  .bigLetter {
+    width: 34px;
+    height: 40px;
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+  }
+
+  .progressBar span {
+    transition: none;
+  }
+}
